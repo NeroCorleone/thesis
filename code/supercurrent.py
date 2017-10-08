@@ -1,0 +1,302 @@
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import kwant
+import numpy as np
+import scipy
+import scipy.ndimage
+import scipy.linalg as la
+from types import SimpleNamespace
+from datetime import datetime
+import multiprocessing as mp
+import queue
+import os
+from functools import partial
+import csv
+
+vsg_values = [0.4,] #[0.0, -0.05, -0.1, -0.15, -0.2, -0.25, -0.3, -0.4, -0.5, -0.6]
+vbg = 0.5 
+nb_points = 10 
+maxB = 0.00005
+magnetic_field = np.linspace(-maxB, maxB, nb_points)
+maxPhi = np.pi
+phase = (-np.pi, np.pi) 
+
+delta = 1.0 
+T = delta / 2
+eta = 2.5 
+gamma = 0.4
+at = 5.0
+a = 0.4
+
+mainpath = '~/thesis/'
+setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
+          'qpc': ('results/qpc/supercurrent/', 'designfiles/qpc_gate.png'), 
+          'long': ('results/long/supercurrent/', 'designfiles/halfBarrier.png')}
+
+path_to_result = '/users/tkm/kanilmaz/code/half_barrier_lower/supercurrent/'
+
+#topgate_file = 1 - scipy.misc.imread(
+#        #'/users/tkm/kanilmaz/Dropbox/master/delft_code/supercurrent/BLG-SNS/code/QPC_device_top_gate.png')[:, :, 0].T / 255
+#    '/users/tkm/kanilmaz/Dropbox/master/code/halfBarrier/designfiles/halfBarrier.png').T / 255
+
+topgate = 1 - scipy.ndimage.imread(
+        '/users/tkm/kanilmaz/code/half_barrier/designfiles/hb_lower_part.png', mode='L').T / 255
+
+scattering_region_file = 1 - scipy.misc.imread(
+        '/users/tkm/kanilmaz/Dropbox/master/code/halfBarrier/designfiles/scatteringRegion.png')[:, :, 0].T / 255
+    #'/home/nefta/Dropbox/master/code/halfBarrier/designfiles/scatteringRegion.png')[:, :, 0].T / 255
+
+    
+scattering_region = scattering_region_file.T[357:-348].T
+topgate_gauss = scipy.ndimage.gaussian_filter(topgate, 20)
+
+potential = scipy.interpolate.RectBivariateSpline(
+    x=(a*np.arange(topgate_gauss.shape[0])),
+    y=(a*np.arange(topgate_gauss.shape[1])),
+    z=topgate_gauss, 
+    kx=1,
+    ky=1,
+)
+
+bilayer =  kwant.lattice.general([(at*np.sqrt(3)/2, at*1/2), (0, at*1)],
+                                 [(0, 0.0), (at*1 / (2*np.sqrt(3)), at*1/2), 
+                                  (-at*1/(2*np.sqrt(3)), at*1/2), (0, 0)])
+a1, b1, a2, b2 = bilayer.sublattices
+hoppings1 = (((0, 0), a1, b1), ((0, 1), a1, b1), ((1, 0), a1, b1)) 
+hoppings2 = (((0, 0), a2, b2), ((0, -1), a2, b2), ((1, -1), a2, b2))
+
+def onsite(site, par):    
+    topgate_potential = par.v_sg * potential(site.pos[0], site.pos[1]) 
+    mu = (par.v_bg + topgate_potential) / 2 
+    delta = - (topgate_potential - par.v_bg) / eta 
+    # site.family in (a1, b1)
+    if (site.family == a1 or site.family == b1):
+        return - mu - delta 
+    return -mu + delta
+
+def onsite_lead(site, par):     
+    topgate_potential = 0
+    mu = (par.v_bg + topgate_potential) / 2
+    delta = - ( topgate_potential - par.v_bg) / eta
+    if site.family == a1 or site.family == b1:
+        return - mu - delta
+    return -mu  + delta
+
+
+def geomShape(pos):
+    #x, y = pos
+    if pos[0] < 0 or pos[1] < 0:
+        return False
+    try:
+        # rather round()?
+        return scattering_region[int(pos[0] / a), int(pos[1] / a)]
+    except IndexError:
+        return False
+
+def hop_intra_layer(site1, site2, par): 
+    xt, yt = site1.pos 
+    xs, ys = site2.pos
+    return -par.t * np.exp(-0.5j * np.pi * par.B  * (xt - xs) * (yt + ys))
+
+def hop_inter_layer(site1, site2, par): 
+    return -par.gamma1 
+
+def hop_intra_layer_lead(site1, site2, par): 
+    return -par.t 
+
+def hop_inter_layer_lead(site1, site2, par): 
+    return -par.gamma1 
+
+def leadShape1(pos):
+    y = pos[1]
+    if y < 0:
+        return False
+    try:
+        return scattering_region[0, int(y / a)]
+    except IndexError:
+        return False
+    
+def leadShape2(pos):
+    y = pos[1]
+    if y < 0:
+        return False
+    try:
+        return scattering_region[-1, int(y / a)]
+    except IndexError:
+        return False
+
+def trs(m):
+    return m.conj()
+
+class TRIInfiniteSystem(kwant.builder.InfiniteSystem):
+    def __init__(self, lead, trs):
+        """A lead with time reversal invariant modes."""
+        self.__dict__ = lead.__dict__
+        self.trs = trs
+
+    def modes(self, energy=0, args=()):
+        prop_modes, stab_modes =             super(TRIInfiniteSystem, self).modes(energy=energy, args=args)
+        n = stab_modes.nmodes
+        stab_modes.vecs[:, n:(2*n)] = self.trs(stab_modes.vecs[:, :n])
+        stab_modes.vecslmbdainv[:, n:(2*n)] =             self.trs(stab_modes.vecslmbdainv[:, :n])
+        prop_modes.wave_functions[:, n:] =             self.trs(prop_modes.wave_functions[:, :n])
+        return prop_modes, stab_modes
+
+def make_system():
+    system = kwant.Builder()
+    scat_width = scattering_region.shape[0]
+    scat_length = scattering_region.shape[1]
+
+    system[bilayer.shape(geomShape, (0.5*a*scat_width, 0.5*a*scat_length))] = onsite 
+    system[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer
+    system[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer
+    system[kwant.builder.HoppingKind((0, 0), a1, b2) ] = hop_inter_layer    
+
+    trans_sym_1 = kwant.TranslationalSymmetry(bilayer.vec((-2, 1)))
+    lead_1 = kwant.Builder(trans_sym_1)
+    lead_1[bilayer.shape(leadShape1, (0, 0.5*a*scat_length))] = onsite_lead
+    lead_1[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
+    lead_1[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
+    lead_1[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
+
+    trans_sym_2 = kwant.TranslationalSymmetry(bilayer.vec((2, -1))) #?
+    lead_2 = kwant.Builder(trans_sym_2)
+    lead_2[bilayer.shape(leadShape2, (0, 0.5*a*scat_length))] = onsite_lead
+    lead_2[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
+    lead_2[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
+    lead_2[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
+     
+    system.attach_lead(lead_1)
+    system.attach_lead(lead_2)
+    system = system.finalized()
+    system.leads = [TRIInfiniteSystem(lead, trs) for lead in system.leads]
+    
+    return(system)
+
+def super_current(scat_matrix, phi):
+    nb_modes = [len(leadInfo.momenta) for leadInfo in scat_matrix.lead_info]
+    scat_data = scat_matrix.data
+    
+    dim1 = int(nb_modes[0]/2)
+    dim2 = int(nb_modes[1]/2)
+    
+    r_a11 = 1j*np.eye(dim1)
+    r_a12 = np.zeros((dim1, dim2))
+    r_a21 = r_a12.T
+    r_a22 = 1j*np.exp(- 1j * phi) * np.eye(dim2)
+    r_a = np.bmat([[r_a11, r_a12], [r_a21, r_a22]])
+    
+    A = (r_a.dot(scat_data) + (scat_data.T).dot(r_a)) / 2
+    
+    dr_a11 = np.zeros((dim1, dim1))
+    dr_a12 = np.zeros((dim1, dim2))
+    dr_a21 = dr_a12.T
+    dr_a22 = np.exp(- 1j * phi) * np.eye(dim2)
+    dr_a = np.bmat([[dr_a11, dr_a12], [dr_a21, dr_a22]])
+
+    dA = (dr_a.dot(scat_data) + (scat_data.T).dot(dr_a)) / 2
+    
+    dA_total = np.array((dA.T.conj()).dot(A) + (A.T.conj()).dot(dA))
+    
+    eigenval, eigenvec = la.eigh(A.T.conj().dot(A))
+    
+    final_eigenval = delta * eigenval ** 0.5 
+    final_eigenvec = eigenvec.T
+    
+    current_imaginary =  np.sum(
+        (vec.T.conj().dot(dA_total.dot(vec)) * np.tanh(val/T)/val)
+        for val, vec in zip(final_eigenval, final_eigenvec)
+    )
+    current = 0.5 * delta ** 2 * np.real(current_imaginary)
+    return(current)
+
+def find_max(func, phase_min, phase_max):
+    current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
+    currentPeak = np.amax(current)
+    return(currentPeak)
+
+def max_current(system, params):
+    pos, par = params
+    scat_matrix = kwant.smatrix(system, energy=0.0, args=[par])
+    func = partial(super_current, scat_matrix)
+    currentPeak = find_max(func, phase[0], phase[-1])
+    return((pos,currentPeak))
+
+def plot_current(magnetic_field, current, filename):
+    plt.figure(figsize=(10, 8))
+    plt.plot(current, magnetic_field, linestyle='None', marker='o', color='b', )
+    plt.xlabel(r'$B$', fontsize=14)
+    plt.ylabel(r'$I_c$', fontsize=14)
+    plt.savefig(filename)
+    return
+
+def worker(system, param_queue, result_queue):
+    try:
+        while True:
+            params = param_queue.get(block=False)
+            result = max_current(system, params)
+            result_queue.put(result)
+            param_queue.task_done()
+    except queue.Empty:
+        pass
+
+
+def current_vs_b(vsg, path=path_to_result):
+    runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
+    system_params_names = ['vsg', 'vbg', 'maxB', 'nb_points', 'eta', 'gamma', 'a', 'at', 'delta', 'T', ]
+    system_params = [str(vsg), str(vbg), str(maxB), str(nb_points), str(eta), str(gamma), str(a), str(at), str(delta), str(T), ]
+    newpath = path + 'vsg=' + str(vsg) + '-' +  runtime + '/'
+    if not os.path.exists(newpath):
+        os.makedirs(newpath)
+    system_params_file = newpath + 'params.txt'
+    with open(system_params_file, 'w' ) as paramfile:
+        for name, value in zip(system_params_names, system_params):
+            paramfile.write(name + ", " + value + '\n')
+
+    param_queue = mp.JoinableQueue()
+    result_queue = mp.JoinableQueue() 
+    namespace_args = []
+
+    for i, b in enumerate(magnetic_field):
+        namespace_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, t=1, gamma1=gamma, B=b)))
+    for arg in namespace_args:
+        param_queue.put(arg)
+
+    timestamp = datetime.now()
+    print('starting calculation with ', len(magnetic_field),' points')
+    nb_cores = mp.cpu_count()
+    processes = [mp.Process(target=worker, args=(system, param_queue, result_queue)) for i in range(nb_cores)]
+    for p in processes:
+        p.start()
+    param_queue.join()
+    results = []
+    try:
+        while True:
+            results.append(result_queue.get(block=False))
+    except queue.Empty:
+        pass
+    print('time for calculation with multiprocessing: ', datetime.now() - timestamp)    
+    sorted_results = sorted(results, key=lambda value: value[0])
+    unzipped = list(zip(*sorted_results))
+    current_values = np.asarray(unzipped[1])
+
+    filename = newpath + 'data.csv' 
+    with open(filename, 'w') as csvfile:
+        writer = csv.writer(csvfile, delimiter=' ')
+        writer.writerow('### Parameters: maxB =' + str(maxB) + ', number of points: ' + str(len(magnetic_field)) 
+                        + 'V_SG = ' + str(vsg)
+    )
+        writer.writerow(current_values)
+    pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
+    plot_current(current_values, magnetic_field, pngfile)
+    print('output in', filename)
+    return()
+
+
+system = make_system()
+
+
+for vsg_value in vsg_values:
+    print(vsg_value)
+    current_vs_b(vsg_value)
