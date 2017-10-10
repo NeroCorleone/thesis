@@ -14,46 +14,53 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [0.4,] #[0.0, -0.05, -0.1, -0.15, -0.2, -0.25, -0.3, -0.4, -0.5, -0.6]
-vbg = 0.5 
-nb_points = 100
-maxB = 0.00005
-magnetic_field = np.linspace(-maxB, maxB, nb_points)
-maxPhi = np.pi
+nb_points = 300 
+splitgate_voltage = np.linspace(-1, 0.0, nb_points)
+vbg_values = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 phase = (-np.pi, np.pi) 
 
 delta = 1.0 
 T = delta / 2
 eta = 2.5 
 gamma = 0.4
-at = 5.0
-a = 0.4
+at = 2.5 
+a = 0.2
 
-case = 'long82'
+case = 'long328'
 mainpath = '/users/tkm/kanilmaz/thesis/'
-setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
-          'qpc': ('results/qpc/supercurrent/', 'designfiles/qpc_gate.png'), 
-          'long82': ('results/long82/supercurrent/', 'designfiles/long_82.png')}
+setups = {'hb': ('results/hb/conductance/', 'designfiles/halfBarrier.png'),
+          'qpc': ('results/qpc/conductance/', 'designfiles/qpc_gate.png'), 
+          'long82': ('results/long82/conductance/', 'designfiles/long_82.png'),
+          'long328': ('results/long328/conductance/', 'designfiles/long_328.png')}
 
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
 
 read_files = {'hb': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
-        'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255
-        'long82': scipy.ndimage.imread(mainpath + setups['long82'][1], mode='L') / 255}
+        'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255,
+        'long82': scipy.ndimage.imread(mainpath + setups['long82'][1], mode='L').T / 255,
+        'long328': scipy.ndimage.imread(mainpath + setups['long328'][1], mode='L').T / 255}
 
 topgate = 1 - read_files[case]
 
 #topgate = 1 - scipy.ndimage.imread(
 #        '/users/tkm/kanilmaz/code/half_barrier/designfiles/hb_lower_part.png', mode='L').T / 255
 
-scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
-    
-topgate_gauss = scipy.ndimage.gaussian_filter(topgate, 20)
+scat_file = mainpath + 'designfiles/scatteringRegion.png'
+
+scattering_cases = {'hb': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
+                    'qpc': 1 - scipy.misc.imread(scat_file)[:, :, 0].T / 255,
+                    'long82': np.ones(topgate.shape),
+                    'long328': np.ones(topgate.shape),
+        }
+#scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
+scattering_region = scattering_cases[case]
+
+topgateGauss = scipy.ndimage.gaussian_filter(topgate, 20)
 
 potential = scipy.interpolate.RectBivariateSpline(
-    x=(a*np.arange(topgate_gauss.shape[0])),
-    y=(a*np.arange(topgate_gauss.shape[1])),
-    z=topgate_gauss, 
+    x=(a*np.arange(topgateGauss.shape[0])),
+    y=(a*np.arange(topgateGauss.shape[1])),
+    z=topgateGauss, 
     kx=1,
     ky=1,
 )
@@ -81,7 +88,6 @@ def onsite_lead(site, par):
     if site.family == a1 or site.family == b1:
         return - mu - delta
     return -mu  + delta
-
 
 def geomShape(pos):
     #x, y = pos
@@ -173,79 +179,39 @@ def make_system():
     
     return(system)
 
-def super_current(scat_matrix, phi):
-    nb_modes = [len(leadInfo.momenta) for leadInfo in scat_matrix.lead_info]
-    scat_data = scat_matrix.data
-    
-    dim1 = int(nb_modes[0]/2)
-    dim2 = int(nb_modes[1]/2)
-    
-    r_a11 = 1j*np.eye(dim1)
-    r_a12 = np.zeros((dim1, dim2))
-    r_a21 = r_a12.T
-    r_a22 = 1j*np.exp(- 1j * phi) * np.eye(dim2)
-    r_a = np.bmat([[r_a11, r_a12], [r_a21, r_a22]])
-    
-    A = (r_a.dot(scat_data) + (scat_data.T).dot(r_a)) / 2
-    
-    dr_a11 = np.zeros((dim1, dim1))
-    dr_a12 = np.zeros((dim1, dim2))
-    dr_a21 = dr_a12.T
-    dr_a22 = np.exp(- 1j * phi) * np.eye(dim2)
-    dr_a = np.bmat([[dr_a11, dr_a12], [dr_a21, dr_a22]])
 
-    dA = (dr_a.dot(scat_data) + (scat_data.T).dot(dr_a)) / 2
-    
-    dA_total = np.array((dA.T.conj()).dot(A) + (A.T.conj()).dot(dA))
-    
-    eigenval, eigenvec = la.eigh(A.T.conj().dot(A))
-    
-    final_eigenval = delta * eigenval ** 0.5 
-    final_eigenvec = eigenvec.T
-    
-    current_imaginary =  np.sum(
-        (vec.T.conj().dot(dA_total.dot(vec)) * np.tanh(val/T)/val)
-        for val, vec in zip(final_eigenval, final_eigenvec)
-    )
-    current = 0.5 * delta ** 2 * np.real(current_imaginary)
-    return(current)
-
-def find_max(func, phase_min, phase_max):
-    current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
-    currentPeak = np.amax(current)
-    return(currentPeak)
-
-def max_current(system, params):
-    pos, par = params
-    scat_matrix = kwant.smatrix(system, energy=0.0, args=[par])
-    func = partial(super_current, scat_matrix)
-    currentPeak = find_max(func, phase[0], phase[-1])
-    return((pos,currentPeak))
-
-def plot_current(magnetic_field, current, filename):
-    plt.figure(figsize=(10, 8))
-    plt.plot(current, magnetic_field, linestyle='None', marker='o', color='b', )
-    plt.xlabel(r'$B$', fontsize=14)
-    plt.ylabel(r'$I_c$', fontsize=14)
-    plt.savefig(filename)
-    return
+def conductance(system, params):
+    pos, param = params
+    smatrix = kwant.smatrix(system, energy=0.0, args=[param])
+    conductance = smatrix.transmission(1, 0)
+    #conductance = smatrix.transmission(0, 0)
+    return((pos, conductance))
 
 def worker(system, param_queue, result_queue):
     try:
         while True:
             params = param_queue.get(block=False)
-            result = max_current(system, params)
+            result = conductance(system, params)
             result_queue.put(result)
             param_queue.task_done()
     except queue.Empty:
         pass
+    
+def plotConductance(splitgate, conductance, filename):
+    plt.figure(figsize=(10, 8))
+    plt.plot(splitgate, conductance, linestyle='None', marker='o', color='b', )
+    plt.xlabel(r'$V_{SG}$', fontsize=14)
+    plt.ylabel('Conductance', fontsize=14)
+    plt.savefig(filename)
+    return
 
-
-def current_vs_b(system, vsg, path=path_to_result):
+def calculate_conductance(system, vbg, b=0, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
-    system_params_names = ['vsg', 'vbg', 'maxB', 'nb_points', 'eta', 'gamma', 'a', 'at', 'delta', 'T', ]
-    system_params = [str(vsg), str(vbg), str(maxB), str(nb_points), str(eta), str(gamma), str(a), str(at), str(delta), str(T), ]
-    newpath = path + 'vsg=' + str(vsg) + '-' +  runtime + '/'
+    system_params_names = ['vbg', 'b', 'nb_points', 
+			   'eta', 'gamma', 'a', 'at', 'delta', 'T', ]
+    system_params = [str(vbg), str(b), str(nb_points), 
+		     str(eta), str(gamma), str(a), str(at), str(delta), str(T), ]
+    newpath = path + 'vbg=' + str(vbg) + '-' +  runtime + '/'
     if not os.path.exists(newpath):
         os.makedirs(newpath)
     system_params_file = newpath + 'params.txt'
@@ -255,15 +221,15 @@ def current_vs_b(system, vsg, path=path_to_result):
 
     param_queue = mp.JoinableQueue()
     result_queue = mp.JoinableQueue() 
-    namespace_args = []
+    param_args = []
 
-    for i, b in enumerate(magnetic_field):
-        namespace_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, t=1, gamma1=gamma, B=b)))
-    for arg in namespace_args:
+    for i, vsg in enumerate(splitgate_voltage):
+        param_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, t=1, gamma1=gamma, B=b)))
+    for arg in param_args:
         param_queue.put(arg)
 
     timestamp = datetime.now()
-    print('starting calculation with ', len(magnetic_field),' points')
+    print('starting calculation with ', str(nb_points), 'points')
     nb_cores = mp.cpu_count()
     processes = [mp.Process(target=worker, args=(system, param_queue, result_queue)) for i in range(nb_cores)]
     for p in processes:
@@ -275,26 +241,36 @@ def current_vs_b(system, vsg, path=path_to_result):
             results.append(result_queue.get(block=False))
     except queue.Empty:
         pass
-    print('time for calculation with multiprocessing: ', datetime.now() - timestamp)    
+    print('time for calculation: ', datetime.now() - timestamp)    
+
     sorted_results = sorted(results, key=lambda value: value[0])
     unzipped = list(zip(*sorted_results))
-    current_values = np.asarray(unzipped[1])
+    conductance_values = np.asarray(unzipped[1])
 
-    filename = newpath + 'data.csv' 
+    filename = newpath + 'data.csv'
     with open(filename, 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=' ')
-        writer.writerow('### Parameters: maxB =' + str(maxB) + ', number of points: ' + str(len(magnetic_field)) 
-                        + 'V_SG = ' + str(vsg)
-    )
-        writer.writerow(current_values)
-    pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
-    plot_current(current_values, magnetic_field, pngfile)
-    print('output in', filename)
+        writer.writerow(conductance_values)
+        
+    png_file = newpath + 'conductance.png'
+    plotConductance(splitgate_voltage, conductance_values, png_file)
     return()
 
-
 sys = make_system()
+fig_sys = kwant.plotter.plot(sys)
+fig_sys.savefig('{}-system.png'.format(case))
+for vbg in vbg_values:
+    print('vbg=', vbg)
+    calculate_conductance(sys, vbg)
+'''
+for vsg in [-0.2, -0.3, -0.4, -0.45, -0.46, -0.47, -0.48, -0.49, -0.5, ]: 
+    print(vsg)
+    par = SimpleNamespace(v_bg=v_bg, t=1, gamma1=gamma, v_sg=vsg, B=0.0)
+    ldos = kwant.ldos(sys, energy=0.0, args=[par])
+    fig = kwant.plotter.map(system, ldos, a=1, vmax=.1, vmin=0.02, fig_size=(10,20))
+    dir = mainpath + '/{}/ldos/'.format(case) 
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+    fig.savefig(dir + 'ldos_vsg={0}.png'.format(vsg))
 
-for vsg_value in vsg_values:
-    print(vsg_value)
-    current_vs_b(sys, vsg_value)
+'''
