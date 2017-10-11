@@ -1,6 +1,6 @@
-vsg, -0.1
+vsg, -0.9
 vbg, 0.5
-maxB, 0.0015
+maxB, 0.002
 nb_points, 500
 eta, 2.5
 gamma, 0.4
