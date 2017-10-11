@@ -16,19 +16,20 @@ import csv
 
 nb_points = 300 
 splitgate_voltage = np.linspace(-1, 0.0, nb_points)
-vbg_values = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+vbg_values = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]#, 0.7, 0.8, 0.9]
 phase = (-np.pi, np.pi) 
 
 delta = 1.0 
 T = delta / 2
 eta = 2.5 
 gamma = 0.4
-at = 2.5 
-a = 0.2
+at = 5 
+a = 0.4
 
-case = 'long328'
+case = 'hb_lower'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/conductance/', 'designfiles/halfBarrier.png'),
+          'hb_lower': ('results/hb_lower/conductance/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/conductance/', 'designfiles/qpc_gate.png'), 
           'long82': ('results/long82/conductance/', 'designfiles/long_82.png'),
           'long328': ('results/long328/conductance/', 'designfiles/long_328.png')}
@@ -36,6 +37,7 @@ setups = {'hb': ('results/hb/conductance/', 'designfiles/halfBarrier.png'),
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
 
 read_files = {'hb': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
+        'hb_lower': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
         'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255,
         'long82': scipy.ndimage.imread(mainpath + setups['long82'][1], mode='L').T / 255,
         'long328': scipy.ndimage.imread(mainpath + setups['long328'][1], mode='L').T / 255}
@@ -48,6 +50,7 @@ topgate = 1 - read_files[case]
 scat_file = mainpath + 'designfiles/scatteringRegion.png'
 
 scattering_cases = {'hb': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
+                    'hb_lower': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
                     'qpc': 1 - scipy.misc.imread(scat_file)[:, :, 0].T / 255,
                     'long82': np.ones(topgate.shape),
                     'long328': np.ones(topgate.shape),

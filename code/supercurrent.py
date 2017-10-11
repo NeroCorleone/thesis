@@ -14,10 +14,10 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [0.4,] #[0.0, -0.05, -0.1, -0.15, -0.2, -0.25, -0.3, -0.4, -0.5, -0.6]
+vsg_values = [-0.1, -0.15, -0.2, -0.25, -0.3, -0.4, -0.5, -0.6, -0.7, -0.8, -0.9]
 vbg = 0.5 
-nb_points = 100
-maxB = 0.00005
+nb_points = 400 
+maxB = 0.002
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
@@ -29,26 +29,40 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
+pot_decay = 20#default 20
 case = 'long82'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
+          'hb_lower': ('results/hb_lower/supercurrent/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/supercurrent/', 'designfiles/qpc_gate.png'), 
-          'long82': ('results/long82/supercurrent/', 'designfiles/long_82.png')}
+          'long82': ('results/long82/supercurrent/', 'designfiles/long_82.png'),
+          'long328': ('results/long328/supercurrent/', 'designfiles/long_328.png')}
 
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
 
 read_files = {'hb': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
-        'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255
-        'long82': scipy.ndimage.imread(mainpath + setups['long82'][1], mode='L') / 255}
+        'hb_lower': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
+        'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255,
+        'long82': scipy.ndimage.imread(mainpath + setups['long82'][1], mode='L').T / 255,
+        'long328': scipy.ndimage.imread(mainpath + setups['long328'][1], mode='L').T / 255}
 
 topgate = 1 - read_files[case]
 
 #topgate = 1 - scipy.ndimage.imread(
 #        '/users/tkm/kanilmaz/code/half_barrier/designfiles/hb_lower_part.png', mode='L').T / 255
 
-scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
+scat_file = mainpath + 'designfiles/scatteringRegion.png'
+
+scattering_cases = {'hb': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
+                    'hb_lower': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
+                    'qpc': 1 - scipy.misc.imread(scat_file)[:, :, 0].T / 255,
+                    'long82': np.ones(topgate.shape),
+                    'long328': np.ones(topgate.shape),
+        }
+#scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
+scattering_region = scattering_cases[case]
     
-topgate_gauss = scipy.ndimage.gaussian_filter(topgate, 20)
+topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 
 potential = scipy.interpolate.RectBivariateSpline(
     x=(a*np.arange(topgate_gauss.shape[0])),
