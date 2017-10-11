@@ -15,9 +15,9 @@ from functools import partial
 import csv
 
 vsg_values = [-0.1, -0.2, -0.3, -0.4, -0.5, -0.6, -0.7, -0.8, -0.9]
-vbg = 0.5 
+vbg = 0.7 
 nb_points = 500 
-maxB = 0.0009
+maxB = 0.00005
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
