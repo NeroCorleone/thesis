@@ -16,7 +16,7 @@ import csv
 
 nb_points = 500 
 splitgate_voltage = np.linspace(-1, 0.0, nb_points)
-vbg_values = [0.7, 0.8, 0.9] 
+vbg_values = np.round(np.linspace(0.4, 0.9, 5), 2) 
 phase = (-np.pi, np.pi) 
 
 delta = 1.0 
@@ -25,7 +25,7 @@ eta = 2.5
 gamma = 0.4
 at = 5 
 a = 0.4
-pot_decay = 0 
+pot_decay = 3 
 
 case = 'long328'
 mainpath = '/users/tkm/kanilmaz/thesis/'
@@ -212,9 +212,11 @@ def plotConductance(splitgate, conductance, filename):
 def calculate_conductance(system, vbg, b=0, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
     system_params_names = ['vbg', 'b', 'nb_points', 
-			   'eta', 'gamma', 'a', 'at', 'delta', 'T', ]
+			   'decay', 'eta', 'gamma', 
+                           'a', 'at', 'delta', 'T', ]
     system_params = [str(vbg), str(b), str(nb_points), 
-		     str(eta), str(gamma), str(a), str(at), str(delta), str(T), ]
+		     str(pot_decay), str(eta), str(gamma), 
+                     str(a), str(at), str(delta), str(T), ]
     newpath = path + 'vbg=' + str(vbg) + '-' +  runtime + '/'
     if not os.path.exists(newpath):
         os.makedirs(newpath)
