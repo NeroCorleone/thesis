@@ -1,0 +1,9 @@
+vbg, 0.3
+b, 0
+nb_points, 300
+eta, 2.5
+gamma, 0.4
+a, 0.4
+at, 5
+delta, 1.0
+T, 0.5
