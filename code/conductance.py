@@ -14,9 +14,9 @@ import os
 from functools import partial
 import csv
 
-nb_points = 300 
+nb_points = 500 
 splitgate_voltage = np.linspace(-1, 0.0, nb_points)
-vbg_values = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]#, 0.7, 0.8, 0.9]
+vbg_values = [0.7, 0.8, 0.9] 
 phase = (-np.pi, np.pi) 
 
 delta = 1.0 
@@ -25,8 +25,9 @@ eta = 2.5
 gamma = 0.4
 at = 5 
 a = 0.4
+pot_decay = 0 
 
-case = 'hb_lower'
+case = 'long328'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/conductance/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/conductance/', 'designfiles/hb_lower_part.png'),
@@ -58,7 +59,7 @@ scattering_cases = {'hb': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
 #scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
 scattering_region = scattering_cases[case]
 
-topgateGauss = scipy.ndimage.gaussian_filter(topgate, 20)
+topgateGauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 
 potential = scipy.interpolate.RectBivariateSpline(
     x=(a*np.arange(topgateGauss.shape[0])),
