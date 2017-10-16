@@ -25,23 +25,26 @@ eta = 2.5
 gamma = 0.4
 at = 5 
 a = 0.4
-pot_decay = 3 
 
-case = 'long328'
+pot_decay = 3 
+case = 'wg3_2'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/conductance/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/conductance/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/conductance/', 'designfiles/qpc_gate.png'), 
-          'long82': ('results/long82/conductance/', 'designfiles/long_82.png'),
-          'long328': ('results/long328/conductance/', 'designfiles/long_328.png')}
+          #'wg3_1': ('results/wg3_1/conductance/', 'designfiles/waveguide3_1.png')
+          'wg3_1': ('results/wg3_1_small/conductance/', 'designfiles/waveguide3_1_small.png'),
+          'wg3_2': ('results/wg3_2/conductance/', 'designfiles/waveguide3_2.png')
+          }
 
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
 
 read_files = {'hb': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
         'hb_lower': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
         'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255,
-        'long82': scipy.ndimage.imread(mainpath + setups['long82'][1], mode='L').T / 255,
-        'long328': scipy.ndimage.imread(mainpath + setups['long328'][1], mode='L').T / 255}
+        'wg3_1': scipy.ndimage.imread(mainpath + setups['wg3_1'][1], mode='L') / 255,
+        'wg3_2': scipy.ndimage.imread(mainpath + setups['wg3_2'][1], mode='L') / 255,
+        }
 
 topgate = 1 - read_files[case]
 
@@ -53,8 +56,8 @@ scat_file = mainpath + 'designfiles/scatteringRegion.png'
 scattering_cases = {'hb': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
                     'hb_lower': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
                     'qpc': 1 - scipy.misc.imread(scat_file)[:, :, 0].T / 255,
-                    'long82': np.ones(topgate.shape),
-                    'long328': np.ones(topgate.shape),
+                    'wg3_1': np.ones(topgate.shape),
+                    'wg3_2': np.ones(topgate.shape),
         }
 #scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
 scattering_region = scattering_cases[case]
