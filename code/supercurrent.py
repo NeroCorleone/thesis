@@ -37,7 +37,7 @@ setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
           'qpc': ('results/qpc/supercurrent/', 'designfiles/qpc_gate.png'), 
           #'wg3_1': ('results/wg3_1/supercurrent/', 'designfiles/waveguide3_1.png')}
           'wg3_1': ('results/wg3_1_small/supercurrent/', 'designfiles/waveguide3_1_small.png'),
-          'wg3_2': ('results/wg3_2/supercurrent/', 'designfiles/waveguide3_2.png')
+          'wg3_2': ('results/wg3_2/supercurrent/', 'designfiles/waveguide3_2_small.png')
           }
 
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
