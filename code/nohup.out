@@ -78,3 +78,37 @@ output in /users/tkm/kanilmaz/thesis/results/long328/supercurrent/vsg=0.0-201710
 starting calculation with  500  points
 time for calculation with multiprocessing:  0:25:14.755984
 output in /users/tkm/kanilmaz/thesis/results/wg3_1/supercurrent/vsg=0.0-20171012-16:58:04/data.csv
+-0.15
+starting calculation with  500  points
+-0.15
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:02:52.355578
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.15-20171016-16:24:03/data.csv
+-0.25
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:02:53.728535
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.25-20171016-16:26:56/data.csv
+-0.35
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:02:52.467118
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.35-20171016-16:29:50/data.csv
+-0.375
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:02:50.173436
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.375-20171016-16:32:42/data.csv
+-0.4
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:02:52.499385
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.4-20171016-16:35:33/data.csv
+-0.425
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:02:51.703832
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.425-20171016-16:38:26/data.csv
+-0.45
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:02:53.761118
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.45-20171016-16:41:18/data.csv
+-0.475
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:02:52.356181
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.475-20171016-16:44:12/data.csv

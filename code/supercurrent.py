@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.1, -0.2, -0.3, -0.4, -0.5, -0.6, -0.7, -0.8, -0.9]#[-0.15, -0.25, -0.35, -0.375, -0.425, -0.45, -0.475]
+vsg_values = [-0.15, -0.25, -0.35, -0.375, -0.4, -0.425, -0.45, -0.475]#[-0.1, -0.2, -0.3, -0.4, -0.5, -0.6, -0.7, -0.8, -0.9]
 vbg = 0.8 
 nb_points = 500 
 maxB = 0.00009
@@ -29,7 +29,7 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
-pot_decay = 3 #QPC 20
+pot_decay = 0 #QPC 20
 case = 'wg3_2'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
