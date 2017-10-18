@@ -16,7 +16,7 @@ import csv
 
 vsg_values = [-0.4, ]#[-0.15, -0.25, -0.35, -0.375, -0.4, -0.425, -0.45, -0.475]
 vbg = 0.8 
-nb_points = 300 
+nb_points = 500 
 maxB = 0.00009
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
@@ -220,14 +220,16 @@ def super_current(scat_matrix, phi):
     final_eigenval = delta * eigenval ** 0.5 
     final_eigenvec = eigenvec.T
     
-    current_imaginary =  np.sum(
+    current_complex =  np.sum(
         (vec.T.conj().dot(dA_total.dot(vec)) * np.tanh(val/T)/val)
         for val, vec in zip(final_eigenval, final_eigenvec)
     )
-    #current = 0.5 * delta ** 2 * np.real(current_imaginary)
-    #current = 0.5 * delta**2 * np.abs(current_imaginary)
+    #current = 0.5 * delta ** 2 * np.real(current_complex)
+    #current = 0.5 * delta**2 * np.abs(current_complex)
     #return(current)
-    return(current_imaginary)
+    current_imag = 0.5 * delta**2 * np.imag(current_complex)
+    current_real = 0.5 * delta**2 * np.real(current_complex)
+    return((current_real, current_imag))
 
 def find_max(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
@@ -258,7 +260,6 @@ def worker(system, param_queue, result_queue):
             param_queue.task_done()
     except queue.Empty:
         pass
-
 
 def current_vs_b(system, vsg, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
