@@ -225,8 +225,9 @@ def super_current(scat_matrix, phi):
         for val, vec in zip(final_eigenval, final_eigenvec)
     )
     #current = 0.5 * delta ** 2 * np.real(current_imaginary)
-    current = 0.5 * delta**2 * np.abs(current_imaginary)
-    return(current)
+    #current = 0.5 * delta**2 * np.abs(current_imaginary)
+    #return(current)
+    return(current_imaginary)
 
 def find_max(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]

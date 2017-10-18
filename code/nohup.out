@@ -160,3 +160,9 @@ time for calculation:  0:02:16.815790
 starting calculation with  300  points
 time for calculation with multiprocessing:  0:01:41.546645
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.4-20171018-14:25:29/data.csv
+-0.4
+starting calculation with  300  points
+/usr/lib/python3/dist-packages/numpy/core/numeric.py:460: ComplexWarning: Casting complex values to real discards the imaginary part
+  return array(a, dtype, copy=False, order=order)
+time for calculation with multiprocessing:  0:01:43.090020
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.4-20171018-14:46:12/data.csv
