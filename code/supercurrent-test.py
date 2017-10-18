@@ -225,8 +225,9 @@ def super_current(scat_matrix, phi):
         (vec.T.conj().dot(dA_total.dot(vec)) * np.tanh(val/T)/val)
         for val, vec in zip(final_eigenval, final_eigenvec)
     )
-    current = 0.5 * delta ** 2 * np.real(current_imaginary)
-    return(current)
+#    current = 0.5 * delta ** 2 * np.real(current_imaginary)
+#    return(current)
+    return(current_imaginary)
 
 def find_max(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
@@ -240,6 +241,12 @@ def max_current(system, params):
     currentPeak = find_max(func, phase[0], phase[-1])
     return((pos,currentPeak))
 
+def get_current(system, params, phase):
+    pos, par = params
+    scat_matrix = kwant.smatrix(system, energy=0.0, args=[par])
+    current = [super_current(scat_matrix, phi) for phi in np.linspace(phase[0], phase[-1])]
+    return((pos, current))
+
 def plot_current(magnetic_field, current, filename):
     plt.figure(figsize=(10, 8))
     plt.plot(current, magnetic_field, linestyle='None', marker='o', color='b', )
@@ -252,9 +259,7 @@ def worker(system, param_queue, result_queue):
     try:
         while True:
             params = param_queue.get(block=False)
-            pos, par = params
-            scat_matrix = kwant.smatrix(system, energy=0.0, args=[par])
-            result = super_current(scat_matrix, phi)#max_current(system, params)
+            result = get_current(system, params, (-np.pi, np.pi))#max_current(system, params)
             result_queue.put(result)
             param_queue.task_done()
     except queue.Empty:
@@ -317,7 +322,7 @@ def current_vs_b(system, vsg, path=path_to_result):
     return()
 
 
-sys = make_system()
+system = make_system()
 
 #for vsg_value in vsg_values:
 #    print(vsg_value)

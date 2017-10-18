@@ -156,3 +156,7 @@ time for calculation:  0:02:09.920537
 vbg= 0.9
 starting calculation with  500 points
 time for calculation:  0:02:16.815790
+-0.4
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:01:41.546645
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.4-20171018-14:25:29/data.csv

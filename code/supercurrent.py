@@ -14,9 +14,9 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.1, -0.2, -0.3, -0.4, -0.5, -0.6, ]#[-0.15, -0.25, -0.35, -0.375, -0.4, -0.425, -0.45, -0.475]
+vsg_values = [-0.4, ]#[-0.15, -0.25, -0.35, -0.375, -0.4, -0.425, -0.45, -0.475]
 vbg = 0.8 
-nb_points = 500 
+nb_points = 300 
 maxB = 0.00009
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
@@ -224,7 +224,8 @@ def super_current(scat_matrix, phi):
         (vec.T.conj().dot(dA_total.dot(vec)) * np.tanh(val/T)/val)
         for val, vec in zip(final_eigenval, final_eigenvec)
     )
-    current = 0.5 * delta ** 2 * np.real(current_imaginary)
+    #current = 0.5 * delta ** 2 * np.real(current_imaginary)
+    current = 0.5 * delta**2 * np.abs(current_imaginary)
     return(current)
 
 def find_max(func, phase_min, phase_max):
