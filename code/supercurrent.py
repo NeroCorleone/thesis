@@ -16,7 +16,7 @@ import csv
 
 vsg_values = [0.0, ]#[-0.15, -0.25, -0.35, -0.375, -0.4, -0.425, -0.45, -0.475]
 vbg = 0.8 
-nb_points = 500 
+nb_points =100 
 maxB = 0.00009
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
@@ -224,16 +224,14 @@ def super_current(scat_matrix, phi):
         (vec.T.conj().dot(dA_total.dot(vec)) * np.tanh(val/T)/val)
         for val, vec in zip(final_eigenval, final_eigenvec)
     )
-    #current = 0.5 * delta ** 2 * np.real(current_complex)
-    #current = 0.5 * delta**2 * np.abs(current_complex)
-    #return(current)
-    current_imag = 0.5 * delta**2 * np.imag(current_complex)
-    current_real = 0.5 * delta**2 * np.real(current_complex)
-    return((current_real, current_imag))
+    imag = 0.5 * delta**2 * np.imag(current_complex)
+    real = 0.5 * delta**2 * np.real(current_complex)
+    abs = 0.5 * delta**2 * np.abs(current_complex)
+    return((abs, real, imag))
 
 def find_max(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
-    currentPeak = np.amax(current)
+    currentPeak = max(current)
     return(currentPeak)
 
 def max_current(system, params):
@@ -307,12 +305,10 @@ def current_vs_b(system, vsg, path=path_to_result):
     filename = newpath + 'data.csv' 
     with open(filename, 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=' ')
-        writer.writerow('### Parameters: maxB =' + str(maxB) + ', number of points: ' + str(len(magnetic_field)) 
-                        + 'V_SG = ' + str(vsg)
-    )
-        writer.writerow(current_values)
+        for row in current_values:
+            writer.writerow(current_values)
     pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
-    plot_current(current_values, magnetic_field, pngfile)
+    plot_current(current_values.T[0], magnetic_field, pngfile)
     print('output in', filename)
     return()
 
