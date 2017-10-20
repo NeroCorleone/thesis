@@ -14,10 +14,10 @@ import os
 from functools import partial
 import csv
 
-vsg = -0.4
+vsg = 0.0
 vsg_values = [-0.1, -0.2, -0.3, -0.4, -0.5, -0.6, ]#[-0.15, -0.25, -0.35, -0.375, -0.4, -0.425, -0.45, -0.475]
 vbg = 0.8 
-nb_points = 10 
+nb_points = 500 
 maxB = 0.00009
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
@@ -221,17 +221,20 @@ def super_current(scat_matrix, phi):
     final_eigenval = delta * eigenval ** 0.5 
     final_eigenvec = eigenvec.T
     
-    current_imaginary =  np.sum(
+    current_complex =  np.sum(
         (vec.T.conj().dot(dA_total.dot(vec)) * np.tanh(val/T)/val)
         for val, vec in zip(final_eigenval, final_eigenvec)
     )
+    imag = 0.5 * delta**2 * np.imag(current_complex)
+    real = 0.5 * delta**2 * np.real(current_complex)
+    abs = 0.5 * delta**2 * np.abs(current_complex)
 #    current = 0.5 * delta ** 2 * np.real(current_imaginary)
 #    return(current)
-    return(current_imaginary)
+    return((abs, real, imag))
 
 def find_max(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
-    currentPeak = np.amax(current)
+    currentPeak = max(current)
     return(currentPeak)
 
 def max_current(system, params):
@@ -259,7 +262,7 @@ def worker(system, param_queue, result_queue):
     try:
         while True:
             params = param_queue.get(block=False)
-            result = get_current(system, params, (-np.pi, np.pi))#max_current(system, params)
+            result = max_current(system, params)#get_current(system, params, (-np.pi, np.pi))
             result_queue.put(result)
             param_queue.task_done()
     except queue.Empty:
@@ -353,9 +356,10 @@ print('time for calculation with multiprocessing: ', datetime.now() - timestamp)
 sorted_results = sorted(results, key=lambda value: value[0])
 unzipped = list(zip(*sorted_results))
 current_values = np.asarray(unzipped[1])
+print(current_values)
 
-filename = 'testdata.csv' 
+filename = 'testdata_2.csv' 
 with open(filename, 'w') as csvfile:
-    writer = csv.writer(csvfile, delimiter=' ')
+    writer = csv.writer(csvfile, delimiter=', ')
     for row in current_values:
         writer.writerow(row)

@@ -1,7 +1,7 @@
-vsg, -0.4
+vsg, 0.0
 vbg, 0.8
 maxB, 9e-05
-nb_points, 300
+nb_points, 500
 decay, 0
 eta, 2.5
 gamma, 0.4
