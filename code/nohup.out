@@ -166,3 +166,12 @@ starting calculation with  300  points
   return array(a, dtype, copy=False, order=order)
 time for calculation with multiprocessing:  0:01:43.090020
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.4-20171018-14:46:12/data.csv
+0.0
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:40.635403
+Traceback (most recent call last):
+  File "supercurrent.py", line 320, in <module>
+    current_vs_b(sys, vsg_value)
+  File "supercurrent.py", line 307, in current_vs_b
+    writer = csv.writer(csvfile, delimiter=', ')
+TypeError: "delimiter" must be an 1-character string
