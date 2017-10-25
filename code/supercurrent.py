@@ -16,7 +16,7 @@ import csv
 
 vsg_values = [0.0, ]#[-0.15, -0.25, -0.35, -0.375, -0.4, -0.425, -0.45, -0.475]
 vbg = 0.8 
-nb_points = 3 
+nb_points = 1000 
 maxB = 0.0001
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
@@ -307,7 +307,8 @@ def current_vs_b(system, vsg, path=path_to_result):
     with open(filename, 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         for row in current_values:
-            writer.writerow(current_values)
+            writer.writerow(list(row))
+            print(list(row))
     pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
     plot_current(current_values.T[0], magnetic_field, pngfile)
     print('output in', filename)
