@@ -16,7 +16,7 @@ import csv
 
 vsg_values = [0.0, ]#[-0.15, -0.25, -0.35, -0.375, -0.4, -0.425, -0.45, -0.475]
 vbg = 0.8 
-nb_points = 1000
+nb_points = 3 
 maxB = 0.0001
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
@@ -226,8 +226,8 @@ def super_current(scat_matrix, phi):
     )
     imag = 0.5 * delta**2 * np.imag(current_complex)
     real = 0.5 * delta**2 * np.real(current_complex)
-    abs = 0.5 * delta**2 * np.abs(current_complex)
-    return((abs, real, imag))
+    absval = 0.5 * delta**2 * np.abs(current_complex)
+    return((absval, real, imag))
 
 def find_max(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
@@ -301,6 +301,7 @@ def current_vs_b(system, vsg, path=path_to_result):
     sorted_results = sorted(results, key=lambda value: value[0])
     unzipped = list(zip(*sorted_results))
     current_values = np.asarray(unzipped[1])
+    print(current_values)
 
     filename = newpath + 'data.csv' 
     with open(filename, 'w') as csvfile:
