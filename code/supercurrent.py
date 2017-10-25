@@ -304,7 +304,7 @@ def current_vs_b(system, vsg, path=path_to_result):
 
     filename = newpath + 'data.csv' 
     with open(filename, 'w') as csvfile:
-        writer = csv.writer(csvfile, delimiter=' ')
+        writer = csv.writer(csvfile, delimiter=', ')
         for row in current_values:
             writer.writerow(current_values)
     pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
