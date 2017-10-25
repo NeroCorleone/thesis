@@ -201,3 +201,7 @@ Traceback (most recent call last):
   File "supercurrent-test.py", line 363, in <module>
     writer = csv.writer(csvfile, delimiter=', ')
 TypeError: "delimiter" must be an 1-character string
+0.0
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:31.742953
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=0.0-20171025-13:03:14/data.csv
