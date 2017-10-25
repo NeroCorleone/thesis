@@ -227,10 +227,10 @@ def super_current(scat_matrix, phi):
     )
     imag = 0.5 * delta**2 * np.imag(current_complex)
     real = 0.5 * delta**2 * np.real(current_complex)
-    abs = 0.5 * delta**2 * np.abs(current_complex)
+    absval = 0.5 * delta**2 * np.abs(current_complex)
 #    current = 0.5 * delta ** 2 * np.real(current_imaginary)
 #    return(current)
-    return((abs, real, imag))
+    return((absval, real, imag))
 
 def find_max(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
@@ -323,7 +323,6 @@ def current_vs_b(system, vsg, path=path_to_result):
     plot_current(current_values, magnetic_field, pngfile)
     print('output in', filename)
     return()
-
 
 system = make_system()
 
