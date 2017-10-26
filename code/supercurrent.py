@@ -37,7 +37,8 @@ setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
           'qpc': ('results/qpc/supercurrent/', 'designfiles/qpc_gate.png'), 
           #'wg3_1': ('results/wg3_1/supercurrent/', 'designfiles/waveguide3_1.png')}
           'wg3_1': ('results/wg3_1_small/supercurrent/', 'designfiles/waveguide3_1_small.png'),
-          'wg3_2': ('results/wg3_2/supercurrent/', 'designfiles/waveguide3_2_small.png')
+          'wg3_2': ('results/wg3_2/supercurrent/', 'designfiles/waveguide3_2_small.png'),
+          'wg3_double': ('results/wg3_double/supercurrent/', 'designfiles/waveguide3_double_1_small.png'),
           }
 
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
@@ -46,7 +47,8 @@ read_files = {'hb': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T
         'hb_lower': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
         'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255,
         'wg3_1': scipy.ndimage.imread(mainpath + setups['wg3_1'][1], mode='L') / 255,
-        'wg3_2': scipy.ndimage.imread(mainpath + setups['wg3_2'][1], mode='L') / 255
+        'wg3_2': scipy.ndimage.imread(mainpath + setups['wg3_2'][1], mode='L') / 255,
+        'wg3_double': scipy.ndimage.imread(mainpath + setups['wg3_double'][1], mode='L') / 255, 
         }
 
 topgate = 1 - read_files[case]
