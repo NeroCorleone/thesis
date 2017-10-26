@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [0.0, ]#[-0.15, -0.25, -0.35, -0.375, -0.4, -0.425, -0.45, -0.475]
+vsg_values = [-0.1, -0.2, -0.3, -0.4, -0.5, -0.6]
 vbg = 0.8 
 nb_points = 1000 
 maxB = 0.0001
