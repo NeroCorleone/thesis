@@ -6271,3 +6271,69 @@ time for calculation with multiprocessing:  0:05:36.319877
 [3.0029389141051355, -3.0029389141051355, -4.3320342345384866e-17]
 [2.9979235693823476, -2.9979235693823476, -4.3697739836496254e-16]
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.6-20171026-13:57:37/data.csv
+-0.1
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:02:53.685071
+[[  8.50016201e-01   8.50016201e-01  -4.75665960e-16]
+ [  8.27619116e-01   8.27619116e-01  -1.61188511e-16]
+ [  7.95076155e-01   7.95076155e-01  -5.11789513e-16]
+ ..., 
+ [  7.95076155e-01  -7.95076155e-01   9.59240523e-17]
+ [  8.27619116e-01  -8.27619116e-01   7.84774254e-16]
+ [  8.50016201e-01  -8.50016201e-01   3.96221202e-17]]
+output in /users/tkm/kanilmaz/thesis/results/wg3_double/supercurrent/vsg=-0.1-20171026-15:12:12/data.csv
+-0.2
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:02:55.665885
+[[  3.07734570e-01   3.07734570e-01   5.76752425e-16]
+ [  2.85102238e-01   2.85102238e-01  -1.64692170e-16]
+ [  2.53619935e-01   2.53619935e-01  -6.05888573e-16]
+ ..., 
+ [  2.53619935e-01  -2.53619935e-01   8.43636101e-16]
+ [  2.85102238e-01  -2.85102238e-01  -7.18764962e-16]
+ [  3.07734570e-01  -3.07734570e-01   1.82749390e-16]]
+output in /users/tkm/kanilmaz/thesis/results/wg3_double/supercurrent/vsg=-0.2-20171026-15:15:06/data.csv
+-0.3
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:02:53.976507
+[[  4.00246067e-01  -4.00246067e-01   5.63527688e-16]
+ [  4.13439067e-01  -4.13439067e-01   1.13698719e-16]
+ [  4.32724652e-01  -4.32724652e-01   7.13295095e-16]
+ ..., 
+ [  4.32724652e-01   4.32724652e-01   1.11461014e-15]
+ [  4.13439067e-01   4.13439067e-01  -2.20495375e-16]
+ [  4.00246067e-01   4.00246067e-01  -6.60205724e-16]]
+output in /users/tkm/kanilmaz/thesis/results/wg3_double/supercurrent/vsg=-0.3-20171026-15:18:02/data.csv
+-0.4
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:02:57.613796
+[[  1.08620481e+00   1.08620481e+00  -9.02787425e-16]
+ [  1.06762811e+00   1.06762811e+00  -1.78295350e-19]
+ [  1.04558829e+00   1.04558829e+00  -3.80443041e-16]
+ ..., 
+ [  1.04558829e+00  -1.04558829e+00  -6.45386528e-16]
+ [  1.06762811e+00  -1.06762811e+00   1.01138227e-15]
+ [  1.08620481e+00  -1.08620481e+00   2.77517128e-16]]
+output in /users/tkm/kanilmaz/thesis/results/wg3_double/supercurrent/vsg=-0.4-20171026-15:20:56/data.csv
+-0.5
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:02:53.986008
+[[  1.02257046e+00   1.02257046e+00  -1.39653284e-15]
+ [  1.00955697e+00   1.00955697e+00  -7.42204172e-16]
+ [  9.95484832e-01   9.95484832e-01   9.56540573e-16]
+ ..., 
+ [  9.95484832e-01  -9.95484832e-01  -2.12794472e-15]
+ [  1.00955697e+00  -1.00955697e+00  -1.59324306e-15]
+ [  1.02257046e+00  -1.02257046e+00  -8.41391176e-17]]
+output in /users/tkm/kanilmaz/thesis/results/wg3_double/supercurrent/vsg=-0.5-20171026-15:23:54/data.csv
+-0.6
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:02:52.927761
+[[  3.69659137e-01  -3.69659137e-01   5.28948396e-16]
+ [  3.70060229e-01  -3.70060229e-01  -1.95735884e-15]
+ [  3.72975374e-01  -3.72975374e-01   6.69306515e-16]
+ ..., 
+ [  3.72975374e-01   3.72975374e-01   4.19666131e-17]
+ [  3.70060229e-01   3.70060229e-01  -1.52477914e-16]
+ [  3.69659137e-01   3.69659137e-01  -5.75021757e-16]]
+output in /users/tkm/kanilmaz/thesis/results/wg3_double/supercurrent/vsg=-0.6-20171026-15:26:48/data.csv

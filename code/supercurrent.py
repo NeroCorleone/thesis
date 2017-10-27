@@ -16,7 +16,7 @@ import csv
 
 vsg_values = [-0.1, -0.2, -0.3, -0.4, -0.5, -0.6]
 vbg = 0.8 
-nb_points = 1000 
+nb_points = 400 
 maxB = 0.0001
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
@@ -30,7 +30,7 @@ at = 5.0
 a = 0.4
 
 pot_decay = 0 #QPC 20
-case = 'wg3_2'
+case = 'wg3_double'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/supercurrent/', 'designfiles/hb_lower_part.png'),
@@ -63,6 +63,7 @@ scattering_cases = {'hb': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
                     'qpc': 1 - scipy.misc.imread(scat_file)[:, :, 0].T / 255,
                     'wg3_1': np.ones(topgate.shape),
                     'wg3_2': np.ones(topgate.shape),
+                    'wg3_double': np.ones(topgate.shape),
         }
 #scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
 scattering_region = scattering_cases[case]
@@ -310,7 +311,6 @@ def current_vs_b(system, vsg, path=path_to_result):
         writer = csv.writer(csvfile, delimiter=',')
         for row in current_values:
             writer.writerow(list(row))
-            print(list(row))
     pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
     plot_current(current_values.T[0], magnetic_field, pngfile)
     print('output in', filename)
