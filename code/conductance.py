@@ -14,9 +14,9 @@ import os
 from functools import partial
 import csv
 
-nb_points = 500 
+nb_points = 400 
 splitgate_voltage = np.linspace(-1, 0.0, nb_points)
-vbg_values = [0.4, 0.5, 0.6, 0.7, 0.8, 0.9]#np.round(np.linspace(0.4, 0.9, 5), 2) 
+vbg_values = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]#np.round(np.linspace(0.4, 0.9, 5), 2) 
 phase = (-np.pi, np.pi) 
 
 delta = 1.0 
@@ -26,15 +26,17 @@ gamma = 0.4
 at = 5 
 a = 0.4
 
-pot_decay = 3 
-case = 'wg3_2'
+pot_decay = 0 
+case = 'hb'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/conductance/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/conductance/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/conductance/', 'designfiles/qpc_gate.png'), 
           #'wg3_1': ('results/wg3_1/conductance/', 'designfiles/waveguide3_1.png')
-          'wg3_1': ('results/wg3_1_small/conductance/', 'designfiles/waveguide3_1_small.png'),
-          'wg3_2': ('results/wg3_2/conductance/', 'designfiles/waveguide3_2_small.png')
+          'wg3_1': ('results/wg3_1/conductance/', 'designfiles/waveguide3_1_small.png'),
+          'wg3_2': ('results/wg3_2/conductance/', 'designfiles/waveguide3_2_small.png'),
+          'wg3_1_double': ('results/wg3_1_double/conductance/', 'designfiles/waveguide3_double_1_small.png'),
+          'wg3_2_double': ('results/wg3_2_double/conductance/', 'designfiles/waveguide3_double_2_small.png'),
           }
 
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
@@ -44,6 +46,8 @@ read_files = {'hb': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T
         'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255,
         'wg3_1': scipy.ndimage.imread(mainpath + setups['wg3_1'][1], mode='L') / 255,
         'wg3_2': scipy.ndimage.imread(mainpath + setups['wg3_2'][1], mode='L') / 255,
+        'wg3_1_double': scipy.ndimage.imread(mainpath + setups['wg3_1_double'][1], mode='L') / 255,
+        'wg3_2_double': scipy.ndimage.imread(mainpath + setups['wg3_2_double'][1], mode='L') / 255,
         }
 
 topgate = 1 - read_files[case]
@@ -58,6 +62,8 @@ scattering_cases = {'hb': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
                     'qpc': 1 - scipy.misc.imread(scat_file)[:, :, 0].T / 255,
                     'wg3_1': np.ones(topgate.shape),
                     'wg3_2': np.ones(topgate.shape),
+                    'wg3_1_double': np.ones(topgate.shape),
+                    'wg3_2_double': np.ones(topgate.shape),
         }
 #scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
 scattering_region = scattering_cases[case]
@@ -205,11 +211,12 @@ def worker(system, param_queue, result_queue):
         pass
     
 def plotConductance(splitgate, conductance, filename):
-    plt.figure(figsize=(10, 8))
-    plt.plot(splitgate, conductance, linestyle='None', marker='o', color='b', )
-    plt.xlabel(r'$V_{SG}$', fontsize=14)
-    plt.ylabel('Conductance', fontsize=14)
-    plt.savefig(filename)
+    fig, ax = plt.subplots(figsize=(16, 9))
+    ax.plot(splitgate, conductance, marker='o', color='b', )
+    ax.set_xlabel(r'$V_{SG}$', fontsize=18)
+    ax.set_ylabel('Conductance', fontsize=18)
+    #ax.set_yscale('log')
+    fig.savefig(filename)
     return
 
 def calculate_conductance(system, vbg, b=0, path=path_to_result):

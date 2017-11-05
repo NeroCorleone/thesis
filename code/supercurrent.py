@@ -14,8 +14,8 @@ import os
 from functools import partial
 import csv
 
-vsg_values = np.arange(-0.1, -0.75, -0.05)#[-0.35, -0.375, -0.425, -0.45, -0.475]
-vbg = 0.5 
+vsg_values = [-0.4, -0.45, -0.5] #[-0.35, -0.375, -0.425, -0.45, -0.475]
+vbg = 0.8 
 nb_points = 500 
 maxB = 0.0003
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
@@ -29,8 +29,8 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
-pot_decay = 20 #QPC 20
-case = 'hb'
+pot_decay = 0#QPC 20
+case = 'wg3_1_double'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/supercurrent/', 'designfiles/hb_lower_part.png'),
@@ -38,7 +38,8 @@ setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
           #'wg3_1': ('results/wg3_1/supercurrent/', 'designfiles/waveguide3_1.png')}
           'wg3_1': ('results/wg3_1_small/supercurrent/', 'designfiles/waveguide3_1_small.png'),
           'wg3_2': ('results/wg3_2/supercurrent/', 'designfiles/waveguide3_2_small.png'),
-          'wg3_double': ('results/wg3_double/supercurrent/', 'designfiles/waveguide3_double_1_small.png'),
+          'wg3_1_double': ('results/wg3_1_double/supercurrent/', 'designfiles/waveguide3_double_1_small.png'),
+          'wg3_2_double': ('results/wg3_2_double/supercurrent/', 'designfiles/waveguide3_double_2_small.png'),
           }
 
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
@@ -48,7 +49,8 @@ read_files = {'hb': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T
         'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255,
         'wg3_1': scipy.ndimage.imread(mainpath + setups['wg3_1'][1], mode='L') / 255,
         'wg3_2': scipy.ndimage.imread(mainpath + setups['wg3_2'][1], mode='L') / 255,
-        'wg3_double': scipy.ndimage.imread(mainpath + setups['wg3_double'][1], mode='L') / 255, 
+        'wg3_1_double': scipy.ndimage.imread(mainpath + setups['wg3_1_double'][1], mode='L') / 255, 
+        'wg3_2_double': scipy.ndimage.imread(mainpath + setups['wg3_2_double'][1], mode='L') / 255, 
         }
 
 topgate = 1 - read_files[case]
@@ -63,7 +65,8 @@ scattering_cases = {'hb': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
                     'qpc': 1 - scipy.misc.imread(scat_file)[:, :, 0].T / 255,
                     'wg3_1': np.ones(topgate.shape),
                     'wg3_2': np.ones(topgate.shape),
-                    'wg3_double': np.ones(topgate.shape),
+                    'wg3_1_double': np.ones(topgate.shape),
+                    'wg3_2_double': np.ones(topgate.shape),
         }
 #scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
 scattering_region = scattering_cases[case]
@@ -304,7 +307,6 @@ def current_vs_b(system, vsg, path=path_to_result):
     sorted_results = sorted(results, key=lambda value: value[0])
     unzipped = list(zip(*sorted_results))
     current_values = np.asarray(unzipped[1])
-    print(current_values)
 
     filename = newpath + 'data.csv' 
     with open(filename, 'w') as csvfile:
