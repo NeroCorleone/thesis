@@ -8,10 +8,12 @@ from scipy.signal import argrelmin
 import csv
 import os
 
-#directory = '/users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/use/'
-directory = '/users/tkm/kanilmaz/thesis/results/hb/supercurrent/use/'
-W = 918 
-L = 204
+directory = '/users/tkm/kanilmaz/thesis/results/wg3_1_double/supercurrent/'
+W = 360
+L = 100
+#directory = '/users/tkm/kanilmaz/thesis/results/hb/supercurrent/use/'
+#W = 918 
+#L = 204
 
 
 dirpath, dirnames, filenames = list(os.walk(directory))[0]
