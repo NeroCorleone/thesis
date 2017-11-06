@@ -9,7 +9,7 @@ import csv
 import os
 
 #directory = '/users/tkm/kanilmaz/thesis/results/wg3_1_double/supercurrent/'
-directory = '/home/nefta/thesis/results/wg3_2_double/supercurrent/'
+directory = '/home/nefta/thesis/results/wg3_2/supercurrent/use/'
 
 W = 360
 L = 100
