@@ -8,7 +8,9 @@ from scipy.signal import argrelmin
 import csv
 import os
 
-directory = '/users/tkm/kanilmaz/thesis/results/wg3_1_double/supercurrent/'
+#directory = '/users/tkm/kanilmaz/thesis/results/wg3_1_double/supercurrent/'
+directory = '/home/nefta/thesis/results/wg3_2_double/supercurrent/'
+
 W = 360
 L = 100
 #directory = '/users/tkm/kanilmaz/thesis/results/hb/supercurrent/use/'
@@ -80,15 +82,16 @@ def plot_current_and_density(phi_values, abs_values, real_flip,
     ax1.plot(phi_values, real_flip, marker='o', label='real, flipped', )
     ax1.set_xlabel(r'$\phi / \phi_0 $', fontsize=18)
     ax1.set_ylabel(r'$I_c$', fontsize=18)
-    ax1.set_xlim(phi_values[0], phi_values[-1])
+    ax1.set_xlim([phi_values[0], phi_values[-1]])
+    ax1.set_ylim([min(real_flip), max(abs_values)])
     ax1.legend()
-    ax1.grid()
+    #ax1.grid()
     
     ax2.plot(y_values, j_values, marker='o', linestyle='none')
     ax2.set_xlabel(r'$y\ [a]$', fontsize=18)
     ax2.set_ylabel(r'$J(y)$', fontsize=18)
     ax2.set_xlim(y_values[0], y_values[-1])
-    ax2.grid()
+    #ax2.grid() #usage of ax.grid() in combination with fivethirtyeight style leads to plot without grids
     
     fig.savefig(filedir + '/current_and_density_{}.png'.format(phi_sg))
     fig.savefig(filedir + '/current_and_density_{}.ps'.format(phi_sg))
