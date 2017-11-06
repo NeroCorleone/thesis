@@ -8,7 +8,7 @@ from scipy.signal import argrelmin
 import csv
 import os
 
-directory = '/users/tkm/kanilmaz/thesis/results/wg3_1_double/supercurrent/'
+directory = '/users/tkm/kanilmaz/thesis/results/wg3_2_double/supercurrent/'
 W = 360
 L = 100
 #directory = '/users/tkm/kanilmaz/thesis/results/hb/supercurrent/use/'
@@ -23,7 +23,7 @@ def flip_minima(abs_values, real_values):
     main_peak = np.argmax(abs_values) # index of main peak
     left_min = [0]
     right_min = [main_peak]
-    for loc_min in argrelmin(abs_values, order=2)[0]:
+    for loc_min in argrelmin(abs_values, order=4)[0]:
         if loc_min < main_peak:
             left_min.append(loc_min)
         else: right_min.append(loc_min)

@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-vsg_values = np.arange(-0.1, -0.8, -0.05)#[-0.35, -0.375, -0.425, -0.45, -0.475]
+vsg_values = [-0.36, -0.37, -0.38, -0.39, -0.41, -0.42, -0.43, -0.44]
 vbg = 0.8 
 nb_points = 1000 
 maxB = 0.00015
@@ -30,7 +30,7 @@ at = 5.0
 a = 0.4
 
 pot_decay = 0#QPC 20
-case = 'wg3_2'
+case = 'wg3_1'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/supercurrent/', 'designfiles/hb_lower_part.png'),
