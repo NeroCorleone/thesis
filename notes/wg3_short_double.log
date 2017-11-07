@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  7 NOV 2017 10:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  7 NOV 2017 11:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**wg_results.tex
-(./wg_results.tex
+**wg3_short_double.tex
+(./wg3_short_double.tex
 LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 5 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -143,8 +143,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen121
 \Gm@dimlist=\toks20
 )
-(./wg_results.aux)
-\openout1 = `wg_results.aux'.
+(./wg3_short_double.aux)
+\openout1 = `wg3_short_double.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -250,194 +250,126 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<figs/setups/wg3.png, id=1, 752.8125pt x 421.575pt>
-File: figs/setups/wg3.png Graphic file (type png)
- <use figs/setups/wg3.png>
-Package pdftex.def Info: figs/setups/wg3.png used on input line 15.
-(pdftex.def)             Requested size: 426.79134pt x 239.00726pt.
-
-<figs/wg32/current_and_density_01.png, id=2, 1156.32pt x 650.43pt>
-File: figs/wg32/current_and_density_01.png Graphic file (type png)
-
-<use figs/wg32/current_and_density_01.png>
-Package pdftex.def Info: figs/wg32/current_and_density_01.png used on input lin
-e 20.
-(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
-
-<figs/wg32/current_and_density_039.png, id=4, 1156.32pt x 650.43pt>
-File: figs/wg32/current_and_density_039.png Graphic file (type png)
-
-<use figs/wg32/current_and_density_039.png>
-Package pdftex.def Info: figs/wg32/current_and_density_039.png used on input li
-ne 25.
-(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
-
-<figs/wg32/current_and_density_042.png, id=5, 1156.32pt x 650.43pt>
-File: figs/wg32/current_and_density_042.png Graphic file (type png)
-
-<use figs/wg32/current_and_density_042.png>
-Package pdftex.def Info: figs/wg32/current_and_density_042.png used on input li
-ne 26.
-(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
-
-<figs/wg32/current_and_density_044.png, id=6, 1156.32pt x 650.43pt>
-File: figs/wg32/current_and_density_044.png Graphic file (type png)
-
-<use figs/wg32/current_and_density_044.png>
-Package pdftex.def Info: figs/wg32/current_and_density_044.png used on input li
-ne 27.
-(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--28
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--28
-[]
- []
-
-<figs/wg32/current_and_density_045.png, id=7, 1156.32pt x 650.43pt>
-File: figs/wg32/current_and_density_045.png Graphic file (type png)
-
-<use figs/wg32/current_and_density_045.png>
-Package pdftex.def Info: figs/wg32/current_and_density_045.png used on input li
-ne 30.
-(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
-
-<figs/wg32/current_and_density_05.png, id=8, 1156.32pt x 650.43pt>
-File: figs/wg32/current_and_density_05.png Graphic file (type png)
-
-<use figs/wg32/current_and_density_05.png>
-Package pdftex.def Info: figs/wg32/current_and_density_05.png used on input lin
-e 31.
-(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
-
-<figs/wg32/current_and_density_055.png, id=9, 1156.32pt x 650.43pt>
-File: figs/wg32/current_and_density_055.png Graphic file (type png)
-
-<use figs/wg32/current_and_density_055.png>
-Package pdftex.def Info: figs/wg32/current_and_density_055.png used on input li
-ne 32.
-(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--33
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--33
-[]
- []
-
-[1
-
-{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}] [2 <./figs/
-setups/wg3.png> <./figs/wg32/current_and_density_01.png>] [3 <./figs/wg32/curre
-nt_and_density_039.png> <./figs/wg32/current_and_density_042.png> <./figs/wg32/
-current_and_density_044.png>] [4 <./figs/wg32/current_and_density_045.png> <./f
-igs/wg32/current_and_density_05.png> <./figs/wg32/current_and_density_055.png>]
- <figs/wg32double/current_and_density_01.png, id=33, 1156.32pt x 650.43pt>
+<figs/wg32double/current_and_density_01.png, id=1, 1156.32pt x 650.43pt>
 File: figs/wg32double/current_and_density_01.png Graphic file (type png)
 
 <use figs/wg32double/current_and_density_01.png>
 Package pdftex.def Info: figs/wg32double/current_and_density_01.png used on inp
-ut line 37.
+ut line 15.
 (pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
 
-<figs/wg32double/current_and_density_03.png, id=34, 1156.32pt x 650.43pt>
+<figs/wg32double/current_and_density_03.png, id=3, 1156.32pt x 650.43pt>
 File: figs/wg32double/current_and_density_03.png Graphic file (type png)
 
 <use figs/wg32double/current_and_density_03.png>
 Package pdftex.def Info: figs/wg32double/current_and_density_03.png used on inp
-ut line 39.
+ut line 16.
 (pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
 
-<figs/wg32double/current_and_density_04.png, id=35, 1156.32pt x 650.43pt>
-File: figs/wg32double/current_and_density_04.png Graphic file (type png)
+<figs/wg32double/current_and_density_035.png, id=4, 1156.32pt x 650.43pt>
+File: figs/wg32double/current_and_density_035.png Graphic file (type png)
 
-<use figs/wg32double/current_and_density_04.png>
-Package pdftex.def Info: figs/wg32double/current_and_density_04.png used on inp
-ut line 40.
+<use figs/wg32double/current_and_density_035.png>
+Package pdftex.def Info: figs/wg32double/current_and_density_035.png used on in
+put line 17.
 (pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--41
+Underfull \hbox (badness 10000) in paragraph at lines 15--18
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--41
+Underfull \hbox (badness 10000) in paragraph at lines 15--18
 []
  []
 
-<figs/wg32double/current_and_density_041.png, id=36, 1156.32pt x 650.43pt>
+<figs/wg32double/current_and_density_0375.png, id=5, 1156.32pt x 650.43pt>
+File: figs/wg32double/current_and_density_0375.png Graphic file (type png)
+
+<use figs/wg32double/current_and_density_0375.png>
+Package pdftex.def Info: figs/wg32double/current_and_density_0375.png used on i
+nput line 20.
+(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
+
+<figs/wg32double/current_and_density_041.png, id=6, 1156.32pt x 650.43pt>
 File: figs/wg32double/current_and_density_041.png Graphic file (type png)
 
 <use figs/wg32double/current_and_density_041.png>
 Package pdftex.def Info: figs/wg32double/current_and_density_041.png used on in
-put line 47.
-(pdftex.def)             Requested size: 426.79134pt x 240.06976pt.
+put line 21.
+(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
 
-<figs/wg32double/current_and_density_042.png, id=37, 1156.32pt x 650.43pt>
+<figs/wg32double/current_and_density_042.png, id=7, 1156.32pt x 650.43pt>
 File: figs/wg32double/current_and_density_042.png Graphic file (type png)
 
 <use figs/wg32double/current_and_density_042.png>
 Package pdftex.def Info: figs/wg32double/current_and_density_042.png used on in
-put line 48.
-(pdftex.def)             Requested size: 426.79134pt x 240.06976pt.
+put line 22.
+(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
 
-<figs/wg32double/current_and_density_0425.png, id=38, 1156.32pt x 650.43pt>
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+[]
+ []
+
+<figs/wg32double/current_and_density_0425.png, id=8, 1156.32pt x 650.43pt>
 File: figs/wg32double/current_and_density_0425.png Graphic file (type png)
 
 <use figs/wg32double/current_and_density_0425.png>
 Package pdftex.def Info: figs/wg32double/current_and_density_0425.png used on i
-nput line 49.
-(pdftex.def)             Requested size: 426.79134pt x 240.06976pt.
+nput line 26.
+(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
 
-<figs/wg32double/current_and_density_043.png, id=39, 1156.32pt x 650.43pt>
+<figs/wg32double/current_and_density_043.png, id=9, 1156.32pt x 650.43pt>
 File: figs/wg32double/current_and_density_043.png Graphic file (type png)
 
 <use figs/wg32double/current_and_density_043.png>
 Package pdftex.def Info: figs/wg32double/current_and_density_043.png used on in
-put line 52.
-(pdftex.def)             Requested size: 426.79134pt x 240.06976pt.
+put line 27.
+(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
 
-<figs/wg32double/current_and_density_05.png, id=40, 1156.32pt x 650.43pt>
+<figs/wg32double/current_and_density_05.png, id=10, 1156.32pt x 650.43pt>
 File: figs/wg32double/current_and_density_05.png Graphic file (type png)
 
 <use figs/wg32double/current_and_density_05.png>
 Package pdftex.def Info: figs/wg32double/current_and_density_05.png used on inp
-ut line 53.
-(pdftex.def)             Requested size: 426.79134pt x 240.06976pt.
+ut line 28.
+(pdftex.def)             Requested size: 384.10959pt x 216.0618pt.
 
-<figs/wg32double/current_and_density_06.png, id=41, 1156.32pt x 650.43pt>
-File: figs/wg32double/current_and_density_06.png Graphic file (type png)
+Underfull \hbox (badness 10000) in paragraph at lines 26--30
+[][]
+ []
 
-<use figs/wg32double/current_and_density_06.png>
-Package pdftex.def Info: figs/wg32double/current_and_density_06.png used on inp
-ut line 54.
-(pdftex.def)             Requested size: 426.79134pt x 240.06976pt.
- [5] [6 <./figs/wg32double/current_and_density_01.png> <./figs/wg32double/curre
-nt_and_density_03.png> <./figs/wg32double/current_and_density_04.png>] [7 <./fi
-gs/wg32double/current_and_density_041.png> <./figs/wg32double/current_and_densi
-ty_042.png> <./figs/wg32double/current_and_density_0425.png>] [8 <./figs/wg32do
-uble/current_and_density_043.png> <./figs/wg32double/current_and_density_05.png
-> <./figs/wg32double/current_and_density_06.png>] (./wg_results.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--30
+[]
+ []
+
+[1{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map} <./figs/wg
+32double/current_and_density_01.png> <./figs/wg32double/current_and_density_03.
+png> <./figs/wg32double/current_and_density_035.png>] [2 <./figs/wg32double/cur
+rent_and_density_0375.png> <./figs/wg32double/current_and_density_041.png> <./f
+igs/wg32double/current_and_density_042.png>] [3 <./figs/wg32double/current_and_
+density_0425.png> <./figs/wg32double/current_and_density_043.png> <./figs/wg32d
+ouble/current_and_density_05.png>] (./wg3_short_double.aux) ) 
 Here is how much of TeX's memory you used:
- 2638 strings out of 494974
- 38389 string characters out of 6180014
+ 2592 strings out of 494974
+ 36974 string characters out of 6180014
  98676 words of memory out of 5000000
- 5854 multiletter control sequences out of 15000+600000
- 4850 words of font info for 18 fonts, out of 8000000 for 9000
+ 5817 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,5n,28p,242b,226s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on wg_results.pdf (8 pages, 590108 bytes).
+ 38i,5n,28p,248b,224s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on wg3_short_double.pdf (3 pages, 285704 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 37 PDF objects out of 1000 (max. 8388607)
+ 12 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
