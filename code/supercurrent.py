@@ -30,7 +30,7 @@ at = 5.0
 a = 0.4
 
 pot_decay = 0#QPC 20
-case = 'wg3_1'
+case = 'wg1_2'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/supercurrent/', 'designfiles/hb_lower_part.png'),
