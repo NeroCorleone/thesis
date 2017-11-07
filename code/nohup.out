@@ -6793,3 +6793,15 @@ time for calculation with multiprocessing:  0:05:33.184837
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.95-20171107-14:19:01/data.csv
 time for calculation with multiprocessing:  0:04:09.006873
 output in /users/tkm/kanilmaz/thesis/results/wg3_2_double/supercurrent/vsg=-0.39-20171107-14:20:27/data.csv
+-0.95
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:30.787179
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.95-20171107-15:03:22/data.csv
+-0.9
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:30.180120
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.9-20171107-15:08:53/data.csv
+-0.8
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:34.918831
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.8-20171107-15:14:24/data.csv
