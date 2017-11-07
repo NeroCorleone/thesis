@@ -14,10 +14,10 @@ import os
 from functools import partial
 import csv
 
-vsg_values = np.arange(-0.1, -0.6, -0.05)#[-0.36, -0.37, -0.38, -0.39, -0.41, -0.42, -0.43, -0.44]
+vsg_values = [-0.36, -0.37, -0.38, -0.39,] 
 vbg = 0.8 
-nb_points = 500 
-maxB = 0.0003
+nb_points = 1000 
+maxB = 0.00015
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
@@ -30,7 +30,7 @@ at = 5.0
 a = 0.4
 
 pot_decay = 0#QPC 20
-case = 'wg1_2'
+case = 'wg3_2_double'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/supercurrent/', 'designfiles/hb_lower_part.png'),
