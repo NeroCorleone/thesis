@@ -6739,3 +6739,57 @@ time for calculation with multiprocessing:  0:01:13.869568
 output in /users/tkm/kanilmaz/thesis/results/wg1_2/supercurrent/vsg=-0.44-20171106-22:19:40/data.csv
 python3: can't open file 'vim': [Errno 2] No such file or directory
 python3: can't open file 'vim': [Errno 2] No such file or directory
+  File "supercurrent.py", line 1
+    mport matplotlib
+                   ^
+SyntaxError: invalid syntax
+  File "supercurrent.py", line 1
+    mport matplotlib
+                   ^
+SyntaxError: invalid syntax
+  File "supercurrent.py", line 1
+    mport matplotlib
+                   ^
+SyntaxError: invalid syntax
+-0.65
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:28.594231
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.65-20171107-13:45:59/data.csv
+-0.7
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:31.521016
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.7-20171107-13:51:28/data.csv
+-0.75
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:29.667997
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.75-20171107-13:57:00/data.csv
+-0.8
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:27.755264
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.8-20171107-14:02:30/data.csv
+-0.85
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:04:09.146525
+output in /users/tkm/kanilmaz/thesis/results/wg3_2_double/supercurrent/vsg=-0.36-20171107-14:07:59/data.csv
+-0.37
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:29.172145
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.85-20171107-14:07:58/data.csv
+-0.9
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:04:07.859735
+output in /users/tkm/kanilmaz/thesis/results/wg3_2_double/supercurrent/vsg=-0.37-20171107-14:12:08/data.csv
+-0.38
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:32.965280
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.9-20171107-14:13:27/data.csv
+-0.95
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:04:10.179010
+output in /users/tkm/kanilmaz/thesis/results/wg3_2_double/supercurrent/vsg=-0.38-20171107-14:16:17/data.csv
+-0.39
+starting calculation with  1000  points
+time for calculation with multiprocessing:  0:05:33.184837
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.95-20171107-14:19:01/data.csv
+time for calculation with multiprocessing:  0:04:09.006873
+output in /users/tkm/kanilmaz/thesis/results/wg3_2_double/supercurrent/vsg=-0.39-20171107-14:20:27/data.csv
