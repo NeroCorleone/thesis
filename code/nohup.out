@@ -6737,3 +6737,5 @@ output in /users/tkm/kanilmaz/thesis/results/wg1_2/supercurrent/vsg=-0.43-201711
 starting calculation with  1000  points
 time for calculation with multiprocessing:  0:01:13.869568
 output in /users/tkm/kanilmaz/thesis/results/wg1_2/supercurrent/vsg=-0.44-20171106-22:19:40/data.csv
+python3: can't open file 'vim': [Errno 2] No such file or directory
+python3: can't open file 'vim': [Errno 2] No such file or directory
