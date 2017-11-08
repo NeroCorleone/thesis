@@ -6853,3 +6853,23 @@ time for calculation:  0:01:21.699131
 vbg= -0.5
 starting calculation with  500 points
 time for calculation:  0:01:24.696467
+-0.7
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:08.406910
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.7-20171108-15:05:24/data.csv
+-0.8
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:08.048134
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.8-20171108-15:06:33/data.csv
+-0.85
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:11.559487
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.85-20171108-15:07:41/data.csv
+-0.9
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:08.052572
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.9-20171108-15:08:53/data.csv
+-0.95
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:07.364920
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.95-20171108-15:10:01/data.csv
