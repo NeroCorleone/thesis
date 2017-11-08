@@ -14,9 +14,9 @@ import os
 from functools import partial
 import csv
 
-nb_points = 400 
+nb_points = 300 
 splitgate_voltage = np.linspace(-1, 0.0, nb_points)
-vbg_values = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]#np.round(np.linspace(0.4, 0.9, 5), 2) 
+vbg_values = [-0.4, -0.5, -0.3]#[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]#np.round(np.linspace(0.4, 0.9, 5), 2) 
 phase = (-np.pi, np.pi) 
 
 delta = 1.0 
@@ -27,7 +27,7 @@ at = 5
 a = 0.4
 
 pot_decay = 0 
-case = 'hb'
+case = 'wg3_2'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/conductance/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/conductance/', 'designfiles/hb_lower_part.png'),
