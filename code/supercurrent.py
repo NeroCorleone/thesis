@@ -14,8 +14,8 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.7, -0.8, -0.85, -0.9, -0.95]#[-0.36, -0.37, -0.38, -0.39,] 
-vbg = -0.4 
+vsg_values = np.round(np.arange(-0.5, -1, 0.05), 2) 
+vbg = 0.5 
 nb_points = 400 
 maxB = 0.00015
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
