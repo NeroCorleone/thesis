@@ -6825,3 +6825,19 @@ time for calculation with multiprocessing:  0:02:03.397185
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.8-20171107-16:01:15/data.csv
 time for calculation with multiprocessing:  0:02:46.495248
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.5-20171107-16:03:09/data.csv
+python3: can't open file 'vim': [Errno 2] No such file or directory
+vbg= -0.2
+starting calculation with  500 points
+time for calculation:  0:01:18.804151
+vbg= -0.6
+starting calculation with  500 points
+time for calculation:  0:01:29.454278
+vbg= -0.4
+starting calculation with  500 points
+time for calculation:  0:01:23.445732
+vbg= -0.5
+starting calculation with  500 points
+time for calculation:  0:01:27.340584
+vbg= -0.3
+starting calculation with  500 points
+time for calculation:  0:01:24.338104
