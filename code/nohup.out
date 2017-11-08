@@ -6885,3 +6885,43 @@ Traceback (most recent call last):
   File "supercurrent.py", line 17, in <module>
     vsg_values = round(np.arange(-0.5, -1, 0.05), 2) 
 TypeError: type numpy.ndarray doesn't define __round__ method
+-0.5
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:13.178994
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.5-20171108-15:39:13/data.csv
+-0.55
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:14.429192
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.55-20171108-15:40:27/data.csv
+-0.6
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:13.612040
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.6-20171108-15:41:41/data.csv
+-0.65
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:13.817968
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.65-20171108-15:42:55/data.csv
+-0.7
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:13.351354
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.7-20171108-15:44:09/data.csv
+-0.75
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:13.906396
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.75-20171108-15:45:23/data.csv
+-0.8
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:14.303631
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.8-20171108-15:46:37/data.csv
+-0.85
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:14.982250
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.85-20171108-15:47:52/data.csv
+-0.9
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:14.062595
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.9-20171108-15:49:07/data.csv
+-0.95
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:01:13.738835
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.95-20171108-15:50:21/data.csv

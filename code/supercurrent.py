@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-vsg_values = np.round(np.arange(-0.5, -1, 0.05), 2) 
+vsg_values = np.round(np.arange(-0.5, -1, -0.05), 2) 
 vbg = 0.5 
 nb_points = 400 
 maxB = 0.00015
