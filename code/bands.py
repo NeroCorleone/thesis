@@ -13,8 +13,8 @@ topgate = 1- scipy.ndimage.imread(
         '/home/nefta/thesis/designfiles/waveguide3_2_small.png', mode='L') / 255
 
 scatteringGeom = np.ones(topgate.shape)
-vbg = -0.4
-vsg_values = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9] 
+vbg = 0.5
+vsg_values = np.arange(0.0, -1, -0.1) 
 b = 0.0
 gamma = 0.4
 a = 0.4
