@@ -14,7 +14,8 @@ topgate = 1- scipy.ndimage.imread(
 
 scatteringGeom = np.ones(topgate.shape)
 vbg = 0.5
-vsg_values = np.arange(0.0, -1, -0.1) 
+vlead = 0.0 
+vsg_values = [0.5]#np.arange(0.0, -1, -0.1) 
 b = 0.0
 gamma = 0.4
 a = 0.4
@@ -27,10 +28,19 @@ a1, b1, a2, b2 = bilayer.sublattices
 hoppings1 = (((0, 0), a1, b1), ((0, 1), a1, b1), ((1, 0), a1, b1)) 
 hoppings2 = (((0, 0), a2, b2), ((0, -1), a2, b2), ((1, -1), a2, b2))
 
-
+'''
 def onsite_lead(site, par):   
     mu = (par.v_bg + par.v_sg) / 2
     delta = - ( par.v_sg - par.v_bg) / 2.5
+    # site.family in (a1, b1)
+    if (site.family == a1 or site.family == b1):
+        return - mu - delta
+    return -mu  + delta
+'''
+def onsite_lead(site, par):   
+    topgate_potential = par.v_sg + par.v_lead 
+    mu = (par.v_bg + topgate_potential) / 2
+    delta = - ( topgate_potential - par.v_bg) / 2.5
     # site.family in (a1, b1)
     if (site.family == a1 or site.family == b1):
         return - mu - delta
@@ -100,5 +110,5 @@ sys_lead = make_system_lead()
 
 for vsg in vsg_values:
     print(vsg)
-    par = SimpleNamespace(v_bg=vbg, v_sg=vsg, t=1, gamma1=gamma, B=b)
+    par = SimpleNamespace(v_bg=vbg, v_sg=vsg, v_lead=vlead, t=1, gamma1=gamma, B=b)
     calculate_bands(par)
