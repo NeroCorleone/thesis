@@ -6957,3 +6957,7 @@ output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.35-201711
 starting calculation with  400  points
 time for calculation with multiprocessing:  0:01:13.075882
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.45-20171108-16:11:44/data.csv
+0.0
+starting calculation with  800  points
+time for calculation with multiprocessing:  0:34:29.436534
+output in /users/tkm/kanilmaz/thesis/results/hb/supercurrent/vsg=0.0-20171114-11:38:40/data.csv
