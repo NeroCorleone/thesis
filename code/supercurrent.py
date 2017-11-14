@@ -14,8 +14,9 @@ import os
 from functools import partial
 import csv
 
-vsg_values = np.round(np.arange(-0.15, -0.55, -0.1), 2) 
+vsg_values = [-0.875, -0.925, -0.975, -0.9, -0.7, -0.6, ]#np.round(np.arange(-0.15, -0.55, -0.1), 2) 
 vbg = 0.5 
+vlead = 0.5
 nb_points = 400 
 maxB = 0.00015
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
@@ -104,7 +105,7 @@ def onsite(site, par):
     return -mu + delta
 
 def onsite_lead(site, par):     
-    topgate_potential = 0
+    topgate_potential = par.v_lead
     mu = (par.v_bg + topgate_potential) / 2
     delta = - ( topgate_potential - par.v_bg) / eta
     if site.family == a1 or site.family == b1:
@@ -273,10 +274,10 @@ def worker(system, param_queue, result_queue):
 
 def current_vs_b(system, vsg, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
-    system_params_names = ['vsg', 'vbg', 'maxB', 'nb_points', 
+    system_params_names = ['vsg', 'vbg', 'vlead', 'maxB', 'nb_points', 
                             'decay', 'eta', 'gamma', 'a', 
                             'at', 'delta', 'T', ]
-    system_params = [str(vsg), str(vbg), str(maxB), str(nb_points), 
+    system_params = [str(vsg), str(vbg), str(vlead), str(maxB), str(nb_points), 
                     str(pot_decay), str(eta), str(gamma), str(a), 
                     str(at), str(delta), str(T), ]
     newpath = path + 'vsg=' + str(vsg) + '-' +  runtime + '/'
@@ -292,7 +293,7 @@ def current_vs_b(system, vsg, path=path_to_result):
     namespace_args = []
 
     for i, b in enumerate(magnetic_field):
-        namespace_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, t=1, gamma1=gamma, B=b)))
+        namespace_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, B=b)))
     for arg in namespace_args:
         param_queue.put(arg)
 
