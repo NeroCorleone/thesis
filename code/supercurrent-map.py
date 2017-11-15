@@ -14,12 +14,12 @@ import os
 from functools import partial
 import csv
 
-vsg = 0.0
-vsg_values = [-0.1, -0.2, -0.3, -0.4, -0.5, -0.6, ]#[-0.15, -0.25, -0.35, -0.375, -0.4, -0.425, -0.45, -0.475]
 vbg = 0.8 
-nb_points = 10 
-maxB = 0.0001
+vlead = 0.0
+nb_points = 10#501 
+maxB = 0.00015 
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
+vsg_values = np.linspace(-0.3, -0.5, 10)#np.linspace(-0.3, -0.45, 151) 
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
@@ -30,15 +30,18 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
-pot_decay = 0 #QPC 20
+pot_decay = 0#QPC 20
 case = 'wg3_2'
 mainpath = '/users/tkm/kanilmaz/thesis/'
-setups = {'hb': ('results/hb/supercurrent/', 'designfiles/halfBarrier.png'),
-          'hb_lower': ('results/hb_lower/supercurrent/', 'designfiles/hb_lower_part.png'),
-          'qpc': ('results/qpc/supercurrent/', 'designfiles/qpc_gate.png'), 
-          #'wg3_1': ('results/wg3_1/supercurrent/', 'designfiles/waveguide3_1.png')}
-          'wg3_1': ('results/wg3_1_small/supercurrent/', 'designfiles/waveguide3_1_small.png'),
-          'wg3_2': ('results/wg3_2/supercurrent/', 'designfiles/waveguide3_2_small.png')
+setups = {'hb': ('results/hb/supercurrent_map/', 'designfiles/halfBarrier.png'),
+          'hb_lower': ('results/hb_lower/supercurrent_map/', 'designfiles/hb_lower_part.png'),
+          'qpc': ('results/qpc/supercurrent_map/', 'designfiles/qpc_gate.png'), 
+          'wg1_1': ('results/wg1_1/supercurrent_map/', 'designfiles/waveguide1_1.png'),
+          'wg1_2': ('results/wg1_2/supercurrent_map/', 'designfiles/waveguide1_2.png'),
+          'wg3_1': ('results/wg3_1/supercurrent_map/', 'designfiles/waveguide3_1_small.png'),
+          'wg3_2': ('results/wg3_2/supercurrent_map/', 'designfiles/waveguide3_2_small.png'),
+          'wg3_1_double': ('results/wg3_1_double/supercurrent_map/', 'designfiles/waveguide3_double_1_small.png'),
+          'wg3_2_double': ('results/wg3_2_double/supercurrent_map/', 'designfiles/waveguide3_double_2_small.png'),
           }
 
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
@@ -46,24 +49,28 @@ path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[ca
 read_files = {'hb': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
         'hb_lower': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
         'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255,
+        'wg1_1': scipy.ndimage.imread(mainpath + setups['wg1_1'][1], mode='L') / 255,
+        'wg1_2': scipy.ndimage.imread(mainpath + setups['wg1_2'][1], mode='L') / 255,
         'wg3_1': scipy.ndimage.imread(mainpath + setups['wg3_1'][1], mode='L') / 255,
-        'wg3_2': scipy.ndimage.imread(mainpath + setups['wg3_2'][1], mode='L') / 255
+        'wg3_2': scipy.ndimage.imread(mainpath + setups['wg3_2'][1], mode='L') / 255,
+        'wg3_1_double': scipy.ndimage.imread(mainpath + setups['wg3_1_double'][1], mode='L') / 255, 
+        'wg3_2_double': scipy.ndimage.imread(mainpath + setups['wg3_2_double'][1], mode='L') / 255, 
         }
 
 topgate = 1 - read_files[case]
-
-#topgate = 1 - scipy.ndimage.imread(
-#        '/users/tkm/kanilmaz/code/half_barrier/designfiles/hb_lower_part.png', mode='L').T / 255
 
 scat_file = mainpath + 'designfiles/scatteringRegion.png'
 
 scattering_cases = {'hb': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
                     'hb_lower': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
                     'qpc': 1 - scipy.misc.imread(scat_file)[:, :, 0].T / 255,
+                    'wg1_1': np.ones(topgate.shape),
+                    'wg1_2': np.ones(topgate.shape),
                     'wg3_1': np.ones(topgate.shape),
                     'wg3_2': np.ones(topgate.shape),
+                    'wg3_1_double': np.ones(topgate.shape),
+                    'wg3_2_double': np.ones(topgate.shape),
         }
-#scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
 scattering_region = scattering_cases[case]
     
 topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
@@ -93,7 +100,7 @@ def onsite(site, par):
     return -mu + delta
 
 def onsite_lead(site, par):     
-    topgate_potential = 0
+    topgate_potential = par.v_lead
     mu = (par.v_bg + topgate_potential) / 2
     delta = - ( topgate_potential - par.v_bg) / eta
     if site.family == a1 or site.family == b1:
@@ -228,9 +235,8 @@ def super_current(scat_matrix, phi):
     imag = 0.5 * delta**2 * np.imag(current_complex)
     real = 0.5 * delta**2 * np.real(current_complex)
     absval = 0.5 * delta**2 * np.abs(current_complex)
-#    current = 0.5 * delta ** 2 * np.real(current_imaginary)
-#    return(current)
-    return((absval, real, imag))
+    #return((absval, real, imag))
+    return(absval)
 
 def find_max(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
@@ -242,19 +248,15 @@ def max_current(system, params):
     scat_matrix = kwant.smatrix(system, energy=0.0, args=[par])
     func = partial(super_current, scat_matrix)
     currentPeak = find_max(func, phase[0], phase[-1])
-    return((pos,currentPeak))
+    return((pos, currentPeak))
 
-def get_current(system, params, phase):
-    pos, par = params
-    scat_matrix = kwant.smatrix(system, energy=0.0, args=[par])
-    current = [super_current(scat_matrix, phi) for phi in np.linspace(phase[0], phase[-1])]
-    return((pos, current))
-
-def plot_current(magnetic_field, current, filename):
-    plt.figure(figsize=(10, 8))
-    plt.plot(current, magnetic_field, linestyle='None', marker='o', color='b', )
+def plot_current(b_field, v_values, current, filename):
+    x, y = np.meshgrid(b_field, v_values)
+    plt.pcolor(x, y, current)
+    cb = plt.colorbar()
+    cb.set_label('r$I_c$')
+    plt.ylabel(r'$\phi_{SG}$', fontsize=14)
     plt.xlabel(r'$B$', fontsize=14)
-    plt.ylabel(r'$I_c$', fontsize=14)
     plt.savefig(filename)
     return
 
@@ -262,22 +264,21 @@ def worker(system, param_queue, result_queue):
     try:
         while True:
             params = param_queue.get(block=False)
-            result = max_current(system, params)#get_current(system, params, (-np.pi, np.pi))
+            result = max_current(system, params)
             result_queue.put(result)
             param_queue.task_done()
     except queue.Empty:
         pass
 
-
-def current_vs_b(system, vsg, path=path_to_result):
+def current_vs_b(system, vsg_values, magnetic_field, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
-    system_params_names = ['vsg', 'vbg', 'maxB', 'nb_points', 
-                            'decay', 'eta', 'gamma', 'a', 
-                            'at', 'delta', 'T', ]
-    system_params = [str(vsg), str(vbg), str(maxB), str(nb_points), 
-                    str(pot_decay), str(eta), str(gamma), str(a), 
-                    str(at), str(delta), str(T), ]
-    newpath = path + 'vsg=' + str(vsg) + '-' +  runtime + '/'
+    system_params_names = ['vbg', 'vlead', 'maxB', 'nb_points', 
+                            'maxVsg', 'minVsg', 'nb_points_vsg', 'decay', 
+                            'eta', 'gamma', 'a', 'at', 'delta', 'T', ]
+    system_params = [str(vbg), str(vlead), str(maxB), str(nb_points), 
+                    str(vsg_values[-1]), str(vsg_values[0]), str(len(vsg_values)), str(pot_decay), 
+                    str(eta), str(gamma), str(a), str(at), str(delta), str(T), ]
+    newpath = path + 'vbg=' + str(vbg) + '-' +  runtime + '/'
     if not os.path.exists(newpath):
         os.makedirs(newpath)
     system_params_file = newpath + 'params.txt'
@@ -290,12 +291,12 @@ def current_vs_b(system, vsg, path=path_to_result):
     namespace_args = []
 
     for i, b in enumerate(magnetic_field):
-        namespace_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, t=1, gamma1=gamma, B=b)))
+        for j, vsg in enumerate(vsg_values):
+            namespace_args.append(((i, j),  SimpleNamespace(v_sg=vsg, v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, B=b)))
     for arg in namespace_args:
         param_queue.put(arg)
 
     timestamp = datetime.now()
-    print('starting calculation with ', len(magnetic_field),' points')
     nb_cores = mp.cpu_count()
     processes = [mp.Process(target=worker, args=(system, param_queue, result_queue)) for i in range(nb_cores)]
     for p in processes:
@@ -310,55 +311,19 @@ def current_vs_b(system, vsg, path=path_to_result):
     print('time for calculation with multiprocessing: ', datetime.now() - timestamp)    
     sorted_results = sorted(results, key=lambda value: value[0])
     unzipped = list(zip(*sorted_results))
-    current_values = np.asarray(unzipped[1])
+    current_values = np.split(np.asarray(unzipped[1]), len(vsg_values))
 
     filename = newpath + 'data.csv' 
     with open(filename, 'w') as csvfile:
-        writer = csv.writer(csvfile, delimiter=' ')
-        writer.writerow('### Parameters: maxB =' + str(maxB) + ', number of points: ' + str(len(magnetic_field)) 
-                        + 'V_SG = ' + str(vsg)
-    )
-        writer.writerow(current_values)
+        writer = csv.writer(csvfile, delimiter=',')
+        for row in current_values:
+            writer.writerow(list(row))
     pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
-    plot_current(current_values, magnetic_field, pngfile)
+    plot_current(magnetic_field, vsg_values, np.asarray(current_values), pngfile)
     print('output in', filename)
     return()
 
-system = make_system()
 
-#for vsg_value in vsg_values:
-#    print(vsg_value)
-#    current_vs_b(sys, vsg_value)
-param_queue = mp.JoinableQueue()
-result_queue = mp.JoinableQueue() 
-namespace_args = []
+sys = make_system()
 
-for i, b in enumerate(magnetic_field):
-    namespace_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, t=1, gamma1=gamma, B=b)))
-for arg in namespace_args:
-        param_queue.put(arg)
-
-timestamp = datetime.now()
-print('starting calculation with ', len(magnetic_field),' points')
-nb_cores = mp.cpu_count()
-processes = [mp.Process(target=worker, args=(system, param_queue, result_queue)) for i in range(nb_cores)]
-for p in processes:
-    p.start()
-param_queue.join()
-results = []
-try:
-    while True:
-        results.append(result_queue.get(block=False))
-except queue.Empty:
-    pass
-print('time for calculation with multiprocessing: ', datetime.now() - timestamp)    
-sorted_results = sorted(results, key=lambda value: value[0])
-unzipped = list(zip(*sorted_results))
-current_values = np.asarray(unzipped[1])
-print(current_values)
-
-filename = 'testdata_2.csv' 
-with open(filename, 'w') as csvfile:
-    writer = csv.writer(csvfile, delimiter=', ')
-    for row in current_values:
-        writer.writerow(row)
+current_vs_b(sys, vsg_values, magnetic_field)
