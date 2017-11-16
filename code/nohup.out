@@ -6969,3 +6969,22 @@ time for calculation with multiprocessing:  0:00:37.055543
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent_map/vbg=0.8-20171115-15:50:49/data.csv
 time for calculation with multiprocessing:  12:42:07.665689
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent_map/vbg=0.8-20171115-15:56:03/data.csv
+vbg= 0.5
+starting calculation with  400 points
+vbg= 0.5
+starting calculation with  400 points
+time for calculation:  0:01:31.057428
+vbg= 0.6
+starting calculation with  400 points
+time for calculation:  0:01:35.772042
+vbg= 0.7
+starting calculation with  400 points
+time for calculation:  0:01:39.726836
+vbg= 0.8
+starting calculation with  400 points
+time for calculation:  0:01:43.351170
+vbg= 0.9
+starting calculation with  400 points
+time for calculation:  0:01:49.584188
+vbg= 0.5
+starting calculation with  400 points

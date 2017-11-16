@@ -16,8 +16,9 @@ import csv
 
 nb_points = 400 
 splitgate_voltage = np.linspace(-1.0, 0.0, nb_points)
-vbg_values = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]#np.round(np.linspace(0.4, 0.9, 5), 2) 
+vbg_values = [0.5, 0.6, 0.7, 0.8, 0.9]#np.round(np.linspace(0.4, 0.9, 5), 2) 
 phase = (-np.pi, np.pi) 
+vlead = 0.3
 
 delta = 1.0 
 T = delta / 2
@@ -26,7 +27,7 @@ gamma = 0.4
 at = 5 
 a = 0.4
 
-pot_decay = 0 
+pot_decay = 5 
 case = 'wg3_2'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/conductance/', 'designfiles/halfBarrier.png'),
@@ -95,7 +96,7 @@ def onsite(site, par):
     return -mu + delta
 
 def onsite_lead(site, par):     
-    topgate_potential = 0
+    topgate_potential = par.v_lead
     mu = (par.v_bg + topgate_potential) / 2
     delta = - ( topgate_potential - par.v_bg) / eta
     if site.family == a1 or site.family == b1:
@@ -221,10 +222,10 @@ def plotConductance(splitgate, conductance, filename):
 
 def calculate_conductance(system, vbg, b=0, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
-    system_params_names = ['vbg', 'b', 'nb_points', 
+    system_params_names = ['vbg', 'vlead', 'b', 'nb_points', 
 			   'decay', 'eta', 'gamma', 
                            'a', 'at', 'delta', 'T', ]
-    system_params = [str(vbg), str(b), str(nb_points), 
+    system_params = [str(vbg), str(vlead), str(b), str(nb_points), 
 		     str(pot_decay), str(eta), str(gamma), 
                      str(a), str(at), str(delta), str(T), ]
     newpath = path + 'vbg=' + str(vbg) + '-' +  runtime + '/'
@@ -240,7 +241,7 @@ def calculate_conductance(system, vbg, b=0, path=path_to_result):
     param_args = []
 
     for i, vsg in enumerate(splitgate_voltage):
-        param_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, t=1, gamma1=gamma, B=b)))
+        param_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, B=b)))
     for arg in param_args:
         param_queue.put(arg)
 
