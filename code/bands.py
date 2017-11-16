@@ -7,18 +7,18 @@ import numpy as np
 from types import SimpleNamespace
 import os
 
-#dirname = '/home/nefta/thesis/results/bands/'
-#topgate = 1- scipy.ndimage.imread(
-#        '/home/nefta/thesis/designfiles/waveguide3_2_small.png', mode='L') / 255
-
-dirname = '/users/tkm/kanilmaz/thesis/results/bands/'
+dirname = '/home/nefta/thesis/results/bands/'
 topgate = 1- scipy.ndimage.imread(
-        '/users/tkm/kanilmaz/thesis/designfiles/waveguide3_2_small.png', mode='L') / 255
+        '/home/nefta/thesis/designfiles/waveguide3_2_small.png', mode='L') / 255
+
+#dirname = '/users/tkm/kanilmaz/thesis/results/bands/'
+#topgate = 1- scipy.ndimage.imread(
+#        '/users/tkm/kanilmaz/thesis/designfiles/waveguide3_2_small.png', mode='L') / 255
 
 scatteringGeom = np.ones(topgate.shape)
 vbg = 0.5
-vlead = 0.0 
-vsg_values = [0.3]#np.arange(0.0, -1, -0.1) 
+vlead = 0.3 
+vsg_values = [-0.1, -0.2, -0.3, -0.4, -0.5, -0.6, -0.7]#np.arange(0.0, -1, -0.1) 
 b = 0.0
 gamma = 0.4
 a = 0.4
@@ -81,7 +81,7 @@ def make_system_lead():
 def calculate_bands(par):
     system_params_names = ['vsg', 'vbg', 'b', 'gamma', 'a', 'at', ]
     system_params = [str(par.v_sg), str(par.v_bg), str(par.B),  str(par.gamma1), str(a), str(at), ]
-    resultdir = dirname + 'vsg={0}-vbg={1}/'.format(par.v_sg, par.v_bg)
+    resultdir = dirname + 'vsg={0}-vbg={1}-vlead={2}/'.format(par.v_sg, par.v_bg, par.v_lead)
     if not os.path.exists(resultdir):
         os.makedirs(resultdir)
     system_params_file = resultdir + 'params.txt'
@@ -103,7 +103,7 @@ def calculate_bands(par):
         ax.set_xlabel("Momentum k", fontsize=14)
         ax.set_ylabel("Energies",  fontsize=14)
 
-    ax.set_title(r'Band structure for $\varphi_{{BG}} = {0}$, $\varphi_{{SG}} = {1}$, $B ={2}$'.format(par.v_bg, par.v_sg, par.B), fontsize=16)
+    ax.set_title(r'Band structure for $\varphi_{{BG}} = {0}$, $\varphi_{{SG}} = {1}$, $\varphi_{{LD}} ={2}$'.format(par.v_bg, par.v_sg, par.v_lead), fontsize=16)
     ax.grid()
     #ax.legend(loc=0)
     fig2.savefig(resultdir + 'bands_vbg={0}_vsg={1}_b={2}.png'.format(par.v_bg, par.v_sg, par.B))
