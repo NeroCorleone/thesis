@@ -16,10 +16,10 @@ import csv
 
 vbg = 0.8 
 vlead = 0.0
-nb_points = 501 
+nb_points = 11 
 maxB = 0.00015 
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
-vsg_values = np.linspace(-0.3, -0.45, 101) 
+vsg_values = [-0.3, -0.3015]#np.linspace(-0.3, -0.45, 101) 
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
@@ -32,8 +32,8 @@ a = 0.4
 
 pot_decay = 3#QPC 20
 case = 'wg3_2'
-mainpath = '/users/tkm/kanilmaz/thesis/'
-#mainpath = '/home/nefta/thesis/'
+#mainpath = '/users/tkm/kanilmaz/thesis/'
+mainpath = '/home/nefta/thesis/'
 setups = {'hb': ('results/hb/supercurrent_map/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/supercurrent_map/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/supercurrent_map/', 'designfiles/qpc_gate.png'), 
