@@ -19,7 +19,7 @@ vlead = 0.0
 nb_points = 501 
 maxB = 0.00015 
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
-vsg_values = np.linspace(-0.3, -0.45, 101) 
+vsg_values = np.linspace(-0.3, -0.45, 101)[:51] 
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
