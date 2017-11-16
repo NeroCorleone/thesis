@@ -16,10 +16,10 @@ import csv
 
 vbg = 0.5 
 vlead = 0.0
-nb_points = 501 
+nb_points = 101 
 maxB = 5e-05 
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
-vsg_values = np.linspace(-0.1, -0.4, 201)#np.linspace(-0.3, -0.45, 151) 
+vsg_values = np.linspace(-0.1, -0.4, 5)#np.linspace(-0.3, -0.45, 151) 
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
@@ -311,7 +311,8 @@ def current_vs_b(system, vsg_values, magnetic_field, path=path_to_result):
     print('time for calculation with multiprocessing: ', datetime.now() - timestamp)    
     sorted_results = sorted(results, key=lambda value: value[0])
     unzipped = list(zip(*sorted_results))
-    current_values = np.split(np.asarray(unzipped[1]), len(vsg_values))
+    current_values = np.asarray(np.split(np.asarray(unzipped[1]), len(vsg_values)))
+    print(current_values.shape())
 
     filename = newpath + 'data.csv' 
     with open(filename, 'w') as csvfile:
@@ -319,7 +320,7 @@ def current_vs_b(system, vsg_values, magnetic_field, path=path_to_result):
         for row in current_values:
             writer.writerow(list(row))
     pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
-    plot_current(magnetic_field, vsg_values, np.asarray(current_values), pngfile)
+    plot_current(magnetic_field, vsg_values, current_values, pngfile)
     print('output in', filename)
     return()
 
