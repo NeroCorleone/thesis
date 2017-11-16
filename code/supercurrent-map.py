@@ -32,7 +32,8 @@ a = 0.4
 
 pot_decay = 0#QPC 20
 case = 'wg3_2'
-mainpath = '/users/tkm/kanilmaz/thesis/'
+#mainpath = '/users/tkm/kanilmaz/thesis/'
+mainpath = '/home/nefta/thesis/'
 setups = {'hb': ('results/hb/supercurrent_map/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/supercurrent_map/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/supercurrent_map/', 'designfiles/qpc_gate.png'), 
@@ -290,8 +291,8 @@ def current_vs_b(system, vsg_values, magnetic_field, path=path_to_result):
     result_queue = mp.JoinableQueue() 
     namespace_args = []
 
-    for i, b in enumerate(magnetic_field):
-        for j, vsg in enumerate(vsg_values):
+    for i, vsg in enumerate(vsg_values):
+        for j, b in enumerate(magnetic_field):
             namespace_args.append(((i, j),  SimpleNamespace(v_sg=vsg, v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, B=b)))
     for arg in namespace_args:
         param_queue.put(arg)
