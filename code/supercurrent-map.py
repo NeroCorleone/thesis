@@ -14,12 +14,12 @@ import os
 from functools import partial
 import csv
 
-vbg = 0.8 
+vbg = 0.5 
 vlead = 0.0
-nb_points = 10#501 
-maxB = 0.00015 
+nb_points = 501 
+maxB = 5e-05 
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
-vsg_values = np.linspace(-0.3, -0.5, 10)#np.linspace(-0.3, -0.45, 151) 
+vsg_values = np.linspace(-0.1, -0.4, 201)#np.linspace(-0.3, -0.45, 151) 
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
@@ -30,10 +30,10 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
-pot_decay = 0#QPC 20
-case = 'wg3_2'
+pot_decay = 20
+case = 'hb_upper'
 mainpath = '/users/tkm/kanilmaz/thesis/'
-setups = {'hb': ('results/hb/supercurrent_map/', 'designfiles/halfBarrier.png'),
+setups = {'hb_upper': ('results/hb/supercurrent_map/', 'designfiles/hb_upper_part.png'),
           'hb_lower': ('results/hb_lower/supercurrent_map/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/supercurrent_map/', 'designfiles/qpc_gate.png'), 
           'wg1_1': ('results/wg1_1/supercurrent_map/', 'designfiles/waveguide1_1.png'),
@@ -46,8 +46,8 @@ setups = {'hb': ('results/hb/supercurrent_map/', 'designfiles/halfBarrier.png'),
 
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
 
-read_files = {'hb': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
-        'hb_lower': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
+read_files = {'hb_upper': scipy.ndimage.imread(mainpath + setups['hb_upper'][1], mode='L').T / 255,
+        'hb_lower': scipy.ndimage.imread(mainpath + setups['hb_lower'][1], mode='L').T / 255,
         'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255,
         'wg1_1': scipy.ndimage.imread(mainpath + setups['wg1_1'][1], mode='L') / 255,
         'wg1_2': scipy.ndimage.imread(mainpath + setups['wg1_2'][1], mode='L') / 255,
@@ -61,7 +61,7 @@ topgate = 1 - read_files[case]
 
 scat_file = mainpath + 'designfiles/scatteringRegion.png'
 
-scattering_cases = {'hb': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
+scattering_cases = {'hb_upper': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
                     'hb_lower': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
                     'qpc': 1 - scipy.misc.imread(scat_file)[:, :, 0].T / 255,
                     'wg1_1': np.ones(topgate.shape),
@@ -251,11 +251,11 @@ def max_current(system, params):
     return((pos, currentPeak))
 
 def plot_current(b_field, v_values, current, filename):
-    x, y = np.meshgrid(b_field, v_values)
+    y, x = np.meshgrid(b_field, v_values)
     plt.pcolor(x, y, current)
     cb = plt.colorbar()
-    cb.set_label('r$I_c$')
-    plt.ylabel(r'$\phi_{SG}$', fontsize=14)
+    cb.set_label(r'$I_c$')
+    plt.ylabel(r'$\varphi_{SG}$', fontsize=14)
     plt.xlabel(r'$B$', fontsize=14)
     plt.savefig(filename)
     return
