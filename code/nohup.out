@@ -7003,3 +7003,6 @@ time for calculation:  0:03:07.245507
 vbg= 0.9
 starting calculation with  400 points
 time for calculation:  0:03:16.225240
+time for calculation with multiprocessing:  3:39:35.050035
+(51, 501)
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent_map/vbg=0.8-20171116-16:32:37/data.csv
