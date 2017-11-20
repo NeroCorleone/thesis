@@ -7006,3 +7006,14 @@ time for calculation:  0:03:16.225240
 time for calculation with multiprocessing:  3:39:35.050035
 (51, 501)
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent_map/vbg=0.8-20171116-16:32:37/data.csv
+Traceback (most recent call last):
+  File "supercurrent-map.py", line 50, in <module>
+    read_files = {'hb': scipy.ndimage.imread(mainpath + setups['hb'][1], mode='L').T / 255,
+  File "/usr/lib/python3/dist-packages/scipy/ndimage/io.py", line 43, in imread
+    im = Image.open(fname)
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2251, in open
+    fp = builtins.open(fp, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nefta/thesis/designfiles/halfBarrier.png'
+time for calculation with multiprocessing:  2:48:28.649319
+(50, 501)
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent_map/vbg=0.8-20171117-08:30:31/data.csv

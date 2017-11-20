@@ -14,11 +14,11 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.3]#np.round(np.arange(-0.15, -0.55, -0.1), 2) 
+vsg_values = [-0.1, -0.2, -0.3, -0.4, -0.5, -0.6]#np.round(np.arange(-0.15, -0.55, -0.1), 2) 
 vbg = 0.8 
 vlead = 0.0
-nb_points = 501 
-maxB = 0.00015 
+nb_points = 200 
+maxB = 5e-05 
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
@@ -30,10 +30,10 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
-pot_decay = 0#QPC 20
-case = 'wg3_2'
+pot_decay = 20
+case = 'hb_lower'
 mainpath = '/users/tkm/kanilmaz/thesis/'
-setups = {'hb_upper': ('results/hb/supercurrent/', 'designfiles/hb_upper_part.png'),
+setups = {'hb_upper': ('results/hb_upper/supercurrent/', 'designfiles/hb_upper_part.png'),
           'hb_lower': ('results/hb_lower/supercurrent/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/supercurrent/', 'designfiles/qpc_gate.png'), 
           #'wg3_1': ('results/wg3_1/supercurrent/', 'designfiles/waveguide3_1.png')}
@@ -47,8 +47,8 @@ setups = {'hb_upper': ('results/hb/supercurrent/', 'designfiles/hb_upper_part.pn
 
 path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1])
 
-read_files = {'hb_upper': scipy.ndimage.imread(mainpath + setups['hb_upper'][1], mode='L').T / 255,
-        'hb_lower': scipy.ndimage.imread(mainpath + setups['hb_lower'][1], mode='L').T / 255,
+read_files = {'hb_upper': np.fliplr(scipy.ndimage.imread(mainpath + setups['hb_upper'][1], mode='L').T / 255),
+        'hb_lower': np.fliplr(scipy.ndimage.imread(mainpath + setups['hb_lower'][1], mode='L').T / 255),
         'qpc': scipy.ndimage.imread(mainpath + setups['qpc'][1])[:,:,0].T / 255,
         'wg1_1': scipy.ndimage.imread(mainpath + setups['wg1_1'][1], mode='L') / 255,
         'wg1_2': scipy.ndimage.imread(mainpath + setups['wg1_2'][1], mode='L') / 255,
@@ -65,8 +65,8 @@ topgate = 1 - read_files[case]
 
 scat_file = mainpath + 'designfiles/scatteringRegion.png'
 
-scattering_cases = {'hb_upper': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
-                    'hb_lower': 1 - scipy.misc.imread(scat_file)[:,:,0].T / 255,
+scattering_cases = {'hb_upper': np.flipud(1 - scipy.misc.imread(scat_file)[:,:,0].T / 255),
+                    'hb_lower': np.flipud(1 - scipy.misc.imread(scat_file)[:,:,0].T / 255),
                     'qpc': 1 - scipy.misc.imread(scat_file)[:, :, 0].T / 255,
                     'wg1_1': np.ones(topgate.shape),
                     'wg1_2': np.ones(topgate.shape),
@@ -230,7 +230,8 @@ def super_current(scat_matrix, phi):
     
     eigenval, eigenvec = la.eigh(A.T.conj().dot(A))
     
-    final_eigenval = delta * eigenval ** 0.5 
+    #final_eigenval = delta * eigenval ** 0.5 
+    final_eigenval = np.sqrt(delta * eigenval)
     final_eigenvec = eigenvec.T
     
     current_complex =  np.sum(
@@ -327,6 +328,16 @@ def current_vs_b(system, vsg, path=path_to_result):
 
 
 sys = make_system()
+
+def family_color(site):
+    delta = 1.0 - potential(site.pos[0], site.pos[1])[0][0]
+    if delta < 0.9:
+        return('black')
+    else:
+        return('grey')
+
+#fig = kwant.plotter.plot(sys, fig_size=(16, 9), site_color=family_color)
+#fig.savefig(path_to_result + "test.png")
 
 for vsg_value in vsg_values:
     print(vsg_value)
