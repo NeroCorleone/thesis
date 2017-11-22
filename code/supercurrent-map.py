@@ -16,10 +16,10 @@ import csv
 
 vbg = 0.8 
 vlead = 0.0
-nb_points = 500 
-maxB = 0.00015 
+nb_points = 500
+maxB = 5e-05 
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
-vsg_values = np.linspace(-0.4, -0.5, 51)
+vsg_values = np.linspace(-0.3, -0.4, 51)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
