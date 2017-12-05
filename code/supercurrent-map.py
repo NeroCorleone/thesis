@@ -15,11 +15,11 @@ from functools import partial
 import csv
 
 vbg = 0.8 
-vlead = 0.0
-nb_points = 500
-maxB = 5e-05 
+vlead = 0.3
+nb_points = 50 
+maxB = 0.00015 
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
-vsg_values = np.linspace(-0.3, -0.4, 51)
+vsg_values = np.linspace(-0.3, -0.4, 3)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
@@ -31,7 +31,7 @@ at = 5.0
 a = 0.4
 
 pot_decay = 20
-case = 'hb_upper'
+case = 'wg3_2'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 #mainpath = '/home/nefta/thesis/'
 setups = {'hb_upper': ('results/hb_upper/supercurrent_map/', 'designfiles/hb_upper_part.png'),

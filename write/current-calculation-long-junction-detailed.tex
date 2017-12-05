@@ -1,0 +1,99 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={150mm,257mm},
+ top=20mm,
+ }
+
+\newcommand{\di}{i}
+\begin{document}
+
+\section{Analytical Model for QPC}
+
+Short summary about the analytical expression for supercurrent, as presented in the paper "Tailoring supercurrent
+confinement in graphene bilayer weak links" (https://arxiv.org/abs/1702.08773). \\
+To calculate the supercurrent through the SNS junction with a QPC Barrier, we follow the quasiclassical approach in [\textbf{References!}].
+%TODO: Explain, how there can be current -- Andreev Reflection leading to quasiclassical current tubes
+In a SNS junction without any barrier or constriction, we can calculate the Josephson current $\mathcal{J}\left( \chi \right)$ through the sample as a function of the superconducting phase $\chi = \chi_1 - \chi_2$. The current from one superconducting lead to another can be seen as electron-hole tubes with a width $\propto \lambda_F$. This is due to Andreev reflection of electrons at the NS interface, which leads to Andreev bound states. Each trajectory or path is a contribution to the Josephson current and as a consequence, the Josephon current directly depends on the position of end points. The critical current shows a magnetic interference pattern and is calculated by maximizing the Josephson current with respect to superconducting phase difference $\chi$:
+\begin{eqnarray}
+\mathcal{J}\left(\chi, \phi\right) &=& \frac{2ev_F}{\pi \lambda_F L^2} \int \int _{-W/2}^{W/2} dy_1 dy_2 \frac{\mathcal{J}\left(\tilde{\chi}(y_i,y_f)\right)}{\left[ 1 + \left(\frac{y_1 - y_2}{L}\right)^2 \right]^{3/2}} \\
+I_c\left(\phi\right) &=& \text{max}_{\chi} \mathcal{J}\left(\chi, \phi\right)
+\end{eqnarray}
+The partial Josephson current in the long junction limit reads
+\begin{equation}
+\mathcal{J}(\chi)=\sum_{k=1}^\infty \frac{(-1)^{k+1} \mathcal{T}^k}{k} \sin(k \chi)
+=\text{Im}\left[ \ln\left(1+\mathcal{T} e^{i \chi}\right)\right], \quad  \xi\ll L,
+\label{sawT}
+\end{equation}
+and in the limit of low transmission $\mathcal{T}$, equation (\ref{sawT}) is replaced by the known Josephson relation
+\begin{equation}
+\mathcal{J}(\chi)\simeq  \mathcal{T} \sin\chi, \quad \mathcal{T}\ll 1,
+\label{sawT<1}
+\end{equation}
+since for $\mathcal{T} \ll 1$, in equation (\ref{sawT}) only the term for $k = 1$ is relevant and the expression becomes (\ref{sawT<1}).
+In the QPC case we can think of these contributions as consisting of two parts: the first one comes from all possible trajectories from one superconducting lead, say, the left one, to the constriction. The second contribution consists of all possible trajectories from the constriction to the right lead. Assuming the scattering at the QPC is isotropic means that we can think of these trajectories as independent contributions to the supercurrent. To connect the points $y_i$ and $y_f$ at the opposite interfaces, the trajectory has to pass through the QPC.
+%TODO: Umschreiben! Das untenstehende ist aus dem Paper direkt (!) uebernommen
+This trajectory is now parameterised by the two angles: $\theta_i$, corresponding to the velocity in the region $-L/2<x<0$, and $\theta_f$ in the region $0<x<L/2$ after transmission through the QPC.
+These angles satisfy the relations:
+\begin{eqnarray}
+\tan\theta_i=-\frac{2y_i}{L}, \quad \tan\theta_f=\frac{2y_f}{L}.
+\end{eqnarray}
+%TODO: Insert about chosen gauge
+With a x-dependent gauge for the vector potential, the magnetic phase acquired within the sample reads:
+\begin{eqnarray}
+\frac{2\pi}{\Phi_0} \int d\mathbf{l} \cdot \mathbf{A}  &=&
+-\frac{\pi B}{\Phi_0}\left(\frac{L}{2}\right)^2
+\left(-\tan\theta_i + \tan\theta_f\right) =
+-\frac{\pi \phi (y_i+y_f)}{2 W}.
+\label{phaseQPC}
+\end{eqnarray}
+The total phase difference is given by the sum of the magnetic phase (\ref{phaseQPC}) 
+and the superconducting phase difference in the presence of magnetic field:
+\begin{equation}
+\tilde{\chi}(y_i,y_f)=\chi-\frac{3\pi \phi }{2W}(y_i+y_f).
+\end{equation}
+When there is no magnetic field applied, we can calculate the critical current, which depends on the phase difference $\chi$ whereas with magnetic field applied, we have to calculate the Josephson current for the total phase difference, $\tilde{\chi}\left(\theta_i, \theta_f\right)$, which then depends on the angle.
+%TODO: Prefactors in equation below
+\begin{eqnarray}
+I_c \left(0\right) &\propto& \int d \theta_i \cos^2 \theta_i \int d \theta_f \cos \theta_f \mathcal{J}\left(\chi \right) \\
+I_c \left(\phi\right)  &\propto& \int d \theta_i \cos^2 \theta_i \int d \theta_f \cos \theta_f \mathcal{J}\left(\tilde{\chi}\left(\theta_i, \theta_f\right) \right)
+\end{eqnarray}
+\textbf{TODO: prefactors in for these euqation?}
+%TODO: untenstehende Abschnitt bis einschliesslich der parabolischen Naeherung ist aus dem Paper copy+paste!
+The normalized critical current reads
+\begin{eqnarray}
+\frac{I_c(\phi)}{I_c(0)} &=& \frac{ \text{max}_{\chi} \int d \theta_i \cos^2 \theta_i\int d \theta_f \cos \theta_f \mathcal{J}(\tilde{\chi}(\theta_i, \theta_f)) }{ \text{max}_{\chi} \int d \theta_i \cos^2 \theta_i\int d \theta_f \cos \theta_f \mathcal{J}(\chi) }
+\end{eqnarray}
+In the limit of small transmission probability $\mathcal{T} << 1$ we use Eq.~(\ref{sawT<1}) for the partial Josephson current. The normalized critical current can then be written as 
+\begin{eqnarray}
+\frac{I_c(\phi)}{I_c(0)} &=& \frac{\mathcal{I}_2(\phi)\mathcal{I}_{3/2}(\phi)}{\mathcal{I}_2(0)\mathcal{I}_{3/2}(0)}
+\end{eqnarray}
+Here, the integrals $\mathcal{I}$ are defined as
+\begin{equation}
+\mathcal{I}_k(\phi) = \frac{2}{L}\int_{-W/2}^{+W/2}dy \frac{\cos\left(\frac{3\pi\phi y}{2W}\right)}{\left[1 + \left(\frac{2y}{L}\right)^2 \right]^k}
+\label{integral-qpc}
+\end{equation}
+At $\phi=0$ we get
+\begin{equation}
+\mathcal{I}_2(0)\mathcal{I}_{3/2}(0) =
+\frac{L}{\sqrt{L^2+W^2}}\arctan\frac{W}{L} + \frac{L^2W}{(L^2+W^2)^{3/2}}
+\label{Ic-0}
+\end{equation}
+The parabolic asymptotics of the critical current at small $\phi$ is found by expanding
+the cosine factors in the numerator:
+\begin{eqnarray}
+\frac{I_c(\phi)}{I_{c0}}&\simeq& 1 - \frac{9\pi ^2 \phi^2 }{32} f_0(W/L) \\
+f_0(x) &=& \frac{\sqrt{x^2+1} \log \left(\sqrt{x^2+1}+x\right)}{x}- \frac{x}{x+\left(x^2+1\right) \arctan(x)} 
+\end{eqnarray}
+In the opposite limit of high fields, $\phi\to \infty$, we extend the integration in Eq.~(\ref{integral-qpc}) over $y_i$ and $y_f$
+to $\pm \infty$ and obtain
+\begin{eqnarray}
+\frac{I_c(\phi)}{I_{c0}} &\simeq& \frac{\pi^3 }{8x^2}\left(\frac{3\phi}{2x}\right)^{3/2}\frac{\left(1+x^2\right)^{3/2}}{x + \left(1+x^2\right)\arctan x}\exp\left(-\frac{3\phi\pi}{2x}\right)
+\label{large-phi}
+\end{eqnarray}
+
+\end{document}

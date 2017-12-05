@@ -1,0 +1,11 @@
+vsg, -0.1
+vbg, 0.8
+maxB, 0.00015
+nb_points, 50
+decay, 20
+eta, 2.5
+gamma, 0.4
+a, 0.4
+at, 5.0
+delta, 1.0
+T, 0.5

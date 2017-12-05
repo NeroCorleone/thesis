@@ -7017,3 +7017,21 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/nefta/thesis/desi
 time for calculation with multiprocessing:  2:48:28.649319
 (50, 501)
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent_map/vbg=0.8-20171117-08:30:31/data.csv
+-0.95
+starting calculation with  50  points
+time for calculation with multiprocessing:  0:01:10.651848
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.95-20171205-16:25:02/data.csv
+-0.95
+starting calculation with  50  points
+Traceback (most recent call last):
+  File "supercurrent.py", line 51, in <module>
+    read_files = {'hb_upper': np.fliplr(scipy.ndimage.imread(mainpath + setups['hb_upper'][1], mode='L').T / 255),
+  File "/usr/lib/python3/dist-packages/scipy/ndimage/io.py", line 43, in imread
+    im = Image.open(fname)
+  File "/usr/lib/python3/dist-packages/PIL/Image.py", line 2251, in open
+    fp = builtins.open(fp, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/scratch/local/kanilmaz/thesis/designfiles/hb_upper_part.png'
+-0.95
+starting calculation with  50  points
+time for calculation with multiprocessing:  0:01:15.632050
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.95-20171205-16:59:26/data.csv
