@@ -301,7 +301,7 @@ def current_vs_b(system, vsg, path=path_to_result):
     timestamp = datetime.now()
     print('starting calculation with ', len(magnetic_field),' points')
     nb_cores = mp.cpu_count()
-    processes = [mp.Process(target=worker, args=(system, param_queue, result_queue)) for i in range(nb_cores)]
+    processes = [mp.Process(target=worker, args=(system, param_queue, result_queue)) for i in range(nb_cores - 1)]
     for p in processes:
         p.start()
     param_queue.join()
