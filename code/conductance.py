@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-nb_points = 400 
+nb_points = 100
 splitgate_voltage = np.linspace(-1.0, 0.0, nb_points)
 vbg_values = [0.7 ]#np.round(np.linspace(0.4, 0.9, 5), 2) 
 phase = (-np.pi, np.pi) 
@@ -25,7 +25,7 @@ T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5 
-a = 0.4
+a = 0.2
 
 pot_decay = 20 
 case = 'wg3_2'
