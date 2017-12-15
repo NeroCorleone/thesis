@@ -7,18 +7,20 @@ import numpy as np
 from types import SimpleNamespace
 import os
 
-dirname = '/home/nefta/thesis/results/bands/'
+dirname = '/home/nefta/thesis/results/bands/qpc/'
 topgate = 1- scipy.ndimage.imread(
-        '/home/nefta/thesis/designfiles/waveguide3_2_small.png', mode='L') / 255
+        '/home/nefta/thesis/designfiles/qpc_gate.png', mode='L') / 255
 
 #dirname = '/users/tkm/kanilmaz/thesis/results/bands/'
 #topgate = 1- scipy.ndimage.imread(
 #        '/users/tkm/kanilmaz/thesis/designfiles/waveguide3_2_small.png', mode='L') / 255
 
-scatteringGeom = np.ones(topgate.shape)
-vbg = 0.5
-vlead = 0.3 
-vsg_values = [-0.1, -0.2, -0.3, -0.4, -0.5, -0.6, -0.7]#np.arange(0.0, -1, -0.1) 
+#scatteringGeom = np.ones(topgate.shape)
+scatteringGeom = np.fliplr(1 - scipy.ndimage.imread(
+    '/home/nefta/thesis/designfiles/scatteringRegion.png', mode='L').T / 255)
+vbg = 0.2
+vlead = 0.0
+vsg_values = [-0.6, -0.7, -0.8]#np.arange(0.0, -1, -0.1) 
 b = 0.0
 gamma = 0.4
 a = 0.4
@@ -41,7 +43,7 @@ def onsite_lead(site, par):
     return -mu  + delta
 '''
 def onsite_lead(site, par):   
-    topgate_potential = par.v_sg + par.v_lead 
+    topgate_potential = par.v_sg #+ par.v_lead 
     mu = (par.v_bg + topgate_potential) / 2
     delta = - ( topgate_potential - par.v_bg) / 2.5
     # site.family in (a1, b1)

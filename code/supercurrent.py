@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.7]#np.round(np.arange(-0.15, -0.55, -0.1), 2) 
+vsg_values = [-0.95]#np.round(np.arange(-0.15, -0.55, -0.1), 2) 
 vbg = 0.8 
 vlead = 0.3
 nb_points = 20 
@@ -30,10 +30,11 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
-pot_decay = 5 
+pot_decay = 0 
 case = 'wg3_2'
-mainpath = '/users/tkm/kanilmaz/thesis/'
+mainpath = '/home/nefta/thesis/'
 #mainpath = '/scratch/local/kanilmaz/thesis/'
+#mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb_upper': ('results/hb_upper/supercurrent/', 'designfiles/hb_upper_part.png'),
           'hb_lower': ('results/hb_lower/supercurrent/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/supercurrent/', 'designfiles/qpc_gate.png'), 
@@ -232,7 +233,7 @@ def super_current(scat_matrix, phi):
     eigenval, eigenvec = la.eigh(A.T.conj().dot(A))
     
     #final_eigenval = delta * eigenval ** 0.5 
-    final_eigenval = np.sqrt(delta * eigenval)
+    final_eigenval = delta * np.sqrt(eigenval)
     final_eigenvec = eigenvec.T
     
     current_complex =  np.sum(
