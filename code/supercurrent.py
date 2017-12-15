@@ -17,7 +17,7 @@ import csv
 vsg_values = [-0.7]#np.round(np.arange(-0.15, -0.55, -0.1), 2) 
 vbg = 0.8 
 vlead = 0.3
-nb_points = 50 
+nb_points = 20 
 maxB = 0.00015  
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
@@ -31,7 +31,7 @@ at = 5.0
 a = 0.4
 
 pot_decay = 5 
-case = 'wg3_2_double'
+case = 'wg3_2'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 #mainpath = '/scratch/local/kanilmaz/thesis/'
 setups = {'hb_upper': ('results/hb_upper/supercurrent/', 'designfiles/hb_upper_part.png'),

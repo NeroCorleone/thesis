@@ -16,7 +16,7 @@ import csv
 
 vsg_values = [-0.95,]#[-0.36, -0.37, -0.38, -0.39,] 
 vbg = 0.8 
-nb_points = 50 
+nb_points = 20 
 maxB = 0.0005
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
@@ -299,7 +299,7 @@ def current_vs_b(system, vsg, path=path_to_result):
     timestamp = datetime.now()
     print('starting calculation with ', len(magnetic_field),' points')
     nb_cores = mp.cpu_count()
-    processes = [mp.Process(target=worker, args=(system, param_queue, result_queue)) for i in range(nb_cores)]
+    processes = [mp.Process(target=worker, args=(system, param_queue, result_queue)) for i in range(nb_cores - 1)]
     for p in processes:
         p.start()
     param_queue.join()
