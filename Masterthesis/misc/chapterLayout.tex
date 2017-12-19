@@ -1,0 +1,31 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%                            %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%   chapter headings             %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%                             %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% INFO: when using different fonts, the chapter headings may look
+%%% different and the given sizes do no longer apply!
+
+\colorlet{chapter}{darkblue}
+\addtokomafont{chapter}{\color{black}}
+
+\makeatletter% siehe De-TeX-FAQ
+\renewcommand*{\chapterformat}{%
+\begingroup% damit \unitlength-Änderung lokal bleibt
+\setlength{\unitlength}{1mm}%
+\begin{picture}(20,40)(0,5)%
+\setlength{\fboxsep}{0pt}%
+%\put(0,0){\framebox(20,30){}}%
+%\put(0,20){\makebox(20,20){\rule{20\unitlength}{20\unitlength}}}%
+\put(20,15){\color{black}\linethickness{0.4pt}\line(1,0){\dimexpr\textwidth-20\unitlength\relax\@gobble}}% line
+\put(0,0){\makebox(18,20)[r]{\fontsize{20\unitlength}{1}\color{black}\selectfont\thechapter %\kern-.04em% Ziffer in der Zeichenzelle nach rechts schieben
+}}%
+\put(20,15){\makebox(\dimexpr \textwidth-20\unitlength\relax\@gobble,\ht\strutbox\@gobble)[l]{%\ %\normalsize\color{black}\chapapp~\thechapter\autodot 
+}}%
+\end{picture} % <- Leerzeichen ist hier beabsichtigt!
+\endgroup
+}%
+\makeatother

@@ -1,0 +1,106 @@
+\documentclass[
+twoside,
+%draft,           %use this for fast draft compilation with additional overfull boxes hint bars (also affects graphicx)
+a4paper,          %A4 paper size
+11pt,             %well readable for A4 printing
+numbers=noenddot, %no trailing dot after numbers for chapters, sections, etc.
+cleardoublepage=empty, %nice left plain pages before chapters
+%chapterprefix,    %chapter X prefix before chapters
+%appendixprefix,   %appendix X prefix before appendices
+headsepline,      %lines in header
+%headtopline,      %lines in header
+footbotline,      %lines in footer
+%footsepline,      %lines in footer
+plainfootbotline, %lines in footer for scrplain page style
+%plainfootsepline, %lines in footer for srcplain page style
+%ilines,
+DIV=15,            %adjust this value for more/less text on pages
+BCOR=5mm % binding correction
+]{scrbook}
+
+%%%packages
+\usepackage[]{scrpage2} %%% koma script for nice layout
+\usepackage[english,ngerman]{babel}   %%% an english thesis usually has a german synopsis
+%\usepackage[T1]{fontenc}      %%%this lets you use äöüß instead of \"a \ss{} etc....
+\usepackage[latin1]{inputenc}  %%%...which makes german tex files
+\usepackage[numbers,square,comma,sort&compress]{natbib}
+\bibliographystyle{unsrtnatMod}
+\usepackage[absolute,overlay]{textpos} %textblock env for text positioning
+\usepackage{multirow}
+\usepackage{amsmath} %Zus�tzliches Mathepaket, dass die Align-Umgebung beinhaltet
+\usepackage{amsfonts} %%% math fonts needed
+\usepackage{amssymb}  %%% maths symbols needed 
+\usepackage{bm}
+\usepackage{physics} 
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\graphicspath{{figure/}} 
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{units}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{helvet}
+\usepackage{titlesec}
+%\usepackage[hyperpageref]{backref}
+\usepackage[draft]{todonotes}   % draft: notes showed, disable: not showed
+\usepackage{comment}
+%\renewcommand{\comment}[1]{}  %comment not showed
+\renewcommand{\comment}[1] {\par {\bfseries \color{blue} #1 \par}} %comment showed
+
+\usepackage{dsfont}
+\usepackage{lipsum}
+
+%%%%macros
+\input{comfiles/macros}
+
+%%%layout
+\input{misc/layout}
+\input{misc/chapterLayout}
+
+%%%feynman diagrams
+%\input{texfiles/feynman_diagrams}
+
+\begin{document}
+
+\frontmatter                    %%% use different numbering format for pages
+\pagestyle{empty}               %%% for special pages, chose a simple layout
+\selectlanguage{ngerman}
+\input{misc/titlepage_german}
+\input{misc/assertion_german}   %%% MANDATORY: your signature on this page
+%\input{misc/synopsis_german}   %%% MANDATORY: introduction, summary and outlook (a complete synopsis) in german
+\selectlanguage{english} 		%Auswahl der Dokumentsprache
+%\input{misc/titlepage_english} %%% if the thesis is english, add a second english titlepage
+\input{misc/acknowledgements}   %%% acknowledge help from colleagues and friends 
+
+\tableofcontents %Inhaltsverzeichnis
+%\listoffigures
+
+\pagestyle{scrheadings}			%%% for normal text, display section names in header line
+
+\mainmatter
+\input{chapter/overview}
+
+\input{misc/chapterLayout}
+
+\input{chapter/introduction}
+
+\input{chapter/analyticalmodel}
+
+\input{chapter/conclusion}
+
+%\listoftodos
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{../../jabref/files/paperbase} 
+
+\begin{appendix}                         %%% start the appendix for longer calculations/info
+	\input{chapter/appendix}
+\end{appendix}
+
+\backmatter
+\end{document}
