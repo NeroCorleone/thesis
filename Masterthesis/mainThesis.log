@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  18 DEC 2017 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  24 DEC 2017 10:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1963,7 +1963,7 @@ parent-eps-converted-to.pdf figure/Logos/KITlogo_transparent.eps>
 (epstopdf)             \includegraphics on input line 16.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/Logos/KITlogo_transparent-eps-converted-to.pdf, id=34, 1324.95pt x 617.
+<figure/Logos/KITlogo_transparent-eps-converted-to.pdf, id=38, 1324.95pt x 617.
 30624pt>
 File: figure/Logos/KITlogo_transparent-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -1993,7 +1993,7 @@ f>
 (epstopdf)             \includegraphics on input line 34.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/Titlepage/cover-eps-converted-to.pdf, id=35, 651.43375pt x 673.51625pt>
+<figure/Titlepage/cover-eps-converted-to.pdf, id=39, 651.43375pt x 673.51625pt>
 File: figure/Titlepage/cover-eps-converted-to.pdf Graphic file (type pdf)
 <use figure/Titlepage/cover-eps-converted-to.pdf>
 Package pdftex.def Info: figure/Titlepage/cover-eps-converted-to.pdf used on in
@@ -2117,12 +2117,23 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 ]
 chapter 2.
-<figure/qpc_sns_junction.pdf, id=109, 461.725pt x 363.3575pt>
-File: figure/qpc_sns_junction.pdf Graphic file (type pdf)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 4.
+<figure/analyticalmodel/sns_junction.pdf, id=113, 461.725pt x 363.3575pt>
+File: figure/analyticalmodel/sns_junction.pdf Graphic file (type pdf)
 
-<use figure/qpc_sns_junction.pdf>
-Package pdftex.def Info: figure/qpc_sns_junction.pdf used on input line 7.
-(pdftex.def)             Requested size: 466.62526pt x 367.21548pt.
+<use figure/analyticalmodel/sns_junction.pdf>
+Package pdftex.def Info: figure/analyticalmodel/sns_junction.pdf used on input 
+line 7.
+(pdftex.def)             Requested size: 279.978pt x 220.32817pt.
+
+<figure/analyticalmodel/qpc_sns_junction.pdf, id=116, 461.725pt x 363.3575pt>
+File: figure/analyticalmodel/qpc_sns_junction.pdf Graphic file (type pdf)
+
+<use figure/analyticalmodel/qpc_sns_junction.pdf>
+Package pdftex.def Info: figure/analyticalmodel/qpc_sns_junction.pdf used on in
+put line 35.
+(pdftex.def)             Requested size: 279.978pt x 220.32817pt.
 ) (./chapter/conclusion.tex
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
@@ -2131,7 +2142,12 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[6 <./figure/qpc_sns_junction.pdf>]
+[6 <./figure/analyticalmodel/sns_junction.pdf> <./figure/analyticalmodel/qpc_sn
+s_junction.pdf
+
+pdfTeX warning: pdflatex (file ./figure/analyticalmodel/qpc_sns_junction.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>]
 chapter 3.
 )
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
@@ -2164,29 +2180,35 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
 Package rerunfilecheck Info: File `mainThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 2C5B1E1A1870D126A85A8AD60AF465B9;341.
+(rerunfilecheck)             Checksum: 48598B78413D963B6B4E493F8AB3D398;424.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
  ) 
 Here is how much of TeX's memory you used:
- 28788 strings out of 494974
- 535232 string characters out of 6180014
- 738938 words of memory out of 5000000
- 31503 multiletter control sequences out of 15000+600000
- 27207 words of font info for 87 fonts, out of 8000000 for 9000
+ 28815 strings out of 494974
+ 535774 string characters out of 6180014
+ 741137 words of memory out of 5000000
+ 31523 multiletter control sequences out of 15000+600000
+ 27685 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 73i,11n,67p,10405b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,10n,75p,10405b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/
-uhvb8a.pfb>
-Output written on mainThesis.pdf (18 pages, 555981 bytes).
+/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
+Output written on mainThesis.pdf (18 pages, 641821 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 164 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 84 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 275 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
