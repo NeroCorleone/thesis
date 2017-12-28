@@ -1,23 +1,22 @@
 ~~~ Timeline heute ~~~
 In Tomatoes:
-1. + 2.  Beschreibe plane setup
-Pause (10  min)
-3. + 4 QPC beschreiben
+Beschreibe plane setup
+QPC beschreiben
 * Skizze (fertig)
 * Erklären, was sich ändert
 * Rechnung zusammenfassen
 Pause
 
 
-~~~ Timeline nächsten drei Wochen ~~~
+~~~ Timeline nächsten zwei Wochen ~~~
 
 Was fertig bis dahin:
-* Stand der Analytischen Berechnungen fertig zusammengefasst (bis zum 26.12.2017 ?)
+* Stand der Analytischen Berechnungen fertig zusammengefasst (bis zum 31.12.2017 ?)
 ** QPC Berechnung 
 ** QPC Berechnung mit edges
 ** Methodik Teile schreiben
 
-* Stand der Simulationen fertig zusammengefasst (31.01.2018)
+* Stand der Simulationen fertig zusammengefasst (06.01.2018)
 ** Ergebnisse sichten und zusammenschreiben
 ** HB setup
 ** Waveguide setups
@@ -26,6 +25,7 @@ Was fertig bis dahin:
 
 * Fehlende Ergebnisse simulieren
 * Current density plots hinzufügfen
+* Methodik: Fourier trafo der current density
 
 
 

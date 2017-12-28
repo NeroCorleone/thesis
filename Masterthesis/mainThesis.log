@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  24 DEC 2017 10:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  28 DEC 2017 20:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1963,7 +1963,7 @@ parent-eps-converted-to.pdf figure/Logos/KITlogo_transparent.eps>
 (epstopdf)             \includegraphics on input line 16.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/Logos/KITlogo_transparent-eps-converted-to.pdf, id=38, 1324.95pt x 617.
+<figure/Logos/KITlogo_transparent-eps-converted-to.pdf, id=46, 1324.95pt x 617.
 30624pt>
 File: figure/Logos/KITlogo_transparent-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -1993,7 +1993,7 @@ f>
 (epstopdf)             \includegraphics on input line 34.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/Titlepage/cover-eps-converted-to.pdf, id=39, 651.43375pt x 673.51625pt>
+<figure/Titlepage/cover-eps-converted-to.pdf, id=47, 651.43375pt x 673.51625pt>
 File: figure/Titlepage/cover-eps-converted-to.pdf Graphic file (type pdf)
 <use figure/Titlepage/cover-eps-converted-to.pdf>
 Package pdftex.def Info: figure/Titlepage/cover-eps-converted-to.pdf used on in
@@ -2119,7 +2119,7 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 chapter 2.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 4.
-<figure/analyticalmodel/sns_junction.pdf, id=113, 461.725pt x 363.3575pt>
+<figure/analyticalmodel/sns_junction.pdf, id=123, 461.725pt x 363.3575pt>
 File: figure/analyticalmodel/sns_junction.pdf Graphic file (type pdf)
 
 <use figure/analyticalmodel/sns_junction.pdf>
@@ -2127,36 +2127,35 @@ Package pdftex.def Info: figure/analyticalmodel/sns_junction.pdf used on input
 line 7.
 (pdftex.def)             Requested size: 279.978pt x 220.32817pt.
 
-<figure/analyticalmodel/qpc_sns_junction.pdf, id=116, 461.725pt x 363.3575pt>
+Overfull \vbox (13.61752pt too high) has occurred while \output is active []
+
+
+[5]
+<figure/analyticalmodel/qpc_sns_junction.pdf, id=143, 461.725pt x 363.3575pt>
 File: figure/analyticalmodel/qpc_sns_junction.pdf Graphic file (type pdf)
 
 <use figure/analyticalmodel/qpc_sns_junction.pdf>
 Package pdftex.def Info: figure/analyticalmodel/qpc_sns_junction.pdf used on in
-put line 35.
+put line 57.
 (pdftex.def)             Requested size: 279.978pt x 220.32817pt.
 ) (./chapter/conclusion.tex
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[5]
+[6 <./figure/analyticalmodel/sns_junction.pdf>]
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[6 <./figure/analyticalmodel/sns_junction.pdf> <./figure/analyticalmodel/qpc_sn
-s_junction.pdf
+[7 <./figure/analyticalmodel/qpc_sns_junction.pdf>] [8
 
-pdfTeX warning: pdflatex (file ./figure/analyticalmodel/qpc_sns_junction.pdf): 
-PDF inclusion: multiple pdfs with page group included in a single page
->]
+
+]
 chapter 3.
 )
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[7
-
-
-] [8
+[9] [10
 
 
 ]
@@ -2167,10 +2166,10 @@ chapter A.
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[9
+[11
 
 
-] [10
+] [12
 
 
 ]
@@ -2180,17 +2179,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
 Package rerunfilecheck Info: File `mainThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 48598B78413D963B6B4E493F8AB3D398;424.
+(rerunfilecheck)             Checksum: 89B44F9DF7AC2AD02ECF582D4C2C436F;595.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
  ) 
 Here is how much of TeX's memory you used:
- 28815 strings out of 494974
- 535774 string characters out of 6180014
- 741137 words of memory out of 5000000
- 31523 multiletter control sequences out of 15000+600000
+ 28825 strings out of 494974
+ 535890 string characters out of 6180014
+ 744137 words of memory out of 5000000
+ 31526 multiletter control sequences out of 15000+600000
  27685 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 73i,10n,75p,10405b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,11n,75p,10405b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
@@ -2202,13 +2201,14 @@ ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on mainThesis.pdf (18 pages, 641821 bytes).
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
+Output written on mainThesis.pdf (20 pages, 656780 bytes).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 30 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 306 PDF objects out of 1000 (max. 8388607)
+ 233 compressed objects within 3 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
