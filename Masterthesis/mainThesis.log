@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  28 DEC 2017 20:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  4 JAN 2018 13:59
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **mainThesis.tex
 (./mainThesis.tex
@@ -1852,6 +1852,24 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \CommentStream=\write4
 
 Excluding comment 'comment')
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
@@ -1876,20 +1894,20 @@ Package hyperref Info: Option `final' set `true' on input line 120.
 ) (./misc/chapterLayout.tex) (./mainThesis.aux)
 \openout1 = `mainThesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
 
 
 Package scrpage2 Warning: seems you are using a very small headheight.
@@ -1913,28 +1931,13 @@ ABD: EveryShipout initializing macros
 \MPnumerator=\count178
 \makeMPintoPDFobject=\count179
 \everyMPtoPDFconversion=\toks45
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box63
-Package hyperref Info: Link coloring OFF on input line 67.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package hyperref Info: Link coloring OFF on input line 66.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1942,9 +1945,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count180
 )
-LaTeX Info: Redefining \ref on input line 67.
-LaTeX Info: Redefining \pageref on input line 67.
-LaTeX Info: Redefining \nameref on input line 67.
+LaTeX Info: Redefining \ref on input line 66.
+LaTeX Info: Redefining \pageref on input line 66.
+LaTeX Info: Redefining \nameref on input line 66.
 
 (./mainThesis.out) (./mainThesis.out)
 \@outlinefile=\write5
@@ -1958,12 +1961,12 @@ Package epstopdf Info: Source file: <figure/Logos/KITlogo_transparent.eps>
 rted-to.pdf>
 (epstopdf)                    date: 2017-12-18 11:20:03
 (epstopdf)                    size: 33816 bytes
-(epstopdf)             Command: <repstopdf --outfile=figure/Logos/KITlogo_trans
-parent-eps-converted-to.pdf figure/Logos/KITlogo_transparent.eps>
+(epstopdf)             Command: <epstopdf --outfile=figure/Logos/KITlogo_transp
+arent-eps-converted-to.pdf figure/Logos/KITlogo_transparent.eps>
 (epstopdf)             \includegraphics on input line 16.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/Logos/KITlogo_transparent-eps-converted-to.pdf, id=46, 1324.95pt x 617.
+<figure/Logos/KITlogo_transparent-eps-converted-to.pdf, id=38, 1324.95pt x 617.
 30624pt>
 File: figure/Logos/KITlogo_transparent-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -1988,12 +1991,12 @@ Package epstopdf Info: Source file: <figure/Titlepage/cover.eps>
 f>
 (epstopdf)                    date: 2017-12-18 11:20:05
 (epstopdf)                    size: 401072 bytes
-(epstopdf)             Command: <repstopdf --outfile=figure/Titlepage/cover-eps
--converted-to.pdf figure/Titlepage/cover.eps>
+(epstopdf)             Command: <epstopdf --outfile=figure/Titlepage/cover-eps-
+converted-to.pdf figure/Titlepage/cover.eps>
 (epstopdf)             \includegraphics on input line 34.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/Titlepage/cover-eps-converted-to.pdf, id=47, 651.43375pt x 673.51625pt>
+<figure/Titlepage/cover-eps-converted-to.pdf, id=39, 651.43375pt x 673.51625pt>
 File: figure/Titlepage/cover-eps-converted-to.pdf Graphic file (type pdf)
 <use figure/Titlepage/cover-eps-converted-to.pdf>
 Package pdftex.def Info: figure/Titlepage/cover-eps-converted-to.pdf used on in
@@ -2049,8 +2052,32 @@ Package babel Info: Redefining ngerman shorthand "~
  [4
 
 
-]) (./misc/acknowledgements.tex
-chapter without number
+])
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 78.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 78.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 78.
+ (./mainThesis.toc)
+\tf@toc=\write6
+\openout6 = `mainThesis.toc'.
+
+
+Overfull \vbox (13.61752pt too high) has occurred while \output is active []
+
+
+[5
+
+
+] [6
+
+
+] (./misc/chapterLayout.tex) (./chapter/introduction.tex
+chapter 1.
 
 Class scrbook Warning: \float@addtolists detected!
 (scrbook)              Implementation of \float@addtolist became
@@ -2066,35 +2093,9 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface .
 
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 1.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
-File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
-)
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <56.90521> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
-) [5
-
-
-] [6
-
-
-]
-(./mainThesis.toc)
-\tf@toc=\write6
-\openout6 = `mainThesis.toc'.
-
-
-Overfull \vbox (13.61752pt too high) has occurred while \output is active []
-
-
-[7] [8
-
-
-] (./chapter/overview.tex
-chapter 0.
-) (./misc/chapterLayout.tex) (./chapter/introduction.tex
+) (./chapter/analyticalmodel.tex
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
@@ -2105,57 +2106,120 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
 ]
-chapter 1.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <56.90521> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
-) (./chapter/analyticalmodel.tex
-Overfull \vbox (13.61752pt too high) has occurred while \output is active []
-
-
-[3] [4
-
-
-]
 chapter 2.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 4.
-<figure/analyticalmodel/sns_junction.pdf, id=123, 461.725pt x 363.3575pt>
-File: figure/analyticalmodel/sns_junction.pdf Graphic file (type pdf)
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 5.
+Package epstopdf Info: Source file: <figure/analyticalmodel/sns_junction.eps>
+(epstopdf)                    date: 2017-12-18 18:11:41
+(epstopdf)                    size: 37219 bytes
+(epstopdf)             Output file: <figure/analyticalmodel/sns_junction-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2018-01-02 15:19:37
+(epstopdf)                    size: 30675 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/analyticalmodel/sns_
+junction-eps-converted-to.pdf figure/analyticalmodel/sns_junction.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
 
-<use figure/analyticalmodel/sns_junction.pdf>
-Package pdftex.def Info: figure/analyticalmodel/sns_junction.pdf used on input 
-line 7.
+<figure/analyticalmodel/sns_junction-eps-converted-to.pdf, id=97, 461.725pt x 3
+63.3575pt>
+File: figure/analyticalmodel/sns_junction-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+ <use figure/analyticalmodel/sns_junction-eps-converted-to.pdf>
+Package pdftex.def Info: figure/analyticalmodel/sns_junction-eps-converted-to.p
+df used on input line 8.
 (pdftex.def)             Requested size: 279.978pt x 220.32817pt.
 
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[5]
-<figure/analyticalmodel/qpc_sns_junction.pdf, id=143, 461.725pt x 363.3575pt>
-File: figure/analyticalmodel/qpc_sns_junction.pdf Graphic file (type pdf)
+[3]
+Package epstopdf Info: Source file: <figure/analyticalmodel/current_density_all
+.eps>
+(epstopdf)                    date: 2017-12-31 16:55:24
+(epstopdf)                    size: 131813 bytes
+(epstopdf)             Output file: <figure/analyticalmodel/current_density_all
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-01-02 15:00:54
+(epstopdf)                    size: 18969 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/analyticalmodel/curr
+ent_density_all-eps-converted-to.pdf figure/analyticalmodel/current_density_all
+.eps>
+(epstopdf)             \includegraphics on input line 73.
+Package epstopdf Info: Output file is already uptodate.
 
-<use figure/analyticalmodel/qpc_sns_junction.pdf>
-Package pdftex.def Info: figure/analyticalmodel/qpc_sns_junction.pdf used on in
-put line 57.
+<figure/analyticalmodel/current_density_all-eps-converted-to.pdf, id=116, 1156.
+32pt x 650.43pt>
+File: figure/analyticalmodel/current_density_all-eps-converted-to.pdf Graphic f
+ile (type pdf)
+
+<use figure/analyticalmodel/current_density_all-eps-converted-to.pdf>
+Package pdftex.def Info: figure/analyticalmodel/current_density_all-eps-convert
+ed-to.pdf used on input line 73.
+(pdftex.def)             Requested size: 466.62526pt x 262.46992pt.
+
+Overfull \vbox (13.61752pt too high) has occurred while \output is active []
+
+
+[4 <./figure/analyticalmodel/sns_junction-eps-converted-to.pdf>]
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 83.
+
+Underfull \vbox (badness 6001) has occurred while \output is active []
+
+
+Overfull \vbox (13.61752pt too high) has occurred while \output is active []
+
+
+[5 <./figure/analyticalmodel/current_density_all-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figure/analyticalmodel/qpc_sns_junction.ep
+s>
+(epstopdf)                    date: 2017-12-18 18:15:09
+(epstopdf)                    size: 48016 bytes
+(epstopdf)             Output file: <figure/analyticalmodel/qpc_sns_junction-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2018-01-03 11:55:44
+(epstopdf)                    size: 36351 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/analyticalmodel/qpc_
+sns_junction-eps-converted-to.pdf figure/analyticalmodel/qpc_sns_junction.eps>
+(epstopdf)             \includegraphics on input line 122.
+Package epstopdf Info: Output file is already uptodate.
+
+<figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf, id=171, 461.725p
+t x 363.3575pt>
+File: figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf Graphic file
+ (type pdf)
+
+<use figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf>
+Package pdftex.def Info: figure/analyticalmodel/qpc_sns_junction-eps-converted-
+to.pdf used on input line 122.
 (pdftex.def)             Requested size: 279.978pt x 220.32817pt.
-) (./chapter/conclusion.tex
+
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[6 <./figure/analyticalmodel/sns_junction.pdf>]
+[6 <./figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `sawT<1' on page 7 undefined on input line 153.
+
+
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[7 <./figure/analyticalmodel/qpc_sns_junction.pdf>] [8
+[7]) (./chapter/conclusion.tex
+Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-]
+[8]
 chapter 3.
 )
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[9] [10
+[9
+
+
+] [10
 
 
 ]
@@ -2173,21 +2237,25 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
  (./mainThesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
 Package rerunfilecheck Info: File `mainThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 89B44F9DF7AC2AD02ECF582D4C2C436F;595.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
+(rerunfilecheck)             Checksum: 3676B955F1D5732189F13FB121EBB8CC;495.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
- 28825 strings out of 494974
- 535890 string characters out of 6180014
- 744137 words of memory out of 5000000
- 31526 multiletter control sequences out of 15000+600000
- 27685 words of font info for 84 fonts, out of 8000000 for 9000
+ 28859 strings out of 494974
+ 536823 string characters out of 6180014
+ 746625 words of memory out of 5000000
+ 31546 multiletter control sequences out of 15000+600000
+ 29318 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  73i,11n,75p,10405b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -2205,10 +2273,10 @@ texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on mainThesis.pdf (20 pages, 656780 bytes).
+Output written on mainThesis.pdf (18 pages, 708994 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
- 37 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 

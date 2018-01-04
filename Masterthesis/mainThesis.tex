@@ -50,10 +50,9 @@ BCOR=5mm % binding correction
 \usepackage{comment}
 %\renewcommand{\comment}[1]{}  %comment not showed
 \renewcommand{\comment}[1] {\par {\bfseries \color{blue} #1 \par}} %comment showed
-
+\usepackage{epstopdf}
 \usepackage{dsfont}
 \usepackage{lipsum}
-
 %%%%macros
 \input{comfiles/macros}
 
@@ -74,7 +73,7 @@ BCOR=5mm % binding correction
 %\input{misc/synopsis_german}   %%% MANDATORY: introduction, summary and outlook (a complete synopsis) in german
 \selectlanguage{english} 		%Auswahl der Dokumentsprache
 %\input{misc/titlepage_english} %%% if the thesis is english, add a second english titlepage
-\input{misc/acknowledgements}   %%% acknowledge help from colleagues and friends 
+%\input{misc/acknowledgements}   %%% acknowledge help from colleagues and friends 
 
 \tableofcontents %Inhaltsverzeichnis
 %\listoffigures
@@ -82,7 +81,7 @@ BCOR=5mm % binding correction
 \pagestyle{scrheadings}			%%% for normal text, display section names in header line
 
 \mainmatter
-\input{chapter/overview}
+%\input{chapter/overview}
 
 \input{misc/chapterLayout}
 
