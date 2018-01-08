@@ -3,45 +3,46 @@
 \textit{This chapter intends to explain the calculation of the critical current in different SNS junctions. For this purpose, a quasiclassical transport theory is used and its foundations are explained in the first section. This technique is then employed for a clean SNS junction and an expression for the Josephson current is found. In the following section the calculations used for the clean setup are extended for the more sophisticated quantum point contact (QPC) and here as well, the current for the QPC-gated junction is found.}
 
 \section{Foundation of the quasiclassical model}
-\begin{figure}
+This section explains preliminary assumptions made to describe the current in a SNS junction. The aim is to express the current through the junction using a quasiclassical approach. Essentially, this means that the Andreev bound states are associated with straight trajectories connecting the superconducting leads. The superconducting current density is then expressed in terms of these trajectories.\\
+\begin{figure}[h]
 \centering	
 \includegraphics[width=0.6\textwidth]{figure/analyticalmodel/sns_junction}
 \caption{Schematic representation of a short and wide SNS junction.}
 \label{fig:sns_schematic}
 \end{figure}
-This section explains preliminary assumptions made to model the current in a SNS junction, a scheme of which is  shown in fig \ref{fig:sns_schematic}. The setup is two dimensional with width $W$ and length $L$ and a short and wide junction with $W \gg L$ is considered. The NS-interfaces are parallel to the $y$-axis and are placed at $x = \pm L/2$. Each of the superconducting leads has a phase $\chi_{1}$ and $\chi_{2}$ and the overall phase difference is $\chi = \chi_{1} - \chi_{2}$. The superconducting gap parameter is only present in the superconducting leads and zero in the normal region and can be expressed as
+
+The two dimensional junction, a schematic is shown in fig \ref{fig:sns_schematic}, is a short and wide junction with width $W$ and length $L$, where $W \gg L$. The NS-interfaces are parallel to the $y$-axis and are placed at $x = \pm L/2$. Each of the superconducting leads has a phase $\chi_{1}$ and $\chi_{2}$ and the overall phase difference is $\chi = \chi_{1} - \chi_{2}$. The superconducting gap parameter is only present in the superconducting leads and zero in the normal region and can be expressed as
 \begin{equation}
 \Delta\left( x \right) = |\Delta| e^{\chi_1} \Theta\left(-L/2 -x \right) + |\Delta| e^{\chi_2} \Theta\left(x-L/2 \right) 
 \label{eq:gap_parameter}
 \end{equation}
-The aim is to express the current through the junction using a quasiclassical approach. In this approach, the Andreev bound states are associated with straight trajectories connecting the superconducting leads. The superconducting current density is expressed in terms of these trajectories. We consider a ballistic sample with ballistic (BCS) coherence length $\zeta = \hbar v_F / \pi \Delta$ %TODO check!
-We assume that at this coherence length $\zeta$ is much larger than the Fermi velocity $\zeta \gg v_F$ (in order to induce superconductivity in the system?). The relation between the coherence length $\zeta$ and the sample length $L$ determines, if the considered junction is a \textit{short} or a \textit{long} junction:
+We consider the low temperature limit, where the thermal length scale of the system is smaller larger than the sample length:
+\begin{equation}
+L_T = \hbar v_F / k_B T \gg L
+\end{equation}
+The considered sample is ballistic, the fermi wavelength $\lambda_F$ is smaller than the sample length $L$. It has the BCS coherence length $\zeta = \hbar v_F / \pi \Delta$, where $\zeta$ is much larger than the Fermi velocity $\zeta \gg v_F$ 
+\textbf{TODO: (in order to induce superconductivity in the system?)}. 
+The relation between the coherence length $\zeta$ and the sample length $L$ determines, if the considered junction is a \textit{short} or a \textit{long} junction:
 \begin{eqnarray*}
 \zeta \ll L \quad \rightarrow \quad \text{long junction} \quad \rightarrow \quad \text{many Andreev levels} \\ 
 \zeta \gg L \quad \rightarrow \quad \text{short junction} \quad \rightarrow \quad \text{one Andreev level} 
 \end{eqnarray*}
-Needless to mention, the fermi wavelength $\lambda_F$ has to be smaller than the sample length $L$. 
-Now, check if this quasiclassical approach is valid. What are preliminary assumptions about the system?
-%TODO klar machen, dass jetzt die Voraussetzungen für Modell getestet werden
-The presence of magnetic field will lead to a bending of the trajectories due to the Lorentz force. Depending on the strength of magnetic field $B$ and the Fermi velocity the radius of this curve is 
+\textbf{TODO: replace equation above with good picture (E < delta, andreec levels...)}\\
+%TODO stimmt das oben? Es sollte einen Zusammenhang primaer mit Energie, nicht mit sample size geben...
+The presence of magnetic field in the normal region of the sample will lead to a bending of the trajectories due to the Lorentz force. Depending on the strength of magnetic field $B$ and the Fermi velocity the radius of this curve is 
 \begin{equation}
-r_B = ???
+r_B = \frac{m^* v_F}{e B}
 \end{equation}
-%TODO add the formula for cyclotron radius
-In order to justify the assumption of straight trajectories, either the magnetic field has to be weak enough or the Fermi wavelength has to be short enough. Then, the cyclotron radius $r_B$ is simply much smaller than the sample length $L$. 
-We consider the low temperature limit, where the thermal length scale of the system is smaller larger than the sample length:
-\begin{equation}
-L_T = \hbar v_F / k_B T \gg L
-\end{equation} 
-%TODO what do these length scales mean? Add!
+%TODO check if correct!
+In order to justify the assumption of straight trajectories, either the magnetic field has to be weak enough or the Fermi velocity (wavelength) has to be large (short) enough. Then, the cyclotron radius $r_B$ is larger than the sample size $L$ and straight trajectories are a valid assumption. 
 
 \section{Plane setup: calculation of current}
 %TODO Re-calculate current from Glazman
-To derive the current for the SNS setup depicted in figure \ref{fig:sns_schematic}, we start by writing down the Bogoliubov-de-Gennes-Hamiltonian for this system.
+To derive the current for the SNS setup depicted in figure \ref{fig:sns_schematic}, we start by writing down the Bogoliubov-de-Gennes Hamiltonian for this system.
 \begin{equation}
 \begin{pmatrix}
--\frac{1}{2m} \nabla^2 - \epsilon_F & \Delta(x) \\
-\Delta^*(x) & \frac{1}{2m} \nabla^2 + \epsilon_F 
+-\frac{\hbar^2}{2m} \nabla^2 - \epsilon_F & \Delta(x) \\
+\Delta^*(x) & \frac{\hbar^2}{2m} \nabla^2 + \epsilon_F 
 \end{pmatrix}
 \begin{pmatrix}
 \psi_e \\
@@ -52,10 +53,14 @@ To derive the current for the SNS setup depicted in figure \ref{fig:sns_schemati
 \psi_h
 \end{pmatrix}
 \end{equation}
-The expression above uses eq. (\ref{eq:gap_parameter}) for the spatially dependent superconducting gap parameter $\Delta(x)$. This Schr\"odinger equation can be solved with boundary conditions at $x = \pm L/2$ and leads to the following wave functions:
+The Hamiltonian above uses eq. (\ref{eq:gap_parameter}) for the spatially dependent superconducting gap parameter $\Delta(x)$. The eigenvalue problem has two solutions
 \begin{equation}
-\text{TODO: Insert equations!}
+\epsilon_{\pm} = \frac{\hbar^2 k^2_{\pm}}{2m} = -\epsilon_F - \sqrt{E_k^2 - |\Delta|^2}
 \end{equation}
+%The corresponding wavefunction (according to Glazman paper):
+%\begin{equation}
+%\psi_e^{n, \pm} = \frac{1}{\sqrt[WL]{}}
+%\end{equation}
 %TODO calculate current and wavefunctionsx
 \textbf{TODO: Hier fehlt die Herleitung f\"ur Wellenfunktionen, Ausdruck f\"ur den Strom etc.!}
 Current density for short and long junction limit: 
@@ -105,7 +110,7 @@ and therefore, the only contribution to the magnetic phase is
 \delta \chi = -\frac{\pi \phi (y_1 + y_2)}{W} \quad \Leftrightarrow \quad \tilde{\chi}(y_1, y_2) = \chi  -\frac{\pi \phi (y_1 + y_2)}{W}.
 \label{eq:chi_plane}
 \end{equation}
-This mean that the current phase relation in the  expression for the Josephson current from eq. (\ref{eq:josephson_current_zero_b}) for zero magnetic field has to replaced by the effective phase $\chi \rightarrow \tilde{\chi}(y_1, y_2)$ and then reads
+This mean that the current phase relation in the expression for the Josephson current from eq. (\ref{eq:josephson_current_zero_b}) for zero magnetic field has to replaced by the effective phase $\chi \rightarrow \tilde{\chi}(y_1, y_2)$ and then reads
 \begin{equation}
 J\left(\chi, \phi \right) = \frac{2 e v_F}{\pi \lambda_F L^2}  \int \int_{-W/2}^{W/2} d y_1 d y_2 \frac{\mathcal{J}(\tilde{\chi}(y_1, y_2))}{\left[ 1 + \left(\frac{y_1 - y_2}{L}\right)^2\right]^2}
 \label{eq:josephson_current}
@@ -114,7 +119,7 @@ By maximizing the Josephson current with respect to $\chi$, the critical current
 \begin{equation}
 I_c(\phi) = \text{max}_{\chi}\left\{ J(\chi, \phi) \right\}
 \end{equation}
-\textbf{Dependence on W/L ratio? Further investigations? Plot of current?}
+\textbf{Dependence on W/L ratio? Plot of current?}
 
 \section{Calculation of QPC current}
 \begin{figure}
@@ -154,7 +159,7 @@ In the limit of small transmission probability $\mathcal{T} << 1$ we use Eq.~(\r
 \begin{eqnarray}
 \frac{I_c(\phi)}{I_c(0)} &=& \frac{\mathcal{I}_2(\phi)\mathcal{I}_{3/2}(\phi)}{\mathcal{I}_2(0)\mathcal{I}_{3/2}(0)}
 \end{eqnarray}
-Here, the integrals $\mathcal{I}$ are defined as
+The integrals $\mathcal{I}$ are here defined as
 \begin{equation}
 \mathcal{I}_k(\phi) = \frac{2}{L}\int_{-W/2}^{+W/2}dy \frac{\cos\left(\frac{3\pi\phi y}{2W}\right)}{\left[1 + \left(\frac{2y}{L}\right)^2 \right]^k}
 \label{integral-qpc}

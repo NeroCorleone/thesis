@@ -1,16 +1,25 @@
 ~~~ Timeline heute ~~~
-Beschreibe plane setup:
-* Herleitung des Stroms
-* Stromausdruck
+Vormittag:
+* Andreev Reflection zusammenfassen (NS interface)
+--> vielleicht davor nochmal BCS theory auffrischen?
+--> paper von Kulik
 
-QPC beschreiben
-* Skizze (fertig)
-* Erklären, was sich ändert
-* Rechnung zusammenfa	ssen
+Nachmittag:
+--> Analytical Model:
+
+* Wellenfunktion für SNS? (motivieren, nicht herleiten)
+* Ausdruck für Stromdichte motivieren --> Streumatrixansatz
+* Ergebnisse checken für Strom
+* Ausdrücke kohärent (Variablen, Formeln, y, chi, delta chi...)
+* Plots für Strom und Ergebnisse
+* Rechnungen überprüfen und gut(!) klären, was klar ist und was nicht
+
+Neu schreiben:
+* Rechnung für QPC mit edges aufschreiben
 
 
-~~~ Timeline nächsten zwei Wochen ~~~
 
+~~~ Timeline nächsten Wochen ~~~
 Was fertig bis dahin:
 * Stand der Analytischen Berechnungen fertig zusammengefasst (bis zum 31.12.2017 ?)
 ** QPC Berechnung 

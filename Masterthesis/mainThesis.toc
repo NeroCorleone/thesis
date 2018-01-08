@@ -1,11 +1,8 @@
 \select@language {ngerman}
 \select@language {ngerman}
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {1}Things you have to know before you read my thesis...}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Analytical Model}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Foundation of the quasiclassical model}{3}{section.2.1}
 \contentsline {section}{\numberline {2.2}Plane setup: calculation of current}{4}{section.2.2}
 \contentsline {section}{\numberline {2.3}Calculation of QPC current}{6}{section.2.3}
-\contentsline {chapter}{\numberline {3}Conclusion and Outlook}{9}{chapter.3}
-\contentsline {chapter}{Bibliography}{11}{chapter.3}
-\contentsline {chapter}{\numberline {A}Appendix}{11}{appendix.A}
