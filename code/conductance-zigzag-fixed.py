@@ -14,27 +14,28 @@ import os
 from functools import partial
 import csv
 
-vbg_values = [0.25,] 
-nb_points = 10 
+vbg_values = [0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4] 
+nb_points = 400 
 vsg_values = np.linspace(-1, 0.0, nb_points)
 vlead = 0.0
 b = 0.0
 
 delta = 1.0 
-T = delta / 2
+T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5.0
 a = 0.2
 
 pot_decay = 15 
-mainpath = '/home/nefta/thesis/'
+mainpath = '/users/tkm/kanilmaz/thesis/'
 
-path_to_result = mainpath + 'results/qpc/supercurrent/' 
+path_to_result = mainpath + 'results/zigzagedge/qpc/conductance/' 
 path_to_file = mainpath +'designfiles/qpc.png'
+path_to_scatfile = mainpath +'designfiles/scatteringRegion.png'
 topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
 scattering_region = np.fliplr(1 - scipy.ndimage.imread(
-    '/home/nefta/thesis/designfiles/scatteringRegion.png', mode='L').T / 255) 
+                            path_to_scatfile, mode='L').T / 255) 
 
 #path_to_result = mainpath + 'results/wg3_2/supercurrent/' 
 #path_to_file = mainpath +'designfiles/waveguide3_2_small.png'
