@@ -79,13 +79,26 @@ The current density for the long junction limit is
 \label{fig:current_density}
 \end{figure}
 Figure \ref{fig:current_density} shows a plot of both short and long junction limit current densities. They differ for a large transmission coefficient $\mathcal{T} \simeq 1$, where in the long junction limit we observe a sawtooth like shape and in the short junction limit we have a sinusoidal shape.\\
-Using the current density the Josephson current at zero magnetic field ($\phi = 0$) can be expressed as 
+A trajectory connecting the superconducting interfaces can be parametrized by 
+\begin{equation}
+\tan \theta = \frac{y_2 - y_1}{L}
+\label{eq:parametrization}
+\end{equation}
+with $\theta$ being the angle between the trajectory and the x-axis.\\ \textbf{TODO: figure!}\\ Using the current density the Josephson current at zero magnetic field ($\phi = 0$) can be expressed as 
 \begin{equation}
 J\left(\chi, \phi=0\right) = \frac{2 e v_F}{\pi \lambda_F L^2}  \int \int_{-W/2}^{W/2} d y_1 d y_2 \frac{\mathcal{J}(\chi)}{\left[ 1 + \left(\frac{y_1 - y_2}{L}\right)^2\right]^2}
 \label{eq:josephson_current_zero_b}
 \end{equation}
 \subsection*{Including magnetic field}
-So far, the current has been derived for zero magnetic field. If a finite magnetic field is considered, the phase $\chi$ will be modified because of two effects. The magnetic phase that will be acquired along a trajectory connecting two points $y_1$ and $y_2$  leads to an additional term in the phase. Then again, \textit{the condition of zero screening current in the bulk superconducting region and the limit of} $\lambda_L \rightarrow 0$ \textit{require the superconducting phase at the interfaces to become functions of y} \textbf{TODO: ? Umschreiben!}.\\
+\textbf{Include parametrizaation of trajectories somewhere, important for calculation of magnetic phase!}\\
+So far, the current has been derived for zero magnetic field. If a finite magnetic field is considered, the phase $\chi$ will be modified because of two effects. The magnetic phase that will be acquired along a trajectory connecting two points $y_1$ and $y_2$  leads to an additional term in the phase. Then again, \textit{the condition of zero screening current in the bulk superconducting region and the limit of} $\lambda_L \rightarrow 0$ \textit{require the superconducting phase at the interfaces to become functions of y.}\\
+\textbf{TODO: Umschreiben!}\\
+\begin{eqnarray}
+\chi_{1/2} &=& \mp \frac{1}{2}\left( \chi - \frac{2 \pi B L }{\phi_0} y_{1/2}\right) \\
+\tilde{\chi}(y_1, y_2) &=& \chi_2 - \chi_1 \\
+ &=& \chi - \frac{\pi B L}{\phi_0}(y_1 + y_2)
+ \label{eq:chi}
+\end{eqnarray}
 Assuming that the London penetration depth is small to zero in the superconducting regions the following gauge for the vector potential can be used
 \begin{equation}
 \mathbf{A}=A_y \mathbf{e}_y, \quad
@@ -97,19 +110,14 @@ A_y=\left\{
 	\right.
 \label{eq:Ay}
 \end{equation}
-The gauge in eq. (\ref{eq:Ay}) will give no additional contribution to the phase on straight trajectories
+This gauge will give no additional contribution to the phase on straight trajectories
 \begin{eqnarray}
 \delta \chi &=& \frac{2 \pi}{\Phi_0} \int d \mathbf{l} \cdot \mathbf{A} \\
 &=& \frac{2 \pi}{\Phi_0} \int_{-L/2}^{L/2} \frac{dx}{\cos \theta} A_y (x) \sin \theta \\
 &=& - \frac{2 \pi B}{\Phi_0} \frac{y_2 - y_1}{L} \int_{-L/2}^{L/2} x dx \\
-&=& 0
+&=& 0, 
 \end{eqnarray}
-and therefore, the only contribution to the magnetic phase is
-\begin{equation}
-\delta \chi = -\frac{\pi \phi (y_1 + y_2)}{W} \quad \Leftrightarrow \quad \tilde{\chi}(y_1, y_2) = \chi  -\frac{\pi \phi (y_1 + y_2)}{W}.
-\label{eq:chi_plane}
-\end{equation}
-This mean that the current phase relation in the expression for the Josephson current from eq. (\ref{eq:josephson_current_zero_b}) for zero magnetic field has to replaced by the effective phase $\chi \rightarrow \tilde{\chi}(y_1, y_2)$ and then reads
+where eq~(\ref{eq:parametrization}) has been used. The total phase for this setup therefore is eq.~(\ref{eq:chi}). This mean that the current phase relation in the expression for the Josephson current from eq. (\ref{eq:josephson_current_zero_b}) for zero magnetic field has to replaced by the effective phase $\chi \rightarrow \tilde{\chi}(y_1, y_2)$ and then reads
 \begin{equation}
 J\left(\chi, \phi \right) = \frac{2 e v_F}{\pi \lambda_F L^2}  \int \int_{-W/2}^{W/2} d y_1 d y_2 \frac{\mathcal{J}(\tilde{\chi}(y_1, y_2))}{\left[ 1 + \left(\frac{y_1 - y_2}{L}\right)^2\right]^2}
 \label{eq:josephson_current}
@@ -118,7 +126,7 @@ By maximizing the Josephson current with respect to $\chi$, the critical current
 \begin{equation}
 I_c(\phi) = \text{max}_{\chi}\left\{ J(\chi, \phi) \right\}
 \end{equation}
-\textbf{Dependence on W/L ratio? Plot of current?}
+\textbf{TODO: Dependence on W/L ratio? Plot of current?}
 
 \section{Calculation of QPC current}
 \begin{figure}
@@ -143,12 +151,13 @@ With the gauge from eq. (\ref{eq:Ay}) the magnetic phase acquired within the sam
 -\frac{\pi \phi (y_1+y_2)}{2 W}.
 \label{eq:phaseQPC}
 \end{eqnarray}
-Adding this contribution to the term in \ref{eq:chi_plane} the effective phase for the QPC setup is found
+Adding this contribution to the term in eq.~(\ref{eq:chi}) the effective phase for the QPC setup is found
 \begin{equation}
 \tilde{\chi}(y_1,y_2)=\chi-\frac{3 \pi \phi }{2W}(y_1+y_2).
 \label{eq:chiQPC}
 \end{equation}
-The contribution in eq. (\ref{eq:chiQPC}) is half of the effective phase without any constriction (eq. (\ref{eq:chi_plane})). This is reasonable and can be illustrated by looking at the area contributing to the phase. Only half of the normal region is covered by all possible trajectories in the QPC case, whereas in the case without any constriction, the whole normal region contributes.\\
+The contribution in eq. (\ref{eq:chiQPC}) is half of the effective phase without any constriction, as written in eq. (\ref{eq:chi}). This is reasonable and can be illustrated by looking at the area contributing to the phase. Only half of the normal region is covered by all possible trajectories in the QPC case, whereas in the case without any constriction, the whole normal region contributes.\\
+\textbf{TODO: stimmt das da oben? warum?}\\
 One consequence of the additional gate on top of the normal region is the change in the effective phase and consequently a modified current phase relation $\mathcal{J}(\tilde{\chi}(y_1, y_2)$. Another consequence is a modified expression for the critical current. In the setup without gates, straight trajectories with a fixed angle $\theta$ were considered and summed up to a total contribution. The difference in the QPC setup is the split in the gate, which is modeled as an isotropic scattering point. The trajectories being summed up in this setup can be thought of two parts. The first part connects $y_1$ with the split at $(x, y) = (0, 0)$ and is determined by the direction of the trajectory. This is why the Fermi velocity enters in this part. The second part of the current trajectory starts from the origin and connects it with a point at the right interface $y_2$. To sum up, the  critical current in the QPC setup is
 \begin{equation}
 I_c^{\text{QPC}}(\phi) \propto \text{max}_{\chi} \int d \theta_1 v_F \cos^2 \theta_1 \int d \theta_f \cos \theta_f \mathcal{J}\left( \tilde{\chi} (\theta_1, \theta_2) \right)
@@ -176,19 +185,42 @@ At $\phi=0$ the cosine term becomes one leading to the simple expression
 &\equiv& \frac{2x}{\sqrt{1 + x^2}} \arctan x + \frac{2 x^2}{\left( 1 + x^2 \right)^{3/2}}, \quad x = W/L
 \label{Ic-0}
 \end{eqnarray}
-\textbf{TODO: check equations below one more time!} \\
 The parabolic asymptotics of the critical current at small $\phi$ is found by expanding the cosine factors in the numerator:
 \begin{eqnarray}
 \frac{I_c(\phi)}{I_{c0}}&\simeq& 1 - \frac{9\pi ^2 \phi^2 }{32} f_0(W/L) \\
-f_0(x) &=& \frac{\sqrt{x^2+1} \log \left(\sqrt{x^2+1}+x\right)}{x}- \frac{x}{x+\left(x^2+1\right) \arctan(x)} 
+f_0(x) &=& \frac{\sqrt{x^2+1} \log \left(\sqrt{x^2+1}+x\right)}{x^3} - \frac{2}{x (x+(x^2+1) \arctan x)} 
 \end{eqnarray}
 In the opposite limit of high fields, $\phi\to \infty$, we extend the integration in Eq.~(\ref{integral-qpc}) over $y_1$ and $y_2$ to $\pm \infty$ and obtain
 \begin{eqnarray}
-\frac{I_c(\phi)}{I_{c0}} &=& \frac{\left(1+x^2\right)^{3/2}}{x + \left(1+x^2\right)\arctan x}\exp\left(-\frac{3\phi\pi}{2x}\right)
+\frac{I_c(\phi)}{I_{c0}} &=& \frac{\pi^2 \left(1+x^2\right)^{3/2}}{4x\left(x + \left(1+x^2\right)\arctan x\right)}\left(1 + \frac{3 \pi \phi }{4 x} \right) \sqrt{\frac{3 \phi}{2x}}\exp\left(-\frac{3\phi\pi}{2x}\right)
 \label{large-phi}
 \end{eqnarray}
-change in magnetic phase, geometrical argument, change in current, limits etc. 
+\textbf{TODO: write this one in pretty}
 
+\newpage
+\section{QPC edge current}
+Quasiclassical model applied to edge currents.
+Parametriztion here:
+\begin{eqnarray}
+\tan \theta_1 = ~\frac{ W - y_1}{L/2}, \quad \tan \theta_2 = -\frac{W - y_2}{L/2}
+\end{eqnarray}
+Magnetic phase gain along trajectory:
+\begin{eqnarray}
+\frac{2 \pi}{\phi_0} \int d \mathbf{l} \cdot \mathbf{A} &=& \frac{2 \pi}{\phi_0} \left( \int A_y(x) |d\mathbf{l}| |\mathbf{e_y}| \sin \theta_1 + \int A_y(x) |d\mathbf{l}| |\mathbf{e_y}| \sin \theta_2  \right)\\
+%&=& \frac{2 \pi B}{\phi_0} \left( \int_{-L/2}^{0} \frac{x dx}{\cos \theta_1} \sin \theta_1  + \int_{0}^{L/2} \frac{x dx}{\cos \theta_2} \sin \theta_2 \right) \\
+&=&  - \frac{2 \pi B}{\phi_0} \left( \int_{-L/2}^{0} x dx \tan \theta_1 + \int_{0}^{L/2} x dx \tan \theta_2 \right) \\
+&=&  - \frac{\pi B}{\phi_0} \frac{L}{2} \left( - \tan \theta_1 + \tan \theta_2 \right) \\
+&=& - \frac{\pi B}{\phi_0} \frac{L}{2} \left( -2W + (y_1 + y_2) \right)\\
+&=& \pi \Phi -\frac{\pi \Phi }{2 W} (y_1 + y_2)  
+\end{eqnarray}
+Using
+\begin{equation}
+\Phi = \frac{\phi}{\phi_0}, \quad \phi = B W L
+\end{equation}
+Remember contribution from setup without any constriction eq.~(\ref{eq:chi}), adding this up leads to a total phase for the edge transmission
+\begin{equation}
+\tilde{\chi}(y_1, y_2) = \chi - \frac{3 \pi \Phi}{2\phi_0} (y_1 + y_2) + \pi \Phi 
+\end{equation}
 
 
 

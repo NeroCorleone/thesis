@@ -13,12 +13,13 @@ import queue
 import os
 from functools import partial
 import csv
+#os.system("taskset -p 0xff %d" % os.getpid())
 
-vsg_values = [-0.95]#np.round(np.arange(-0.15, -0.55, -0.1), 2) 
-vbg = 0.8 
-vlead = 0.3
-nb_points = 20 
-maxB = 0.00015  
+vsg_values = [-0.8,]#np.round(np.arange(-0.15, -0.55, -0.1), 2) 
+vbg = 0.25
+vlead = 0.0
+nb_points =  100 
+maxB = 0.00005
 magnetic_field = np.linspace(-maxB, maxB, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
@@ -32,9 +33,9 @@ a = 0.4
 
 pot_decay = 0 
 case = 'wg3_2'
-mainpath = '/home/nefta/thesis/'
+#mainpath = '/home/nefta/thesis/'
 #mainpath = '/scratch/local/kanilmaz/thesis/'
-#mainpath = '/users/tkm/kanilmaz/thesis/'
+mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb_upper': ('results/hb_upper/supercurrent/', 'designfiles/hb_upper_part.png'),
           'hb_lower': ('results/hb_lower/supercurrent/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/supercurrent/', 'designfiles/qpc_gate.png'), 
@@ -107,7 +108,8 @@ def onsite(site, par):
     return -mu + delta
 
 def onsite_lead(site, par):     
-    topgate_potential = par.v_lead
+    topgate_potential = 0.0 
+    #topgate_potential = par.v_lead
     mu = (par.v_bg + topgate_potential) / 2
     delta = - ( topgate_potential - par.v_bg) / eta
     if site.family == a1 or site.family == b1:
@@ -232,8 +234,8 @@ def super_current(scat_matrix, phi):
     
     eigenval, eigenvec = la.eigh(A.T.conj().dot(A))
     
-    #final_eigenval = delta * eigenval ** 0.5 
-    final_eigenval = delta * np.sqrt(eigenval)
+    final_eigenval = delta * eigenval ** 0.5 
+    #final_eigenval = delta * np.sqrt(eigenval)
     final_eigenvec = eigenvec.T
     
     current_complex =  np.sum(
@@ -243,11 +245,13 @@ def super_current(scat_matrix, phi):
     imag = 0.5 * delta**2 * np.imag(current_complex)
     real = 0.5 * delta**2 * np.real(current_complex)
     absval = 0.5 * delta**2 * np.abs(current_complex)
+    #return(absval)
     return((absval, real, imag))
 
 def find_max(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
-    currentPeak = max(current)
+    #currentPeak = np.amax(current)
+    currentPeak = max(current, key=lambda x: x[0])
     return(currentPeak)
 
 def max_current(system, params):
@@ -296,7 +300,8 @@ def current_vs_b(system, vsg, path=path_to_result):
     namespace_args = []
 
     for i, b in enumerate(magnetic_field):
-        namespace_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, B=b)))
+        namespace_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, t=1, gamma1=gamma, B=b)))
+        #namespace_args.append((i, SimpleNamespace(v_sg=vsg, v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, B=b)))
     for arg in namespace_args:
         param_queue.put(arg)
 
