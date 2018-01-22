@@ -7035,3 +7035,24 @@ FileNotFoundError: [Errno 2] No such file or directory: '/scratch/local/kanilmaz
 starting calculation with  50  points
 time for calculation with multiprocessing:  0:01:15.632050
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/vsg=-0.95-20171205-16:59:26/data.csv
+starting calculation with  400  points
+time for calculation:  0:02:47.040073
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/conductance/vbg=0.1-20180122-12:26:50/data.csv
+starting calculation with  400  points
+time for calculation:  0:02:53.541998
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/conductance/vbg=0.15-20180122-12:29:37/data.csv
+starting calculation with  400  points
+time for calculation:  0:03:04.633523
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/conductance/vbg=0.2-20180122-12:32:31/data.csv
+starting calculation with  400  points
+time for calculation:  0:02:40.659427
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/conductance/vbg=0.25-20180122-12:35:36/data.csv
+starting calculation with  400  points
+time for calculation:  0:02:43.615186
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/conductance/vbg=0.3-20180122-12:38:17/data.csv
+starting calculation with  400  points
+time for calculation:  0:03:06.845117
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/conductance/vbg=0.35-20180122-12:41:01/data.csv
+starting calculation with  400  points
+time for calculation:  0:03:09.210606
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/conductance/vbg=0.4-20180122-12:44:09/data.csv

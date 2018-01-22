@@ -17,8 +17,8 @@ import csv
 vsg_values = [-0.8, ]
 vbg = 0.25 
 vlead = 0.0
-nb_points = 100 
-max_b = 0.00005
+nb_points = 20 
+max_b = 0.00009
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
@@ -31,13 +31,15 @@ at = 5.0
 a = 0.4
 
 pot_decay = 15 
+#mainpath = '/users/tkm/kanilmaz/thesis/'
 mainpath = '/home/nefta/thesis/'
 
-path_to_result = mainpath + 'results/qpc/supercurrent/' 
+path_to_result = mainpath + 'results/zigzagedge/qpc/supercurrent/' 
 path_to_file = mainpath +'designfiles/qpc.png'
+path_to_scatfile = mainpath +'designfiles/scatteringRegion.png'
 topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
 scattering_region = np.fliplr(1 - scipy.ndimage.imread(
-    '/home/nefta/thesis/designfiles/scatteringRegion.png', mode='L').T / 255) 
+                            path_to_scatfile, mode='L').T / 255) 
 
 #path_to_result = mainpath + 'results/wg3_2/supercurrent/' 
 #path_to_file = mainpath +'designfiles/waveguide3_2_small.png'
@@ -75,11 +77,11 @@ potential = scipy.interpolate.RectBivariateSpline(
 
 #bilayer with zigzag edges
 sin30, cos20 = sin30, cos30 = (1/2, np.sqrt(3)/2)
-bilayer = kwant.lattice.general([(at*1, 0), (at*sin30, at*cos30)],
+zigzag = kwant.lattice.general([(at*1, 0), (at*sin30, at*cos30)],
                                  [(0, 0), (0, at/np.sqrt(3)),
                                   (0, 0), (at/2, at/(2*np.sqrt(3)))])
 
-a1, b1, a2, b2 = bilayer.sublattices
+a1, b1, a2, b2 = zigzag.sublattices
 #different hoppings for zigzag edges
 hoppings1 = (((0, 0), a1, b1), ((-1, 1), a1, b1), ((0, 1), a1, b1))
 hoppings2 = (((0, 0), a2, b2), ((1, 0), a2, b2), ((0, 1), a2, b2))
@@ -198,7 +200,7 @@ def make_system():
     sys.attach_lead(lead_2)
     sys = sys.finalized()
     sys.leads = [TRIInfiniteSystem(lead, trs) for lead in sys.leads]
-    return system
+    return sys 
 
 def superCurrent(scatMatrix, phi):
     nbModes = [len(leadInfo.momenta) for leadInfo in scatMatrix.lead_info]
@@ -331,7 +333,7 @@ def current_vs_b(system, vsg, path=path_to_result):
         for row in current_values:
             writer.writerow(list(row))
     pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
-    plotCurrentPerV(current_values, magnetic_field, pngfile)
+    plotCurrentPerV(current_values.T[0], magnetic_field, pngfile)
     print('output in', filename)
     return()
 

@@ -14,12 +14,12 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.8, ]
 vbg = 0.25 
 vlead = 0.0
-nb_points = 10 
+nb_points = 3 
 max_b = 0.00005
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
+vsg_values = np.linspace(-0.3, -0.2, 5)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
@@ -28,18 +28,18 @@ T = delta / 2
 eta = 2.5 
 gamma = 0.4
 at = 5.0
-a = 0.4
+a = 0.2
 
 pot_decay = 15 
-#mainpath = '/users/tkm/kanilmaz/thesis/' 
+#mainpath = '/users/tkm/kanilmaz/thesis/'
 mainpath = '/home/nefta/thesis/'
 
-path_to_result = mainpath + 'results/qpc/supercurrent/' 
+path_to_result = mainpath + 'results/zigzagedge/qpc/supercurrent-map/' 
 path_to_file = mainpath +'designfiles/qpc.png'
-path_to_scatfile= mainpath +'designfiles/scatteringRegion.png'
+path_to_scatfile = mainpath +'designfiles/scatteringRegion.png'
 topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
 scattering_region = np.fliplr(1 - scipy.ndimage.imread(
-    path_to_scatfile, mode='L').T / 255) 
+                            path_to_scatfile, mode='L').T / 255) 
 
 #path_to_result = mainpath + 'results/wg3_2/supercurrent/' 
 #path_to_file = mainpath +'designfiles/waveguide3_2_small.png'
@@ -75,13 +75,16 @@ potential = scipy.interpolate.RectBivariateSpline(
     ky=1
 )
 
-bilayer =  kwant.lattice.general([(at*np.sqrt(3)/2, at*1/2), (0, at*1)],
-                                 [(0, 0.0), (at*1 / (2*np.sqrt(3)), at*1/2), 
-                                  (-at*1/(2*np.sqrt(3)), at*1/2), (0, 0)])
+#bilayer with zigzag edges
+sin30, cos20 = sin30, cos30 = (1/2, np.sqrt(3)/2)
+zigzag = kwant.lattice.general([(at*1, 0), (at*sin30, at*cos30)],
+                                 [(0, 0), (0, at/np.sqrt(3)),
+                                  (0, 0), (at/2, at/(2*np.sqrt(3)))])
 
-a1, b1, a2, b2 = bilayer.sublattices
-hoppings1 = (((0, 0), a1, b1), ((0, 1), a1, b1), ((1, 0), a1, b1)) 
-hoppings2 = (((0, 0), a2, b2), ((0, -1), a2, b2), ((1, -1), a2, b2))
+a1, b1, a2, b2 = zigzag.sublattices
+#different hoppings for zigzag edges
+hoppings1 = (((0, 0), a1, b1), ((-1, 1), a1, b1), ((0, 1), a1, b1))
+hoppings2 = (((0, 0), a2, b2), ((1, 0), a2, b2), ((0, 1), a2, b2))
 
 def onsite(site, par):    
     potentialTop = par.v_sg * potential(site.pos[0], site.pos[1]) 
@@ -91,7 +94,6 @@ def onsite(site, par):
     if (site.family == a1 or site.family == b1):
         return - mu - delta #+ disorder #- edge_gap
     return -mu + delta #+ disorder  #+ edge_gap
-
 
 def onsite_lead(site, par):     
     potentialTop = par.v_lead 
@@ -162,35 +164,43 @@ class TRIInfiniteSystem(kwant.builder.InfiniteSystem):
         return prop_modes, stab_modes
 
 def make_system():
-    system = kwant.Builder()
-    scat_width= scattering_region.shape[0]
-    scat_length = scattering_region.shape[1]
-    
-    system[bilayer.shape(geomShape, (0.5*a*scat_width, 0.5*a*scat_length))] = onsite 
-    system[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer
-    system[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer
-    system[kwant.builder.HoppingKind((0, 0), a1, b2) ] = hop_inter_layer    
-      
-    trans_sym_1 = kwant.TranslationalSymmetry(bilayer.vec((-2, 1)))
-    first_lead = kwant.Builder(trans_sym_1)
-    first_lead[bilayer.shape(leadShape1, (0, 0.5*a*scat_length))] = onsite_lead
-    first_lead[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
-    first_lead[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
-    first_lead[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
-    
-    trans_sym_2 = kwant.TranslationalSymmetry(bilayer.vec((2, -1))) #?
-    second_lead = kwant.Builder(trans_sym_2)
-    second_lead[bilayer.shape(leadShape2, (0, 0.5*a*scat_length))] = onsite_lead
-    second_lead[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
-    second_lead[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
-    second_lead[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
-     
-    system.attach_lead(first_lead)
-    system.attach_lead(second_lead)
-    system = system.finalized()
-    system.leads = [TRIInfiniteSystem(lead, trs) for lead in system.leads]
-    
-    return system
+    scat_width, scat_length = scattering_region.shape
+
+    sys = kwant.Builder()
+    sys[zigzag.shape(geomShape, (0.5*a*scat_width, 0.5*a*scat_length))] = onsite
+    sys[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer
+    sys[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer
+    sys[kwant.builder.HoppingKind((0, 0), a1, b2) ] = hop_inter_layer
+
+    sym1 = kwant.TranslationalSymmetry(zigzag.vec((-1,0)))
+    sym1.add_site_family(a1, other_vectors=[(-1, 2)])
+    sym1.add_site_family(b1, other_vectors=[(-1, 2)])
+    sym1.add_site_family(a2, other_vectors=[(-1, 2)])
+    sym1.add_site_family(b2, other_vectors=[(-1, 2)])
+
+    lead_1 = kwant.Builder(sym1)
+    lead_1[zigzag.shape(leadShape1, (0, 0.5*a*scat_length))] = onsite_lead
+    lead_1[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
+    lead_1[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
+    lead_1[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
+
+    sym2 = kwant.TranslationalSymmetry(zigzag.vec((1, 0)))
+    sym2.add_site_family(a1, other_vectors=[(1, -2)])
+    sym2.add_site_family(b1, other_vectors=[(1, -2)])
+    sym2.add_site_family(a2, other_vectors=[(1, -2)])
+    sym2.add_site_family(b2, other_vectors=[(1, -2)])
+
+    lead_2 = kwant.Builder(sym2)
+    lead_2[zigzag.shape(leadShape2, (0, 0.5*a*scat_length))] = onsite_lead
+    lead_2[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
+    lead_2[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
+    lead_2[kwant.builder.HoppingKind((0,0), a1, b2)] = hop_inter_layer_lead
+
+    sys.attach_lead(lead_1)
+    sys.attach_lead(lead_2)
+    sys = sys.finalized()
+    sys.leads = [TRIInfiniteSystem(lead, trs) for lead in sys.leads]
+    return sys 
 
 def superCurrent(scatMatrix, phi):
     nbModes = [len(leadInfo.momenta) for leadInfo in scatMatrix.lead_info]
@@ -258,25 +268,29 @@ def worker(system, param_queue, result_queue):
     except queue.Empty:
         pass
 
-def plotCurrentPerV(magneticField, current, filename):
-    plt.figure(figsize=(10, 8))
-    plt.plot(current, magneticField, linestyle='None', marker='o', color='b', )
-    plt.xlabel(r'$B$', fontsize=14)
-    plt.ylabel(r'$I_c$', fontsize=14)
-    plt.savefig(filename)
+def plotHeatmap(current_values, filename):
+#TODO: ticks for x and y label?
+    fig, ax = plt.subplots(figsize=(16, 9))
+    cax = ax.imshow(np.asarray(current_values), aspect='auto')
+    cbar = fig.colorbar(cax,) 
+    cbar.set_label(r'$I_c$', fontsize=18)
+    ax.set_xlabel('B',  fontsize=18)
+    ax.set_ylabel(r'$\varphi_{SG}$', fontsize=18)
+    fig.savefig(filename)
     return
 
-
-def current_vs_b(system, vsg, path=path_to_result):
+def current_vs_b(system, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
-    system_params_names = ['vsg', 'vbg', 'maxB', 'nb_points',
-                           'decay', 'eta', 'gamma', 'a', 
+    system_params_names = ['vbg', 'vlead', 'maxB', 'nb_points',
+                           'maxVsg', 'minVsg', 'nb_points_vsg',
+                            'decay', 'eta', 'gamma', 'a', 
                            'at', 'delta', 'T', ]
-    system_params = [str(vsg), str(vbg), str(vlead), str(max_b), str(nb_points), 
+    system_params = [str(vbg), str(vlead), str(max_b), str(nb_points), 
+                    str(vsg_values[-1]), str(vsg_values[0]), str(len(vsg_values)),
                     str(pot_decay), str(eta), str(gamma), str(a), 
                     str(at), str(delta), str(T), ]
     
-    newpath = path + 'vsg=' + str(vsg) + '-' +  runtime + '/'
+    newpath = path + 'vbg=' + str(vbg) + '-' +  runtime + '/'
     if not os.path.exists(newpath):
         os.makedirs(newpath)
     system_params_file = newpath + 'params.txt'
@@ -290,8 +304,9 @@ def current_vs_b(system, vsg, path=path_to_result):
     result_queue = mp.JoinableQueue() 
     param_args = []
     
-    for i, b in enumerate(magnetic_field):
-        param_args.append((i, SimpleNamespace(v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, v_sg=vsg, B=b)))
+    for i, vsg in enumerate(vsg_values):
+        for j, b in enumerate(magnetic_field):
+            param_args.append((i, SimpleNamespace(v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, v_sg=vsg, B=b)))
     for arg in param_args:
         param_queue.put(arg)
         
@@ -315,7 +330,7 @@ def current_vs_b(system, vsg, path=path_to_result):
     print('time for calculation with multiprocessing: ', datetime.now() - timestamp)    
     sorted_results = sorted(results, key=lambda value: value[0])
     unzipped = list(zip(*sorted_results))
-    current_values = np.asarray(unzipped[1])
+    current_values = np.split(np.asarray(unzipped[1]), len(vsg_values))
         
     filename = newpath + 'data.csv' 
     with open(filename, 'w') as csvfile:
@@ -323,12 +338,11 @@ def current_vs_b(system, vsg, path=path_to_result):
         for row in current_values:
             writer.writerow(list(row))
     pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
-    plotCurrentPerV(current_values, magnetic_field, pngfile)
+    plotHeatmap(current_values, pngfile)
     print('output in', filename)
     return()
 
 system = make_system()
 
-for vsg in vsg_values:
-    current_vs_b(system, vsg)
+current_vs_b(system)
 
