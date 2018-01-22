@@ -1,11 +1,11 @@
 \chapter{Things you have to know before you read my thesis...}
 \label{ch:basics}
-
+\section{Some stuff...}
 The interface between a superconductor and a normal metal can be described with an effective 1D Bogoliubov-de-Gennes Hamiltonian, describing the superconducting order parameter with a step-like function as order parameter
 \begin{eqnarray}
 \begin{pmatrix}
--\frac{\hbar^2}{2m} \nabla^2 - \epsilon_F & \Delta(x) \\
-\Delta^*(x) & \frac{\hbar^2}{2m} \nabla^2 + \epsilon_F 
+-\frac{\hbar^2}{2m} \nabla^2 - \mu & \Delta(x) \\
+\Delta^*(x) & \frac{\hbar^2}{2m} \nabla^2 + \mu
 \end{pmatrix}
 \begin{pmatrix}
 u(x) \\
@@ -23,3 +23,25 @@ This is the so called Blonder-Tinkham-Klapwijk model and can be solved seperatel
 \end{eqnarray}
 \textbf{TODO:} electron solution because of term $e_f + E$, hole solution because of $e_f - E$ ? \\
 To find the wavefunctions for the superconducting side, we have to distinguish between propagating waves ($E > \Delta_0$) and 
+
+\section{Andreev reflection at NS interfaces}
+
+- thesis observes current flow in SNS junctions
+- how is current flow possible in these junctions?
+- model this setup with planar NS interface
+- calculate BdG Hamiltonian
+- Andreev approximation
+\begin{eqnarray}
+\begin{pmatrix}
+-\frac{\hbar^2}{2m} \nabla^2 - \mu & \Delta(x) \\
+\Delta^*(x) & \frac{\hbar^2}{2m} \nabla^2 + \mu
+\end{pmatrix}
+\begin{pmatrix}
+u(x) \\
+v(x)
+\end{pmatrix} = E 
+\begin{pmatrix}
+u(x)\\
+v(x)
+\end{pmatrix}, \quad \Delta(x) = \Delta_0 e^{i \phi} \theta(x)
+\end{eqnarray}
