@@ -1,0 +1,11 @@
+vbg, 0.7
+vlead, 0.6
+b, 0
+nb_points, 10
+decay, 20
+eta, 2.5
+gamma, 0.4
+a, 0.2
+at, 5
+delta, 1.0
+T, 0.05

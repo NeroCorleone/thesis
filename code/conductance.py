@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-nb_points = 100
+nb_points = 10 
 splitgate_voltage = np.linspace(-1.0, 0.0, nb_points)
 vbg_values = [0.7 ]#np.round(np.linspace(0.4, 0.9, 5), 2) 
 phase = (-np.pi, np.pi) 
@@ -29,7 +29,8 @@ a = 0.2
 
 pot_decay = 20 
 case = 'wg3_2'
-mainpath = '/users/tkm/kanilmaz/thesis/'
+mainpath = '/home/nefta/thesis/'
+#mainpath = '/users/tkm/kanilmaz/thesis/'
 setups = {'hb': ('results/hb/conductance/', 'designfiles/halfBarrier.png'),
           'hb_lower': ('results/hb_lower/conductance/', 'designfiles/hb_lower_part.png'),
           'qpc': ('results/qpc/conductance/', 'designfiles/qpc_gate.png'), 
@@ -263,7 +264,7 @@ def calculate_conductance(system, vbg, b=0, path=path_to_result):
     sorted_results = sorted(results, key=lambda value: value[0])
     unzipped = list(zip(*sorted_results))
     conductance_values = np.asarray(unzipped[1])
-
+    print(conductance_values)
     filename = newpath + 'data.csv'
     with open(filename, 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=' ')
