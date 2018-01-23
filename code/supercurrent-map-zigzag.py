@@ -31,8 +31,8 @@ at = 5.0
 a = 0.4
 
 pot_decay = 15 
-mainpath = '/users/tkm/kanilmaz/thesis/'
-#mainpath = '/home/nefta/thesis/'
+#mainpath = '/users/tkm/kanilmaz/thesis/'
+mainpath = '/home/nefta/thesis/'
 
 path_to_result = mainpath + 'results/zigzagedge/qpc/supercurrent-map/' 
 path_to_file = mainpath +'designfiles/qpc.png'
@@ -238,16 +238,16 @@ def superCurrent(scatMatrix, phi):
         for val, vec in zip(finalEigenVal, finalEigenVec)
     )
     #current = 0.5 * delta ** 2 * np.real(current_complex)
-    imag = 0.5 * delta ** 2 * np.imag(current_complex)
+    #imag = 0.5 * delta ** 2 * np.imag(current_complex)
     real = 0.5 * delta ** 2 * np.real(current_complex)
-    absval = 0.5 * delta ** 2 * np.abs(current_complex)
+    #absval = 0.5 * delta ** 2 * np.abs(current_complex)
     
-    return((absval, real, imag)) 
+    return real
 
 def findMax(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
-    currentPeak = max(current, key=lambda x: x[2])
-    #currentPeak = np.amax(current)
+    #currentPeak = max(current, key=lambda x: x[2])
+    currentPeak = np.amax(current)
     return(currentPeak)
 
 
@@ -306,7 +306,7 @@ def current_vs_b(system, path=path_to_result):
     
     for i, vsg in enumerate(vsg_values):
         for j, b in enumerate(magnetic_field):
-            param_args.append((i, SimpleNamespace(v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, v_sg=vsg, B=b)))
+            param_args.append(((i, j), SimpleNamespace(v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, v_sg=vsg, B=b)))
     for arg in param_args:
         param_queue.put(arg)
         
