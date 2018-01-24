@@ -16,10 +16,10 @@ import csv
 
 vbg = 0.2 
 vlead = 0.0
-nb_points = 6 
+nb_points = 10  
 max_b = 0.00009
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
-vsg_values = np.linspace(0.0, -0.2, 5)
+vsg_values = np.linspace(0.0, -0.05, 10)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
@@ -31,8 +31,8 @@ at = 5.0
 a = 0.4
 
 pot_decay = 15 
-#mainpath = '/users/tkm/kanilmaz/thesis/'
-mainpath = '/home/nefta/thesis/'
+mainpath = '/users/tkm/kanilmaz/thesis/'
+#mainpath = '/home/nefta/thesis/'
 
 path_to_result = mainpath + 'results/zigzagedge/qpc/supercurrent-map/' 
 path_to_file = mainpath +'designfiles/qpc.png'
@@ -271,7 +271,7 @@ def worker(system, param_queue, result_queue):
 def plotHeatmap(current_values, filename):
 #TODO: ticks for x and y label?
     fig, ax = plt.subplots(figsize=(16, 9))
-    cax = ax.imshow(np.asarray(current_values), aspect='auto')
+    cax = ax.imshow(np.asarray(current_values), interpolation='None', aspect='auto')
     cbar = fig.colorbar(cax,) 
     cbar.set_label(r'$I_c$', fontsize=18)
     ax.set_xlabel('B',  fontsize=18)

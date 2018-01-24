@@ -7056,3 +7056,35 @@ output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/conductance/vbg=0.35
 starting calculation with  400  points
 time for calculation:  0:03:09.210606
 output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/conductance/vbg=0.4-20180122-12:44:09/data.csv
+starting calculation with  500  points
+starting calculation with  500  points
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:19:11.094414
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.0-20180123-11:57:05/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:19:02.350102
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.01-20180123-12:16:17/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:18:49.847091
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.02-20180123-12:35:19/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:18:46.990574
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.03-20180123-12:54:09/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:19:15.372695
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.04-20180123-13:12:57/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:19:16.069717
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.05-20180123-13:32:12/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:19:17.268458
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.06-20180123-13:51:29/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:19:12.477279
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.07-20180123-14:10:46/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:19:16.759539
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.08-20180123-14:29:59/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:18:56.075911
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.09-20180123-14:49:16/data.csv
