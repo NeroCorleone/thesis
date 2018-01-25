@@ -14,10 +14,10 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.0, -0.1]#np.arange(-0.0, -0.1, -0.01)
+vsg_values = [-0.1, -0.2]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.2 
 vlead = 0.0
-nb_points = 10 
+nb_points = 500 
 max_b = 0.00009
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
@@ -31,8 +31,8 @@ at = 5.0
 a = 0.4
 
 pot_decay = 15 
-#mainpath = '/users/tkm/kanilmaz/thesis/'
-mainpath = '/home/nefta/thesis/'
+mainpath = '/users/tkm/kanilmaz/thesis/'
+#mainpath = '/home/nefta/thesis/'
 
 path_to_result = mainpath + 'results/qpc/supercurrent/' 
 path_to_file = mainpath +'designfiles/qpc.png'

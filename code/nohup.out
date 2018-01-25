@@ -7092,3 +7092,17 @@ output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.
   if self._edgecolors == str('face'):
 time for calculation with multiprocessing:  1 day, 7:00:27.507849
 output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent-map/vbg=0.2-20180123-11:49:52/data.csv
+Traceback (most recent call last):
+  File "supercurrent-zigzag-fixed.py", line 344, in <module>
+    system = make_system()
+  File "supercurrent-zigzag-fixed.py", line 203, in make_system
+    sys.attach_lead(lead_1)
+  File "/usr/lib/python3/dist-packages/kwant/builder.py", line 1138, in attach_lead
+    raise ValueError('Builder does not interrupt the lead,'
+ValueError: Builder does not interrupt the lead, this lead cannot be attached.
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:15:32.802121
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.1-20180125-17:59:21/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:15:32.106546
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.2-20180125-18:14:55/data.csv
