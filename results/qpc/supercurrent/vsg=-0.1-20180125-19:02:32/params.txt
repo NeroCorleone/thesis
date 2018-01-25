@@ -1,10 +1,8 @@
+vsg, -0.1
 vbg, 0.2
 vlead, 0.0
-maxB, 9e-05
-nb_points, 5
-maxVsg, -0.05
-minVsg, 0.0
-nb_points_vsg, 10
+maxB, 5e-05
+nb_points, 50
 decay, 15
 eta, 2.5
 gamma, 0.4

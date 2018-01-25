@@ -13,74 +13,52 @@ import queue
 import os
 from functools import partial
 import csv
+import scipy.sparse.linalg as sla
 
-vsg_values = [-0.1, -0.2]#np.arange(-0.0, -0.1, -0.01)
-vbg = 0.2 
-vlead = 0.0
-nb_points = 50
+nb_points = 100 
 max_b = 0.00005
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
+vsg_values = [-0.8, ]#[-0.2, -0.3, -0.325, -0.35, -0.375, -0.4, -0.45, -0.5, -0.55, -0.6]
+backgate_voltage = 0.25 
+
+### needed for current calculation and make_system()
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
 delta = 1.0 
-T = delta / 20
+T = delta / 2
 eta = 2.5 
 gamma = 0.4
+
 at = 5.0
 a = 0.4
 
-pot_decay = 15 
-#mainpath = '/users/tkm/kanilmaz/thesis/'
-mainpath = '/home/nefta/thesis/'
+topgate = 1 - scipy.ndimage.imread(
+        '/users/tkm/kanilmaz/thesis/designfiles/qpc.png')[:, :, 0].T / 255
+    #'/users/tkm/kanilmaz/thesis/designfiles/waveguide3_2_small.png', mode='L').T / 255
+    #'/users/tkm/kanilmaz/Dropbox/master/delft_code/supercurrent/BLG-SNS/code/QPC_device_top_gate.png')[:, :, 0].T / 255
+    #'/home/nefta/Dropbox/master/delft_code/supercurrent/BLG-SNS/code/QPC_device_top_gate.png')[:, :, 0].T / 255
 
-path_to_result = mainpath + 'results/qpc/supercurrent/' 
-path_to_file = mainpath +'designfiles/qpc.png'
-path_to_scatfile = mainpath +'designfiles/scatteringRegion.png'
-topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
-scattering_region = np.fliplr(1 - scipy.ndimage.imread(
-                            path_to_scatfile, mode='L').T / 255) 
-
-#path_to_result = mainpath + 'results/wg3_2/supercurrent/' 
-#path_to_file = mainpath +'designfiles/waveguide3_2_small.png'
-#topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
-#scattering_region = np.ones(topgate.shape)
-"""
-case = 'wg3_2'
-setups = {'wg3_2': ('results/wg3_2/supercurrent/', 'designfiles/waveguide3_2_small.png')}
-
-path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1]) 
-
-read_files = {
-        'wg3_2': scipy.ndimage.imread(mainpath + setups['wg3_2'][1], mode='L') / 255, 
-        }
-
-topgate = 1 - read_files[case]
-
-scat_file = mainpath + 'designfiles/scatteringRegions.png'
-
-scattering_cases = {
-        'wg3_2': np.ones(topgate.shape)
-        }
-
-scattering_region = scattering_cases[case]
-"""
-topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
+scatteringGeom = 1 - scipy.misc.imread(
+        '/users/tkm/kanilmaz/thesis/designfiles/scatteringRegion.png')[:,:,0].T / 255
+#        '/users/tkm/kanilmaz/Dropbox/master/code/halfBarrier/designfiles/scatteringRegion.png')[:, :, 0].T / 255
+    #'/home/nefta/Dropbox/master/code/halfBarrier/designfiles/scatteringRegion.png')[:, :, 0].T / 255
+#scatteringGeom = np.ones(topgate.shape)
+topgateGauss = scipy.ndimage.gaussian_filter(topgate, 20)
 
 potential = scipy.interpolate.RectBivariateSpline(
-    x=(a*np.arange(topgate_gauss.shape[0])),
-    y=(a*np.arange(topgate_gauss.shape[1])),
-    z=topgate_gauss, 
+    x=(a*np.arange(topgateGauss.shape[0])),
+    y=(a*np.arange(topgateGauss.shape[1])),
+    z=topgateGauss, 
     kx=1,
     ky=1
 )
 
-
 bilayer =  kwant.lattice.general([(at*np.sqrt(3)/2, at*1/2), (0, at*1)],
                                  [(0, 0.0), (at*1 / (2*np.sqrt(3)), at*1/2), 
                                   (-at*1/(2*np.sqrt(3)), at*1/2), (0, 0)])
+
 a1, b1, a2, b2 = bilayer.sublattices
-#different hoppings for bilayer edges
 hoppings1 = (((0, 0), a1, b1), ((0, 1), a1, b1), ((1, 0), a1, b1)) 
 hoppings2 = (((0, 0), a2, b2), ((0, -1), a2, b2), ((1, -1), a2, b2))
 
@@ -93,8 +71,9 @@ def onsite(site, par):
         return - mu - delta #+ disorder #- edge_gap
     return -mu + delta #+ disorder  #+ edge_gap
 
+
 def onsite_lead(site, par):     
-    potentialTop = par.v_lead 
+    potentialTop = 0
     mu = (par.v_bg + potentialTop) / 2
     delta = - ( potentialTop - par.v_bg) / eta 
     # site.family in (a1, b1)
@@ -108,7 +87,7 @@ def geomShape(pos):
         return False
     try:
         # rather round()?
-        return scattering_region[int(pos[0] / a), int(pos[1] / a)]
+        return scatteringGeom[int(pos[0] / a), int(pos[1] / a)]
     except IndexError:
         return False
 
@@ -131,7 +110,7 @@ def leadShape1(pos):
     if y < 0:
         return False
     try:
-        return scattering_region[0, int(y / a)]
+        return scatteringGeom[0, int(y / a)]
     except IndexError:
         return False
     
@@ -140,7 +119,7 @@ def leadShape2(pos):
     if y < 0:
         return False
     try:
-        return scattering_region[-1, int(y / a)]
+        return scatteringGeom[-1, int(y / a)]
     except IndexError:
         return False
 
@@ -163,37 +142,45 @@ class TRIInfiniteSystem(kwant.builder.InfiniteSystem):
 
 def make_system():
     system = kwant.Builder()
-    scat_width = scattering_region.shape[0]
-    scat_length = scattering_region.shape[1]
-
-    system[bilayer.shape(geomShape, (0.5*a*scat_width, 0.5*a*scat_length))] = onsite 
+    
+    #width, length = scatt....shape
+    scatWidth = scatteringGeom.shape[0]
+    scatLength = scatteringGeom.shape[1]
+    
+    #potential for scattering region
+    system[bilayer.shape(geomShape, (0.5*a*scatWidth, 0.5*a*scatLength))] = onsite 
+    #hopping matrix elements for hopping within layer (intra) or hopping between two layers (inter) (?)
     system[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer
     system[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer
     system[kwant.builder.HoppingKind((0, 0), a1, b2) ] = hop_inter_layer    
-
-    trans_sym_1 = kwant.TranslationalSymmetry(bilayer.vec((-2, 1)))
-    lead_1 = kwant.Builder(trans_sym_1)
-    lead_1[bilayer.shape(leadShape1, (0, 0.5*a*scat_length))] = onsite_lead
-    lead_1[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
-    lead_1[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
-    lead_1[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
+      
+    #define first lead
+    transSym1 = kwant.TranslationalSymmetry(bilayer.vec((-2, 1)))
+    firstLead = kwant.Builder(transSym1)
+    firstLead[bilayer.shape(leadShape1, (0, 0.5*a*scatLength))] = onsite_lead
+    firstLead[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
+    firstLead[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
+    firstLead[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
     
-    system.attach_lead(lead_1)
-
-    trans_sym_2 = kwant.TranslationalSymmetry(bilayer.vec((2, -1))) #?
-    lead_2 = kwant.Builder(trans_sym_2)
-    lead_2[bilayer.shape(leadShape2, (0, 0.5*a*scat_length))] = onsite_lead
-    lead_2[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
-    lead_2[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
-    lead_2[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
+    #define second lead
+    transSym2 = kwant.TranslationalSymmetry(bilayer.vec((2, -1))) #?
+    secondLead = kwant.Builder(transSym2)
+    secondLead[bilayer.shape(leadShape2, (0, 0.5*a*scatLength))] = onsite_lead
+    secondLead[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
+    secondLead[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
+    secondLead[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
      
-    system.attach_lead(lead_2)
+    system.attach_lead(firstLead)
+    system.attach_lead(secondLead)
     system = system.finalized()
-    system.leads = [TRIInfiniteSystem(lead, trs) for lead in system.leads]#
-    return system 
+    system.leads = [TRIInfiniteSystem(lead, trs) for lead in system.leads]
+    
+    return system
 
-def superCurrent(scatMatrix, phi):
+### Supercurrent calculation
+def superCurrent(scatMatrix, delta, T, phi):
     nbModes = [len(leadInfo.momenta) for leadInfo in scatMatrix.lead_info]
+    #print(nbModes)
     scatData = scatMatrix.data
     
     dim1 = int(nbModes[0]/2)
@@ -217,43 +204,54 @@ def superCurrent(scatMatrix, phi):
     
     dA_total = np.array((dA.T.conj()).dot(A) + (A.T.conj()).dot(dA))
     
-    eigenval, eigenvec = la.eigh(A.T.conj().dot(A))
+    eigenVal, eigenVec = la.eigh(A.T.conj().dot(A))
     
-    #finalEigenVal = delta * eigenVal ** 0.5 
-    finalEigenVal = delta * np.sqrt(eigenval)
-    finalEigenVec = eigenvec.T
+    finalEigenVal = delta * eigenVal ** 0.5 
+    finalEigenVec = eigenVec.T
     
-    current_complex =  np.sum(
+    currentImag =  np.sum(
         (vec.T.conj().dot(dA_total.dot(vec)) * np.tanh(val/T)/val)
         for val, vec in zip(finalEigenVal, finalEigenVec)
     )
-    #current = 0.5 * delta ** 2 * np.real(current_complex)
-    #imag = 0.5 * delta ** 2 * np.imag(current_complex)
-    #real = 0.5 * delta ** 2 * np.real(current_complex)
-    absval = 0.5 * delta ** 2 * np.abs(current_complex)
+    current = 0.5 * delta ** 2 * np.real(currentImag)
     
-    #return((absval, real, imag)) 
-    return absval
+    return current
 
 def findMax(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
-    #currentPeak = max(current, key=lambda x: x[2])
     currentPeak = np.amax(current)
     return(currentPeak)
 
 
 def maxCurrent(system, params):
-    (pos, par) = params
+    (phase, delta, T, namespace_arg) = params
+    pos, par = namespace_arg
     scatMatrix = kwant.smatrix(system, energy=0.0, args=[par])
-    func = partial(superCurrent, scatMatrix )
+    func = partial(superCurrent, scatMatrix, delta, T)
     currentPeak = findMax(func, phase[0], phase[-1])
-    return((pos, currentPeak))
+    return((pos,currentPeak))
 
 def worker(system, param_queue, result_queue):
     try:
         while True:
             params = param_queue.get(block=False)
             result = maxCurrent(system, params)
+            result_queue.put(result)
+            param_queue.task_done()
+    except queue.Empty:
+        pass
+
+def eigenvalues(system, params):
+    count, par = params
+    hamilton = system.hamiltonian_submatrix(args=[params], sparse=True)
+    ev = sla.eigsh(hamilton, k=15, which='SM', return_eigenvectors=False)
+    return(ev)
+
+def worker_bands(system, param_queue, result_queue):
+    try:
+        while True:
+            params = param_queue.get(block=False)
+            result = eigenvalues(system, params)
             result_queue.put(result)
             param_queue.task_done()
     except queue.Empty:
@@ -267,16 +265,18 @@ def plotCurrentPerV(magneticField, current, filename):
     plt.savefig(filename)
     return
 
+#### Creating system
+system = make_system()
 
-def current_vs_b(system, vsg, path=path_to_result):
+def current_vs_b(vsg):
+    ### Create directory to store data in:
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
-    system_params_names = ['vsg', 'vbg', 'vlead', 'maxB', 'nb_points',
-                           'decay', 'eta', 'gamma', 'a', 
-                           'at', 'delta', 'T', ]
-    system_params = [str(vsg), str(vbg), str(vlead), str(max_b), str(nb_points), 
-                    str(pot_decay), str(eta), str(gamma), str(a), 
-                    str(at), str(delta), str(T), ]
+    path = '/users/tkm/kanilmaz/code/qpc/current_vs_b/' 
+    #path = '/home/nefta/code/qpc/current_vs_b/' 
+    system_params_names = ['vsg', 'backgate_voltage', 'maxB', 'nb_points', 'eta', 'gamma', 'a', 'at', 'delta', 'T', ]
+    system_params = [str(vsg), str(backgate_voltage), str(max_b), str(nb_points), str(eta), str(gamma), str(a), str(at), str(delta), str(T), ]
     
+    #newpath = path + system_params + runtime + '/'
     newpath = path + 'vsg=' + str(vsg) + '-' +  runtime + '/'
     if not os.path.exists(newpath):
         os.makedirs(newpath)
@@ -289,12 +289,14 @@ def current_vs_b(system, vsg, path=path_to_result):
 
     param_queue = mp.JoinableQueue()
     result_queue = mp.JoinableQueue() 
-    param_args = []
+    namespace_args = []
+    count = 0
     
-    for i, b in enumerate(magnetic_field):
-        param_args.append((i, SimpleNamespace(v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, v_sg=vsg, B=b)))
-    for arg in param_args:
-        param_queue.put(arg)
+    for b in magnetic_field:
+        namespace_args.append((count, SimpleNamespace(v_bg=backgate_voltage, t=1, gamma1=gamma, v_sg=vsg, B=b)))
+        count +=1
+    for arg in namespace_args:
+        param_queue.put((phase, delta, T, arg))
         
     timestamp = datetime.now()
     print('starting calculation with ', len(magnetic_field),' points')
@@ -313,23 +315,27 @@ def current_vs_b(system, vsg, path=path_to_result):
             results.append(result_queue.get(block=False))
     except queue.Empty:
         pass
+    
     print('time for calculation with multiprocessing: ', datetime.now() - timestamp)    
+        
     sorted_results = sorted(results, key=lambda value: value[0])
+    
     unzipped = list(zip(*sorted_results))
     current_values = np.asarray(unzipped[1])
         
     filename = newpath + 'data.csv' 
+    print(current_values)
+        
     with open(filename, 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=' ')
-        for row in current_values:
-            writer.writerow(list(row))
-    pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
-    plotCurrentPerV(current_values.T[0], magnetic_field, pngfile)
+        writer.writerow(current_values)
+                
     print('output in', filename)
+        
+    pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
+    plotCurrentPerV(current_values, magnetic_field, pngfile)
     return()
 
-system = make_system()
-
 for vsg in vsg_values:
-    current_vs_b(system, vsg)
+    current_vs_b(vsg)
 
