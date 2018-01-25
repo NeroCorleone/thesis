@@ -34,7 +34,7 @@ pot_decay = 15
 mainpath = '/users/tkm/kanilmaz/thesis/'
 #mainpath = '/home/nefta/thesis/'
 
-path_to_result = mainpath + 'results/zigzagedge/qpc/supercurrent-map/' 
+path_to_result = mainpath + 'results/qpc/supercurrent-map/' 
 path_to_file = mainpath +'designfiles/qpc.png'
 path_to_scatfile = mainpath +'designfiles/scatteringRegion.png'
 topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
@@ -75,16 +75,14 @@ potential = scipy.interpolate.RectBivariateSpline(
     ky=1
 )
 
-#bilayer with zigzag edges
-sin30, cos20 = sin30, cos30 = (1/2, np.sqrt(3)/2)
-zigzag = kwant.lattice.general([(at*1, 0), (at*sin30, at*cos30)],
-                                 [(0, 0), (0, at/np.sqrt(3)),
-                                  (0, 0), (at/2, at/(2*np.sqrt(3)))])
+bilayer =  kwant.lattice.general([(at*np.sqrt(3)/2, at*1/2), (0, at*1)],
+                                 [(0, 0.0), (at*1 / (2*np.sqrt(3)), at*1/2), 
+                                  (-at*1/(2*np.sqrt(3)), at*1/2), (0, 0)])
 
-a1, b1, a2, b2 = zigzag.sublattices
-#different hoppings for zigzag edges
-hoppings1 = (((0, 0), a1, b1), ((-1, 1), a1, b1), ((0, 1), a1, b1))
-hoppings2 = (((0, 0), a2, b2), ((1, 0), a2, b2), ((0, 1), a2, b2))
+a1, b1, a2, b2 = bilayer.sublattices
+
+hoppings1 = (((0, 0), a1, b1), ((0, 1), a1, b1), ((1, 0), a1, b1)) 
+hoppings2 = (((0, 0), a2, b2), ((0, -1), a2, b2), ((1, -1), a2, b2))
 
 def onsite(site, par):    
     potentialTop = par.v_sg * potential(site.pos[0], site.pos[1]) 
@@ -167,31 +165,31 @@ def make_system():
     scat_width, scat_length = scattering_region.shape
 
     sys = kwant.Builder()
-    sys[zigzag.shape(geomShape, (0.5*a*scat_width, 0.5*a*scat_length))] = onsite
+    sys[bilayer.shape(geomShape, (0.5*a*scat_width, 0.5*a*scat_length))] = onsite
     sys[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer
     sys[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer
     sys[kwant.builder.HoppingKind((0, 0), a1, b2) ] = hop_inter_layer
 
-    sym1 = kwant.TranslationalSymmetry(zigzag.vec((-1,0)))
+    sym1 = kwant.TranslationalSymmetry(bilayer.vec((-1,0)))
     sym1.add_site_family(a1, other_vectors=[(-1, 2)])
     sym1.add_site_family(b1, other_vectors=[(-1, 2)])
     sym1.add_site_family(a2, other_vectors=[(-1, 2)])
     sym1.add_site_family(b2, other_vectors=[(-1, 2)])
 
     lead_1 = kwant.Builder(sym1)
-    lead_1[zigzag.shape(leadShape1, (0, 0.5*a*scat_length))] = onsite_lead
+    lead_1[bilayer.shape(leadShape1, (0, 0.5*a*scat_length))] = onsite_lead
     lead_1[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
     lead_1[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
     lead_1[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
 
-    sym2 = kwant.TranslationalSymmetry(zigzag.vec((1, 0)))
+    sym2 = kwant.TranslationalSymmetry(bilayer.vec((1, 0)))
     sym2.add_site_family(a1, other_vectors=[(1, -2)])
     sym2.add_site_family(b1, other_vectors=[(1, -2)])
     sym2.add_site_family(a2, other_vectors=[(1, -2)])
     sym2.add_site_family(b2, other_vectors=[(1, -2)])
 
     lead_2 = kwant.Builder(sym2)
-    lead_2[zigzag.shape(leadShape2, (0, 0.5*a*scat_length))] = onsite_lead
+    lead_2[bilayer.shape(leadShape2, (0, 0.5*a*scat_length))] = onsite_lead
     lead_2[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
     lead_2[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
     lead_2[kwant.builder.HoppingKind((0,0), a1, b2)] = hop_inter_layer_lead
