@@ -14,10 +14,10 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.1, -0.2]#np.arange(-0.0, -0.1, -0.01)
+vsg_values = [-0.2,]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.2 
 vlead = 0.0
-nb_points = 50
+nb_points = 100 
 max_b = 0.00005
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
@@ -237,8 +237,8 @@ def superCurrent(scatMatrix, phi):
 
 def findMax(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
-    #currentPeak = max(current, key=lambda x: x[2])
-    currentPeak = np.amax(current)
+    currentPeak = max(current, key=lambda x: x[0])
+    #currentPeak = np.amax(current)
     return(currentPeak)
 
 
