@@ -7088,3 +7088,7 @@ output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.
 starting calculation with  500  points
 time for calculation with multiprocessing:  0:18:56.075911
 output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent/vsg=-0.09-20180123-14:49:16/data.csv
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+time for calculation with multiprocessing:  1 day, 7:00:27.507849
+output in /users/tkm/kanilmaz/thesis/results/zigzagedge/qpc/supercurrent-map/vbg=0.2-20180123-11:49:52/data.csv
