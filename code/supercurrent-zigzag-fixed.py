@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-vsg_values = np.arange(-0.0, -0.1, -0.01)
+vsg_values = [-0.0, -0.1]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.2 
 vlead = 0.0
 nb_points = 500 
@@ -76,11 +76,15 @@ potential = scipy.interpolate.RectBivariateSpline(
 )
 
 #bilayer with zigzag edges
-sin30, cos20 = sin30, cos30 = (1/2, np.sqrt(3)/2)
-zigzag = kwant.lattice.general([(at*1, 0), (at*sin30, at*cos30)],
-                                 [(0, 0), (0, at/np.sqrt(3)),
-                                  (0, 0), (at/2, at/(2*np.sqrt(3)))])
+#sin30, cos20 = sin30, cos30 = (1/2, np.sqrt(3)/2)
+#zigzag = kwant.lattice.general([(at*1, 0), (at*sin30, at*cos30)],
+#                                 [(0, 0), (0, at/np.sqrt(3)),
+#                                  (0, 0), (at/2, at/(2*np.sqrt(3)))])
 
+#This is not zigzag, this is armchair below. Delelte after testing!
+zigzag =  kwant.lattice.general([(at*np.sqrt(3)/2, at*1/2), (0, at*1)],
+                                 [(0, 0.0), (at*1 / (2*np.sqrt(3)), at*1/2), 
+                                  (-at*1/(2*np.sqrt(3)), at*1/2), (0, 0)])
 a1, b1, a2, b2 = zigzag.sublattices
 #different hoppings for zigzag edges
 hoppings1 = (((0, 0), a1, b1), ((-1, 1), a1, b1), ((0, 1), a1, b1))
@@ -279,7 +283,7 @@ def plotCurrentPerV(magneticField, current, filename):
 
 def current_vs_b(system, vsg, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
-    system_params_names = ['vsg', 'vbg', 'maxB', 'nb_points',
+    system_params_names = ['vsg', 'vbg', 'vlead', 'maxB', 'nb_points',
                            'decay', 'eta', 'gamma', 'a', 
                            'at', 'delta', 'T', ]
     system_params = [str(vsg), str(vbg), str(vlead), str(max_b), str(nb_points), 
