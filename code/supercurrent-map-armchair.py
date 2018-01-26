@@ -16,10 +16,10 @@ import csv
 
 vbg = 0.2 
 vlead = 0.0
-nb_points = 10  
+nb_points = 500 
 max_b = 0.00009
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
-vsg_values = np.linspace(0.0, -0.05, 10)
+vsg_values = np.linspace(-0.0375, -0.05, 25)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
@@ -162,43 +162,35 @@ class TRIInfiniteSystem(kwant.builder.InfiniteSystem):
         return prop_modes, stab_modes
 
 def make_system():
-    scat_width, scat_length = scattering_region.shape
+    system = kwant.Builder()
+    scat_width = scattering_region.shape[0]
+    scat_length = scattering_region.shape[1]
 
-    sys = kwant.Builder()
-    sys[bilayer.shape(geomShape, (0.5*a*scat_width, 0.5*a*scat_length))] = onsite
-    sys[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer
-    sys[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer
-    sys[kwant.builder.HoppingKind((0, 0), a1, b2) ] = hop_inter_layer
+    system[bilayer.shape(geomShape, (0.5*a*scat_width, 0.5*a*scat_length))] = onsite 
+    system[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer
+    system[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer
+    system[kwant.builder.HoppingKind((0, 0), a1, b2) ] = hop_inter_layer    
 
-    sym1 = kwant.TranslationalSymmetry(bilayer.vec((-1,0)))
-    sym1.add_site_family(a1, other_vectors=[(-1, 2)])
-    sym1.add_site_family(b1, other_vectors=[(-1, 2)])
-    sym1.add_site_family(a2, other_vectors=[(-1, 2)])
-    sym1.add_site_family(b2, other_vectors=[(-1, 2)])
-
-    lead_1 = kwant.Builder(sym1)
+    trans_sym_1 = kwant.TranslationalSymmetry(bilayer.vec((-2, 1)))
+    lead_1 = kwant.Builder(trans_sym_1)
     lead_1[bilayer.shape(leadShape1, (0, 0.5*a*scat_length))] = onsite_lead
     lead_1[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
     lead_1[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
-    lead_1[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
+    lead_1[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead 
 
-    sym2 = kwant.TranslationalSymmetry(bilayer.vec((1, 0)))
-    sym2.add_site_family(a1, other_vectors=[(1, -2)])
-    sym2.add_site_family(b1, other_vectors=[(1, -2)])
-    sym2.add_site_family(a2, other_vectors=[(1, -2)])
-    sym2.add_site_family(b2, other_vectors=[(1, -2)])
-
-    lead_2 = kwant.Builder(sym2)
+    trans_sym_2 = kwant.TranslationalSymmetry(bilayer.vec((2, -1))) #?
+    lead_2 = kwant.Builder(trans_sym_2)
     lead_2[bilayer.shape(leadShape2, (0, 0.5*a*scat_length))] = onsite_lead
     lead_2[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings1]] = hop_intra_layer_lead
     lead_2[[kwant.builder.HoppingKind(*hopping) for hopping in hoppings2]] = hop_intra_layer_lead
-    lead_2[kwant.builder.HoppingKind((0,0), a1, b2)] = hop_inter_layer_lead
+    lead_2[kwant.builder.HoppingKind((0, 0), a1, b2)] = hop_inter_layer_lead
 
-    sys.attach_lead(lead_1)
-    sys.attach_lead(lead_2)
-    sys = sys.finalized()
-    sys.leads = [TRIInfiniteSystem(lead, trs) for lead in sys.leads]
-    return sys 
+    system.attach_lead(lead_1)
+    system.attach_lead(lead_2)
+    system = system.finalized()
+    system.leads = [TRIInfiniteSystem(lead, trs) for lead in system.leads]#
+    return(system)
+
 
 def superCurrent(scatMatrix, phi):
     nbModes = [len(leadInfo.momenta) for leadInfo in scatMatrix.lead_info]

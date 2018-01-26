@@ -14,11 +14,11 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.2,]#np.arange(-0.0, -0.1, -0.01)
+vsg_values = np.arange(-0.0, -0.1, -0.01)
 vbg = 0.2 
 vlead = 0.0
-nb_points = 100 
-max_b = 0.00005
+nb_points = 500 
+max_b = 0.00009
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
@@ -31,8 +31,8 @@ at = 5.0
 a = 0.4
 
 pot_decay = 15 
-#mainpath = '/users/tkm/kanilmaz/thesis/'
-mainpath = '/home/nefta/thesis/'
+mainpath = '/users/tkm/kanilmaz/thesis/'
+#mainpath = '/home/nefta/thesis/'
 
 path_to_result = mainpath + 'results/qpc/supercurrent/' 
 path_to_file = mainpath +'designfiles/qpc.png'
@@ -228,12 +228,12 @@ def superCurrent(scatMatrix, phi):
         for val, vec in zip(finalEigenVal, finalEigenVec)
     )
     #current = 0.5 * delta ** 2 * np.real(current_complex)
-    #imag = 0.5 * delta ** 2 * np.imag(current_complex)
-    #real = 0.5 * delta ** 2 * np.real(current_complex)
+    imag = 0.5 * delta ** 2 * np.imag(current_complex)
+    real = 0.5 * delta ** 2 * np.real(current_complex)
     absval = 0.5 * delta ** 2 * np.abs(current_complex)
     
-    #return((absval, real, imag)) 
-    return absval
+    return (absval, real, imag) 
+    #return absval
 
 def findMax(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
