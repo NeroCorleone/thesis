@@ -1,0 +1,40 @@
+Thesis structure:
+
+1. Introduction
+?
+
+2. Basics for analytical model
+** Short Theory of superconductivity
+** Andreev Reflection, SN interface
+** Theory of SNS junctions
+** Quasiclassical model: foundations and preliminary assumptions
+
+3. Results of analytical model
+
+** Calculation of current calculation plane SNS junction
+** Calculating current for QPC
+** QPC with edge current
+
+4. Basics for numerical model
+** Experiment (?)
+** Tight Binding model for Bilayer graphene
+** Random matrix theory for transport
+** 
+4. Results of numerical model
+** QPC:
+--> Conductance and critical current for normal setup
+--> Including Disorder
+--> Rough edges
+--> Finite doping in leads
+--> Current density distribution (?)
+--> Zigzag vs Armchair
+
+** Waveguide setup:
+--> Conductance and critical current
+--> ... same as above ..
+--> Fourier transformation for current density
+--> 
+
+
+5. Conclusion
+?
