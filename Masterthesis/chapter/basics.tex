@@ -1,6 +1,136 @@
-\chapter{Things you have to know before you read my thesis...}
+\chapter{Framework for analytical model}
 \label{ch:basics}
-\section{Some stuff...}
+
+\section{Theory of superconductivity}
+
+In 19somewhat, Dutch physicist Heike Kammerlingh Onnes managed to liquify Helium. This great engineering achievement opened a door into the world of low-temperature physics. He started to study porperties of metals such as mercury, tin and something else at these very low temperatures. Measuring the ectrical resistance of mercury in 19??, he made an exiting discovery. The expected outcome of these resistance measurements were an increase of the resistance to practically infinity since the expected behaviour was a freezing of conducting electrons leading less carriers transported though the material. Suprisingly, the resistance vanished and Heike himself noted that this was the discovery of a whole new physical picture. Superconductiviy was born. In 1933, Meissner and Ochsenfeld discovered that a superconductor is also a perfect diamagnet. Below the critical temperature, when the material gets superconducting, an external magnetic field is totally expelled by the superconductor. This observation was followed by the London equation in 1935.
+
+In 1950, Lev Landau and Vitaly Ginzburg was a great success. This phenomenological theory could predict the two classes of superconductors and could predict a characteristic length scale in the superconductor, the coherence length $\xi$. 
+BCS theory: how to introduce? This is the first paper with Superconductivity \cite{Bardeen1957}
+
+\begin{equation}
+H = \sum_{\mathbf{k}, \sigma} \xi_{\mathbf{k}} c^{\dagger}_{\mathbf{k} \sigma }c_{\mathbf{k} \sigma }  + \frac{1}{N} \sum_{\mathbf{k}, \mathbf{k'}} V_\mathbf{{\mathbf{k}, \mathbf{k'}}} c^{\dagger}_{\mathbf{k} \uparrow }c^{\dagger}_{- \mathbf{k} \downarrow}   c_{- \mathbf{k'} \downarrow} c_{\mathbf{k'} \uparrow}  
+\end{equation}
+
+Mean field approximation: describing a variable by its fluctuation from a mean value. Bardeen, Cooper and Schrieffer choose ...
+
+\begin{eqnarray}
+A &=& \langle A \rangle + \delta A \\
+B &=& \langle B \rangle + \delta B \\
+A B &=& \langle A \rangle  \langle B \rangle  + \langle A \rangle  \delta B +  \langle B \rangle \delta A + \underbrace{\delta A \delta B}_{\approx 0} \\
+\end{eqnarray}
+
+Using $\delta A = A - \langle A \rangle $ and the same for $B$, inserting into equation above leads to 
+
+\begin{equation}
+AB = \langle A \rangle B + \langle B \rangle A - \langle A \rangle \langle B \rangle
+\end{equation}
+
+Choice for A and B:
+\begin{eqnarray}
+A &=& c^{\dagger}_{\mathbf{k} \uparrow }c^{\dagger}_{- \mathbf{k} \downarrow}    \\
+B &=&  c_{- \mathbf{k'} \downarrow} c_{\mathbf{k'} \uparrow}  
+\end{eqnarray}
+
+Replacing
+\begin{eqnarray}
+\Delta_{\mathbf{k}} &:=& - \frac{1}{N} \sum_{\mathbf{k'}} V_\mathbf{{\mathbf{k} \mathbf{k'}}} \langle c_{-\mathbf{k'}, \downarrow} c_{\mathbf{k'} \uparrow} \rangle \\
+\Delta_{\mathbf{k}}^* &:=& - \frac{1}{N} \sum_{\mathbf{k'}} V_\mathbf{{\mathbf{k}, \mathbf{k'}}}  \langle  c^{\dagger}_{\mathbf{k'} \uparrow} c^{\dagger}_{- \mathbf{k'} \downarrow} \rangle
+\end{eqnarray}
+
+\begin{equation}
+H_{\text{BCS}} = \sum_{\mathbf{k}, \sigma} \xi_{\mathbf{k}} c^{\dagger}_{\mathbf{k} \sigma }c_{\mathbf{k} \sigma }    -  \sum_{\mathbf{k}} \Delta_{\mathbf{k}}^* c_{-\mathbf{k}, \downarrow} c_{\mathbf{k}, \uparrow}  - \sum_{\mathbf{k}} \Delta_{\mathbf{k}}  c^{\dagger}_{\mathbf{k} \uparrow} c^{\dagger}_{- \mathbf{k} \downarrow} + \text{const.}
+\end{equation}
+
+What now? Bcs Hamiltonian: check. Now, apply fancy transformation of Bogoliubov (maybe motivate why he did this?), diagonalization of this Hamiltonian!
+
+\begin{equation}
+\begin{pmatrix}
+\gamma_{\mathbf{k} \uparrow} \\ \gamma^{\dagger}_{-\mathbf{k} \downarrow}  
+\end{pmatrix} = \begin{pmatrix}
+u^*_{\mathbf{k} } & -v_{\mathbf{k} } \\
+v^*_{\mathbf{k} }  & u_{\mathbf{k} } 
+\end{pmatrix} 
+\begin{pmatrix}
+c_{\mathbf{k} \uparrow} \\ c^{\dagger}_{-\mathbf{k} \downarrow}  
+\end{pmatrix}
+\end{equation}
+
+Using fermionic anticommutation relation :
+
+\begin{equation}
+\left\{ \gamma_{\mathbf{k} \uparrow}, \gamma^{\dagger}_{\mathbf{k} \uparrow}  \right\}  = \dots = |u_{\mathbf{k}}|^2 | + v_{\mathbf{k}}|^2 \stackrel{!}{=} 1
+\end{equation}
+
+This will give the inverse transformation.
+
+Now, a lot of magic will happen and I will not mention it further, but the main result is then
+
+\begin{eqnarray}
+H_{\text{BCS}} &=&  \sum_{ \mathbf{k} \sigma } E_{ \mathbf{k} } \gamma^{\dagger}_{\mathbf{k} \sigma } \gamma_{\mathbf{k} \sigma }\\
+E_{\mathbf{k}} &:=&  \sqrt{\xi^2_{\mathbf{k}}  + |\Delta_{\mathbf{k}}|^2 }
+\end{eqnarray}
+
+interpretation as holes, etc \\
+plots of particle and hole exitation (dispersion relation with gap)\\
+metion fermi surface and so on \\
+\subsection*{Bogoliubov de Gennes Hamiltonian}
+Motivation for BdG: Describing inhomogneous systems, example Josephson junctions --> need for a microsopic theory for inhomogenous systems. 
+Idea: make BCS- mean field hamiltonian spatially dependent. 
+
+Introduce a BCS ground state, the ground state of condenced bosons(?), ground state of $H_\text{BCS}$
+\begin{equation}
+H_\text{BCS} \ket{\psi_\text{BCS}} = E_\text{BCS} \ket{\psi_\text{BCS}}  
+\end{equation}
+
+Consider single particle excitation (?), define two component spinor 
+
+\begin{equation}
+\ket{\Psi_\mathbf{k}} = \begin{pmatrix}
+| \Psi_\mathbf{k_1} \rangle \\ | \Psi_\mathbf{k_2} \rangle
+\end{pmatrix} := \begin{pmatrix}
+c^{\dagger}_{\mathbf{k}, \uparrow} \\ c_{- \mathbf{k}, \downarrow}
+\end{pmatrix} \ket{\psi_\text{BCS}}
+\end{equation}
+
+In this basis $\left\{| \Psi_\mathbf{k_1} \rangle, | \Psi_\mathbf{k_2} \rangle \right\}$, the Hamiltonian is (and this is the Bogoliubov de Gennes Hamiltonian (with energies relative to $E_\mathbf{k}$):
+\begin{equation}
+H_\text{BdG}\left(\mathbf{k} \right) = \begin{pmatrix}
+\xi_\mathbf{k} &  - \Delta_\mathbf{k}\\
+- \Delta^*_\mathbf{k} & - \xi_\mathbf{k}
+\end{pmatrix}
+\end{equation}
+
+Eigenvalues: 
+\begin{equation}
+ \pm E_\mathbf{k} = \pm \sqrt{\xi_\mathbf{k}^2 + |\Delta_\mathbf{k}|^2  }
+\end{equation}
+
+Include eigenstates?
+
+Fourier transformation:
+
+\begin{eqnarray}
+H_\text{BdG} \left( \mathbf{r} \right) &:=& \frac{1}{N} \sum_\mathbf{k} e^{i \mathbf{k \cdot r}} H_\text{BdG}\left( \mathbf{k} \right) \\
+&=& \begin{pmatrix}
+H_0\left( \mathbf{r} \right)  &  - \Delta \left( \mathbf{r} \right) \\
+- \Delta^* \left( \mathbf{r} \right)  & - H_0 \left( \mathbf{r} \right) 
+\end{pmatrix}
+\end{eqnarray}
+
+$H_0 \left( \mathbf{r} \right) $ is the free Hamiltonian. Corresponding Schr\"odinger equaions are called BdG-equations:
+
+\begin{equation}
+H_\text{BdG} \left( \mathbf{r} \right) \Psi\left( \mathbf{r} \right) = E \Psi\left( \mathbf{r} \right)
+\end{equation}
+
+with \begin{equation}
+\Psi\left( \mathbf{r} \right)  = \begin{pmatrix}
+\Psi_1\left( \mathbf{r} \right) \\ \Psi_2\left( \mathbf{r} \right) 
+\end{pmatrix}
+\end{equation}
+\section{Theory of NS interface}
+
 The interface between a superconductor and a normal metal can be described with an effective 1D Bogoliubov-de-Gennes Hamiltonian, describing the superconducting order parameter with a step-like function as order parameter
 \begin{eqnarray}
 \begin{pmatrix}
@@ -45,3 +175,4 @@ u(x)\\
 v(x)
 \end{pmatrix}, \quad \Delta(x) = \Delta_0 e^{i \phi} \theta(x)
 \end{eqnarray}
+\section{Theory of SNS junction}

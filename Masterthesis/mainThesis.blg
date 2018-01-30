@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/dev)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: mainThesis.aux
+The style file: unsrtnatMod.bst
+Database file #1: literature.bib
+You can't pop an empty literal stack for entry Bardeen1957
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Bardeen1957
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Bardeen1957
+while executing---line 1300 of file unsrtnatMod.bst
+You've used 1 entry,
+            2418 wiz_defined-function locations,
+            547 strings with 4582 characters,
+and the built_in function-call counts, 486 in all, are:
+= -- 43
+> -- 23
+< -- 0
++ -- 10
+- -- 6
+* -- 46
+:= -- 81
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 2
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 19
+empty$ -- 38
+format.name$ -- 7
+if$ -- 95
+int.to.chr$ -- 1
+int.to.str$ -- 2
+missing$ -- 1
+newline$ -- 13
+num.names$ -- 3
+pop$ -- 6
+preamble$ -- 1
+purify$ -- 1
+quote$ -- 0
+skip$ -- 12
+stack$ -- 0
+substring$ -- 33
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 7
+warning$ -- 0
+while$ -- 4
+width$ -- 0
+write$ -- 23
+(There were 3 error messages)
