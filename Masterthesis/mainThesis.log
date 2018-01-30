@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  29 JAN 2018 16:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  30 JAN 2018 21:55
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2097,6 +2097,8 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <56.90521> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 26.
 
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
@@ -2105,24 +2107,23 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 71--74
+Underfull \hbox (badness 10000) in paragraph at lines 78--83
 
  []
 
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 74.
 
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[2]) (./chapter/analyticalmodel.tex
+[2]
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[3] [4
+[3]) (./chapter/analyticalmodel.tex
+Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-]
+[4]
 chapter 2.
 Package epstopdf Info: Source file: <figure/analyticalmodel/sns_junction.eps>
 (epstopdf)                    date: 2018-01-22 10:47:27
@@ -2136,7 +2137,7 @@ junction-eps-converted-to.pdf figure/analyticalmodel/sns_junction.eps>
 (epstopdf)             \includegraphics on input line 9.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/sns_junction-eps-converted-to.pdf, id=155, 461.725pt x 
+<figure/analyticalmodel/sns_junction-eps-converted-to.pdf, id=168, 461.725pt x 
 363.3575pt>
 File: figure/analyticalmodel/sns_junction-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -2148,7 +2149,10 @@ df used on input line 9.
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[5 <./figure/analyticalmodel/sns_junction-eps-converted-to.pdf>]
+[5
+
+
+ <./figure/analyticalmodel/sns_junction-eps-converted-to.pdf>]
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
@@ -2167,7 +2171,7 @@ ent_density_all-eps-converted-to.pdf figure/analyticalmodel/current_density_all
 (epstopdf)             \includegraphics on input line 77.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/current_density_all-eps-converted-to.pdf, id=182, 1156.
+<figure/analyticalmodel/current_density_all-eps-converted-to.pdf, id=194, 1156.
 32pt x 650.43pt>
 File: figure/analyticalmodel/current_density_all-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -2199,7 +2203,7 @@ sns_junction-eps-converted-to.pdf figure/analyticalmodel/qpc_sns_junction.eps>
 (epstopdf)             \includegraphics on input line 134.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf, id=221, 461.725p
+<figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf, id=233, 461.725p
 t x 363.3575pt>
 File: figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -2256,13 +2260,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 107.
  ) 
 Here is how much of TeX's memory you used:
- 28891 strings out of 494974
- 537177 string characters out of 6180014
- 745792 words of memory out of 5000000
- 31550 multiletter control sequences out of 15000+600000
+ 28900 strings out of 494974
+ 537280 string characters out of 6180014
+ 746042 words of memory out of 5000000
+ 31558 multiletter control sequences out of 15000+600000
  29318 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 73i,13n,75p,10405b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,15n,75p,10405b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
@@ -2280,12 +2284,13 @@ ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helveti
-c/uhvb8a.pfb>
-Output written on mainThesis.pdf (20 pages, 722380 bytes).
+fonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
+/uhvb8a.pfb>
+Output written on mainThesis.pdf (20 pages, 735847 bytes).
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
- 83 named destinations out of 1000 (max. 500000)
+ 382 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
+ 84 named destinations out of 1000 (max. 500000)
  126 words of extra memory for PDF output out of 10000 (max. 10000000)
 

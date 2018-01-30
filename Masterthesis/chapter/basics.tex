@@ -3,47 +3,59 @@
 
 \section{Theory of superconductivity}
 
-In 19somewhat, Dutch physicist Heike Kammerlingh Onnes managed to liquify Helium. This great engineering achievement opened a door into the world of low-temperature physics. He started to study porperties of metals such as mercury, tin and something else at these very low temperatures. Measuring the ectrical resistance of mercury in 19??, he made an exiting discovery. The expected outcome of these resistance measurements were an increase of the resistance to practically infinity since the expected behaviour was a freezing of conducting electrons leading less carriers transported though the material. Suprisingly, the resistance vanished and Heike himself noted that this was the discovery of a whole new physical picture. Superconductiviy was born. In 1933, Meissner and Ochsenfeld discovered that a superconductor is also a perfect diamagnet. Below the critical temperature, when the material gets superconducting, an external magnetic field is totally expelled by the superconductor. This observation was followed by the London equation in 1935.
+%In 19somewhat, Dutch physicist Heike Kammerlingh Onnes managed to liquify Helium. This great engineering achievement opened a door into the world of low-temperature physics. He started to study porperties of metals such as mercury, tin and something else at these very low temperatures. Measuring the ectrical resistance of mercury in 19??, he made an exiting discovery. The expected outcome of these resistance measurements were an increase of the resistance to practically infinity since the expected behaviour was a freezing of conducting electrons leading less carriers transported though the material. Suprisingly, the resistance vanished and Heike himself noted that this was the discovery of a whole new physical picture. Superconductiviy was born. In 1933, Meissner and Ochsenfeld discovered that a superconductor is also a perfect diamagnet. Below the critical temperature, when the material gets superconducting, an external magnetic field is totally expelled by the superconductor. This observation was followed by the London equation in 1935. \\
 
-In 1950, Lev Landau and Vitaly Ginzburg was a great success. This phenomenological theory could predict the two classes of superconductors and could predict a characteristic length scale in the superconductor, the coherence length $\xi$. 
-BCS theory: how to introduce? This is the first paper with Superconductivity \cite{Bardeen1957}
+%In 1950, Lev Landau and Vitaly Ginzburg was a great success. This phenomenological theory could predict the two classes of superconductors and could predict a characteristic length scale in the superconductor, the coherence length $\xi$.  \\
 
+%Isotope effect gave hint that there is a de
+%"If electrical conduction in mercury was purely electronic, there should be no dependence upon the nuclear masses"
+%"Dependence of critical temperature upon isotopic mass was first direct evidence for interaction between electrons and the lattice"
+%"Supports BCS theory of lattice coupling of electron pairs"
+
+%* "Cooper showed in 1956 that the Fermi sea of electrons is unstable against the formation of at least one bound pair, regardless how weak the interaction is, as long as it is attractive" \\
+%* An interaction between electrons can only be interactive, when one takes the motion of ion cores into account --> elctron polarizing medium by attracting positive ions --> positive ions attract second electron  --> effective interaction between two electrons. If this attraction is large enough to override the coumlob interaction, it leads to a net attractive interaction --> superconductivity
+%* First one to introduce this concept is Fröhlich in 1950, confirmed experimentally in 1950 with isotope effect
+The discovery of the isotope effect in 1950 revealed that not only lattice electrons but rather the whole lattice determines the superconducting properties of a solid. Experiments measuring the critical temperature $T_c$ of different mercury isotopes showed that indeed, there is a relation between the isotope mass and $T_c$. Herbert Fr\"olich was then the first to introduce a new concept to explain superconductivity. He showed that a phonon-intermediated interaction between electrons and the lattice could lead to an attractive long-range interaction of electrons in the lattice. Figuratively speaking, an electron passing through the crystal lattice will polarize it by attracting the positive ions. It leaves a deformed lattice, which will then attract a second electron. An effective attractive interaction between these two electrons is created. % – they form a Cooper pair. 
+In 1956, Cooper showed that the electronic ground state, the Fermi sea at $T = 0$, is unstable if a weak attractive interaction is taken into account. This layed the foundation of the BCS theory \cite{Bardeen1957}, the first microscopic theory after the discovery in 1911 by Heike Kammerlingh Onnes. 
+ 
+
+This is the first paper with Superconductivity 
+%TODO maybe include picture that explains, why opposite k vectors
+%Cooper instability
+
+\subsection*{Formulas needed}
+Hamiltonian:
+\begin{align}
+H &= H_0 + H_1 \label{eq:H}\\
+H_0 &= \sum_{\mathbf{k}, \sigma} \xi_{\mathbf{k}} c^{\dagger}_{\mathbf{k} \sigma }c_{\mathbf{k} \sigma }  \label{eq:H0}\\
+H_1 &= \frac{1}{N} \sum_{\mathbf{k}, \mathbf{k'}} V_\mathbf{{\mathbf{k}, \mathbf{k'}}} c^{\dagger}_{\mathbf{k} \uparrow }c^{\dagger}_{- \mathbf{k} \downarrow}   c_{- \mathbf{k'} \downarrow} c_{\mathbf{k'} \uparrow} \label{eq:H1}
+\end{align}
+The operators $c^\dagger_{\mathbf{k}, \sigma} , c_{\mathbf{k}, \sigma}$ are fermion operators that create or annihilate an electron with momentum $\mathbf{k}$ and spin $\sigma$. The first term in the Hamiltonian $H$ is the unperturbed electron Hamiltonian $H_0$ with parabolic energy dispersion $\xi_{\mathbf{k}}$. The  second term is the interaction Hamiltonian $H_1$, expressing the scattering of two electrons from $(- \mathbf{k'} \downarrow,  \mathbf{k'} \uparrow)$ to $(\mathbf{k} \uparrow , - \mathbf{k} \downarrow)$. The interaction potential $V_\mathbf{{\mathbf{k}, \mathbf{k'}}}$ exchanges the scattering for electrons with energy $|\xi_\mathbf{k}| \lesssim \hbar \omega_D$.
+%TODO check!
+The Hamiltonian in eq. (\ref{eq:H}) can be simplified by doing a mean-field approximation. In this approximation, an operator $A$ is expressed by a sum of its statistical mean $\braket{A}$ and small statistical fluctuations $\delta A$. Since the fluctuations are assumed to be small, terms with $\mathcal{O}((\delta A)^2)$ can be neglected.
+\begin{align}
+A &= \langle A \rangle + \delta A, \quad B = \langle B \rangle + \delta B  \nonumber \\
+A B &= \langle A \rangle  \langle B \rangle  + \langle A \rangle  \delta B +  \langle B \rangle \delta A + \underbrace{\delta A \delta B}_{\approx 0}\label{eq:meanfield-der}
+\end{align}
+Using $\delta A = A - \langle A \rangle$ and inserting this back into eq. (\ref{eq:meanfield-der}) leads to
 \begin{equation}
-H = \sum_{\mathbf{k}, \sigma} \xi_{\mathbf{k}} c^{\dagger}_{\mathbf{k} \sigma }c_{\mathbf{k} \sigma }  + \frac{1}{N} \sum_{\mathbf{k}, \mathbf{k'}} V_\mathbf{{\mathbf{k}, \mathbf{k'}}} c^{\dagger}_{\mathbf{k} \uparrow }c^{\dagger}_{- \mathbf{k} \downarrow}   c_{- \mathbf{k'} \downarrow} c_{\mathbf{k'} \uparrow}  
+AB = \langle A \rangle B + \langle B \rangle A - \langle A \rangle \langle B \rangle.\label{eq:meanfield-ab}
 \end{equation}
-
-Mean field approximation: describing a variable by its fluctuation from a mean value. Bardeen, Cooper and Schrieffer choose ...
-
-\begin{eqnarray}
-A &=& \langle A \rangle + \delta A \\
-B &=& \langle B \rangle + \delta B \\
-A B &=& \langle A \rangle  \langle B \rangle  + \langle A \rangle  \delta B +  \langle B \rangle \delta A + \underbrace{\delta A \delta B}_{\approx 0} \\
-\end{eqnarray}
-
-Using $\delta A = A - \langle A \rangle $ and the same for $B$, inserting into equation above leads to 
-
+This approximation is applied to the interaction part $H_1$ in eq. (\ref{eq:H1}), replacing
 \begin{equation}
-AB = \langle A \rangle B + \langle B \rangle A - \langle A \rangle \langle B \rangle
+A = c^{\dagger}_{\mathbf{k} \uparrow }c^{\dagger}_{- \mathbf{k} \downarrow}, \quad B =  c_{- \mathbf{k'} \downarrow} c_{\mathbf{k'} \uparrow} .
 \end{equation}
-
-Choice for A and B:
-\begin{eqnarray}
-A &=& c^{\dagger}_{\mathbf{k} \uparrow }c^{\dagger}_{- \mathbf{k} \downarrow}    \\
-B &=&  c_{- \mathbf{k'} \downarrow} c_{\mathbf{k'} \uparrow}  
-\end{eqnarray}
-
-Replacing
+The result is the BCS-Hamiltonian
+\begin{equation}
+H_{\text{BCS}} = \sum_{\mathbf{k}, \sigma} \xi_{\mathbf{k}} c^{\dagger}_{\mathbf{k} \sigma }c_{\mathbf{k} \sigma }    -  \sum_{\mathbf{k}} \Delta_{\mathbf{k}}^* c_{-\mathbf{k}, \downarrow} c_{\mathbf{k}, \uparrow}  - \sum_{\mathbf{k}} \Delta_{\mathbf{k}}  c^{\dagger}_{\mathbf{k} \uparrow} c^{\dagger}_{- \mathbf{k} \downarrow} + \text{const.}\label{eq:H-BCS}
+\end{equation}
+where 
 \begin{eqnarray}
 \Delta_{\mathbf{k}} &:=& - \frac{1}{N} \sum_{\mathbf{k'}} V_\mathbf{{\mathbf{k} \mathbf{k'}}} \langle c_{-\mathbf{k'}, \downarrow} c_{\mathbf{k'} \uparrow} \rangle \\
 \Delta_{\mathbf{k}}^* &:=& - \frac{1}{N} \sum_{\mathbf{k'}} V_\mathbf{{\mathbf{k}, \mathbf{k'}}}  \langle  c^{\dagger}_{\mathbf{k'} \uparrow} c^{\dagger}_{- \mathbf{k'} \downarrow} \rangle
 \end{eqnarray}
-
-\begin{equation}
-H_{\text{BCS}} = \sum_{\mathbf{k}, \sigma} \xi_{\mathbf{k}} c^{\dagger}_{\mathbf{k} \sigma }c_{\mathbf{k} \sigma }    -  \sum_{\mathbf{k}} \Delta_{\mathbf{k}}^* c_{-\mathbf{k}, \downarrow} c_{\mathbf{k}, \uparrow}  - \sum_{\mathbf{k}} \Delta_{\mathbf{k}}  c^{\dagger}_{\mathbf{k} \uparrow} c^{\dagger}_{- \mathbf{k} \downarrow} + \text{const.}
-\end{equation}
-
-What now? Bcs Hamiltonian: check. Now, apply fancy transformation of Bogoliubov (maybe motivate why he did this?), diagonalization of this Hamiltonian!
-
+%TODO why is this the pair potential?
+The BCS-Hamiltonian in eq. (\ref{eq:H-BCS}) can be diagonalized using the Bogoliubov transformation. The aim is to express the Hamiltonian in the basis of new fermion operators. These new operators will describe quasiparticles, which are a linear combination of $c^\dagger_{\mathbf{k}, \sigma}$ and $c_{\mathbf{k}, \sigma}$.
 \begin{equation}
 \begin{pmatrix}
 \gamma_{\mathbf{k} \uparrow} \\ \gamma^{\dagger}_{-\mathbf{k} \downarrow}  
@@ -54,37 +66,32 @@ v^*_{\mathbf{k} }  & u_{\mathbf{k} }
 \begin{pmatrix}
 c_{\mathbf{k} \uparrow} \\ c^{\dagger}_{-\mathbf{k} \downarrow}  
 \end{pmatrix}
-\end{equation}
-
-Using fermionic anticommutation relation :
-
+\end{equation}\label{eq:bogol-trans}
+Evaluating the fermion anticommutation relation using the transformation above yields
 \begin{equation}
 \left\{ \gamma_{\mathbf{k} \uparrow}, \gamma^{\dagger}_{\mathbf{k} \uparrow}  \right\}  = \dots = |u_{\mathbf{k}}|^2 | + v_{\mathbf{k}}|^2 \stackrel{!}{=} 1
 \end{equation}
-
-This will give the inverse transformation.
-
-Now, a lot of magic will happen and I will not mention it further, but the main result is then
-
+and will lead to the inverse transformation of eq. (\ref{eq:bogol-trans}). Inserting the inverse transformation into the BCS-Hamiltonian in eq.(\ref{eq:H-BCS}) will give the coefficients $u_{\mathbf{k}}$, $v_{\mathbf{k}}$ from eq. (\ref{eq:bogol-trans}) and finally yield to the diagonalized form of the BCS-Hamiltonian
 \begin{eqnarray}
 H_{\text{BCS}} &=&  \sum_{ \mathbf{k} \sigma } E_{ \mathbf{k} } \gamma^{\dagger}_{\mathbf{k} \sigma } \gamma_{\mathbf{k} \sigma }\\
 E_{\mathbf{k}} &:=&  \sqrt{\xi^2_{\mathbf{k}}  + |\Delta_{\mathbf{k}}|^2 }
 \end{eqnarray}
-
-interpretation as holes, etc \\
+%TODO below:
+\textbf{interpretation as holes, etc \\
 plots of particle and hole exitation (dispersion relation with gap)\\
-metion fermi surface and so on \\
+metion fermi surface and so on} \\
+
 \subsection*{Bogoliubov de Gennes Hamiltonian}
-Motivation for BdG: Describing inhomogneous systems, example Josephson junctions --> need for a microsopic theory for inhomogenous systems. 
-Idea: make BCS- mean field hamiltonian spatially dependent. 
-
-Introduce a BCS ground state, the ground state of condenced bosons(?), ground state of $H_\text{BCS}$
-\begin{equation}
-H_\text{BCS} \ket{\psi_\text{BCS}} = E_\text{BCS} \ket{\psi_\text{BCS}}  
-\end{equation}
-
-Consider single particle excitation (?), define two component spinor 
-
+%Motivation for BdG: Describing inhomogneous systems, example Josephson junctions --> need for a microsopic theory for inhomogenous systems. 
+%Idea: make BCS- mean field hamiltonian spatially dependent. 
+The ansatz for the BCS ground state used by Bardeen, Cooper and Schrieffer is based on the concept of Cooper pairs. It is a direct consequence of the instability in the ground state through the attractive interaction. The BCS theory proposes a BCS ground state built on eigenstates of the single-particle Hamiltonian $H_0$ from eq. (\ref{eq:H0}), leading to a ground state that consists of a linear combination of pair states. %TODO check!
+\begin{eqnarray}
+\ket{\psi_\text{BCS}} &=& \prod_{ \mathbf{k} } (u_\mathbf{k} + v_\mathbf{k} c^{\dagger}_{ \mathbf{k} \uparrow } c^{\dagger}_{ - \mathbf{k} \downarrow }) \ket{\text{vac}} \\
+H_\text{BCS} \ket{\psi_\text{BCS}} &=& E_\text{BCS} \ket{\psi_\text{BCS}}  
+\end{eqnarray}
+In most cases however, a more realistic set-up or inhomogeneous system cannot be described in terms of eigenfunctions of $H_0$. With a vector potential $\mathbf{A} \neq 0$, for example, time reversal symmetry is not given any more. %TODO Überleitung (“In the general case”)
+The characteristic length scale is the superconducting coherence length $\xi_0$. If a system is varying slowly over a length scale $l \approx \xi_0$, a spatially dependent, more general Hamiltonian is needed. 
+In order to find an adequate expression for such a spatially dependent Hamiltonian, the following spinor is introduced
 \begin{equation}
 \ket{\Psi_\mathbf{k}} = \begin{pmatrix}
 | \Psi_\mathbf{k_1} \rangle \\ | \Psi_\mathbf{k_2} \rangle
@@ -92,24 +99,20 @@ Consider single particle excitation (?), define two component spinor
 c^{\dagger}_{\mathbf{k}, \uparrow} \\ c_{- \mathbf{k}, \downarrow}
 \end{pmatrix} \ket{\psi_\text{BCS}}
 \end{equation}
-
-In this basis $\left\{| \Psi_\mathbf{k_1} \rangle, | \Psi_\mathbf{k_2} \rangle \right\}$, the Hamiltonian is (and this is the Bogoliubov de Gennes Hamiltonian (with energies relative to $E_\mathbf{k}$):
+In this basis $\left\{| \Psi_\mathbf{k_1} \rangle, | \Psi_\mathbf{k_2} \rangle \right\}$, the Hamiltonian is (and this is the Bogoliubov de Gennes Hamiltonian with energies relative to $E_\mathbf{k}$):
 \begin{equation}
 H_\text{BdG}\left(\mathbf{k} \right) = \begin{pmatrix}
 \xi_\mathbf{k} &  - \Delta_\mathbf{k}\\
 - \Delta^*_\mathbf{k} & - \xi_\mathbf{k}
-\end{pmatrix}
+\end{pmatrix} \label{eq:H-BdG}
 \end{equation}
-
-Eigenvalues: 
+%For this, the commutation relation for $H_\text{BCS}$ and $c^\dagger_{\mathbf{k}, \uparrow}$, $c_{- \mathbf{k}, \downarrow}$ have been used.
+This Hamiltonian form eq. (\ref{eq:H-BdG}) has the eigenvalues
 \begin{equation}
- \pm E_\mathbf{k} = \pm \sqrt{\xi_\mathbf{k}^2 + |\Delta_\mathbf{k}|^2  }
+ \pm E_\mathbf{k} = \pm \sqrt{\xi_\mathbf{k}^2 + |\Delta_\mathbf{k}|^2  }.
 \end{equation}
-
-Include eigenstates?
-
-Fourier transformation:
-
+%Include eigenstates?
+To finally arrive at the spatially dependent form of eg. (\ref{eq:H-BdG}), the Hamiltonian is Fourier-transformed.
 \begin{eqnarray}
 H_\text{BdG} \left( \mathbf{r} \right) &:=& \frac{1}{N} \sum_\mathbf{k} e^{i \mathbf{k \cdot r}} H_\text{BdG}\left( \mathbf{k} \right) \\
 &=& \begin{pmatrix}
@@ -117,18 +120,14 @@ H_0\left( \mathbf{r} \right)  &  - \Delta \left( \mathbf{r} \right) \\
 - \Delta^* \left( \mathbf{r} \right)  & - H_0 \left( \mathbf{r} \right) 
 \end{pmatrix}
 \end{eqnarray}
-
 $H_0 \left( \mathbf{r} \right) $ is the free Hamiltonian. Corresponding Schr\"odinger equaions are called BdG-equations:
-
-\begin{equation}
-H_\text{BdG} \left( \mathbf{r} \right) \Psi\left( \mathbf{r} \right) = E \Psi\left( \mathbf{r} \right)
-\end{equation}
-
-with \begin{equation}
-\Psi\left( \mathbf{r} \right)  = \begin{pmatrix}
+\begin{eqnarray}
+H_\text{BdG} \left( \mathbf{r} \right) \Psi\left( \mathbf{r} \right) &=& E \Psi\left( \mathbf{r} \right)\\
+\Psi\left( \mathbf{r} \right)  &=& \begin{pmatrix}
 \Psi_1\left( \mathbf{r} \right) \\ \Psi_2\left( \mathbf{r} \right) 
 \end{pmatrix}
-\end{equation}
+\end{eqnarray}
+
 \section{Theory of NS interface}
 
 The interface between a superconductor and a normal metal can be described with an effective 1D Bogoliubov-de-Gennes Hamiltonian, describing the superconducting order parameter with a step-like function as order parameter
@@ -146,7 +145,7 @@ u(x)\\
 v(x)
 \end{pmatrix}, \quad \Delta(x) = \Delta_0 e^{i \phi} \theta(x)
 \end{eqnarray}
-This is the so called Blonder-Tinkham-Klapwijk model and can be solved seperately for each of side of the NS interface. For the normal side, the superconducting order parameter vanishes and the equation leads to two solutions
+This is the so called Blonder-Tinkham-Klapwijk model and can be solved separately for each of side of the NS interface. For the normal side, the superconducting order parameter vanishes and the equation leads to two solutions
 \begin{eqnarray}
 \psi_e^{\pm}(x) &=& \begin{pmatrix} 1 \\ 0 \end{pmatrix} e^{\pm i k_e x}, \quad k_e = k_F \sqrt{1 + \frac{E}{e_F}}\\ 
 \psi_h^{\pm}(x) &=& \begin{pmatrix} 0 \\ 1 \end{pmatrix} e^{\pm i k_h x}, \quad k_h =  k_F \sqrt{1 - \frac{E}{e_F}}
