@@ -118,60 +118,108 @@ H_\text{BdG} \left( \mathbf{r} \right) &:=& \frac{1}{N} \sum_\mathbf{k} e^{i \ma
 &=& \begin{pmatrix}
 H_0\left( \mathbf{r} \right)  &  - \Delta \left( \mathbf{r} \right) \\
 - \Delta^* \left( \mathbf{r} \right)  & - H_0 \left( \mathbf{r} \right) 
-\end{pmatrix}
+\end{pmatrix} \label{eq:H-BdG-r}
 \end{eqnarray}
 $H_0 \left( \mathbf{r} \right) $ is the free Hamiltonian. Corresponding Schr\"odinger equaions are called BdG-equations:
 \begin{eqnarray}
-H_\text{BdG} \left( \mathbf{r} \right) \Psi\left( \mathbf{r} \right) &=& E \Psi\left( \mathbf{r} \right)\\
+H_\text{BdG} \left( \mathbf{r} \right) \Psi\left( \mathbf{r} \right) &=& E \Psi\left( \mathbf{r} \right)\label{eq:BdG-eq} \\
 \Psi\left( \mathbf{r} \right)  &=& \begin{pmatrix}
 \Psi_1\left( \mathbf{r} \right) \\ \Psi_2\left( \mathbf{r} \right) 
-\end{pmatrix}
+\end{pmatrix}\label{eq:BdG-spinor}
 \end{eqnarray}
 
-\section{Theory of NS interface}
+\section{Theory of NS interface, Andreev reflection at NS interfaces}
 
-The interface between a superconductor and a normal metal can be described with an effective 1D Bogoliubov-de-Gennes Hamiltonian, describing the superconducting order parameter with a step-like function as order parameter
+%Motivation for Andreev reflection, one to two sentences
+%Actually, start with a sketch and explain the scattering process, then start with the equations
+
+Starting with Hamiltonian in eq. (\ref{eq:H-BdG-r}), and $\Delta \left( \mathbf{r} \right) = \Delta_0 \theta \left( x\right)$ and $H_0 = \frac{\hbar}{2m} \nabla^2 + \mu^2$. For some reasons, there is a sign change here...
+Normal region: $x < 0$, superconducting region: $x > 0 $.
+Now: Solve the BdG-euqationg from eq. (\ref{eq:BdG-eq}) for the two different regions.
+
+\subsection*{Solution for the normal region}
+%TODO rewrite!
+Normal region, components of eq. (\ref{eq:BdG-spinor}) are just superpositions of plane waves
+Set $\hbar = 1$
+Solution to the normal side:
+\begin{equation}
+k_{1/2}^2 = k_F^2 \pm 2mE
+\end{equation}
+
+\subsection*{Solution in the superconducting region}
+
+\textbf{Energy above the gap:} $\mathbf{ |E| > \Delta_0}$
+Plane vectors again, wave functions from BdG equations are coupled:
+\begin{equation}
+\Psi_2 \left( \mathbf{r} \right)  = \frac{1}{\Delta_0} \left( E + \frac{1}{2m} \nabla^2 + \mu \right) \Psi_1 \left( \mathbf{r}  \right) 
+\end{equation}
+Above means, the amplitudes are coupled and the solution is given by:
+\begin{equation}
+q_{1/2}^2 = 2m \left( \mu + \sqrt{E^2 - \Delta_0^2} \right)
+\end{equation}
+\textbf{Energy below the gap:} $\mathbf{ |E| < \Delta_0}$
+This is where the magic happens...
+Ansatz:
 \begin{eqnarray}
-\begin{pmatrix}
--\frac{\hbar^2}{2m} \nabla^2 - \mu & \Delta(x) \\
-\Delta^*(x) & \frac{\hbar^2}{2m} \nabla^2 + \mu
-\end{pmatrix}
-\begin{pmatrix}
-u(x) \\
-v(x)
-\end{pmatrix} = E 
-\begin{pmatrix}
-u(x)\\
-v(x)
-\end{pmatrix}, \quad \Delta(x) = \Delta_0 e^{i \phi} \theta(x)
+\Psi_1 \left( \mathbf{r} \right)  &=& e^{i ( \mathbf{k}_{1, \parallel} \cdot \mathbf{r}_{\parallel} ) } \Phi_1\left( x \right) \\
+\Rightarrow \left( - \frac{k_{1, \parallel}^2}{2m} + \frac{1}{2m} \frac{d^2}{dx^2} + \mu \right)^2 \Phi_1\left( x \right) &=& (E^2 - \Delta_0^2) \Phi_1\left( x \right)
 \end{eqnarray}
-This is the so called Blonder-Tinkham-Klapwijk model and can be solved separately for each of side of the NS interface. For the normal side, the superconducting order parameter vanishes and the equation leads to two solutions
+Make an exponential ansatz (why this particular form?):
+\begin{equation}
+\Phi_1(x) = e^{\kappa x + i q x}
+\end{equation}
+Plugging in ansatz leads to (by comparing real and imaginary part of the right hand and left hand side) 
+%TODO there is a lengthy calculation before this, which I do not include
 \begin{eqnarray}
-\psi_e^{\pm}(x) &=& \begin{pmatrix} 1 \\ 0 \end{pmatrix} e^{\pm i k_e x}, \quad k_e = k_F \sqrt{1 + \frac{E}{e_F}}\\ 
-\psi_h^{\pm}(x) &=& \begin{pmatrix} 0 \\ 1 \end{pmatrix} e^{\pm i k_h x}, \quad k_h =  k_F \sqrt{1 - \frac{E}{e_F}}
+\kappa^2 &=& k_{1\parallel}^2 + q^2 - 2m\mu \\
+- \frac{\kappa^2 q^2}{m} &=& E^2 - \Delta_0^2
 \end{eqnarray}
-\textbf{TODO:} electron solution because of term $e_f + E$, hole solution because of $e_f - E$ ? \\
-To find the wavefunctions for the superconducting side, we have to distinguish between propagating waves ($E > \Delta_0$) and 
+Next step: write down explicit solutions for $q$ and $\kappa$:
+\begin{equation}
+q^2 = \frac{1}{2}\left( k_F^2 - k_{1, \parallel}^2 \pm \sqrt{ (k_F^2 - k_{1, \parallel}^2) + 4m(\Delta_0^2 - E^2)} \right)
+\end{equation}
+Assumption for real $q$ makes only solution with plus sign in squareroot possible. 
+\begin{equation}
+q = \pm q_1 := \pm \frac{1}{\sqrt{2}}\sqrt{\left( k_F^2 - k_{1, \parallel}^2 \pm \sqrt{ (k_F^2 - k_{1, \parallel}^2) + 4m(\Delta_0^2 - E^2)} \right)}
+\end{equation}
+Therefore we find for $\kappa$:
+\begin{equation}
+\kappa^2 = \frac{1}{2}\left( k_{1, \parallel}^2 - k_F^2 \pm \sqrt{ (k_F^2 - k_{1, \parallel}^2) + 4m(\Delta_0^2 - E^2)} \right)
+\end{equation}
+In this case, only the negative solution of $\kappa$ is relevant, because the positive solution would grow exponentially for $x \rightarrow \infty$.
+\begin{equation}
+\kappa = - \kappa_1 := \pm \frac{1}{\sqrt{2}}\sqrt{\left( k_{1, \parallel}^2 - k_F^2 \pm \sqrt{ (k_F^2 - k_{1, \parallel}^2) + 4m(\Delta_0^2 - E^2)} \right)}
+\end{equation}
+Since the solutions for $\Psi_1 \left( x \right)$ and $\Psi_2 \left( x \right)$ are proportional to each other, we already know, that the solving the differential equation with the ansatz from ref? will lead to the same result. In other word, since $\mathbf{k_{1, \parallel}} = \mathbf{k_{2, \parallel}}$, it follows directly that $\kappa_1 = \kappa_2$ and $q_1 = q_2$.
+Plugging in the results, we find
+\begin{equation}
+\Psi_2 \left( x \right) = \frac{E \mp i \sqrt{\Delta_0^2 - E^2}}{\Delta_0} \Psi_1 \left( x \right)
+\end{equation}
+Short summary: so far we have only found, how the two spinor components are related. Now we need an ansatz for the spinor to solve the BdG equation itself. (Maybe mention this one earlier, in the part for the solution in the normal region?)
+\begin{equation}
+\Psi \left( r \right) = \begin{pmatrix}
+e^{i \mathbf{k}_1 \mathbf{r}} + r \cdot e^{i \tilde{\mathbf{k}}_1 \mathbf{r}} \\
+a \cdot e^{i \mathbf{k}_2 \mathbf{r}}
+\end{pmatrix} \quad \text{for ~} x \leq 0 
+\end{equation}
 
-\section{Andreev reflection at NS interfaces}
-
-- thesis observes current flow in SNS junctions
-- how is current flow possible in these junctions?
-- model this setup with planar NS interface
-- calculate BdG Hamiltonian
-- Andreev approximation
 \begin{eqnarray}
-\begin{pmatrix}
--\frac{\hbar^2}{2m} \nabla^2 - \mu & \Delta(x) \\
-\Delta^*(x) & \frac{\hbar^2}{2m} \nabla^2 + \mu
-\end{pmatrix}
-\begin{pmatrix}
-u(x) \\
-v(x)
-\end{pmatrix} = E 
-\begin{pmatrix}
-u(x)\\
-v(x)
-\end{pmatrix}, \quad \Delta(x) = \Delta_0 e^{i \phi} \theta(x)
+\tilde{\mathbf{k}}_1  &=& \begin{pmatrix} -k_{1, x} \\ ~k_{1, y}\\ ~k_{1, z} \end{pmatrix}, \quad
+\mathbf{k}_2  = \begin{pmatrix} k_{2, x} \\ k_{1, y}\\ k_{1, z} \end{pmatrix}, \quad k_{2, x} > 0 \\
+k_{1, x}^2 + k_{1, \parallel}^2 &=& k_F^2 + 2mE \\
+k_{2, x}^2 + k_{1, \parallel}^2 &=& k_F^2 - 2mE 
 \end{eqnarray}
+
+Ansatz for wave function in superconducting region: two solutions for $q = \pm q_1$, $\kappa = - \kappa_1$ leads to $\Phi \left( x \right) = e^{\kappa x + i q x} = e^{-\kappa_1 x } \left( e^{+i q_1 x} + e^{- i q_1 x} \right)$
+
+\begin{equation}
+\Psi \left( \mathbf{r} \right) = e^{- \kappa_1 x }  \begin{pmatrix} \alpha_+ e^{i ( q_1x + \mathbf{k}_\parallel \cdot \mathbf{r}_\parallel)} + \alpha_- e^{i ( - q_1x + \mathbf{k}_\parallel \cdot \mathbf{r}_\parallel)}\\ \beta_+ e^{i ( q_1x + \mathbf{k}_\parallel \cdot \mathbf{r}_\parallel)} + \beta_-e^{i ( - q_1x + \mathbf{k}_\parallel \cdot \mathbf{r}_\parallel)} \end{pmatrix}
+\end{equation}
+
+Randwertbedingungen der Schrädingergleichung, Kopplung der Amplituden --> set an sechs gekoppelten gleichungen mit einer unique solution
+
+
 \section{Theory of SNS junction}
+
+\section{Specular Andreev reflection, graphene specifics}
+
