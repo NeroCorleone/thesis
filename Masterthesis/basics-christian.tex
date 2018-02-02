@@ -130,29 +130,29 @@ H_\text{BdG} \left( \mathbf{r} \right) \Psi\left( \mathbf{r} \right) &=& E \Psi\
 
 \section{Theory of NS interface, Andreev reflection at NS interfaces}
 
-Now that the principles of BCS theory are clear, the situation for a transition between superconductor and a normal region should be discussed. In the next section, the situation of a SNS junction will be discussed, so this is the groundwork for that.
-The most important detail, when modelling the interface between a superconductor and a normal metal, is the superconducting order parameter $\Delta \left( \mathbf{r} \right)$. It is obviously present in the superconducting region and zero in a normal metal. To keep the model as simple as possile, a step-like behaviour is assumed. This means that for an interface placed at $x=0$, the superconducting order parameter becomes a function of $x$ and can be written as
+Now that the principles of BCS theory have been established, the physical effects at the interface between a superconductor and a normal are to be outlined.
+
+The most important detail when modelling the interface between a superconductor and a normal metal is the superconducting order parameter $\Delta \left( \mathbf{r} \right)$. It is present in the superconducting region and zero in a normal metal. To keep the model as simple as possible, a step-like behaviour is assumed. This means that for an interface placed at $x=0$, the superconducting order parameter becomes a function of $x$ and can be written as
 \begin{equation}
 \Delta \left( x \right) = \theta \left(x \right)
 \end{equation}.
-It is reasonable to ask, how this situation is different from a quantum mechanical step potential. Turns out, the formalism really is not, but there is a subtle and important difference in the results. Before starting the explicit calculation, lets make the physical picture clear. What happens at the interface? In the normal region, there are electrons. In the superconducting regions, there are Cooper pairs. One can principally think of a process where a normal electron is reflected at the interface as a hole and an additional Cooper pair is created in the superconducting region.
-By writing down and solving the Schr\"odinger equation this picture becomes a bit clearer.
+How does this model differ from a quantum mechanical step potential set-up? The formalism is virtually identical, but there is a subtle and important difference in the results. In the normal region, there are electrons, whereas in the superconducting regions, there is a condensate of Cooper pairs. A normal electron can be reflected at the interface as a hole and an additional Cooper pair can be created in the superconducting region.
 
-To approach this problem, the Bogoliubov-de-Gennes equation in (\ref{eq:BdG-eq}) needs to be solved for the normal region and for the superconducting region. Treating this problem quantum mechanically means energies below and above the gap need to be considered as well. The resulting wave functions need then to be made continuous at the interface. Depending on the region, the gap parameter in the Hamiltonian in eq. (\ref{eq:H-BdG-r}) is either zero or $\Delta_0$.
+By solving the Bogoliubov-de-Gennes equation in (\ref{eq:BdG-eq}), this picture becomes clearer.  This equation needs to be solved both for the normal and the superconducting region. When treating this problem quantum-mechanically, energies below and above the gap need to be considered independently. The resulting wave functions have to be continuous at the interface. Depending on the region, the gap parameter in the Hamiltonian in eq. (\ref{eq:H-BdG-r}) is either zero or $\Delta_0$.
 
 \subsection{Solution for the normal region}\label{sec:normal-region}
-In the normal region, for $x < 0$, only the free particle Hamiltonian $H_0$ has to be considered. With $\hbar = 1$ , it reads
+In the normal region, for $x < 0$, only the free particle Hamiltonian $H_0$ has to be considered. With $\hbar = 1$, it reads
 \begin{equation}
 H_0 = - \frac{\hbar^2}{2m} \nabla^2 - \mu 
 \end{equation}
-since no additional (vector) potential is present. The solution for this is simply a superposition of plane waves with the corresponding wave vectors
+since no additional (vector) potential is present. The solution is simply a superposition of plane waves with the corresponding wave vectors
 \begin{equation}
-k_{1/2}^2 = k_F^2 \pm 2mE \label{eq:k-normal}
+k_{1/2}^2 = k_F^2 \pm 2mE \label{eq:k-normal}.
 \end{equation}
 
 \subsection{Solution in the superconducting region}
  
-If the \textbf{energy is above the gap} $\mathbf{ |E| > \Delta_0}$, then the solution is again a superposition of plane waves, similar to section \ref{sec:normal-region}. But this time, the gap parameter $\Delta_0$ couples the wave functions or rather the amplitudes.
+If the \textbf{energy is above the gap} $\mathbf{ |E| > \Delta_0}$, then the solution is, again, a superposition of plane waves, similar to section \ref{sec:normal-region}. But this time, the gap parameter $\Delta_0$ couples the amplitures of the wave functions.
 \begin{equation}
 \Psi_2 \left( \mathbf{r} \right)  = \frac{1}{\Delta_0} \left( E + \frac{1}{2m} \nabla^2 + \mu \right) \Psi_1 \left( \mathbf{r}  \right) \label{eq:psi-coupling}
 \end{equation}
@@ -161,38 +161,37 @@ The corresponding wave vectors are
 q_{1/2}^2 = 2m \left( \mu + \sqrt{E^2 - \Delta_0^2} \right)
 \end{equation}
 \newline
-For \textbf{energies below the gap} $\mathbf{ |E| < \Delta_0}$, the a separable ansatz for $\Psi_1$ is chosen.
+For \textbf{energies below the gap} $\mathbf{ |E| < \Delta_0}$, the a separable ansatz for $\Psi_1$ is chosen as
 \begin{equation}
-\Psi_1 \left( \mathbf{r} \right)  = e^{i ( \mathbf{k}_{1 \parallel} \cdot \mathbf{r}_{\parallel} ) } \Phi_1\left( x \right) 
+\Psi_1 \left( \mathbf{r} \right)  = e^{i ( \mathbf{k}_{1 \parallel} \cdot \mathbf{r}_{\parallel} ) } \Phi_1\left( x \right),
 \end{equation}
-where $\mathbf{k}_{1 \parallel} = (k_{1y}, k_{2y})$. 
-This leads to the effective one dimensional differential equation for $\Phi_1\left( x \right)$.
+where $\mathbf{k}_{1 \parallel} = (k_{1y}, k_{2y})$. This leads to the effective one-dimensional differential equation for $\Phi_1\left( x \right)$.
 \begin{equation}
 \left( - \frac{k_{1, \parallel}^2}{2m} + \frac{1}{2m} \frac{d^2}{dx^2} + \mu \right)^2 \Phi_1\left( x \right) = (E^2 - \Delta_0^2) \Phi_1\left( x \right) \label{eq:phi-diff}
 \end{equation}
-To solve the differential equation in (\ref{eq:phi-diff}), an exponential ansatz is chosen.
+To solve the differential equation in (\ref{eq:phi-diff}), an exponential ansatz is chosen:
 \begin{equation}
-\Phi_1(x) = e^{\kappa x + i q x}
+\Phi_1(x) = e^{\kappa x + i q x}.
 \end{equation}
 The chosen ansatz then yields
 \begin{eqnarray}
 \kappa^2 &=& k_{1\parallel}^2 + q^2 - 2m\mu \\
 - \frac{\kappa^2 q^2}{m} &=& E^2 - \Delta_0^2.
 \end{eqnarray}
-The explicit solution of $q$ and $\kappa$ is given by
+The explicit solutions of $q$ and $\kappa$ are given by
 \begin{eqnarray}
 q^2 &=& \frac{1}{2}\left( k_F^2 - k_{1, \parallel}^2 \pm \sqrt{ (k_F^2 - k_{1, \parallel}^2) + 4m(\Delta_0^2 - E^2)} \right) \label{eq:q2}\\
-\kappa^2 &=& \frac{1}{2}\left( k_{1, \parallel}^2 - k_F^2 \pm \sqrt{ (k_F^2 - k_{1, \parallel}^2) + 4m(\Delta_0^2 - E^2)} \right)\label{eq:kappa2}
+\kappa^2 &=& \frac{1}{2}\left( k_{1, \parallel}^2 - k_F^2 \pm \sqrt{ (k_F^2 - k_{1, \parallel}^2) + 4m(\Delta_0^2 - E^2)} \right)\label{eq:kappa2}.
 \end{eqnarray}
-These solutions have to be checked for physical sense (?). Since a real value for $q$ has been assumed, only  the solution with plus sign in the square root of eq. (\ref{eq:q2}) is possible. Considering eq. (\ref{eq:kappa2}), only the negative solution is relevant, because the positive solution would grow exponentially for $x \rightarrow \infty$.
+These solutions have to be checked for physical plausibility. Since a real value for $q$ has been assumed, only the solution with positive sign in the square root of eq. (\ref{eq:q2}) is possible. Considering eq. (\ref{eq:kappa2}), only the negative solution is relevant, because the positive solution would grow exponentially for $x \rightarrow \infty$.
 \begin{eqnarray}
 q &=& \pm q_1 := \pm \frac{1}{\sqrt{2}}\sqrt{\left( k_F^2 - k_{1, \parallel}^2 \pm \sqrt{ (k_F^2 - k_{1, \parallel}^2) + 4m(\Delta_0^2 - E^2)} \right)} \label{eq:q} \\
 \kappa &=& - \kappa_1 := \pm \frac{1}{\sqrt{2}}\sqrt{\left( k_{1, \parallel}^2 - k_F^2 \pm \sqrt{ (k_F^2 - k_{1, \parallel}^2) + 4m(\Delta_0^2 - E^2)} \right)}\label{eq:kappa}
 \end{eqnarray}
-The differential equation for $\Phi_1\left( x \right)$ and has been solved so far and therefore an expression for the wave function $\Psi_1 \left( \mathbf{r} \right)$ has been found. The components of $\Psi \left( \mathbf{r} \right)$, $\Psi_1 \left( \mathbf{r} \right)$ and $\Psi_2 \left( \mathbf{r} \right)$,  are coupled by eq. (\ref{eq:psi-coupling}). Solving the differential equation for $\Phi_2 \left( x \right)$ will therefore lead to the same results. In other words,  since $\mathbf{k_{1, \parallel}} = \mathbf{k_{2, \parallel}}$, it follows directly that $\kappa_1 = \kappa_2$ and $q_1 = q_2$. 
+Up to this point, we have only considered the differential equation for $\Phi_1\left( x \right)$. As a result, an expression for the wave function $\Psi_1 \left( \mathbf{r} \right)$ has been found. The components of $\Psi \left( \mathbf{r} \right)$, $\Psi_1 \left( \mathbf{r} \right)$ and $\Psi_2 \left( \mathbf{r} \right)$, are coupled by eq. (\ref{eq:psi-coupling}). Solving the differential equation for $\Phi_2 \left( x \right)$ will therefore lead to the same results. In other words, since $\mathbf{k_{1, \parallel}} = \mathbf{k_{2, \parallel}}$, it follows directly that $\kappa_1 = \kappa_2$ and $q_1 = q_2$. 
 Combining the results, we find 
 \begin{equation}
-\Psi_2 \left( x \right) = \frac{E \mp i \sqrt{\Delta_0^2 - E^2}}{\Delta_0} \Psi_1 \left( x \right)
+\Psi_2 \left( x \right) = \frac{E \mp i \sqrt{\Delta_0^2 - E^2}}{\Delta_0} \Psi_1 \left( x \right).
 \end{equation}
 The next step in solving the problem for the NS-interface is matching the solutions at both sides of the interface. The ansatz for the wave function in the normal region reads
 \begin{equation}
@@ -205,13 +204,13 @@ a \cdot e^{i \mathbf{k}_2 \mathbf{r}}
 \mathbf{k}_1  = \begin{pmatrix} ~k_{1, x} \\ ~k_{1, y}\\ ~k_{1, z} \end{pmatrix}, \quad \tilde{\mathbf{k}}_1  = \begin{pmatrix} -k_{1, x} \\ ~k_{1, y}\\ ~k_{1, z} \end{pmatrix}, \quad
 \mathbf{k}_2  = \begin{pmatrix} ~k_{2, x} \\ ~k_{1, y}\\ ~k_{1, z} \end{pmatrix}, \quad k_{2, x} > 0,
 \end{eqnarray}
-where $\mathbf{k}_1$ is the wave vector of the incoming electron and $\tilde{\mathbf{k}}_1$ corresponds to a reflected electron with amplitude $r$. The wave vector $\mathbf{k}_2$ however, corresponds to the second spinor which was defined in eq. (\ref{eq:spinor}) as $\ket{Psi_{\mathbf{k}2}} =  c_{- \mathbf{k}, \downarrow} \ket{\psi_\text{BCS}}$. This means that it corresponds to a hole in the normal region. \\
+where $\mathbf{k}_1$ is the wave vector of the incoming electron and $\tilde{\mathbf{k}}_1$ corresponds to a reflected electron with amplitude $r$. The wave vector $\mathbf{k}_2$ however, corresponds to the second spinor component which was defined in eq. (\ref{eq:spinor}) as $\ket{Psi_{\mathbf{k}2}} =  c_{- \mathbf{k}, \downarrow} \ket{\psi_\text{BCS}}$. This means that it corresponds to a hole in the normal region. \\
 Rewriting eq. (\ref{eq:k-normal}) makes clear that this hole travels almost exactly into the opposite direction as the electron.
 \begin{eqnarray}
 k_{1, x}^2 + k_{1, \parallel}^2 &=& k_F^2 + 2mE \\
-k_{2, x}^2 + k_{1, \parallel}^2 &=& k_F^2 - 2mE
+k_{2, x}^2 + k_{1, \parallel}^2 &=& k_F^2 - 2mE.
 \end{eqnarray}
-Since the energy is below the superconducting gap, it holds that $E < \Delta_0 \ll \mu = \frac{k_F^2}{2m}$. From equation (\ref{eq:k-normal}) it can be seen that $|k_{2x} - k_{2x}|$ is small and $\mathbf{k}_{1\parallel} = \mathbf{k}_{2\parallel}$. This means that the incoming electron can be reflected as a hole travelling into the opposite direction. Still, it has to be shown that this interpretation is valid and therefore the wave functions have to be matched at the interface.
+Since the energy is below the superconducting gap, it holds that $E < \Delta_0 \ll \mu = \frac{k_F^2}{2m}$. From equation (\ref{eq:k-normal}), it can be seen that $|k_{2x} - k_{2x}|$ is small and $\mathbf{k}_{1\parallel} = \mathbf{k}_{2\parallel}$: The incoming electron can be reflected as a hole travelling into the opposite direction. Still, it has to be shown that this interpretation is valid and therefore the wave functions have to be matched at the interface.
 \newline
 An ansatz for the wave function in the superconducting region uses the results of eq. (\ref{eq:phi-diff}). The wave function is proportional to $\Phi \left( x \right) = e^{-\kappa_1 x } \left( e^{+i q_1 x} + e^{- i q_1 x} \right)$ (see eq. (\ref{eq:q}) and (\ref{eq:kappa})).
 \begin{equation}
@@ -226,7 +225,7 @@ i k_{2x} a &=& \beta_+(-\kappa_1 + i q_1) + \beta_- ( -\kappa_1 - i q_1). \\
 \end{eqnarray}
 The coupling of the amplitudes of $\Psi_1 \left( \mathbf{r} \right)$ and $\Psi_2 \left( \mathbf{r} \right)$ by eq. (\ref{eq:psi-coupling}) eventually yields
 \begin{equation}
-\beta_\pm = \frac{E \mp i \sqrt{\Delta_0^2 - E^2}}{\Delta_0}\alpha_\pm
+\beta_\pm = \frac{E \mp i \sqrt{\Delta_0^2 - E^2}}{\Delta_0}\alpha_\pm.
 \end{equation}
 These equations above build a linear system, which can be solved. But the most important insight comes from the reflection coefficient $r$. When evaluating the expression, one can see that $|r|^2 < 1$, which means that not all electrons are reflected. This is the important difference to a step-like potential.
 
