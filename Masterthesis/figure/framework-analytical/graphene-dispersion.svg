@@ -190,10 +190,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.9999999"
-     inkscape:cx="340.13654"
-     inkscape:cy="68.618049"
+     inkscape:cx="300.79032"
+     inkscape:cy="47.618048"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="svg2"
      showgrid="true"
      inkscape:window-width="1366"
      inkscape:window-height="704"
@@ -228,26 +228,30 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Ebene 2"
-     style="display:none"
-     transform="translate(-5.4649497,-139.05215)" />
+     style="display:inline"
+     transform="translate(-5.4649497,-139.05215)"
+     sodipodi:insensitive="true" />
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Ebene 3"
-     style="display:none"
-     transform="translate(-5.4649497,-139.05215)" />
+     style="display:inline"
+     transform="translate(-5.4649497,-139.05215)"
+     sodipodi:insensitive="true" />
   <g
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Ebene 4"
      transform="translate(-5.4649497,-139.05215)"
-     style="display:inline" />
+     style="display:inline"
+     sodipodi:insensitive="true" />
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline;filter:url(#filter4494)"
-     transform="translate(-5.4649497,-139.05215)">
+     transform="translate(-5.4649497,-139.05215)"
+     sodipodi:insensitive="true">
     <g
        style="display:inline"
        id="g17025"
