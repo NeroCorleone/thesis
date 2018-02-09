@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  9 FEB 2018 09:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  9 FEB 2018 13:38
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2251,32 +2251,32 @@ Package pdftex.def Info: figure/framework-analytical/specular-reflection-eps-co
 nverted-to.pdf used on input line 371.
 (pdftex.def)             Requested size: 326.63625pt x 111.46892pt.
 )
-(./chapter/analyticalresults-corrected.tex
+(./chapter/analyticalresults.tex
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
 [12 <./figure/framework-analytical/specular-reflection-eps-converted-to.pdf>]
 chapter 3.
 Package epstopdf Info: Source file: <figure/analyticalmodel/sns_junction.eps>
-(epstopdf)                    date: 2018-02-08 20:33:13
-(epstopdf)                    size: 71180 bytes
+(epstopdf)                    date: 2018-02-09 11:29:03
+(epstopdf)                    size: 70992 bytes
 (epstopdf)             Output file: <figure/analyticalmodel/sns_junction-eps-co
 nverted-to.pdf>
-(epstopdf)                    date: 2018-02-08 20:33:29
-(epstopdf)                    size: 60670 bytes
+(epstopdf)                    date: 2018-02-09 11:29:47
+(epstopdf)                    size: 60604 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/analyticalmodel/sns_
 junction-eps-converted-to.pdf figure/analyticalmodel/sns_junction.eps>
 (epstopdf)             \includegraphics on input line 11.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/analyticalmodel/sns_junction-eps-converted-to.pdf, id=291, 462.72874pt 
-x 393.47pt>
+x 372.39125pt>
 File: figure/analyticalmodel/sns_junction-eps-converted-to.pdf Graphic file (ty
 pe pdf)
  <use figure/analyticalmodel/sns_junction-eps-converted-to.pdf>
 Package pdftex.def Info: figure/analyticalmodel/sns_junction-eps-converted-to.p
 df used on input line 11.
-(pdftex.def)             Requested size: 279.978pt x 238.07109pt.
+(pdftex.def)             Requested size: 279.978pt x 225.31728pt.
 
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
@@ -2291,12 +2291,12 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 [14]
 Package epstopdf Info: Source file: <figure/analyticalmodel/current_density_all
 .eps>
-(epstopdf)                    date: 2017-12-31 16:55:24
-(epstopdf)                    size: 131813 bytes
+(epstopdf)                    date: 2018-02-09 11:40:30
+(epstopdf)                    size: 145636 bytes
 (epstopdf)             Output file: <figure/analyticalmodel/current_density_all
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2018-01-22 10:47:27
-(epstopdf)                    size: 20498 bytes
+(epstopdf)                    date: 2018-02-09 11:40:40
+(epstopdf)                    size: 22850 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/analyticalmodel/curr
 ent_density_all-eps-converted-to.pdf figure/analyticalmodel/current_density_all
 .eps>
@@ -2313,7 +2313,7 @@ Package pdftex.def Info: figure/analyticalmodel/current_density_all-eps-convert
 ed-to.pdf used on input line 79.
 (pdftex.def)             Requested size: 466.62526pt x 262.46992pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--84
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
@@ -2332,23 +2332,26 @@ s-converted-to.pdf>
 (epstopdf)                    size: 92723 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/analyticalmodel/qpc_
 sns_junction-eps-converted-to.pdf figure/analyticalmodel/qpc_sns_junction.eps>
-(epstopdf)             \includegraphics on input line 127.
+(epstopdf)             \includegraphics on input line 130.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf, id=372, 461.725p
+<figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf, id=377, 461.725p
 t x 371.3875pt>
 File: figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf Graphic file
  (type pdf)
 
 <use figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf>
 Package pdftex.def Info: figure/analyticalmodel/qpc_sns_junction-eps-converted-
-to.pdf used on input line 127.
-(pdftex.def)             Requested size: 279.978pt x 225.19731pt.
+to.pdf used on input line 130.
+(pdftex.def)             Requested size: 326.63625pt x 262.72925pt.
 
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
 [16]
+Underfull \vbox (badness 2772) has occurred while \output is active []
+
+
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
@@ -2367,100 +2370,96 @@ s-converted-to.pdf>
 (epstopdf)                    size: 54207 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/analyticalmodel/qpc_
 edges_angles-eps-converted-to.pdf figure/analyticalmodel/qpc_edges_angles.eps>
-(epstopdf)             \includegraphics on input line 199.
+(epstopdf)             \includegraphics on input line 201.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/qpc_edges_angles-eps-converted-to.pdf, id=415, 503.8825
+<figure/analyticalmodel/qpc_edges_angles-eps-converted-to.pdf, id=421, 503.8825
 pt x 399.4925pt>
 File: figure/analyticalmodel/qpc_edges_angles-eps-converted-to.pdf Graphic file
  (type pdf)
 
 <use figure/analyticalmodel/qpc_edges_angles-eps-converted-to.pdf>
 Package pdftex.def Info: figure/analyticalmodel/qpc_edges_angles-eps-converted-
-to.pdf used on input line 199.
+to.pdf used on input line 201.
 (pdftex.def)             Requested size: 233.31262pt x 184.97574pt.
 
 
-Package caption Warning: \label without proper \caption on input line 202.
+Package caption Warning: \label without proper \caption on input line 201.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:qpc-edge-parametrization' on page 19 undefined on
- input line 202.
+ input line 204.
 
 
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
 [19 <./figure/analyticalmodel/qpc_edges_angles-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `eq:large-phi' on page 20 undefined on input line 234.
+
+
 Package epstopdf Info: Source file: <figure/analyticalmodel/ratio-transmissions
 .eps>
-(epstopdf)                    date: 2018-02-08 22:14:54
-(epstopdf)                    size: 125495 bytes
+(epstopdf)                    date: 2018-02-09 11:08:40
+(epstopdf)                    size: 157463 bytes
 (epstopdf)             Output file: <figure/analyticalmodel/ratio-transmissions
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2018-02-08 22:16:40
-(epstopdf)                    size: 14551 bytes
+(epstopdf)                    date: 2018-02-09 11:11:11
+(epstopdf)                    size: 24378 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/analyticalmodel/rati
 o-transmissions-eps-converted-to.pdf figure/analyticalmodel/ratio-transmissions
 .eps>
-(epstopdf)             \includegraphics on input line 248.
+(epstopdf)             \includegraphics on input line 250.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/ratio-transmissions-eps-converted-to.pdf, id=439, 1156.
+<figure/analyticalmodel/ratio-transmissions-eps-converted-to.pdf, id=443, 1156.
 32pt x 650.43pt>
 File: figure/analyticalmodel/ratio-transmissions-eps-converted-to.pdf Graphic f
 ile (type pdf)
 
 <use figure/analyticalmodel/ratio-transmissions-eps-converted-to.pdf>
 Package pdftex.def Info: figure/analyticalmodel/ratio-transmissions-eps-convert
-ed-to.pdf used on input line 248.
-(pdftex.def)             Requested size: 373.30162pt x 209.97792pt.
-
-
-Package caption Warning: \label without proper \caption on input line 251.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:ratio-transmissions' on page 20 undefined on inpu
-t line 250.
-
+ed-to.pdf used on input line 250.
+(pdftex.def)             Requested size: 466.62526pt x 262.46992pt.
 Package epstopdf Info: Source file: <figure/analyticalmodel/ratio-transmissions
 -gaussian.eps>
-(epstopdf)                    date: 2018-02-08 22:15:19
-(epstopdf)                    size: 126051 bytes
+(epstopdf)                    date: 2018-02-09 11:10:56
+(epstopdf)                    size: 144625 bytes
 (epstopdf)             Output file: <figure/analyticalmodel/ratio-transmissions
 -gaussian-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-02-08 22:18:10
-(epstopdf)                    size: 15224 bytes
+(epstopdf)                    date: 2018-02-09 11:11:11
+(epstopdf)                    size: 21955 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/analyticalmodel/rati
 o-transmissions-gaussian-eps-converted-to.pdf figure/analyticalmodel/ratio-tran
 smissions-gaussian.eps>
-(epstopdf)             \includegraphics on input line 254.
+(epstopdf)             \includegraphics on input line 257.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/analyticalmodel/ratio-transmissions-gaussian-eps-converted-to.pdf, id=4
-42, 1156.32pt x 650.43pt>
+46, 1156.32pt x 650.43pt>
 File: figure/analyticalmodel/ratio-transmissions-gaussian-eps-converted-to.pdf 
 Graphic file (type pdf)
 
 <use figure/analyticalmodel/ratio-transmissions-gaussian-eps-converted-to.pdf>
 Package pdftex.def Info: figure/analyticalmodel/ratio-transmissions-gaussian-ep
-s-converted-to.pdf used on input line 254.
-(pdftex.def)             Requested size: 373.30162pt x 209.97792pt.
+s-converted-to.pdf used on input line 257.
+(pdftex.def)             Requested size: 466.62526pt x 262.46992pt.
 )
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[20 <./figure/analyticalmodel/ratio-transmissions-eps-converted-to.pdf>]
+[20]
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[21 <./figure/analyticalmodel/ratio-transmissions-gaussian-eps-converted-to.pdf
->] [22
+[21 <./figure/analyticalmodel/ratio-transmissions-eps-converted-to.pdf> <./figu
+re/analyticalmodel/ratio-transmissions-gaussian-eps-converted-to.pdf>] [22
 
 
-] (./mainThesis.bbl)
+]
+(./mainThesis.bbl)
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
@@ -2485,13 +2484,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 109.
  ) 
 Here is how much of TeX's memory you used:
- 29055 strings out of 494974
- 541239 string characters out of 6180014
- 749728 words of memory out of 5000000
- 31634 multiletter control sequences out of 15000+600000
+ 29061 strings out of 494974
+ 541274 string characters out of 6180014
+ 750724 words of memory out of 5000000
+ 31639 multiletter control sequences out of 15000+600000
  29318 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 73i,15n,75p,10405b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,15n,75p,10405b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
@@ -2514,10 +2513,10 @@ fonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8
 a.pfb>
-Output written on mainThesis.pdf (29 pages, 699299 bytes).
+Output written on mainThesis.pdf (29 pages, 726364 bytes).
 PDF statistics:
- 617 PDF objects out of 1000 (max. 8388607)
- 486 compressed objects within 5 object streams
- 156 named destinations out of 1000 (max. 500000)
+ 639 PDF objects out of 1000 (max. 8388607)
+ 492 compressed objects within 5 object streams
+ 157 named destinations out of 1000 (max. 500000)
  172 words of extra memory for PDF output out of 10000 (max. 10000000)
 
