@@ -14,8 +14,8 @@ import os
 from functools import partial
 import csv
 
-nb_points = 10 
-splitgate_voltage = np.linspace(-1.0, 0.0, nb_points)
+nb_points = 400 
+splitgate_voltage = np.linspace(-0.8, 0.2, nb_points)#np.linspace(-1.0, 0.0, nb_points)
 vbg_values = [0.1, 0.15,  0.2, 0.25, 0.3,]
 phase = (-np.pi, np.pi) 
 vlead = 0.0 
@@ -28,8 +28,8 @@ at = 5
 a = 0.4
 
 pot_decay = 15 
-mainpath = '/home/nefta/thesis/'
-#mainpath = '/users/tkm/kanilmaz/thesis/'
+#mainpath = '/home/nefta/thesis/'
+mainpath = '/users/tkm/kanilmaz/thesis/'
 
 path_to_result = mainpath + 'results/qpc/conductance/' 
 path_to_file = mainpath + 'designfiles/qpc.png' 

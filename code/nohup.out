@@ -7151,3 +7151,5 @@ output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.08-20180126
 starting calculation with  500  points
 time for calculation with multiprocessing:  0:15:48.376348
 output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.09-20180126-10:19:34/data.csv
+vbg= 0.1
+starting calculation with  400 points
