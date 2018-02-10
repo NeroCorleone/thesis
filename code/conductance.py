@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-nb_points = 400 
+nb_points = 50 
 splitgate_voltage = np.linspace(-0.8, 0.2, nb_points)#np.linspace(-1.0, 0.0, nb_points)
 vbg_values = [0.1, 0.15,  0.2, 0.25, 0.3,]
 phase = (-np.pi, np.pi) 
@@ -25,13 +25,21 @@ T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5 
-a = 0.4
+a = 0.1
+
+#parameters for rough edges
+rough_edges = True
+depth = 10
+size = 0.1
 
 pot_decay = 15 
-#mainpath = '/home/nefta/thesis/'
-mainpath = '/users/tkm/kanilmaz/thesis/'
+mainpath = '/home/nefta/thesis/'
+#mainpath = '/users/tkm/kanilmaz/thesis/'
 
-path_to_result = mainpath + 'results/qpc/conductance/' 
+if rough_edges:
+    path_to_result = mainpath + 'results/qpc/conductance/rough/' 
+else:
+    path_to_result = mainpath + 'results/qpc/conductance/' 
 path_to_file = mainpath + 'designfiles/qpc.png' 
 
 scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
@@ -131,6 +139,53 @@ class TRIInfiniteSystem(kwant.builder.InfiniteSystem):
         prop_modes.wave_functions[:, n:] =             self.trs(prop_modes.wave_functions[:, :n])
         return prop_modes, stab_modes
 
+def make_edges_rough(system, depth, size, lead_distance=2):
+    site_positions = [site.pos for site in system.sites()]
+    unique_x = np.unique(list(zip(*site_positions))[0])[lead_distance:-lead_distance]
+    ymin = {xval: min([val for val in site_positions if val[0] == xval])[1] for xval in unique_x}
+    ymax = {xval: max([val for val in site_positions if val[0] == xval])[1] for xval in unique_x}
+    
+    def upper_edge(site, width):
+        x0, y0 = site.pos
+        try:
+            delta = ymax[x0] - y0
+            if delta < width:
+                return(True)
+        except KeyError:
+            return False
+
+    def lower_edge(site, width=10):
+        x0, y0 = site.pos
+        try:
+            delta = y0 - ymin[x0]
+            if delta < width:
+                return(True)
+        except KeyError:
+            return False
+    
+    upper_edge_sites = [(site.tag, site.family) for site in system.sites() if upper_edge(site, depth)]
+    upper_indices_to_delete = np.random.choice(np.arange(len(upper_edge_sites)),
+                                               round(len(upper_edge_sites) * size))
+    
+    for index in upper_indices_to_delete:
+        tag_to_del, family_to_del = upper_edge_sites[index]
+        try:
+            del system[family_to_del(tag_to_del[0], tag_to_del[1])]
+        except KeyError:
+            pass
+    
+    lower_edge_sites = [(site.tag, site.family) for site in system.sites() if lower_edge(site, depth)]
+    lower_indices_to_delete = np.random.choice(np.arange(len(lower_edge_sites)), 
+                                               round(len(lower_edge_sites)*size))
+    
+    for index in lower_indices_to_delete:
+        tag_to_del, family_to_del = lower_edge_sites[index]
+        try:
+            del system[family_to_del(tag_to_del[0], tag_to_del[1])]
+        except KeyError:
+            pass
+    return(system)
+
 def make_system():
     system = kwant.Builder()
     scat_width = scattering_region.shape[0]
@@ -157,6 +212,7 @@ def make_system():
      
     system.attach_lead(lead_1)
     system.attach_lead(lead_2)
+    system = make_edges_rough(system, depth, size)
     system = system.finalized()
     system.leads = [TRIInfiniteSystem(lead, trs) for lead in system.leads]
     
@@ -193,10 +249,12 @@ def calculate_conductance(system, vbg, b=0, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
     system_params_names = ['vbg', 'vlead', 'b', 'nb_points', 
 			   'decay', 'eta', 'gamma', 
-                           'a', 'at', 'delta', 'T', ]
+                           'a', 'at', 'delta', 'T', 
+                           'rough_edges', 'depth', 'size', ]
     system_params = [str(vbg), str(vlead), str(b), str(nb_points), 
 		     str(pot_decay), str(eta), str(gamma), 
-                     str(a), str(at), str(delta), str(T), ]
+                     str(a), str(at), str(delta), str(T), 
+                     str(rough_edges), str(depth), str(size), ]
     newpath = path + 'vbg=' + str(vbg) + '-' +  runtime + '/'
     if not os.path.exists(newpath):
         os.makedirs(newpath)
@@ -239,21 +297,10 @@ def calculate_conductance(system, vbg, b=0, path=path_to_result):
         
     png_file = newpath + 'conductance.png'
     plotConductance(splitgate_voltage, conductance_values, png_file)
-    return()
+    return
+
 
 sys = make_system()
 for vbg in vbg_values:
     print('vbg=', vbg)
     calculate_conductance(sys, vbg)
-'''
-for vsg in [-0.2, -0.3, -0.4, -0.45, -0.46, -0.47, -0.48, -0.49, -0.5, ]: 
-    print(vsg)
-    par = SimpleNamespace(v_bg=v_bg, t=1, gamma1=gamma, v_sg=vsg, B=0.0)
-    ldos = kwant.ldos(sys, energy=0.0, args=[par])
-    fig = kwant.plotter.map(system, ldos, a=1, vmax=.1, vmin=0.02, fig_size=(10,20))
-    dir = mainpath + '/{}/ldos/'.format(case) 
-    if not os.path.exists(dir):
-        os.makedirs(dir)
-    fig.savefig(dir + 'ldos_vsg={0}.png'.format(vsg))
-
-'''
