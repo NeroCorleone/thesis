@@ -13,4 +13,5 @@
 \contentsline {section}{\numberline {3.2}Plane setup: calculation of current}{14}{section.3.2}
 \contentsline {section}{\numberline {3.3}Calculation of QPC current}{16}{section.3.3}
 \contentsline {section}{\numberline {3.4}QPC edge current}{19}{section.3.4}
-\contentsline {chapter}{Bibliography}{23}{figure.caption.11}
+\contentsline {chapter}{\numberline {4}Numerical Results}{23}{chapter.4}
+\contentsline {chapter}{Bibliography}{25}{figure.caption.12}
