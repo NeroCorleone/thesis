@@ -7153,3 +7153,16 @@ time for calculation with multiprocessing:  0:15:48.376348
 output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.09-20180126-10:19:34/data.csv
 vbg= 0.1
 starting calculation with  400 points
+time for calculation:  0:11:57.719878
+vbg= 0.15
+starting calculation with  400 points
+time for calculation:  0:12:12.131144
+vbg= 0.2
+starting calculation with  400 points
+time for calculation:  0:12:25.324026
+vbg= 0.25
+starting calculation with  400 points
+time for calculation:  0:12:40.360607
+vbg= 0.3
+starting calculation with  400 points
+time for calculation:  0:13:30.521145
