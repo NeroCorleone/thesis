@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-nb_points = 50 
+nb_points = 400 
 splitgate_voltage = np.linspace(-0.8, 0.2, nb_points)#np.linspace(-1.0, 0.0, nb_points)
 vbg_values = [0.1, 0.15,  0.2, 0.25, 0.3,]
 phase = (-np.pi, np.pi) 
@@ -25,16 +25,16 @@ T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5 
-a = 0.1
+a = 0.4
 
 #parameters for rough edges
 rough_edges = True
-depth = 10
-size = 0.1
+depth = 20 
+size = 0.4
 
 pot_decay = 15 
-mainpath = '/home/nefta/thesis/'
-#mainpath = '/users/tkm/kanilmaz/thesis/'
+#mainpath = '/home/nefta/thesis/'
+mainpath = '/users/tkm/kanilmaz/thesis/'
 
 if rough_edges:
     path_to_result = mainpath + 'results/qpc/conductance/rough/' 
@@ -142,8 +142,11 @@ class TRIInfiniteSystem(kwant.builder.InfiniteSystem):
 def make_edges_rough(system, depth, size, lead_distance=2):
     site_positions = [site.pos for site in system.sites()]
     unique_x = np.unique(list(zip(*site_positions))[0])[lead_distance:-lead_distance]
-    ymin = {xval: min([val for val in site_positions if val[0] == xval])[1] for xval in unique_x}
-    ymax = {xval: max([val for val in site_positions if val[0] == xval])[1] for xval in unique_x}
+    #for xval in unique_x[:1]:
+    #    print(min([val for val in site_positions if val[0] == xval], key=lambda x: x[1])) 
+    #    print('done')
+    ymin = {xval: min([val for val in site_positions if val[0] == xval], key=lambda x: x[1])[1] for xval in unique_x}
+    ymax = {xval: max([val for val in site_positions if val[0] == xval], key=lambda x: x[1])[1] for xval in unique_x}
     
     def upper_edge(site, width):
         x0, y0 = site.pos
