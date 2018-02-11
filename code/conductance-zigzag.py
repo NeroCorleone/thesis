@@ -14,8 +14,8 @@ import os
 from functools import partial
 import csv
 
+nb_points = 100 
 vbg_values = [0.2, ]#[0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4] 
-nb_points = 10 
 vsg_values = np.linspace(-1, 0.0, nb_points)
 vlead = 0.0
 b = 0.0
@@ -25,7 +25,7 @@ T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5.0
-a = 0.1
+a = 0.4
 
 pot_decay = 15 
 mainpath = '/home/nefta/thesis/'
