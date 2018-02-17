@@ -1,9 +1,71 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Josephson(1962)]{Josephson1962}
+B.D. Josephson.
+\newblock {Possible new effects in superconductive tunnelling}.
+\newblock \emph{Physics Letters}, 1\penalty0 (7):\penalty0 251--253, jul 1962.
+
+\bibitem[Likharev(1979)]{Likharev1979}
+K.~K. Likharev.
+\newblock {Superconducting weak links}.
+\newblock \emph{Reviews of Modern Physics}, 51\penalty0 (1):\penalty0 101--159,
+  jan 1979.
+
+\bibitem[Katsnelson et~al.(2006)Katsnelson, Novoselov, and
+  Geim]{Katsnelson2006}
+M.~I. Katsnelson, K.~S. Novoselov and A.~K. Geim.
+\newblock {Chiral tunnelling and the Klein paradox in graphene}.
+\newblock \emph{Nature Physics}, 2\penalty0 (9):\penalty0 620--625, sep 2006.
+
+\bibitem[McCann(2006)]{McCann2006}
+Edward McCann.
+\newblock {Asymmetry gap in the electronic band structure of bilayer graphene}.
+\newblock \emph{Physical Review B}, 74\penalty0 (16):\penalty0 161403, oct
+  2006.
+
+\bibitem[Shytov et~al.(2008)Shytov, Rudner, and Levitov]{Shytov2008}
+A.~V. Shytov, M.~S. Rudner and L.~S. Levitov.
+\newblock {Klein Backscattering and Fabry-Perot Interference in Graphene
+  Heterojunctions}.
+\newblock aug 2008.
+
+\bibitem[Chiodi et~al.(2012)Chiodi, Ferrier, Gu{\'{e}}ron, Cuevas, Montambaux,
+  Fortuna, Kasumov, and Bouchiat]{Chiodi2012}
+F.~Chiodi et~al.
+\newblock {Geometry-related magnetic interference patterns in long SNS
+  Josephson junctions}.
+\newblock jan 2012.
+
+\bibitem[Zagoskin(1997)]{Zagoskin1997}
+Alexandre~M. Zagoskin.
+\newblock {The half-periodic Josephson effect in an s-wave
+  superconductor-normal-metal-d-wave superconductor junction}.
+\newblock \emph{Journal of Physics Condensed Matter}, 9\penalty0 (31), 1997.
+
+\bibitem[Barzykin and Zagoskin(1999)]{Barzykin1999}
+Victor Barzykin and Alexandre~M. Zagoskin.
+\newblock {Coherent transport and nonlocality in mesoscopic SNS junctions:
+  Anomalous magnetic interference patterns}.
+\newblock \emph{Superlattices and Microstructures}, 25\penalty0 (5):\penalty0
+  797--807, 1999.
+
+\bibitem[Meier et~al.(2016)Meier, Fal'Ko, and Glazman]{Meier2016}
+Hendrik Meier, Vladimir~I. Fal'Ko and Leonid~I. Glazman.
+\newblock {Edge effects in the magnetic interference pattern of a ballistic SNS
+  junction}.
+\newblock \emph{Physical Review B}, 93\penalty0 (18):\penalty0 1--13, 2016.
+
+\bibitem[Beenakker and {Van Houten}(1991)]{Beenakker1991}
+C.~W~J Beenakker and H.~{Van Houten}.
+\newblock {Josephson current through a superconducting quantum point contact
+  shorter than the coherence length}.
+\newblock \emph{Physical Review Letters}, 66\penalty0 (23):\penalty0
+  3056--3059, 1991.
 
 \bibitem[McCann and Koshino(2012)]{McCann2012}
 Edward McCann and Mikito Koshino.
@@ -34,5 +96,38 @@ J.~W. McClure.
 \newblock {Theory of Diamagnetism of Graphite}.
 \newblock \emph{Physical Review}, 119\penalty0 (2):\penalty0 606--613, jul
   1960.
+
+\bibitem[Mucha-Kruczynski et~al.(2010)Mucha-Kruczynski, McCann, and
+  Fal'ko]{Mucha-Kruczynski2010}
+M~Mucha-Kruczynski, E~McCann and Vladimir~I Fal'ko.
+\newblock {Electron hole asymmetry and energy gaps in bilayer graphene}.
+\newblock \emph{Semiconductor Science and Technology}, 25\penalty0
+  (3):\penalty0 033001, mar 2010.
+
+\bibitem[Malard et~al.(2007)Malard, Nilsson, Elias, Brant, Plentz, Alves, Neto,
+  and Pimenta]{Malard2007}
+L.~M. Malard et~al.
+\newblock {Probing the Electronic Structure of Bilayer Graphene by Raman
+  Scattering}.
+\newblock aug 2007.
+
+\bibitem[Kuzmenko et~al.(2009)Kuzmenko, Crassee, van~der Marel, Blake, and
+  Novoselov]{Kuzmenko2009}
+A.~B. Kuzmenko et~al.
+\newblock {Determination of the gate-tunable band gap and tight-binding
+  parameters in bilayer graphene using infrared spectroscopy}.
+\newblock \emph{Physical Review B}, 80\penalty0 (16):\penalty0 165406, oct
+  2009.
+
+\bibitem[Mello et~al.(1988)Mello, Pereyra, and Kumar]{Mello1988}
+Pier~A. Mello, Pedro Pereyra and Narendra Kumar.
+\newblock {A soluble random-matrix model for relaxation in quantum systems}.
+\newblock \emph{Journal of Statistical Physics}, 51\penalty0 (1-2):\penalty0
+  77--94, apr 1988.
+
+\bibitem[Beenakker(1992)]{Beenakker1992}
+C.~W.~J. Beenakker.
+\newblock
+\newblock {Three Universal Mesoscopic Josephson Effects}. 1992.
 
 \end{thebibliography}
