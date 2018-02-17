@@ -20,13 +20,12 @@ scatteringGeom = np.fliplr(1 - scipy.ndimage.imread(
     '/home/nefta/thesis/designfiles/scatteringRegion.png', mode='L').T / 255)
 vbg = 0.2
 vlead = 0.0
-vsg_values = [-0.6, -0.7, -0.8]#np.arange(0.0, -1, -0.1) 
+vsg_values = np.round(np.arange(-0.4, 0.4, 0.1), 1)
 b = 0.0
 gamma = 0.4
 a = 0.4
 at = 5.0
 bilayer = kwant.lattice.general([(at*np.sqrt(3)/2, at*1/2), (0, at*1)], [(0, 0.0), (at*1 / (2*np.sqrt(3)), at*1/2), (-at*1/(2*np.sqrt(3)), at*1/2), (0, 0)])
-
 
 a1, b1, a2, b2 = bilayer.sublattices
 

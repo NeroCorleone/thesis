@@ -8,7 +8,7 @@ From section \ref{sec:theory-sns} it is known that Andreev reflection of electro
 %The superconducting current density is found by summing up these trajectories. This is a way to express the current through geometrical analysis of possible trajectories only. The underlying material does not play a specific role in the calculation, which makes this approach universally applicable.
 \begin{figure}[h]
 \centering	
-\includegraphics[width=0.6\textwidth]{figure/analyticalmodel/sns_junction}
+\includegraphics[width=0.5\textwidth]{figure/analyticalmodel/sns_junction}
 \caption{SNS junction with width $W$ and length $L$. A trajectory connecting the interfaces is parametrized by the angle $\theta$ between the trajectory and the x-axis. $\chi_1$ and $\chi_2$ are the superconducting phases, with total phase differece $\chi = \chi_2 - \chi_1$.}
 \label{fig:sns_schematic}
 \end{figure}
@@ -111,23 +111,60 @@ This gauge will give no additional contribution to the phase on straight traject
 \delta \chi &=& \frac{2 \pi}{\Phi_0} \int d \mathbf{l} \cdot \mathbf{A} \\
 &=& \frac{2 \pi}{\Phi_0} \int_{-L/2}^{L/2} \frac{dx}{\cos \theta} A_y (x) \sin \theta \\
 &=& - \frac{2 \pi B}{\Phi_0} \frac{y_2 - y_1}{L} \int_{-L/2}^{L/2} x dx \\
-&=& 0, 
+&=& 0, \label{eq:magnetic-phase-straight}
 \end{eqnarray}
 where eq.~(\ref{eq:parametrization}) has been used. The total phase for this setup is therefore eq.~(\ref{eq:chi}). This results in the current phase relation in the expression for the Josephson current from eq. (\ref{eq:josephson_current_zero_b}) to be replaced by the effective phase $\chi \rightarrow \tilde{\chi}(y_1, y_2)$:
 \begin{equation}
 J\left(\chi, \phi \right) = \frac{2 e v_F}{\pi \lambda_F L^2}  \int \int_{-W/2}^{W/2} d y_1 d y_2 \frac{\mathcal{J}(\tilde{\chi}(y_1, y_2))}{\left[ 1 + \left(\frac{y_1 - y_2}{L}\right)^2\right]^2}
 \label{eq:josephson_current}
 \end{equation}
-By maximizing the Josephson current with respect to $\chi$, the critical current can be found as:
+The critical current can be found by maximizing the Josephson current with respect to $\chi$:
 \begin{equation}
-I_c(\phi) = \text{max}_{\chi}\left\{ J(\chi, \phi) \right\}
+I_c(\phi) = \text{max}_{\chi}\left\{ J(\chi, \phi) \right\}.
 \end{equation}
-%\textbf{TODO: Dependence on W/L ratio? Plot of current?}
+The integation over $y_1$ and $y_2$ has been evaluated in \textbf{TODO cite!} yields the critical current
+\begin{equation}
+I_c(\chi) = \frac{2e W v_F }{\lambda_F L}\frac{( 1- \{ \phi \}) \{ \phi \} }{|\phi|} 
+\end{equation}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figure/analyticalmodel/ic_vs_tau}
+\caption{$I_c$ vs. $\phi$ for different values of  $\mathcal{T}$}
+\end{figure}
+
+\subsection*{Including scattering at the boundaries}
+
+So far, straight trajectories connecting the two superconducting interfaces have been considered. A process that is possible in principal, is a trajectory of an electron that is scattered at a side boundary (see figure \textbf{TODO!}). It is clear that, especially in the case of a short and wide junction with $W \gg L$, these trajectories do not contribute as much as the straight trajectories. When a trajectory is scattered at, say, a point at the upper edge $(x, y) = (x_s, p W/2)$, the parametrisation for the angle describing the trajectory is
+\begin{equation}
+\tan \theta = \frac{\bar{y}_2 - y_1}{L} = \frac{W - y_2 - y_1}{L}. \label{eq:angles-scattering}
+\end{equation}
+In this parametrisation, the coordinate $\bar{y}_2$ is the mirror image of $y_2$. For straight trajectories the vector potential $\mathbf{A}$ does not give an additional contribution, which can be seen in eq. (\ref{qe:magnetic-phase-straight}). The effective phase is in this case determined by eq. (\ref{eq:chi}). When considering the scattering at side boundaries with the parametrization from eq. (\ref{eq:angles-scattering}), the contribution from the magnetic phase is no longer zero,
+\begin{eqnarray}
+\delta \chi &=& \frac{2 \pi}{\Phi_0} \int_{-L/2}^{x_s} dx A_y(x) \tan \theta  - \frac{2 \pi}{\Phi_0} \int_{x_s}^{+L/2} dx A_y(x) \tan \theta \\
+&=& - \frac{2 \pi B }{\Phi_0 } \tan \theta \left( \int_{-L/2}^{x_s} x dx - \int_{x_s}^{+L/2} dx \right) \\
+&=& - \frac{2 \pi B}{\Phi_0 } \tan \theta \left( x_s^2 - (L/2)^2 \right) \\
+&=& ~ \frac{\pi \phi}{2 W} \frac{(W - 2 y_1) ( W - 2y_2)}{W - y_1 - y_2},
+\end{eqnarray}
+since the trajectory changes the direction and therefore $d \mathbf{l} \cdot \mathbf{A}$ changes sign. The total effective phase difference is then, using eq. (\ref{eq:chi})
+\begin{equation}
+\tilde{chi} (y_1, y_2) = \chi - \frac{\pi \phi}{2 W} \left( 2 (y_1 + y_2) - \frac{(W-2y_1)(W-2y_2)}{W - y_1 - y_2} \right)
+\end{equation}
+With the contribution from side boundary scattering, the total Josephson current is
+\begin{equation}
+J \left( \chi, \phi \right) = J^{(0)} \left( \chi, \phi \right)  + 2 J^{(1)} \left( \chi, \phi \right).
+\end{equation}
+$J^{(0)}$ denotes the part coming from straight trajectories. Since there are two side boundaries, the part describing the scattering, $J^{(1)}$, has an additional factor 2 and reads
+\begin{equation}
+J^{(1)} = \frac{2 e v_F}{\pi \lambda_F L^2} \int \int_{-W/2}^{W/2} \frac{d y_1 d y_2}{ \left[ 1 + \left(\frac{y_1 - y_2}{L}\right)^2\right]^{2}} \mathcal{J} \left( \chi - \frac{\pi \phi}{2 W} \left( 2 (y_1 + y_2) - \frac{(W-2y_1)(W-2y_2)}{W - y_1 - y_2} \right)\right)
+\end{equation}
+This contribution has not been noted in \cite{Meier2016}. In the case of short and wide junctions, it is sufficient to consider only $J^{(0)}$. For the cases, when $W / L \simeq 1$, it is necessary to sum over all possible edge channels.
+
 
 \section{Calculation of QPC current}
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{figure/analyticalmodel/qpc_sns_junction}
+\includegraphics[width=0.5\textwidth]{figure/analyticalmodel/qpc_sns_junction}
 \caption{SNS junction with a QPC gate on top. The split is located at $(x, y) = (0, 0)$ and the width of the barrier is assumed to be negligible. Each trajectory that contributes has to pass though the origin. The angles $\theta_1$ and $\theta_2$ parametrize this trajectory.}
 \label{fig:qpc_sns_schematic}
 \end{figure}
@@ -147,9 +184,9 @@ With the gauge from eq. (\ref{eq:Ay}), the magnetic phase acquired within the sa
 -\frac{\pi \phi (y_1+y_2)}{2 W}.
 \label{eq:phaseQPC}
 \end{eqnarray}
-Adding this contribution to the term in eq.~(\ref{eq:chi}), the effective phase for the QPC setup is found to be
+The total phase difference is the difference of the contribution coming from the magnetic field, eq. (\ref{eq:phaseQPC}) and the supcondcucting phase difference eq.~(\ref{eq:chi}). The effective phase for the QPC setup is found to be
 \begin{equation}
-\tilde{\chi}(y_1,y_2)=\chi-\frac{3 \pi \phi }{2W}(y_1+y_2).
+\tilde{\chi}(y_1,y_2)=\chi-\frac{ \pi \phi }{2W}(y_1+y_2).
 \label{eq:chiQPC}
 \end{equation}
 %The contribution in eq. (\ref{eq:chiQPC}) is half of the effective phase without any constriction, as written in eq. (\ref{eq:chi}). This is reasonable and can be illustrated by looking at the area contributing to the phase. Only half of the normal region is covered by all possible trajectories in the QPC case, whereas in the case without any constriction, the whole normal region contributes.\\
@@ -170,25 +207,35 @@ The angles $\theta_{1, 2}$ can be rewritten in terms of $y_{1, 2}$ by using the 
 \end{eqnarray}
 where the integrals $\mathcal{I}$ are defined as
 \begin{equation}
-\mathcal{I}_k(\phi) = \frac{2}{L}\int_{-W/2}^{+W/2}dy \frac{\cos\left(\frac{3\pi\phi y}{2W}\right)}{\left[1 + \left(\frac{2y}{L}\right)^2 \right]^k}
+\mathcal{I}_k(\phi) = \frac{2}{L}\int_{-W/2}^{+W/2}dy \frac{\cos\left(\frac{\pi\phi y}{2W}\right)}{\left[1 + \left(\frac{2y}{L}\right)^2 \right]^k}
 \label{integral-qpc}
 \end{equation}
+\subsubsection*{Numerical evaluation}
+
+Evaluating the integral numerically, one finds 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{figure/analyticalmodel/qpc-numerical-integration-fit}
+\end{figure}
+\subsubsection*{Evaluation in limits}
 The current can be evaluated in the limit of small flux $\phi \rightarrow 0$, and in limit of high fields $\phi \rightarrow \infty$. 
 At $\phi=0$ the cosine term becomes one leading to the simple expression
 \begin{eqnarray}
 \mathcal{I}_2(0)\mathcal{I}_{3/2}(0) &=&
-\frac{2 W}{\sqrt{L^2+W^2}}\arctan\frac{W}{L} + \frac{2 L W^2}{(L^2+W^2)^{3/2}} \\
-&\equiv& \frac{2x}{\sqrt{1 + x^2}} \arctan x + \frac{2 x^2}{\left( 1 + x^2 \right)^{3/2}}, \quad x = W/L
+\frac{2 W^2 L}{\left( L^2 + W^2 \right)^{3/2}} + \frac{2W}{\sqrt{L^2 + W^2}} \arctan \frac{W}{L}  \\
+&\equiv & \frac{2 x^2}{\left( 1 + x^2 \right)^{3/2}} + \frac{2 x}{\sqrt{1 + x^2} } \arctan x,
 \label{Ic-0}
 \end{eqnarray}
+where $x \equiv W/L$.
 The parabolic asymptotics of the critical current at small $\phi$ is found by expanding the cosine factors in the numerator:
 \begin{eqnarray}
-\frac{I_c(\phi)}{I_{c0}}&\simeq& 1 - \frac{9\pi ^2 \phi^2 }{32} f_0(W/L) \\
+\frac{I_c(\phi)}{I_{c0}}&\simeq& 1 - \frac{\pi ^2 \phi^2 }{32} f_0(W/L) \\
 f_0(x) &=& \frac{\sqrt{x^2+1} \log \left(\sqrt{x^2+1}+x\right)}{x^3} - \frac{2}{x (x+(x^2+1) \arctan x)} 
 \end{eqnarray}
 In the opposite limit of high fields, $\phi\to \infty$, the integration in eq.~(\ref{integral-qpc}) is extended over $y_1$ and $y_2$ to $\pm \infty$ and obtain
 \begin{eqnarray}
-\frac{I_c(\phi)}{I_{c0}} &=& \frac{\pi^2 \left(1+x^2\right)^{3/2}}{4x\left(x + \left(1+x^2\right)\arctan x\right)}\left(1 + \frac{3 \pi \phi }{4 x} \right) \sqrt{\frac{3 \phi}{2x}}\exp\left(-\frac{3\phi\pi}{2x}\right)
+\frac{I_c(\phi)}{I_{c0}} &=& \frac{\pi^{3/2}}{8 x} \frac{(1 + x^2)^{3/2}}{x + (1+x^2) \arctan x} \left( \frac{\pi \phi}{2 x} \right)^{3/2} \exp \left( - \frac{\pi \phi}{2 x} \right)
 \label{eq:large-phi}
 \end{eqnarray}
 %\textbf{TODO: write this one in pretty}
@@ -264,3 +311,16 @@ make plot colors uniform\\
 add figure captions\\
 check plots for edge current --> cbar seems wrong}
 %write more about edge current contribution
+
+\section{Barrier with finite split width - Transition to QPC setup}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{figure/analyticalmodel/hourglass}
+\caption{Hourglass setup}\label{fig:hourglass}
+\end{figure}
+The QPC setup and the SNS setup without barriers can be linked conceptually by investigating an hourglass-shaped setup. This setup constricts the trajectories through a split with a finite width $w_s$ and is visualized in figure (\ref{fig:hourglass}). When considering only straight trajectories, this split width models the transition to the QPC in the limit of $w_s \rightarrow 0 $. The difference to the QPC is simply the parametrization of the angles: with a finite $w_s$, trajectories are parametrized by only one angle $\theta$, the direction does not change after passing the split. When $w_s$ is small enough, like in the QPC case, two independent trajectories are considered with two parametrization angles $\theta_1$ and $\theta_2$. 
+%TODO size of $w_s$?
+This setup is particularly interesting because the impact of asymmetry in the junction can be studied. When relocating the split by for example moving it along the $x$-axis, the possible trajectories are limited. As a consequence, the Fraunhofer pattern changes. 
+%TODO das ist ein bisschen dünn...
+
+%TODO cite?

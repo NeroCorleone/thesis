@@ -142,9 +142,6 @@ class TRIInfiniteSystem(kwant.builder.InfiniteSystem):
 def make_edges_rough(system, depth, size, lead_distance=2):
     site_positions = [site.pos for site in system.sites()]
     unique_x = np.unique(list(zip(*site_positions))[0])[lead_distance:-lead_distance]
-    #for xval in unique_x[:1]:
-    #    print(min([val for val in site_positions if val[0] == xval], key=lambda x: x[1])) 
-    #    print('done')
     ymin = {xval: min([val for val in site_positions if val[0] == xval], key=lambda x: x[1])[1] for xval in unique_x}
     ymax = {xval: max([val for val in site_positions if val[0] == xval], key=lambda x: x[1])[1] for xval in unique_x}
     
