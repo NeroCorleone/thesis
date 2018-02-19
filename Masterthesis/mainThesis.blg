@@ -3,24 +3,31 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: mainThesis.aux
 The style file: unsrtnatMod.bst
 Database file #1: literature.bib
-Repeated entry---line 224 of file literature.bib
+Repeated entry---line 159 of file literature.bib
  : @article{Beenakker1992
  :                       ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Bardeen1957"
-Warning--I didn't find a database entry for "Beenakker2006"
-Warning--I didn't find a database entry for "Efetov2016"
-You can't pop an empty literal stack for entry Josephson1962
+Repeated entry---line 202 of file literature.bib
+ : @article{CastroNeto2009
+ :                        ,
+I'm skipping whatever remains of this entry
+You can't pop an empty literal stack for entry Semenoff1984
 while executing---line 1300 of file unsrtnatMod.bst
-You can't pop an empty literal stack for entry Josephson1962
+You can't pop an empty literal stack for entry Semenoff1984
 while executing---line 1300 of file unsrtnatMod.bst
-You can't pop an empty literal stack for entry Josephson1962
+You can't pop an empty literal stack for entry Semenoff1984
 while executing---line 1300 of file unsrtnatMod.bst
-You can't pop an empty literal stack for entry Likharev1979
+You can't pop an empty literal stack for entry Zhang2005
 while executing---line 1300 of file unsrtnatMod.bst
-You can't pop an empty literal stack for entry Likharev1979
+You can't pop an empty literal stack for entry Zhang2005
 while executing---line 1300 of file unsrtnatMod.bst
-You can't pop an empty literal stack for entry Likharev1979
+You can't pop an empty literal stack for entry Zhang2005
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Novoselov2005
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Novoselov2005
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Novoselov2005
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Katsnelson2006
 while executing---line 1300 of file unsrtnatMod.bst
@@ -28,11 +35,48 @@ You can't pop an empty literal stack for entry Katsnelson2006
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Katsnelson2006
 while executing---line 1300 of file unsrtnatMod.bst
-You can't pop an empty literal stack for entry McCann2006
+You can't pop an empty literal stack for entry Oostinga2008
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Oostinga2008
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Oostinga2008
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Zhu2017
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Zhu2017
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Zhu2017
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Dynes1971
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Dynes1971
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Dynes1971
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Heersche2007
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Heersche2007
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Heersche2007
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Likharev1979
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Likharev1979
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Likharev1979
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry McCann2006
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry McCann2006
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry McCann2006
+while executing---line 1300 of file unsrtnatMod.bst
+Warning--empty journal in Taychatanapat2010
+You can't pop an empty literal stack for entry Taychatanapat2010
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Taychatanapat2010
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Taychatanapat2010
 while executing---line 1300 of file unsrtnatMod.bst
 Warning--empty journal in Shytov2008
 You can't pop an empty literal stack for entry Shytov2008
@@ -47,6 +91,25 @@ while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Chiodi2012
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Chiodi2012
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Bardeen1957
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Bardeen1957
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Bardeen1957
+while executing---line 1300 of file unsrtnatMod.bst
+Warning--empty journal in Beenakker2006
+You can't pop an empty literal stack for entry Beenakker2006
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Beenakker2006
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Beenakker2006
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Efetov2016
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Efetov2016
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Efetov2016
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Zagoskin1997
 while executing---line 1300 of file unsrtnatMod.bst
@@ -138,45 +201,45 @@ You can't pop an empty literal stack for entry Beenakker1992
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Beenakker1992
 while executing---line 1300 of file unsrtnatMod.bst
-You've used 20 entries,
+You've used 30 entries,
             2418 wiz_defined-function locations,
-            736 strings with 9407 characters,
-and the built_in function-call counts, 7594 in all, are:
-= -- 699
-> -- 353
-< -- 10
-+ -- 155
-- -- 96
-* -- 661
-:= -- 1238
-add.period$ -- 61
-call.type$ -- 20
-change.case$ -- 40
-chr.to.int$ -- 20
-cite$ -- 26
-duplicate$ -- 378
-empty$ -- 643
-format.name$ -- 122
-if$ -- 1567
+            810 strings with 11878 characters,
+and the built_in function-call counts, 11703 in all, are:
+= -- 1061
+> -- 595
+< -- 14
++ -- 253
+- -- 164
+* -- 1040
+:= -- 1922
+add.period$ -- 91
+call.type$ -- 30
+change.case$ -- 60
+chr.to.int$ -- 30
+cite$ -- 38
+duplicate$ -- 565
+empty$ -- 965
+format.name$ -- 206
+if$ -- 2407
 int.to.chr$ -- 1
-int.to.str$ -- 21
-missing$ -- 20
-newline$ -- 108
-num.names$ -- 60
-pop$ -- 118
+int.to.str$ -- 31
+missing$ -- 30
+newline$ -- 158
+num.names$ -- 90
+pop$ -- 171
 preamble$ -- 1
-purify$ -- 20
+purify$ -- 30
 quote$ -- 0
-skip$ -- 217
+skip$ -- 326
 stack$ -- 0
-substring$ -- 360
-swap$ -- 50
+substring$ -- 557
+swap$ -- 77
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 140
-warning$ -- 6
-while$ -- 65
+type$ -- 210
+warning$ -- 8
+while$ -- 98
 width$ -- 0
-write$ -- 318
-(There were 62 error messages)
+write$ -- 474
+(There were 93 error messages)

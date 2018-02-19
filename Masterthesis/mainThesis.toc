@@ -1,10 +1,13 @@
 \select@language {ngerman}
 \select@language {ngerman}
+\contentsline {paragraph}{Ergebnisse}{vi}{Doc-Start}
+\contentsline {paragraph}{Ausblick}{vi}{Doc-Start}
 \select@language {english}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Experimental set-up}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}First: summary of paper}{3}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Introduction}{3}{subsection.2.1.1}
+\contentsline {chapter}{\numberline {2}Experimental Motivation}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Normal state analysis:}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Superconducting state}{5}{section.2.3}
 \contentsline {chapter}{\numberline {3}Framework for analytical model}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Theory of superconductivity}{7}{section.3.1}
 \contentsline {section}{\numberline {3.2}Andreev reflection at the interfaceb between a superconductor and a normal metal}{10}{section.3.2}

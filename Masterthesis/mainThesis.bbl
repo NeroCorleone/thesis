@@ -1,14 +1,58 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{30}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Josephson(1962)]{Josephson1962}
-B.D. Josephson.
-\newblock {Possible new effects in superconductive tunnelling}.
-\newblock \emph{Physics Letters}, 1\penalty0 (7):\penalty0 251--253, jul 1962.
+\bibitem[Semenoff(1984)]{Semenoff1984}
+Gordon~W. Semenoff.
+\newblock {Condensed-Matter Simulation of a Three-Dimensional Anomaly}.
+\newblock \emph{Physical Review Letters}, 53\penalty0 (26):\penalty0
+  2449--2452, dec 1984.
+
+\bibitem[Zhang et~al.(2005)Zhang, Tan, Stormer, and Kim]{Zhang2005}
+Yuanbo Zhang et~al.
+\newblock {Experimental observation of the quantum Hall effect and Berry's
+  phase in graphene}.
+\newblock \emph{Nature}, 438\penalty0 (7065):\penalty0 201--204, nov 2005.
+
+\bibitem[Novoselov et~al.(2005)Novoselov, Geim, Morozov, Jiang, Katsnelson,
+  Grigorieva, Dubonos, and Firsov]{Novoselov2005}
+K.~S. Novoselov et~al.
+\newblock {Two-dimensional gas of massless Dirac fermions in graphene}.
+\newblock \emph{Nature}, 438\penalty0 (7065):\penalty0 197--200, nov 2005.
+
+\bibitem[Katsnelson et~al.(2006)Katsnelson, Novoselov, and
+  Geim]{Katsnelson2006}
+M.~I. Katsnelson, K.~S. Novoselov and A.~K. Geim.
+\newblock {Chiral tunnelling and the Klein paradox in graphene}.
+\newblock \emph{Nature Physics}, 2\penalty0 (9):\penalty0 620--625, sep 2006.
+
+\bibitem[Oostinga et~al.(2008)Oostinga, Heersche, Liu, Morpurgo, and
+  Vandersypen]{Oostinga2008}
+Jeroen~B. Oostinga et~al.
+\newblock {Gate-induced insulating state in bilayer graphene devices}.
+\newblock \emph{Nature Materials}, 7\penalty0 (2):\penalty0 151--157, feb 2008.
+
+\bibitem[Zhu et~al.(2017)Zhu, Kretinin, Thompson, Bandurin, Hu, Yu, Birkbeck,
+  Mishchenko, Vera-Marun, Watanabe, Taniguchi, Polini, Prance, Novoselov, Geim,
+  and {Ben Shalom}]{Zhu2017}
+M.~J. Zhu et~al.
+\newblock {Edge currents shunt the insulating bulk in gapped graphene}.
+\newblock \emph{Nature Communications}, 8:\penalty0 14552, feb 2017.
+
+\bibitem[Dynes and Fulton(1971)]{Dynes1971}
+R.~C. Dynes and T.~A. Fulton.
+\newblock {Supercurrent Density Distribution in Josephson Junctions}.
+\newblock \emph{Physical Review B}, 3\penalty0 (9):\penalty0 3015--3023, may
+  1971.
+
+\bibitem[Heersche et~al.(2007)Heersche, Jarillo-Herrero, Oostinga, Vandersypen,
+  and Morpurgo]{Heersche2007}
+Hubert~B. Heersche et~al.
+\newblock {Bipolar supercurrent in graphene}.
+\newblock \emph{Nature}, 446\penalty0 (7131):\penalty0 56--59, mar 2007.
 
 \bibitem[Likharev(1979)]{Likharev1979}
 K.~K. Likharev.
@@ -16,17 +60,17 @@ K.~K. Likharev.
 \newblock \emph{Reviews of Modern Physics}, 51\penalty0 (1):\penalty0 101--159,
   jan 1979.
 
-\bibitem[Katsnelson et~al.(2006)Katsnelson, Novoselov, and
-  Geim]{Katsnelson2006}
-M.~I. Katsnelson, K.~S. Novoselov and A.~K. Geim.
-\newblock {Chiral tunnelling and the Klein paradox in graphene}.
-\newblock \emph{Nature Physics}, 2\penalty0 (9):\penalty0 620--625, sep 2006.
-
 \bibitem[McCann(2006)]{McCann2006}
 Edward McCann.
 \newblock {Asymmetry gap in the electronic band structure of bilayer graphene}.
 \newblock \emph{Physical Review B}, 74\penalty0 (16):\penalty0 161403, oct
   2006.
+
+\bibitem[Taychatanapat and Jarillo-Herrero(2010)]{Taychatanapat2010}
+Thiti Taychatanapat and Pablo Jarillo-Herrero.
+\newblock {Electronic Transport in Dual-gated Bilayer Graphene at Large
+  Displacement Fields}.
+\newblock sep 2010.
 
 \bibitem[Shytov et~al.(2008)Shytov, Rudner, and Levitov]{Shytov2008}
 A.~V. Shytov, M.~S. Rudner and L.~S. Levitov.
@@ -40,6 +84,23 @@ F.~Chiodi et~al.
 \newblock {Geometry-related magnetic interference patterns in long SNS
   Josephson junctions}.
 \newblock jan 2012.
+
+\bibitem[Bardeen et~al.(1957)Bardeen, Cooper, and Schrieffer]{Bardeen1957}
+J.~Bardeen, L.~N. Cooper and J.~R. Schrieffer.
+\newblock {Theory of Superconductivity}.
+\newblock \emph{Physical Review}, 108\penalty0 (5):\penalty0 1175--1204, dec
+  1957.
+
+\bibitem[Beenakker(2006)]{Beenakker2006}
+C.~W.~J. Beenakker.
+\newblock {Specular Andreev reflection in graphene}.
+\newblock apr 2006.
+
+\bibitem[Efetov and Efetov(2016)]{Efetov2016}
+Dmitri~K. Efetov and Konstantin~B. Efetov.
+\newblock {Crossover from retro to specular Andreev reflections in bilayer
+  graphene}.
+\newblock \emph{Physical Review B}, 94\penalty0 (7), 2016.
 
 \bibitem[Zagoskin(1997)]{Zagoskin1997}
 Alexandre~M. Zagoskin.

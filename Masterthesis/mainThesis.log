@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  17 FEB 2018 17:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  19 FEB 2018 09:38
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1970,7 +1970,7 @@ arent-eps-converted-to.pdf figure/Logos/KITlogo_transparent.eps>
 (epstopdf)             \includegraphics on input line 16.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/Logos/KITlogo_transparent-eps-converted-to.pdf, id=114, 1324.95pt x 617
+<figure/Logos/KITlogo_transparent-eps-converted-to.pdf, id=118, 1324.95pt x 617
 .30624pt>
 File: figure/Logos/KITlogo_transparent-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2037,13 +2037,48 @@ Package babel Info: Redefining ngerman shorthand "~
 
 
 ])
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 78.
+(./misc/synopsis_german.tex
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 2.
+
+
+Package natbib Warning: Citation `Mermin1966' on page v undefined on input line
+ 4.
+
+
+Package natbib Warning: Citation `Novoselov2004' on page v undefined on input l
+ine 6.
+
+
+Package natbib Warning: Citation `Jurewicz2014' on page v undefined on input li
+ne 10.
+
+
+Package natbib Warning: Citation `Son2017' on page v undefined on input line 10
+.
+
+
+Underfull \vbox (badness 1852) has occurred while \output is active []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 33.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 33.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 33.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 33.
+ [5])
+[6]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 78.
  (./mainThesis.toc)
@@ -2054,13 +2089,13 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[5
+[7
 
 
-] [6
+] [8
 
 
-] (./misc/chapterLayout.tex) (./chapter/introduction.tex
+] (./chapter/introduction.tex
 chapter 1.
 
 Class scrbook Warning: \float@addtolists detected!
@@ -2091,23 +2126,12 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 ]
 chapter 2.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 4.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 5.
-<figure/experiment/setup.png, id=185, 2211.76312pt x 469.00218pt>
+<figure/experiment/setup.png, id=231, 2211.76312pt x 469.00218pt>
 File: figure/experiment/setup.png Graphic file (type png)
 
 <use figure/experiment/setup.png>
-Package pdftex.def Info: figure/experiment/setup.png used on input line 9.
-(pdftex.def)             Requested size: 373.30162pt x 79.1568pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 24.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
+Package pdftex.def Info: figure/experiment/setup.png used on input line 8.
+(pdftex.def)             Requested size: 466.62526pt x 98.94421pt.
 Package epstopdf Info: Source file: <figure/experiment/resistance-map-edit.eps>
 
 (epstopdf)                    date: 2018-02-17 16:58:39
@@ -2118,53 +2142,99 @@ converted-to.pdf>
 (epstopdf)                    size: 624841 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/experiment/resistanc
 e-map-edit-eps-converted-to.pdf figure/experiment/resistance-map-edit.eps>
-(epstopdf)             \includegraphics on input line 32.
+(epstopdf)             \includegraphics on input line 18.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/experiment/resistance-map-edit-eps-converted-to.pdf, id=190, 2067.725pt
+<figure/experiment/resistance-map-edit-eps-converted-to.pdf, id=235, 2067.725pt
  x 997.7275pt>
 File: figure/experiment/resistance-map-edit-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use figure/experiment/resistance-map-edit-eps-converted-to.pdf>
 Package pdftex.def Info: figure/experiment/resistance-map-edit-eps-converted-to
-.pdf used on input line 32.
+.pdf used on input line 18.
 (pdftex.def)             Requested size: 373.30162pt x 180.11604pt.
+
+Underfull \vbox (badness 5802) has occurred while \output is active []
+
 
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
 [3 <./figure/experiment/setup.png>]
-<figure/experiment/supercurrent.png, id=205, 2338.98843pt x 1575.63657pt>
+Package epstopdf Info: Source file: <figure/experiment/npn-regions-gates.eps>
+(epstopdf)                    date: 2018-02-17 16:59:04
+(epstopdf)                    size: 436140 bytes
+(epstopdf)             Output file: <figure/experiment/npn-regions-gates-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2018-02-18 18:06:33
+(epstopdf)                    size: 115039 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/experiment/npn-regio
+ns-gates-eps-converted-to.pdf figure/experiment/npn-regions-gates.eps>
+(epstopdf)             \includegraphics on input line 24.
+Package epstopdf Info: Output file is already uptodate.
+
+<figure/experiment/npn-regions-gates-eps-converted-to.pdf, id=250, 1396.21625pt
+ x 832.10875pt>
+File: figure/experiment/npn-regions-gates-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+ <use figure/experiment/npn-regions-gates-eps-converted-to.pdf>
+Package pdftex.def Info: figure/experiment/npn-regions-gates-eps-converted-to.p
+df used on input line 24.
+(pdftex.def)             Requested size: 233.31262pt x 139.04419pt.
+Package epstopdf Info: Source file: <figure/experiment/mar.eps>
+(epstopdf)                    date: 2018-02-18 21:16:07
+(epstopdf)                    size: 424934 bytes
+(epstopdf)             Output file: <figure/experiment/mar-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2018-02-18 21:51:50
+(epstopdf)                    size: 132739 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/experiment/mar-eps-c
+onverted-to.pdf figure/experiment/mar.eps>
+(epstopdf)             \includegraphics on input line 36.
+Package epstopdf Info: Output file is already uptodate.
+
+<figure/experiment/mar-eps-converted-to.pdf, id=253, 926.46124pt x 935.495pt>
+File: figure/experiment/mar-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figure/experiment/mar-eps-converted-to.pdf>
+Package pdftex.def Info: figure/experiment/mar-eps-converted-to.pdf used on inp
+ut line 36.
+(pdftex.def)             Requested size: 186.64725pt x 188.46603pt.
+
+<figure/experiment/supercurrent.png, id=255, 2338.98843pt x 1575.63657pt>
 File: figure/experiment/supercurrent.png Graphic file (type png)
 
 <use figure/experiment/supercurrent.png>
 Package pdftex.def Info: figure/experiment/supercurrent.png used on input line 
-51.
+42.
 (pdftex.def)             Requested size: 373.30162pt x 251.45786pt.
+)
+Underfull \vbox (badness 3989) has occurred while \output is active []
+
 
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[4 <./figure/experiment/resistance-map-edit-eps-converted-to.pdf>])
-(./chapter/analyticalframework.tex
+[4 <./figure/experiment/resistance-map-edit-eps-converted-to.pdf>]
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[5 <./figure/experiment/supercurrent.png>] [6
+[5 <./figure/experiment/npn-regions-gates-eps-converted-to.pdf> <./figure/exper
+iment/mar-eps-converted-to.pdf>] (./chapter/analyticalframework.tex
+Overfull \vbox (13.61752pt too high) has occurred while \output is active []
+
+
+[6 <./figure/experiment/supercurrent.png>]
+chapter 3.
+
+Overfull \vbox (13.61752pt too high) has occurred while \output is active []
+
+
+[7
 
 
 ]
-chapter 3.
-
-Package natbib Warning: Citation `Bardeen1957' on page 7 undefined on input lin
-e 7.
-
-
-Overfull \vbox (13.61752pt too high) has occurred while \output is active []
-
-
-[7]
 Package epstopdf Info: Source file: <figure/framework-analytical/bcs-spectrum.e
 ps>
 (epstopdf)                    date: 2018-02-06 15:30:59
@@ -2179,7 +2249,7 @@ ps-converted-to.pdf>
 (epstopdf)             \includegraphics on input line 70.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/framework-analytical/bcs-spectrum-eps-converted-to.pdf, id=250, 186.697
+<figure/framework-analytical/bcs-spectrum-eps-converted-to.pdf, id=311, 186.697
 5pt x 149.55875pt>
 File: figure/framework-analytical/bcs-spectrum-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -2211,7 +2281,7 @@ ps-converted-to.pdf>
 (epstopdf)             \includegraphics on input line 141.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/framework-analytical/ns-interface-eps-converted-to.pdf, id=285, 319.192
+<figure/framework-analytical/ns-interface-eps-converted-to.pdf, id=347, 319.192
 5pt x 205.76875pt>
 File: figure/framework-analytical/ns-interface-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -2246,7 +2316,7 @@ ted-to.pdf>
 (epstopdf)             \includegraphics on input line 249.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/framework-analytical/sns-eps-converted-to.pdf, id=320, 319.1925pt x 204
+<figure/framework-analytical/sns-eps-converted-to.pdf, id=382, 319.1925pt x 204
 .765pt>
 File: figure/framework-analytical/sns-eps-converted-to.pdf Graphic file (type p
 df)
@@ -2270,15 +2340,6 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
 [14]
-
-Package natbib Warning: Citation `Beenakker2006' on page 15 undefined on input 
-line 359.
-
-
-Package natbib Warning: Citation `Efetov2016' on page 15 undefined on input lin
-e 359.
-
-
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
@@ -2297,7 +2358,7 @@ reflection.eps>
 (epstopdf)             \includegraphics on input line 395.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/framework-analytical/specular-reflection-eps-converted-to.pdf, id=385, 
+<figure/framework-analytical/specular-reflection-eps-converted-to.pdf, id=449, 
 464.73625pt x 158.5925pt>
 File: figure/framework-analytical/specular-reflection-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -2333,7 +2394,7 @@ junction-eps-converted-to.pdf figure/analyticalmodel/sns_junction.eps>
 (epstopdf)             \includegraphics on input line 11.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/sns_junction-eps-converted-to.pdf, id=412, 462.72874pt 
+<figure/analyticalmodel/sns_junction-eps-converted-to.pdf, id=479, 462.72874pt 
 x 372.39125pt>
 File: figure/analyticalmodel/sns_junction-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -2364,7 +2425,7 @@ ent_density_all-eps-converted-to.pdf figure/analyticalmodel/current_density_all
 (epstopdf)             \includegraphics on input line 79.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/current_density_all-eps-converted-to.pdf, id=455, 1156.
+<figure/analyticalmodel/current_density_all-eps-converted-to.pdf, id=520, 1156.
 32pt x 650.43pt>
 File: figure/analyticalmodel/current_density_all-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -2395,7 +2456,7 @@ s_tau-eps-converted-to.pdf figure/analyticalmodel/ic_vs_tau.eps>
 (epstopdf)             \includegraphics on input line 131.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/ic_vs_tau-eps-converted-to.pdf, id=501, 1156.32pt x 650
+<figure/analyticalmodel/ic_vs_tau-eps-converted-to.pdf, id=566, 1156.32pt x 650
 .43pt>
 File: figure/analyticalmodel/ic_vs_tau-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2432,7 +2493,7 @@ up-edge-contribution.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/analyticalmodel/plane-setup-edge-contribution-eps-converted-to.pdf, id=
-550, 1156.32pt x 650.43pt>
+617, 1156.32pt x 650.43pt>
 File: figure/analyticalmodel/plane-setup-edge-contribution-eps-converted-to.pdf
  Graphic file (type pdf)
 
@@ -2453,7 +2514,7 @@ sns_junction-eps-converted-to.pdf figure/analyticalmodel/qpc_sns_junction.eps>
 (epstopdf)             \includegraphics on input line 171.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf, id=557, 461.725p
+<figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf, id=624, 461.725p
 t x 371.3875pt>
 File: figure/analyticalmodel/qpc_sns_junction-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -2487,7 +2548,7 @@ ical-integration-fit.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/analyticalmodel/qpc-numerical-integration-fit-eps-converted-to.pdf, id=
-626, 1156.32pt x 650.43pt>
+691, 1156.32pt x 650.43pt>
 File: figure/analyticalmodel/qpc-numerical-integration-fit-eps-converted-to.pdf
  Graphic file (type pdf)
 
@@ -2514,7 +2575,7 @@ edges_angles-eps-converted-to.pdf figure/analyticalmodel/qpc_edges_angles.eps>
 (epstopdf)             \includegraphics on input line 251.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/qpc_edges_angles-eps-converted-to.pdf, id=682, 503.8825
+<figure/analyticalmodel/qpc_edges_angles-eps-converted-to.pdf, id=747, 503.8825
 pt x 399.4925pt>
 File: figure/analyticalmodel/qpc_edges_angles-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -2557,7 +2618,7 @@ o-transmissions-eps-converted-to.pdf figure/analyticalmodel/ratio-transmissions
 (epstopdf)             \includegraphics on input line 300.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/ratio-transmissions-eps-converted-to.pdf, id=703, 1156.
+<figure/analyticalmodel/ratio-transmissions-eps-converted-to.pdf, id=768, 1156.
 32pt x 650.43pt>
 File: figure/analyticalmodel/ratio-transmissions-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -2581,7 +2642,7 @@ smissions-gaussian.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/analyticalmodel/ratio-transmissions-gaussian-eps-converted-to.pdf, id=7
-06, 1156.32pt x 650.43pt>
+71, 1156.32pt x 650.43pt>
 File: figure/analyticalmodel/ratio-transmissions-gaussian-eps-converted-to.pdf 
 Graphic file (type pdf)
 
@@ -2611,7 +2672,7 @@ glass-eps-converted-to.pdf figure/analyticalmodel/hourglass.eps>
 (epstopdf)             \includegraphics on input line 321.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/analyticalmodel/hourglass-eps-converted-to.pdf, id=786, 461.725pt x 371
+<figure/analyticalmodel/hourglass-eps-converted-to.pdf, id=853, 461.725pt x 371
 .3875pt>
 File: figure/analyticalmodel/hourglass-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2690,7 +2751,7 @@ cnorm_heatmap-eps-converted-to.pdf figure/numericalmodel/qpc_icnorm_heatmap.eps
 (epstopdf)             \includegraphics on input line 4.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/qpc_icnorm_heatmap-eps-converted-to.pdf, id=910, 1156.32
+<figure/numericalmodel/qpc_icnorm_heatmap-eps-converted-to.pdf, id=975, 1156.32
 pt x 650.43pt>
 File: figure/numericalmodel/qpc_icnorm_heatmap-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -2712,7 +2773,7 @@ onductance-eps-converted-to.pdf figure/numericalmodel/qpc-conductance.eps>
 (epstopdf)             \includegraphics on input line 9.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/qpc-conductance-eps-converted-to.pdf, id=911, 1156.32pt 
+<figure/numericalmodel/qpc-conductance-eps-converted-to.pdf, id=976, 1156.32pt 
 x 650.43pt>
 File: figure/numericalmodel/qpc-conductance-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -2760,16 +2821,11 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 [44]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
- (./mainThesis.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+ (./mainThesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
 Package rerunfilecheck Info: File `mainThesis.out' has not changed.
-(rerunfilecheck)             Checksum: DF4F3888F89038BFFBFD16092731D29F;2092.
+(rerunfilecheck)             Checksum: 331F5CA07107B5760B49035F015C6277;2157.
 
 
 LaTeX Warning: There were undefined references.
@@ -2780,13 +2836,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
  ) 
 Here is how much of TeX's memory you used:
- 29360 strings out of 494974
- 547935 string characters out of 6180014
- 753395 words of memory out of 5000000
- 31789 multiletter control sequences out of 15000+600000
+ 29412 strings out of 494974
+ 549135 string characters out of 6180014
+ 754573 words of memory out of 5000000
+ 31826 multiletter control sequences out of 15000+600000
  29774 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 73i,15n,75p,10405b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,15n,75p,10405b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
@@ -2810,10 +2866,10 @@ cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/ds
 rom10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 am10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on mainThesis.pdf (50 pages, 2305404 bytes).
+Output written on mainThesis.pdf (52 pages, 2563202 bytes).
 PDF statistics:
- 1134 PDF objects out of 1200 (max. 8388607)
- 817 compressed objects within 9 object streams
- 270 named destinations out of 1000 (max. 500000)
- 329 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1202 PDF objects out of 1440 (max. 8388607)
+ 879 compressed objects within 9 object streams
+ 285 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 

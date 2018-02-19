@@ -1,67 +1,45 @@
-\chapter{Experimental set-up}
+\chapter{Experimental Motivation}
 \label{ch:experiment}
 
-\section{First: summary of paper}
-\subsection{Introduction}
-
-\begin{figure}
+\section{Introduction}
+Can the supercurrent be monitored in a bilayer graphene (BLG) sample? The experimental work underpinning this thesis concerns itself with this question. In a conventional tunnel barrier, the supercurrent can only be tuned when the sample geometry or the environment temperature is changed. Moreover, the tunnel barrier should not exceed a certain width in order to make the supercurrent observable. The central idea of the particular set-up presented here is to create a weak link in the form of a quantum point contact (QPC). A weak link is a conductive material in which superconductivity can be induced because of the superconducting proximity effect \cite{Likharev1979}. The key achievement of this work is showing that with this QPC geometry, the supercurrent can be controlled both in its amplitude as well as in the spatial distribution within the set-up, which has not been observed so far. 
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{figure/experiment/setup}
+\includegraphics[width=\textwidth]{figure/experiment/setup}
+\caption{Experimental set-up schemes. Some stuff.}\label{fig:setup}
 \end{figure}
+Figure \ref{fig:setup} shows a schematic of the set-up. The BLG layer (black) is of width $W$ and a length $L$. It is encapsulated between two layers of hexagonal boron nitride (hBN, blue) and lies on top of a back-gate. A top-gate with a split of width $w$ in the middle, as depicted in see figure \ref{fig:setup} b, covers the the heterostructure. This device layout enables tuning the back-gate potential $V_{BG}$ independently from the top-gate or split-gate potential $V_{SG}$.
 
-Josephson effect \cite{Josephson1962} has been studied a lot. Key challenge: Developing devices in which the induced superconductivity can be monitored. This experiment is cool, because it uses local gates to control confinement, amplitude and density profile of the supercurrent. The sample used is a BLG-HBN-VDW heterostructure.
-Tunnel barrier -> supercurrent can only be tuned by modifying the geometry/temperature.
-Weak link -> a conductive material, in which superconductivity can be induced (proximity effect) and supercurrent can flow over larger distance than in tunnel junction \cite{Likharev1979}.
-Magnitude of supercurrent depends on contact transparency, disorder in the weak link, temperature.
+By gating the material with $V_{BG}$, an overall potential is applied at the whole region, lifting the Fermi energy $E_F$ of the system. At the same time, the region that is covered with the top gate is gated locally by the split-gate potential, while creating a displacement field along the sample. The displacement field breaks the symmetry of the BLG, and the two layers are at different energy levels. As as result, a gap in the BLG spectrum is opened \cite{McCann2006}. 
 
-Greatness of this work: full control of supercurrent both in amplitude and spatial distribution has not been observed so far. It is difficult to confine charge carriers in graphene (SLG!), because no backscattering in graphene and Klein tunneling \cite{Katsnelson2006}. Using BLG helps, because one can engineer an electronic band gap forming the barrier. 
-
-Sample geometry: QPC-like split gate geometry. The sample is overall gated with a backgate $V_{BG}$, a local top-gate in shape of two fingers (QPC geometry) is used to build a barrier. How does this process work? The overall backgate pushes the fermi level up into the conductance band. The topgate gives a displacement field, it pushes the fermi level down into the band gap --> no conduction possible, insulating state induced.
-Asymmetry between the layers of bilyer graphene (different energies at the layer) opens a band gap \cite{McCann2006} that is tuneable.
-
-\subsection*{Normal state analysis:}
-\begin{itemize}
-\item low charge carrier density $2.8\cdot 10^{18}$.
-\item Landau fans in magnetotransport measurement
-\item Fabry Perot interferences
-\end{itemize}
-
-\subsubsection*{On the resistance maps}
+\section{Normal state analysis:}
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{figure/experiment/resistance-map-edit}
-\caption{Resistance maps}
+\caption{Resistance maps}\label{fig:gate-map}
 \end{figure}
+In figure \ref{fig:gate-map}, the normal state resistance dependence on both back-gate and split-gate voltage is shown. The results of the normal state resistance differ from previous studies \cite{Oostinga2008}, \cite{Taychatanapat2010}. The gate map in \ref{fig:gate-map} has the back-gate as y-axis, the split-gate forming the QPC as x-axis, and the color indicates the strength of measured resistance. The diagonal line where back and split-gate are equal is called displacement field line (indicated with a grey arrow). The four quadrants are named according to how the BLG is gated: The first letter is the doping of the BLG region between the left superconductor and the split-gate, which is not gated. The middle letter indicates the doping underneath the region of the split-gate, and the third letter is the BLG doping between split-gate and right superconducting lead. Depending on the the choice of $V_{BG}$ and $V_{SG}$, the overall doping can be either one of $NNN$, $NPN$, $PPP$, or $PNP$. In the upper left quadrant, where the region is $NPN$ doped, the maximum resistance seems to follow the displament field line on the diagonal. After a certain point, however, it bends, and its maximum resistance is not found to be on the diagonal line anymore. This behaviour was not seen in  \cite{Oostinga2008}, \cite{Taychatanapat2010} -- these studies observed the maximum resistance to be on the diagonal line. The effect can be seen in the normal state resistance map, but it is strongly visible in the superconducting state. The overall resistance of the sample is higher on the p-side, because the superconducting leads are slightly n-doped. This leads to a $PN$-junction at each contact, which is seen in the gate map for the superconducting state. The $PNP$-region remains resistive, while the $NPN$-region shows zero resistance.
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{figure/experiment/npn-regions-gates}
+\caption{Explanation of the bending in the normal state resistance}\label{fig:npn-regions-gates}
+\end{figure}
+How can de bending in the resistance peak be explained?  Since the charge carrier density in the sample is low ($2.8\cdot 10^{18}\ \text{cm}^-2$), the influence of the back gate is important. The higher the back gate value, the less the charge carrier density is affected by the split gate and the stray fields it produces. In the lower $NPN$-region, the split gates work as intended: The channel region -- the region between the split gates where the supercurrent can pass through -- is conductive, because the back gate dominates. The BLG directly underneath the gates is $P$-doped, and the area between the two gate fingers is $N$-doped. A channel is created, where the current can pass through. This set-up is illustrated in the middle picture of figure \ref{fig:npn-regions-gates}. However, in the region where the resistance curve starts to bend, the stray fields from the split gate dominate. The area underneath the gates is still $P$-doped, but now the area between the fingers is slightly $P$-doped as well (see the right picture in figure \ref{fig:npn-regions-gates}), which effectively leads to a blocking behaviour of the channel, and eventually to an increased resistance.
+%\subsection*{Fabry Perot resonances}
+%gate dependece of conductance shows oscillatory behaviour, are attributed to Fabry Perot interferences of differenct cavities \cite{Shytov2008}	
 
- The gate map has the backgate as y-axis, the splitgate (QPC topgate) as x-axis and the color indicates the strength of measured resistane. For orientiation, the line where back and splitgate are equal is called the displacement field line (grey arrow). Naming the regions, depending on the position of the fermi level: fermi level in valence band: N, fermi level in conductance band: P. Think of it as three regions: BLG backgated, the area where BLG is back and topgated (region with topgates on top of the material), and again a region where BLG is only backgated. Depending on the the choice of $V_{BG}$ and $V_{SG}$, there are four regions: NNN, NPN, PPP, PNP. Looking at the upper left quadrant, NPN. In this region, the maximum resistance seems to follow the displacement field line (grey arrow), until a certain point, where it bends and the maximum resistance is not on a straight line anymore. Effect is visible in the normal state but even more in the superconducting state. --> unexpected behaviour.
- 
-Explanation? Charge carrier density is low, the influence of the backgate is important. The higher the backgate value is, the less the charge carrier density is affected by the splitgate and the stray fields, that it produces. And, as the splitgate impact is weak, the device stays conductive (resistance is low) along the displacement field line. 
-Why the bending? In the upper region of the displacement field line, the split gates work as intenden: the channel region (the region, where the supercurrent can pass through) is conductive, because the backgate dominates. In the region, where the resistance curve is bending, the stray fields from the splitgate dominate, effectively blocking the channel region and therefore leading to to increased resistance.
+\section{Superconducting state}
 
-The overall resistance is higher on the p-side, due to the slight n-doping of the leads (they create a pn junction at each contact). Can be seen in the supercondcuting state, the pnp region remains resistive, the npn region shows zero resistance.
-
-\subsubsection*{Fabry Perot resonances}
-
-gate dependece of conductance shows oscillatory behaviour, are attributed to Fabry Perot interferences of differenct cavities \cite{Shytov2008}
-
-
-\subsection*{Superconducting state}
+The superconducting state is analysed in the $NPN$-region of the gatemap. The confinement of the two-dimensional supercurrent (in the case of no barrier present) to transport on a one-dimensional channel manifests in a Fraunhofer pattern of the supercurrent and in the differential conductance $dI/dV$. 
+\begin{figure}
+\centering
+\includegraphics[width=0.4\textwidth]{figure/experiment/mar}
+\caption{Differential conductance versus Voltage for different values of $V_{SG}$.}\label{fig:mar}
+\end{figure}
+While there is no constriction present, at $V_{SG} = 0 V$, multiple Andreev reflections take place. When the constriction -- the QPC barrier -- forms, the process of multiple Andreev reflections is supressed, because the probability of an electron reaching the opposite superconducting lead and getting Andreev reflected there is low. This is observable in the differential conductance for different values of the splitgate $V_{SG}$. Andreev reflection manifests within the $dI/dV$ curve in form of as peaks. In figure \ref{fig:mar}, the $dI/dV$ curves are plotted. For $V_{SG} = 0 V$ (blue curve), sharp peaks can be seen. These peaks vanish with increasing split-gate voltage.
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{figure/experiment/supercurrent}
+\caption{Supercurrent stuff}\label{fig:supercurrent}
 \end{figure}
-
-Since the device becomes superconducting in the npn region, the experiments focus on this part when analysing the supercurrent.
-
-The amplitude of the supercurrent can be monitored by tuning the charge carrier densitiy with the backgate. 
-
-Supercurrent density can be explored by probing the interference pattern in response to a perpendicular magnetic field.  A change of the junction geometry directly manifests within the interference pattern. 
-
-Confinement of the current can be observerd: 
-\begin{itemize}
-\item open regime: Fraunhofer-like pattern, two dimensional system
-\item splitgate increases: lobes are lifted
-\item constriction is formed, really a 1D channel has formed: non beating, bell-shaped pattern
-\end{itemize}
-
-Transition from Fraunhofer to bell-shaped pattern has been observed before: \cite{Chiodi2012}
+By probing the magnetic interference pattern, the supercurrent density can be explored. When the junction geometry changes, for example because the split-gate voltage is increased and a constriction starts to form, the Fraunhofer pattern will change accordingly. Figure \ref{fig:supercurrent} b) shows magnetic interferometry measurements at a constant back-gate voltage $V_{BG}$. The x-axis indicates the magnetic field $B$ and the y-axis is the split-gate voltage $V_{SG}$. The colour displays the strength of the ciritcal current. The confinement of the current can be seen in the plots in figure \ref{fig:supercurrent} a), where $I_c$ curves are plotted for $V_{SG} = -6\ V,\ -6.5\ V,\ -7\ V$. For $V_{SG} = -6 V$, the observed Fraunhofer pattern indicates a two-dimensinal current flow. With increasing $V_{SG}$, the lobes of the pattern are lifted. When the split-gate reaches $V_{SG} = -7\ V$, the constricion has formed, and the Fraunhofer pattern has vanished: A bell-shaped pattern is observed. This shows a transition from the beating to the non-beating, gaussian battern indicates that a one-dimensional channel has formed. A similar transition from a Fraunhofer pattern to a gaussian-like decay has been obeserved before, for example in \cite{Chiodi2012}, where a long SNS junction has been studied.

@@ -1,27 +1,28 @@
 \BOOKMARK [0][]{chapter.1}{1 Introduction}{}% 1
-\BOOKMARK [0][]{chapter.2}{2 Experimental set-up}{}% 2
-\BOOKMARK [1][]{section.2.1}{2.1 First: summary of paper}{chapter.2}% 3
-\BOOKMARK [2][]{subsection.2.1.1}{2.1.1 Introduction}{section.2.1}% 4
-\BOOKMARK [0][]{chapter.3}{3 Framework for analytical model}{}% 5
-\BOOKMARK [1][]{section.3.1}{3.1 Theory of superconductivity}{chapter.3}% 6
-\BOOKMARK [1][]{section.3.2}{3.2 Andreev reflection at the interfaceb between a superconductor and a normal metal}{chapter.3}% 7
-\BOOKMARK [1][]{section.3.3}{3.3 Theory of SNS junction}{chapter.3}% 8
-\BOOKMARK [1][]{section.3.4}{3.4 Supercurrent through the SNS junction}{chapter.3}% 9
-\BOOKMARK [1][]{section.3.5}{3.5 Specular Andreev reflection, graphene specifics}{chapter.3}% 10
-\BOOKMARK [0][]{chapter.4}{4 Analytical Model}{}% 11
-\BOOKMARK [1][]{section.4.1}{4.1 Foundation of the quasiclassical model}{chapter.4}% 12
-\BOOKMARK [1][]{section.4.2}{4.2 Plane setup: calculation of current}{chapter.4}% 13
-\BOOKMARK [1][]{section.4.3}{4.3 Calculation of QPC current}{chapter.4}% 14
-\BOOKMARK [1][]{section.4.4}{4.4 QPC edge current}{chapter.4}% 15
-\BOOKMARK [1][]{section.4.5}{4.5 Barrier with finite split width - Transition to QPC setup}{chapter.4}% 16
-\BOOKMARK [0][]{chapter.5}{5 A framework for the numerical model}{}% 17
-\BOOKMARK [1][]{section.5.1}{5.1 Tight binding model for graphene}{chapter.5}% 18
-\BOOKMARK [2][]{subsection.5.1.1}{5.1.1 Monolayer graphene}{section.5.1}% 19
-\BOOKMARK [2][]{subsection.5.1.2}{5.1.2 Bilayer graphene}{section.5.1}% 20
-\BOOKMARK [2][]{subsection.5.1.3}{5.1.3 Model used in kwant}{section.5.1}% 21
-\BOOKMARK [1][]{section.5.2}{5.2 Random matrix theory for transport}{chapter.5}% 22
-\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 Basics about the random matrix theory}{section.5.2}% 23
-\BOOKMARK [2][]{subsection.5.2.2}{5.2.2 Supercurrent of a SNS junction in the scattering matrix approach}{section.5.2}% 24
-\BOOKMARK [0][]{chapter.6}{6 Numerical Results}{}% 25
-\BOOKMARK [0][]{chapter.7}{7 Conclusion and Outlook}{}% 26
-\BOOKMARK [0][]{chapter.7}{Bibliography}{}% 27
+\BOOKMARK [0][]{chapter.2}{2 Experimental Motivation}{}% 2
+\BOOKMARK [1][]{section.2.1}{2.1 Introduction}{chapter.2}% 3
+\BOOKMARK [1][]{section.2.2}{2.2 Normal state analysis:}{chapter.2}% 4
+\BOOKMARK [1][]{section.2.3}{2.3 Superconducting state}{chapter.2}% 5
+\BOOKMARK [0][]{chapter.3}{3 Framework for analytical model}{}% 6
+\BOOKMARK [1][]{section.3.1}{3.1 Theory of superconductivity}{chapter.3}% 7
+\BOOKMARK [1][]{section.3.2}{3.2 Andreev reflection at the interfaceb between a superconductor and a normal metal}{chapter.3}% 8
+\BOOKMARK [1][]{section.3.3}{3.3 Theory of SNS junction}{chapter.3}% 9
+\BOOKMARK [1][]{section.3.4}{3.4 Supercurrent through the SNS junction}{chapter.3}% 10
+\BOOKMARK [1][]{section.3.5}{3.5 Specular Andreev reflection, graphene specifics}{chapter.3}% 11
+\BOOKMARK [0][]{chapter.4}{4 Analytical Model}{}% 12
+\BOOKMARK [1][]{section.4.1}{4.1 Foundation of the quasiclassical model}{chapter.4}% 13
+\BOOKMARK [1][]{section.4.2}{4.2 Plane setup: calculation of current}{chapter.4}% 14
+\BOOKMARK [1][]{section.4.3}{4.3 Calculation of QPC current}{chapter.4}% 15
+\BOOKMARK [1][]{section.4.4}{4.4 QPC edge current}{chapter.4}% 16
+\BOOKMARK [1][]{section.4.5}{4.5 Barrier with finite split width - Transition to QPC setup}{chapter.4}% 17
+\BOOKMARK [0][]{chapter.5}{5 A framework for the numerical model}{}% 18
+\BOOKMARK [1][]{section.5.1}{5.1 Tight binding model for graphene}{chapter.5}% 19
+\BOOKMARK [2][]{subsection.5.1.1}{5.1.1 Monolayer graphene}{section.5.1}% 20
+\BOOKMARK [2][]{subsection.5.1.2}{5.1.2 Bilayer graphene}{section.5.1}% 21
+\BOOKMARK [2][]{subsection.5.1.3}{5.1.3 Model used in kwant}{section.5.1}% 22
+\BOOKMARK [1][]{section.5.2}{5.2 Random matrix theory for transport}{chapter.5}% 23
+\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 Basics about the random matrix theory}{section.5.2}% 24
+\BOOKMARK [2][]{subsection.5.2.2}{5.2.2 Supercurrent of a SNS junction in the scattering matrix approach}{section.5.2}% 25
+\BOOKMARK [0][]{chapter.6}{6 Numerical Results}{}% 26
+\BOOKMARK [0][]{chapter.7}{7 Conclusion and Outlook}{}% 27
+\BOOKMARK [0][]{chapter.7}{Bibliography}{}% 28
