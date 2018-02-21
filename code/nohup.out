@@ -7224,3 +7224,18 @@ starting calculation with  400 points
 time for calculation:  0:13:34.165442
 time for calculation:  0:13:56.495327
 time for calculation:  0:13:54.711092
+starting calculation with  500  points
+starting calculation with  5  points
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+time for calculation with multiprocessing:  0:01:46.812933
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent-map/vbg=0.2-20180221-10:55:53/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:17.508859
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.055-20180221-10:53:32/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:05.052023
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.065-20180221-11:09:50/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:18.490182
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.075-20180221-11:25:55/data.csv
