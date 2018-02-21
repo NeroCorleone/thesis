@@ -1,6 +1,6 @@
-\chapter{A framework for the numerical model}
+\chapter{A Framework For The Numerical Analysis}
 \label{ch:basics-numerical}
-\section{Tight binding model for graphene}
+\section{Tight Binding Model For Graphene}
 %%%%%%
 Tight binding models are simple, yet powerful methods to calculate the electronic band structure of a system consisting of many lattice sites. Each lattice site is represented in the Hamiltonian as an atomic potential. 
 The basic premise is that the solution to the Schr\"odinger equation of the isolated system, an electron at a specific site in an atomic potential, is known. The wave function of this electron interacting with the whole lattice (interacting with all other atomic potentials from the other lattice sites) can be constructed from the overlap of the atomic wave functions. 
@@ -31,8 +31,13 @@ So, in order to find the band energies $E_j$, these coefficients $H_{m, m'}$ and
 \text{det} \left[ H - E_j S \right] = 0
 \end{equation}
 
-\subsection{Monolayer graphene}
+\subsection{Monolayer Graphene}
 
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figure/numericalframework/graphene-lattice-small}
+\caption{Monolayer graphene lattice with lattice vectors $\mathbf{a}_1$, $\mathbf{a}_1$ for sublattice $A$. The vectors $\delta_i$ give the shift to the atoms of sublattice $B$. }
+\end{figure}
 Let us apply the introduced procedure to monolayer graphene. Graphene has two atoms per unit cell and  one $2p_z$ orbital per atom is taken into account. Graphene has two sets of lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{b_1}$, $\mathbf{b_2}$, depending on which the lattice site (see figure XY). The sublattices are labelled $A$ and $B$. The atomic orbitals are therefore also labelled with a sublattice index, $\phi_A$ and $\phi_B$. The transfer matrix $H$ is
 \begin{eqnarray}
 H &=& \begin{pmatrix}
@@ -76,7 +81,7 @@ S &=& \begin{pmatrix} 1 & s_0 f \left( \mathbf{k} \right) \\ s_0 f^* \left( \mat
 The energy $\gamma_0$ and the coefficient $s_0$ have been determined experimentally \cite{Dresselhaus1995}:
 $\gamma_0 = 3.033 \text{eV}$ and $s_0 = 0.129$.
 
-\subsection{Bilayer graphene}
+\subsection{Bilayer Graphene}
 Bilayer graphene consists of two layers of graphene, and each of these layers has two sublattices. A lattice site in bilayer graphene can there be in one of the four sublattices $A_1$, $B_1$, $A_2$ and $B_2$, where the integer 1, 2 labels the layer. Using the notation of the SWM model, \cite{McClure1957}, \cite{McClure1960}, the transfer matrix can be written as
 \begin{equation}
 H =  \begin{pmatrix} \epsilon_{A_1} & - \gamma_0 f \left( \mathbf{k} \right) & \gamma_4 f \left( \mathbf{k} \right) & - \gamma_3 f^*\left( \mathbf{k} \right) \\
@@ -116,24 +121,25 @@ The tight binding parameters can be determined experimentally using Raman scatte
 \gamma_4 = 0.14.
 \end{eqnarray}
 
-\subsection{Model used in kwant}
-
-The bilayer system that is used in this thesis is $AB$-stacked. The Hamiltonian that is used in the \texttt{kwant} software is
+\subsection{Tight Binding Models And \texttt{kwant}}
+The numerical calculations in this thesis were performed using \texttt{kwant} \cite{Groth2014}, an open source Python package for calculations with tight binding models. For implementing the system in \texttt{kwant} , the tight binding model hast to be defined. This means,  a lattice with corresponding symmetry has to be build and the hoppings between the lattice points have to be defined. The bilayer system that is used in this thesis is $AB$-stacked and the presence of a magnetic field is considered, entering the Hamiltonian with the Peierls approximation:
 \begin{equation}
-H = - t \sum_{i, j} e^{i \phi_{i, j }} a^\dagger_{m, i} b_{m, i} - \gamma_1 \sum_j a_{1, j}^\dagger b_{2, j} - \sum_{i, m} \left( \mu_i - (-1)^m \delta_i\right) \left(a^\dagger_{m, i} a_{m, i} + b^\dagger_{m, i} b_{m, i} \right).
+\phi_{i, j} = \frac{e}{\hbar} \int_i^j \mathbf{A} d\mathbf{r}.
 \end{equation}
+The tight binding Hamiltonian reads
 \begin{equation}
-H = - \gamma_0 \sum_{i, j} e^{i \phi_{i, j }} a^\dagger_{m, i} b_{m, i} - \gamma_3 \sum_j a_{1, j}^\dagger b_{2, j} - \sum_{i, m} \left( \mu_i - (-1)^m \delta_i\right) \left(a^\dagger_{m, i} a_{m, i} + b^\dagger_{m, i} b_{m, i} \right).
+H = - \gamma_0 \sum_{i, j} e^{i \phi_{i, j }} a^\dagger_{m, i} b_{m, i} - \gamma_1 \sum_j a_{1, j}^\dagger b_{2, j} - \sum_{i, m} \left( \mu_i - (-1)^m \delta_i\right) \left(a^\dagger_{m, i} a_{m, i} + b^\dagger_{m, i} b_{m, i} \right).
 \end{equation}
-
-For implementing the system in kwant, the tight binding model hast to be defined. Means, lattice with corresponding symmetry has to be build and the hoppings between the lattice points have to be definded.
-First adaption: magnetic field has to be included. It enters in form of a phase (Peierls substitution):
-\begin{equation}
-\phi_{i, j} = \frac{e}{\hbar} \int_i^j \mathbf{A} d\mathbf{r}
-\end{equation}
-The parameters X and Y are neglected, the Hamiltonian is of the form
-
-$m = 1, 2$ is index of the layer. The operators $a^\dagger_{m, i},\ a_{m, i}$ create and annihilate an electron of sublattice $A$ on layer $m$ at site $i$. In the same way, $b^\dagger_{m, i},\ b_{m, i}$ are the creation and annihilation operators for the sublattice $B$. The intralayer hopping parameter $t$ is the same as $\gamma_0$ from above and $\gamma_1$ is the known interlayer (between dimer) hopping parameter. 
+%TODO is this correct?
+%The Hamiltonian that is used in the \texttt{kwant} software is
+%\begin{equation}
+%H = - t \sum_{i, j} e^{i \phi_{i, j }} a^\dagger_{m, i} b_{m, i} - \gamma_1 \sum_j a_{1, j}^\dagger b_{2, j} - \sum_{i, m} \left( \mu_i - (-1)^m \delta_i\right) \left(a^\dagger_{m, i} a_{m, i} + b^\dagger_{m, i} b_{m, i} \right).
+%\end{equation}
+%\begin{equation}
+%H = - \gamma_0 \sum_{i, j} e^{i \phi_{i, j }} a^\dagger_{m, i} b_{m, i} - \gamma_3 \sum_j a_{1, j}^\dagger b_{2, j} - \sum_{i, m} \left( \mu_i - (-1)^m \delta_i\right) \left(a^\dagger_{m, i} a_{m, i} + b^\dagger_{m, i} b_{m, i} \right).
+%\end{equation}
+The different layers of BLG are indexed with $m = 1, 2$. The operators $a^\dagger_{m, i},\ a_{m, i}$ create and annihilate an electron of sublattice $A$ on layer $m$ at site $i$. In the same way, $b^\dagger_{m, i},\ b_{m, i}$ are the creation and annihilation operators for the sublattice $B$.
+% The intralayer hopping parameter $t$ is the same as $\gamma_0$ from above and $\gamma_1$ is the known interlayer (between dimer) hopping parameter. 
 %TODO not sure of the interlayer hopping parameter is really gamma1 from mccann or SWM model? matrix element / hopping corresponds to gamma_3....
 The onsite energies are
 \begin{eqnarray}
@@ -147,10 +153,9 @@ Here, $\mu$ and $\delta$ are defined as
 \end{eqnarray}
 $u_i$ is used as a paramter that defines, if the lattice site $i$ is within a gated region ($u_i = 1$) (underneath a topgate) or not ($u_i = 0$).
 
-\section{Random matrix theory for transport}
+\section{Random Matrix Theory Tor Transport}
 
-\subsection{Basics about the random matrix theory}
-
+\subsection{Fundamental Idea}
 To describe the transport through a conducting region of interest, which is in between of two ideal leads. Ideal leads means that there is no disorder present, whereas the conductor is a disordered system. The question that the random matrix theory is answering, is: how can one describe the transport from one lead, through the disordered region to the other lead? Essential for this transport theory is the work of Landauer (cite!), who described ballistic transport through a 1D channel as a transmission problem. 
 
 The transport through the conducting region can be written in terms of an incident wave $c^\text{in}$ and a reflected/transmitted wave $c^\text{out}$. The scattering matrix $\mathcal{S}$ relates the amplitudes of these wave functions.
@@ -178,7 +183,7 @@ It is useful to write the scattering matrix $\mathcal{S}$ in terms of the transm
 \begin{equation}
 \mathcal{S} = \begin{pmatrix} U & 0 \\ 0 & V\end{pmatrix} \begin{pmatrix} - \sqrt{1 - \mathcal{T}} & \sqrt{\mathcal{T}} \\ \sqrt{\mathcal{T}}& \sqrt{1 - \mathcal{T}} \end{pmatrix} \begin{pmatrix} U' & 0 \\ 0 & V' \end{pmatrix}
 \end{equation}
-$U$, $V$ are are $N\times N $ unitary matrices, I dont know why they are useful.
+$U$, $V$ are are $N\times N $ unitary matrices.
 
 %TODO rewrite below, 
 The scattering matrix relates incoming ($c^\text{in}$) states to outgoing ($c^\text{out}$) states. It is also possible to look at the transfer matrix $M$, which relates states from the left lead ($c^\text{left}$) to states in the right lead ($c^\text{right}$):
@@ -201,7 +206,7 @@ G = G_0 \sum_{n=1}^N T_n, \quad G_0 = \frac{2e^2}{h}
 \end{equation}
 This is cool. But there is not much context...
 
-\subsection{Supercurrent of a SNS junction in the scattering matrix approach}
+\subsection{Supercurrent In An SNS Junction}
 
 Considering an SNS junction. The wave funtions for an incident wave and an reflected/transmitted wave contain now coefficients for electrons and holes:
 \begin{eqnarray}
@@ -243,7 +248,7 @@ This can be used to simplify the normal scattering matrix $s_N (\epsilon) $ equa
 \begin{equation}
 \begin{pmatrix} s_0^\dagger & 0\\ 0 & s_0^T \end{pmatrix}  \begin{pmatrix} 0 & r_A^* \\ r_A & 0 \end{pmatrix}  c_\text{in} = \text{exp} \left( i \arccos \frac{\epsilon}{\Delta} \right) c_\text{in}
 \end{equation}
-This can be simplified further. By appliying a Joukowsky (magic) transformation, that i do not understand yet, it is possible to write
+This can be simplified further. By appliying a Joukowsky transformation, it is possible to write
 \begin{equation}
 \begin{pmatrix} 0 & - i A \\ i A & 0 \end{pmatrix} c_\text{in} = \frac{\epsilon}{\Delta}
 \end{equation}

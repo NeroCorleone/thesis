@@ -2,14 +2,14 @@
 \label{ch:analyticalmodel}
 %\textit{This chapter presents a calculation of the critical current in a SNS junctions. For this purpose, a quasiclassical transport theory is used and its foundations are explained in the first section. This technique is then employed for a clean SNS junction, and an expression for the Josephson current is found. In the following section, the calculations used for the clean setup are extended for the more sophisticated quantum point contact (QPC) and here as well, the current for the QPC-gated junction is found.}
 
-\section{Foundation of the quasiclassical model}
+\section{Foundation Of The Quasi-classical Model}
 %This section explains preliminary assumptions made to describe the current in a SNS junction. 
 From section \ref{sec:theory-sns} it is known that Andreev reflection of electrons in a SNS junction leads to Andreev bound states within the junction. Each one of these bound states contributes to the total current through the junction. Essentially, a bound state can be expressed as a trajectory from one superconductor through the normal metal to the other superconductor. The superconducting current density is found through geometrical analysis of possible trajectories. The total current density is then found by adding up all these trajectories.
 %The superconducting current density is found by summing up these trajectories. This is a way to express the current through geometrical analysis of possible trajectories only. The underlying material does not play a specific role in the calculation, which makes this approach universally applicable.
 \begin{figure}[h]
 \centering	
-\includegraphics[width=0.5\textwidth]{figure/analyticalmodel/sns_junction}
-\caption{SNS junction with width $W$ and length $L$. A trajectory connecting the interfaces is parametrized by the angle $\theta$ between the trajectory and the x-axis. $\chi_1$ and $\chi_2$ are the superconducting phases, with total phase differece $\chi = \chi_2 - \chi_1$.}
+\includegraphics[width=0.6\textwidth]{figure/analyticalmodel/sns_junction_csch}
+\caption{An SNS junction with width $W$ and length $L$. A trajectory connecting the interfaces is parametrized by the angle $\theta$ between the trajectory and the x-axis. $\chi_1$ and $\chi_2$ are the superconducting phases, with total phase difference $\chi = \chi_2 - \chi_1$.}
 \label{fig:sns_schematic}
 \end{figure}
 The two dimensional junction (schematic shown in fig \ref{fig:sns_schematic}) is a short and wide junction with width $W$ and length $L$, where $W \gg L$. The NS-interfaces are parallel to the $y$-axis and are placed at $x = \pm L/2$. Each of the superconducting leads has a phase $\chi_{1}$ and $\chi_{2}$, and the overall phase difference is $\chi = \chi_{1} - \chi_{2}$. The superconducting gap parameter $\Delta$ is only present in the superconducting leads. Close to the interface, $\Delta$ begins to decay on a length scale of the superconducting coherence length $\xi_0$ into the normal region.
@@ -31,7 +31,7 @@ r_B = \frac{m v_F}{e B}
 \end{equation}
 In order to justify the assumption of straight trajectories, either the magnetic field has to be weak enough, or the Fermi velocity (wavelength) has to be large (short) enough. Then, the cyclotron radius $r_B$ is larger than the sample size $L$, and straight trajectories are a valid assumption. 
 
-\section{Plane setup: calculation of current}
+\section{Plane Set-up: Calculation Of The Critical Current}
 Summing up the contributions leads to the current through the SNS junctions, the Josephson current $J\left( \chi \right)$, which is a function of the superconducting phase difference $\chi = \chi_2 - \chi_1$. By maximizing the Josephson current with respect to $\chi$, one finds the critical current $I_c$.\\
 A trajectory connecting the two superconducting interfaces can be parametrized by the angle $\theta$ between the trajectory and the x-axis. For a trajectory from a point $(-L/2, y_1)$ to another at $(+L/2, y_2)$, the angle for the parametrization is
 \begin{equation}
@@ -77,7 +77,7 @@ The coefficient $\mathcal{T}$ has been included phenomenologically in this formu
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{figure/analyticalmodel/current_density_all}
-\caption{Current density plotted against the superconducting phase difference $\chi = \chi_2 - \chi_1$. The density from eq. (\ref{eq:long-j}) gives the sawtooth like shape for $\mathcal{J}^l$ for high values of $\mathcal{T}$. In the short junction limit, $\mathcal{J}^s$ holds from eq. (\ref{eq:short-j}). For low values of the transmission coefficient $\mathcal{T}$, both current densities look similar (sinusoidal form). }
+\caption{Current density plotted against the superconducting phase difference $\chi = \chi_2 - \chi_1$. The density from eq. (\ref{eq:long-j}) gives the sawtooth like shape for $\mathcal{J}^l$ for high values of $\mathcal{T}$. In the short junction limit, $\mathcal{J}^s$ holds from eq. (\ref{eq:short-j}). For low values of the transmission coefficient $\mathcal{T}$, both current densities have a similar sinusoidal form. }
 \label{fig:current_density}
 \end{figure}
 Figure \ref{fig:current_density} shows a plot of both short and long junction limit current densities. For $\mathcal{T} \ll 1$, $\mathcal{J}^s$ takes a sinusoidal form, which also true for the long junction limit. For each of those, the classical Josephson relation can be found in the limit of low transmissions:
@@ -86,7 +86,7 @@ Figure \ref{fig:current_density} shows a plot of both short and long junction li
 \end{equation} The current densities differ for a large transmission coefficient $\mathcal{T} \simeq 1$: A sawtooth-like shape is observed in the long junction limit, and in the short junction limit, a sinusoidal shape appears.\\
 
 %%%%%
-\subsection*{Including magnetic field}
+\subsection*{Including Magnetic Field}
 Up to this point, the current has been derived for zero magnetic field. If a finite magnetic field is considered, the phase $\chi$ is modified because of two effects: First, the magnetic phase that will be acquired along a trajectory connecting two points $y_1$ and $y_2$  leads to an additional term in the phase. Also, the superconducting phases at each interface become functions of $y_{1/2}$ (see \cite{Meier2016}):
 %Then again, \textit{the condition of zero screening current in the bulk superconducting region and the limit of} $\lambda_L \rightarrow 0$ \textit{require the superconducting phase at the interfaces to become functions of y.
 \begin{eqnarray}
@@ -121,24 +121,43 @@ Here, the expression for the supercurrent density in the long junction limit and
 \begin{equation}
 J(\tilde{\chi}(y_1, y_2), \phi) = \mathcal{T}  \sin \chi  \frac{2 e v_F}{\pi \lambda_F L^2} \int \int_{-W/2}^{W/2} d y_1 d y_2 \frac{\cos \left( \frac{\pi \phi}{W}(y_1 + y_2) \right)}{\left[ 1 + \left(\frac{y_1 - y_2}{L}\right)^2\right]^2} \label{eq:josephson_current},
 \end{equation}
-where $\sin \tilde{\chi}$ has been rearranged in term of trigonometric functions. Since the integration is symmteric in the limits, only the term with $\cos ( \frac{\pi \phi}{W}(y_1 + y_2) )$ is being kept in the expression for the current. Maximizing the Josephson current with respect to $\chi$ gives $sin\chi \rightarrow 1$. Evaluating the integration over $y_1$ and $y_2$, the critical current is \textbf{TODO cite!} found
-\begin{equation}
-I_c(\chi) = \frac{2e W v_F }{\lambda_F L}\frac{( 1- \{ \phi \}) \{ \phi \} }{|\phi|},
-\end{equation}
-where $\mathcal{T} \approx 1$.
+where $\sin \tilde{\chi}$ has been rearranged in term of trigonometric functions. Since the integration is symmteric in the limits, only the term with $\cos ( \frac{\pi \phi}{W}(y_1 + y_2) )$ is being kept in the expression for the current. Maximizing the Josephson current with respect to $\chi$ gives $\sin\chi \rightarrow 1$. 
+
+The result for the critical current at zero temperature for the limits of a wide and narrow junction has been done in\cite{Barzykin1999} and is found
+\begin{eqnarray}
+I_c(\nu) &=& \frac{2 e v_F }{\lambda_F L^2}\frac{( 1- \{ \nu \}) \{ \nu \} }{|\nu|}, \quad W/L \gg 1 \label{eq:ic-short}\\
+I_c(\nu) &=& \frac{e v_F }{\lambda_F L^2}\frac{( 1- \{ \nu/2  \})^2 \{ \nu/2 \}^2 }{|\nu/2|^2}, \quad W/L \ll 1 \label{eq:ic-long}
+\end{eqnarray}
+where $\nu = \phi / \phi_0 $ and $\mathcal{T} \approx 1$. The fractional part of $\nu$ is denoted with $\{ \nu \}$. Depending on the geometry of the sample, in particular depending on the raio $W/L$, the periodicity of the Fraunhofer pattern changes. For a wide junction ($W/L \gg 1$), the critical curve is periodic in $phi_0$. With a changing ratio, the periodicity changes. In the other limit of a narrow junction with  $W/L \ll 1$, the Fraunhofer pattern has a $2\phi_0$ periodicity.
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{figure/analyticalmodel/ic_vs_tau}
-\caption{$I_c$ vs. $\phi$ for different values of  $\mathcal{T}$}
+\caption{The normed critical current $I_c/I_0$ versus $\phi / \phi_0$ for different transmissions cofficients $\mathcal{T}$. For $\mathcal{T} > 1$, the barrier becomes reflective and the overall current density is low. The sharp peak ar $\phi / \phi_0$ arises from the  }
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figure/analyticalmodel/ic-long-vs-short}
+\caption{Normed critical current calculated from eqs. (\ref{eq:ic-long}) and (\ref{eq:ic-short}) for the long and short junction limit, respectively. }
 \end{figure}
 
-\subsection*{Including scattering at the boundaries}
+%\begin{figure}
+%\centering
+%\begin{minipage}{0.5\textwidth}
+%\includegraphics[width=0.9\textwidth]{figure/analyticalmodel/ic_vs_tau}
+%\caption{The normed critical current $I_c/I_0$ versus $\phi / \phi_0$ for different transmissions cofficients $\mathcal{T}$. For $\mathcal{T} > 1$, the barrier becomes reflective and the overall current density is low. The sharp peak ar $\phi / \phi_0$ arises from the  }
+%\end{minipage}%
+%\begin{minipage}{0.5\textwidth}
+%\includegraphics[width=0.9\textwidth]{figure/analyticalmodel/ic-long-vs-short}
+%\caption{long vs short}
+%\end{minipage}
+%\end{figure}
 
-So far, straight trajectories connecting the two superconducting interfaces have been considered. A process that is possible in principal, is a trajectory of an electron that is scattered at a side boundary (see figure \textbf{TODO!}). It is clear that, especially in the case of a short and wide junction with $W \gg L$, these trajectories do not contribute as much as the straight trajectories. When a trajectory is scattered at, say, a point at the upper edge $(x, y) = (x_s, p W/2)$, the parametrisation for the angle describing the trajectory is
+\subsection*{Including Scattering At The Boundaries}
+So far, straight trajectories connecting the two superconducting interfaces have been considered. A process that is possible in principal, is a trajectory of an electron that is scattered at a side boundary (at $y = \pm W/2$, see figure \ref{fig:sns_schematic}). It is clear that, especially in the case of a short and wide junction with $W \gg L$, these trajectories do not contribute as much as the straight trajectories. When a trajectory is scattered at, say, a point at the upper edge $(x, y) = (x_s, + W/2)$, the parametrisation for the angle describing the trajectory is
 \begin{equation}
 \tan \theta = \frac{\bar{y}_2 - y_1}{L} = \frac{W - y_2 - y_1}{L}. \label{eq:angles-scattering}
 \end{equation}
-In this parametrisation, the coordinate $\bar{y}_2$ is the mirror image of $y_2$. For straight trajectories the vector potential $\mathbf{A}$ does not give an additional contribution, which can be seen in eq. (\ref{qe:magnetic-phase-straight}). The effective phase is in this case determined by eq. (\ref{eq:chi}). When considering the scattering at side boundaries with the parametrization from eq. (\ref{eq:angles-scattering}), the contribution from the magnetic phase is no longer zero,
+In this parametrisation, the coordinate $\bar{y}_2$ is the mirror image of $y_2$. For straight trajectories the vector potential $\mathbf{A}$ does not give an additional contribution, which can be seen in eq. (\ref{eq:magnetic-phase-straight}). The effective phase is in this case determined by eq. (\ref{eq:chi}). When considering the scattering at side boundaries with the parametrization from eq. (\ref{eq:angles-scattering}), the contribution from the magnetic phase is no longer zero,
 \begin{eqnarray}
 \delta \chi &=& \frac{2 \pi}{\Phi_0} \int_{-L/2}^{x_s} dx A_y(x) \tan \theta  - \frac{2 \pi}{\Phi_0} \int_{x_s}^{+L/2} dx A_y(x) \tan \theta \\
 &=& - \frac{2 \pi B }{\Phi_0 } \tan \theta \left( \int_{-L/2}^{x_s} x dx - \int_{x_s}^{+L/2} dx \right) \\
@@ -161,15 +180,15 @@ This contribution has not been noted in \cite{Meier2016}. In the case of short a
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{figure/analyticalmodel/plane-setup-edge-contribution}
-\caption{Comparison of different contributions to the current at $\mathcal{T} =1$. }\label{fig:plane-edge-contribution}
+\caption{Comparison of contribution  to current with and without boundary scattering at $\mathcal{T} =1$. The total current is a sum of the contribution without boundary scattering, $I_c^{(0)}$, and two times the current from the boundaries, $I_c^{(1)}$. The boundary scattering can be seen in the Fraunhofer pattern of the total current in the lifting of the lobes}\label{fig:plane-edge-contribution}
 \end{figure}
 Figure \ref{fig:plane-edge-contribution} shows the result of equations (\ref{eq:josephson-edge}) and (\ref{eq:josephson_current}). The overall contribution from the side scattering is lower than the contribution of only straight trajectories. In the total current, eq. (\ref{eq:total-current}), the edge scattering manifests by lifting the minimas from zero (see green curve in figure \ref{fig:plane-edge-contribution}). This is in agreement with the results from \cite{Meier2016}
 
-\section{Calculation of QPC current}
+\section{Calculation Of QPC Critical Current}
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{figure/analyticalmodel/qpc_sns_junction}
-\caption{SNS junction with a QPC gate on top. The split is located at $(x, y) = (0, 0)$ and the width of the barrier is assumed to be negligible. Each trajectory that contributes has to pass though the origin. The angles $\theta_1$ and $\theta_2$ parametrize this trajectory.}
+\includegraphics[width=0.6\textwidth]{figure/analyticalmodel/qpc_sns_junction_csch}
+\caption{SNS junction with a QPC gate on top. The split is located at $(x, y) = (0, 0)$, and the width of the barrier is assumed to be negligible. Each contributing trajectory has to pass though the origin. The angles $\theta_1$ and $\theta_2$ parametrize this trajectory.}
 \label{fig:qpc_sns_schematic}
 \end{figure}
 %\textbf{TODO: what happens when a constriction is on top of normal layer, fermi levels etc}
@@ -188,7 +207,7 @@ With the gauge from eq. (\ref{eq:Ay}), the magnetic phase acquired within the sa
 -\frac{\pi \phi (y_1+y_2)}{2 W}.
 \label{eq:phaseQPC}
 \end{eqnarray}
-The total phase difference is the difference of the contribution coming from the magnetic field, eq. (\ref{eq:phaseQPC}) and the supcondcucting phase difference eq.~(\ref{eq:chi}). The effective phase for the QPC setup is found to be
+The total phase difference is the difference of the contribution coming from the magnetic field, eq. (\ref{eq:phaseQPC}) and the superconducting phase difference eq.~(\ref{eq:chi}). The effective phase for the QPC set-up is found to be
 \begin{equation}
 \tilde{\chi}(y_1,y_2)=\chi-\frac{ \pi \phi }{2W}(y_1+y_2).
 \label{eq:chiQPC}
@@ -207,22 +226,21 @@ The QPC is modelled as an isotropic scatterer with transmission probability $\ma
 %TODO \textbf{TODO: add why from $\sin \tilde{\chi}$ only cosine survives!}
 The angles $\theta_{1, 2}$ can be rewritten in terms of $y_{1, 2}$ by using the parametrization from eq.~(\ref{eq:QPCparametrization}), allowing the normalized critical current to be expressed as
 \begin{eqnarray}
-\frac{I_c(\phi)}{I_c(0)} &=& \frac{\mathcal{I}_2(\phi)\mathcal{I}_{3/2}(\phi)}{\mathcal{I}_2(0)\mathcal{I}_{3/2}(0)},
+\frac{I_c(\phi)}{I_c(0)} &=& \frac{\mathcal{I}_2(\phi)\mathcal{I}_{3/2}(\phi)}{\mathcal{I}_2(0)\mathcal{I}_{3/2}(0)}\label{eq:qpc-integral},
 \end{eqnarray}
 where the integrals $\mathcal{I}$ are defined as
 \begin{equation}
 \mathcal{I}_k(\phi) = \frac{2}{L}\int_{-W/2}^{+W/2}dy \frac{\cos\left(\frac{\pi\phi y}{2W}\right)}{\left[1 + \left(\frac{2y}{L}\right)^2 \right]^k}
 \label{integral-qpc}
 \end{equation}
-\subsubsection*{Numerical evaluation}
 
-Evaluating the integral numerically, one finds 
-
+Evaluating the integral in eq. (\ref{eq:qpc-integral}) numerically gives a bell-shaped form that is very well described with a Gaussian function $\exp ( -a (x-\mu)^2 / (2 \sigma)^2 )$. Figure \ref{fig:ic-qpc-gauss} shows a plot of the resulting current from the integration as well as a plot of the fitted function. 
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{figure/analyticalmodel/qpc-numerical-integration-fit}
+\caption{Plot of the numerical integration for the QPC current from eq. (\ref{eq:qpc-integral}) and the result of the fitting to a Gaussian curve.} \label{fig:ic-qpc-gauss}
 \end{figure}
-\subsubsection*{Evaluation in limits}
+\subsubsection*{Evaluation In Limits}
 The current can be evaluated in the limit of small flux $\phi \rightarrow 0$, and in limit of high fields $\phi \rightarrow \infty$. 
 At $\phi=0$ the cosine term becomes one leading to the simple expression
 \begin{eqnarray}
@@ -242,14 +260,15 @@ In the opposite limit of high fields, $\phi\to \infty$, the integration in eq.~(
 \frac{I_c(\phi)}{I_{c0}} &=& \frac{\pi^{3/2}}{8 x} \frac{(1 + x^2)^{3/2}}{x + (1+x^2) \arctan x} \left( \frac{\pi \phi}{2 x} \right)^{3/2} \exp \left( - \frac{\pi \phi}{2 x} \right)
 \label{eq:large-phi}
 \end{eqnarray}
-%\textbf{TODO: write this one in pretty}
-\section{QPC edge current}
-Additionally to the QPC, two edge channels at $(x, y) = (0, \pm w/2)$ are introduced. The QPC is modelled with the transmission coefficient $\mathcal{T}_q$, and the edge channel with the coefficient $\mathcal{T}_e$. The lattice orientation of the graphene structure may may be either predominantly arm-chair or zigzag. Depending on this orientation, the edge currents may or may not contribute significantly  to the total current. The Fraunhofer pattern changes accordingly.
-%TODO cite!
+
+
+\section{QPC Edge Current}
+The role of edge current is of importance when studying SNS junctions. As has been explained in chapter \ref{ch:experiment}, when a large band gap is opened in BLG, an insulating state is expected, especially at very low temperatures. The non-occurrence of this insulating state has been attributed to the existence of edge currents in the sample. It makes sense to address the problem also for the QPC in within the quasi-classical framework. To this end, two scattering points at the edges $(x, y) = (0, \pm W/2)$ are introduced. These scattering points are modelled in the exact same way as the QPC (they are assumed to be isotropic scatterers) and only differ by means of transmission coefficient. The edge channel transmission coefficient is denoted with $\mathcal{T}_e$ and the QPC transmission coefficient with $\mathcal{T}_q$. 
+
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{figure/analyticalmodel/qpc_edges_angles}\label{fig:qpc-edge-parametrization}
-\caption{A SNS junction with split at upper edge, $(x, y) = (0, + W/2)$. Similar to the QPC set-up, this constriction is formed in a way that each trajectory has to pass through to contribute to the current.}
+\includegraphics[width=0.6\textwidth]{figure/analyticalmodel/qpc_edges_angles_csch}
+\caption{A SNS junction with split at upper edge, $(x, y) = (0, + W/2)$. Similar to the QPC set-up, this constriction is formed so that each trajectory has to pass through in order to contribute to the current.}\label{fig:qpc-edge-parametrization}
 \end{figure}
 The parametrization of an edge trajectory, illustrated in figure \ref{fig:qpc-edge-parametrization}, reads
 \begin{eqnarray}
@@ -272,58 +291,57 @@ has been used. Together with the contribution from the set-up without any constr
 \begin{equation}
 \tilde{\chi}(y_1, y_2) = \chi - \frac{3 \pi \Phi}{2\phi_0} (y_1 + y_2) + \pi \Phi \label{eq:chi-edge}.
 \end{equation}
-This is the effective phase $\tilde{\chi}(y_1, y_2)$ for the upper edge. Analogously, the phase for the lower edge can be constructed with a simple sign change in the parametrization in eq. (\ref{eq:angles-edge}), leading to
+This is the effective phase $\tilde{\chi}(y_1, y_2)$ for the upper edge leading to a critical current $I_c^{e, u}$. Analogously, the phase for the lower edge can be constructed with a simple sign change in the parametrization in eq. (\ref{eq:angles-edge}):
 \begin{equation}
-\tilde{\chi}(y_1, y_2) = \chi + \frac{3 \pi \Phi}{2\phi_0} (y_1 + y_2) - \pi \Phi \label{eq:chi-edge}
+\tilde{\chi}(y_1, y_2) = \chi + \frac{3 \pi \Phi}{2\phi_0} (y_1 + y_2) - \pi \Phi,
 \end{equation}
+which is the effective phase for the lower edge current, $I_c^{e, l}$.
 The Josephson relation for the edge contribution has the modified phase from eq. (\ref{eq:chi-edge}). 
-The result for the QPC in the limit in high fields, eq. (\ref{large-phi}), has a transmission coefficient $\mathcal{T} = 1$. For easier comparison with the edge channel contribution, this is rewritten into the following form
+The result for the QPC in the limit in high fields, eq. (\ref{eq:large-phi}), has a transmission coefficient $\mathcal{T} = 1$. For easier comparison with the edge channel contribution, this is rewritten into the following form
 \begin{equation}
-I_c^{\text{QPC}} = \mathcal{T}_q F(W/L)
-\end{equation},
+I_c^{\text{QPC}} = \mathcal{T}_q F(W/L),
+\end{equation}
 where the function $F(W/L)$ represents the result from eq. (\ref{eq:large-phi}). The integrals for the upper edge can be written in a similar way:
 \begin{eqnarray}
-I_c^e &=& \mathcal{T}_e \sin \left( \chi_0 - \pi \Phi \right) \int_0^\infty d \tilde{y}_1 \int_0^\infty d \tilde{y}_2 \frac{\cos \left( \frac{3 \pi \Phi \tilde{y}_1}{2 W} \right) }{\left( 1 + \left( \frac{2 \tilde{y}_1}{L}\right)^2 \right)^2} \frac{\cos \left( \frac{3 \pi \Phi \tilde{y}_2}{2 W} \right)}{\left( 1 + \left( \frac{2 \tilde{y}_1}{L}\right)^2 \right)^{3/2}} \\
-&=& \mathcal{T}_e \sin \left( \chi_0 - \pi \Phi \right) \frac{F(W/L)}{4}, 
+I_c^{e, u} &=& \mathcal{T}_e \text{max}_{\chi} \{ \sin \left( \chi_0 - \pi \Phi \right) \int_0^\infty d \tilde{y}_1 \int_0^\infty d \tilde{y}_2 \frac{\cos \left( \frac{3 \pi \Phi \tilde{y}_1}{2 W} \right) }{\left( 1 + \left( \frac{2 \tilde{y}_1}{L}\right)^2 \right)^2} \frac{\cos \left( \frac{3 \pi \Phi \tilde{y}_2}{2 W} \right)}{\left( 1 + \left( \frac{2 \tilde{y}_1}{L}\right)^2 \right)^{3/2}} \}\\
+&=& \mathcal{T}_e \text{max}_{\chi} \left\{ \sin \left( \chi - \pi \Phi \right) \right\} \frac{F(W/L)}{4}, 
 \end{eqnarray}
 where
 \begin{equation}
-\tilde{y}_{1/2} = W/2 - y_{1/2} 
+\tilde{y}_{1/2} = W/2 - y_{1/2}.
 \end{equation}
-The total critical current though the junction is proportional to the sum of the individual contributions
+The total critical though the junction is proportional to the sum of the individual contributions of the QPC, the upper edge, and the lower edge: $I_c^\text{total} = I_c^\text{QPC} + I_c^{e,u} + I_c^{e,l}$. The normalized total current then is
 \begin{eqnarray}
-\frac{I_c\left( \phi \right)}{I_{c0}} &=& \text{max}_\chi \left\{ \mathcal{T}_q \sin \chi + \frac{\mathcal{T}_e}{4} \sin \left( \chi - \pi \phi \right) + \frac{\mathcal{T}_e}{4} \sin \left( \chi + \pi \phi \right) \right\} / \left( \mathcal{T}_q + \mathcal{T}_e/2 \right)\\
-&=& \frac{\mathcal{T}_q / \mathcal{T}_e + \cos \left( \pi \phi \right)/ 2 }{\mathcal{T}_q / \mathcal{T}_e + 1/2}\label{eq:ratio-transmissions}
+\frac{I_c^\text{total}\left( \phi \right)}{I^\text{total}_{c0}} &=& \text{max}_\chi \left\{ \mathcal{T}_q \sin \chi + \frac{\mathcal{T}_e}{4} \sin \left( \chi - \pi \phi \right) + \frac{\mathcal{T}_e}{4} \sin \left( \chi + \pi \phi \right) \right\} / \left( \mathcal{T}_q + \mathcal{T}_e/2 \right)\\
+&=& \frac{| \mathcal{T}_q / \mathcal{T}_e + \cos \left( \pi \phi \right)/2 |}{\mathcal{T}_q / \mathcal{T}_e + 1/2}\label{eq:ratio-transmissions} \\
+&\equiv & \mathcal{C}
 \end{eqnarray}
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{figure/analyticalmodel/ratio-transmissions} 
-\caption{Another figure caption. Whatever.}\label{fig:ratio-transmissions}
-\end{figure}
-The result of eq. (\ref{eq:ratio-transmissions}) is plotted in figure \ref{fig:ratio-transmissions}. 
-%For $\mathcal{T}_q/\mathcal{T}_e \ll 1$
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{figure/analyticalmodel/ratio-transmissions-gaussian}
-\caption{Some figure.}\label{fig:modulated-pattern}
-\end{figure}
-Figure \ref{fig:modulated-pattern} shows a plot of the ratio from eq. (\ref{eq:ratio-transmissions}) multiplied with a gaussian curve. 
 
-\textbf{TODOs: \\
-make plot colors uniform\\
-add figure captions\\
-check plots for edge current --> cbar seems wrong}
-%write more about edge current contribution
-
-\section{Barrier with finite split width - Transition to QPC setup}
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{figure/analyticalmodel/hourglass}
-\caption{Hourglass setup}\label{fig:hourglass}
+\includegraphics[width=\textwidth]{figure/analyticalmodel/edge-current-modulation}
+\caption{Upper plot: Correction factor $\mathcal{C}$ versus magnetic flux $\phi / \phi_0$ for different values of $\mathcal{T}_e / \mathcal{T}_q$. Lower plot: critical current for the QPC from eq. (\ref{eq:qpc-integral}), modulated by $\mathcal{C}$.}\label{fig:edge-current-modulation}
 \end{figure}
-The QPC setup and the SNS setup without barriers can be linked conceptually by investigating an hourglass-shaped setup. This setup constricts the trajectories through a split with a finite width $w_s$ and is visualized in figure (\ref{fig:hourglass}). When considering only straight trajectories, this split width models the transition to the QPC in the limit of $w_s \rightarrow 0 $. The difference to the QPC is simply the parametrization of the angles: with a finite $w_s$, trajectories are parametrized by only one angle $\theta$, the direction does not change after passing the split. When $w_s$ is small enough, like in the QPC case, two independent trajectories are considered with two parametrization angles $\theta_1$ and $\theta_2$. 
+
+In figure \ref{fig:edge-current-modulation} visualizes, how the total critical current is affected if edge channels are present. The color scale indicates the ratio of transmissions coefficients $\mathcal{T}_e$ and $\mathcal{T}_q$. When $\mathcal{T}_e / \mathcal{T}_q \approx 1$, meaning the transmission of the edges is as strong as the transmission of the QPC, the current is strongly modulated and the bell-shaped pattern is destroyed. When the ratio is small, the Gaussian curve is not affected by the modulation.
+The data presented in chapter \ref{ch:experiment} in section \ref{sec:experiment-superconducting} suggests that edge current do not have a major influence in this setup. 
+
+\section{Barrier With Finite Split Width: Transition To The QPC Set-up}
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{figure/analyticalmodel/hourglass_csch}
+\caption{An SNS junction with hourglass-shaped constriction on top. The split is located at $(x, y) = (0, \pm w_s / 2)$ and  the trajectory is parametrized by the angle $\theta$. }\label{fig:hourglass}
+\end{figure}
+The QPC set-up and the SNS set-up without barriers can be linked conceptually by investigating an hourglass-shaped set-up. This set-up constricts the trajectories through a split with a finite width $w_s$ as visualized in figure (\ref{fig:hourglass}). When considering only straight trajectories, this split width models the transition to the QPC in the limit of $w_s \rightarrow 0 $. The difference to the QPC is simply the parametrization of the angles: with a finite $w_s$, trajectories are parametrized by only one angle $\theta$, the direction does not change after passing the split:
+\begin{equation}
+J \left( \chi, \phi \right) = \frac{2 e v_F}{\pi \lambda_F L^2} \int_{-W/2}^{W/2} d y_1 \int_{\theta_\text{min}}^{\theta_\text{max}} \frac{\mathcal{J}(\tilde{\chi} ( y_1, y_2 ) )}{\left( 1 + \left(\frac{y_2 - y_1}{L}\right)^2 \right)^2},
+\end{equation}
+where
+\begin{eqnarray}
+\theta_\text{min} &=& \arctan\left( -\frac{w_s + 2y_1}{L} \right),\\
+\theta_\text{max} &=& \arctan\left( \frac{w_s - 2y_1}{L} \right).
+\end{eqnarray}
+When $w_s$ is small enough, like in the QPC case, two independent trajectories are considered with two parametrization angles $\theta_1$ and $\theta_2$. 
 %TODO size of $w_s$?
-This setup is particularly interesting because the impact of asymmetry in the junction can be studied. When relocating the split by for example moving it along the $x$-axis, the possible trajectories are limited. As a consequence, the Fraunhofer pattern changes. 
-%TODO das ist ein bisschen dünn...
-
+This set-up is particularly interesting because the impact of asymmetry in the junction can be studied. When relocating the split by for example moving it along the $x$-axis, the possible trajectories are limited. As a consequence, the Fraunhofer pattern changes. 
 %TODO cite?
