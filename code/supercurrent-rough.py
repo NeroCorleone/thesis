@@ -18,22 +18,22 @@ vsg_values = [0.0, ]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.2 
 vdis = 0 
 vlead = 0.0
-nb_points = 100
-max_b = 0.0001
+nb_points = 500 
+max_b = 0.00005
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
 delta = 1.0 
-T = delta / 2
+T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5
-a = 0.2
+a = 0.4
 
 pot_decay = 15 
-#mainpath = '/users/tkm/kanilmaz/thesis/'
-mainpath = '/home/nefta/thesis/'
+mainpath = '/users/tkm/kanilmaz/thesis/'
+#mainpath = '/home/nefta/thesis/'
 
 path_to_result = mainpath + 'results/qpc/supercurrent/rough/' 
 path_to_file = mainpath +'designfiles/qpc.png'
@@ -143,8 +143,8 @@ class TRIInfiniteSystem(kwant.builder.InfiniteSystem):
 def make_edges_rough(system, depth, size, lead_distance=2):
     site_positions = [site.pos for site in system.sites()]
     unique_x = np.unique(list(zip(*site_positions))[0])[lead_distance:-lead_distance]
-    ymin = {xval: min([val for val in site_positions if val[0] == xval])[1] for xval in unique_x}
-    ymax = {xval: max([val for val in site_positions if val[0] == xval])[1] for xval in unique_x}
+    ymin = {xval: min([val for val in site_positions if val[0] == xval], key=lambda x: x[1])[1] for xval in unique_x}
+    ymax = {xval: max([val for val in site_positions if val[0] == xval], key=lambda x: x[1])[1] for xval in unique_x}
     
     def upper_edge(site, width):
         x0, y0 = site.pos
@@ -304,7 +304,7 @@ def current_vs_b(system, vsg, path=path_to_result):
                     str(pot_decay), str(eta), str(gamma), str(a), 
                     str(at), str(delta), str(T), ]
     
-    newpath = path + 'vsg=' + str(vsg) + '-' +  runtime + '/'
+    newpath = path + 'depth=' + str(depth) + 'size=' + str(size) +  '-' +  runtime + '/'
     if not os.path.exists(newpath):
         os.makedirs(newpath)
     system_params_file = newpath + 'params.txt'
@@ -355,7 +355,7 @@ def current_vs_b(system, vsg, path=path_to_result):
     print('output in', filename)
     return()
 
-for depth, size in [(20, 0.5), (30, 0.5), (40, 0.5)]:
+for depth, size in [(10, 0.5), (20, 0.5), (30, 0.5), (40, 0.5), (50, 0.5)]:
     system = make_system(depth, size)
     for vsg in vsg_values:
         current_vs_b(system, vsg)

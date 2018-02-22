@@ -14,12 +14,13 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.05, ]#np.arange(-0.0, -0.1, -0.01)
+vsg_values = [-0.0]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.2 
-vdis = 0 
+#vdis = 0 
+vdis_values = [1, 2, 4, 6, 10] 
 vlead = 0.0
-nb_points = 100
-max_b = 0.0001
+nb_points = 500 
+max_b = 0.00005
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
@@ -29,11 +30,11 @@ T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5.0
-a = 0.2
+a = 0.4
 
 pot_decay = 15 
-#mainpath = '/users/tkm/kanilmaz/thesis/'
-mainpath = '/home/nefta/thesis/'
+mainpath = '/users/tkm/kanilmaz/thesis/'
+#mainpath = '/home/nefta/thesis/'
 
 path_to_result = mainpath + 'results/qpc/supercurrent/' 
 path_to_file = mainpath +'designfiles/qpc.png'
@@ -270,7 +271,7 @@ def plotCurrentPerV(magneticField, current, filename):
     return
 
 
-def current_vs_b(system, vsg, path=path_to_result):
+def current_vs_b(system, vsg, dis, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
     system_params_names = ['vsg', 'vbg', 'vdis', 'vlead', 'maxB', 'nb_points',
                            'decay', 'eta', 'gamma', 'a', 
@@ -332,6 +333,7 @@ def current_vs_b(system, vsg, path=path_to_result):
 
 system = make_system()
 
-for vsg in vsg_values:
-    current_vs_b(system, vsg)
+for vdis in vdis_values:
+    for vsg in vsg_values:
+        current_vs_b(system, vsg, vdis)
 

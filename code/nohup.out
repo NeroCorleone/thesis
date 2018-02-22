@@ -7248,3 +7248,28 @@ output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent-map/vbg=0.2-201802
   if self._edgecolors == str('face'):
 time for calculation with multiprocessing:  6:48:45.212494
 output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent-map/vbg=0.2-20180221-11:48:08/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:04.453287
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.0-20180222-09:46:29/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:03.176188
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.0-20180222-10:02:34/data.csv
+starting calculation with  500  points
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:15:55.769139
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.0-20180222-10:18:38/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:34.278593
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=10size=0.5-20180222-10:31:20/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:11.061432
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.0-20180222-10:34:34/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:31.364643
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=20size=0.5-20180222-10:47:57/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:17:29.277357
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.0-20180222-10:50:45/data.csv
+time for calculation with multiprocessing:  0:16:33.320885
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=30size=0.5-20180222-11:04:31/data.csv
+starting calculation with  500  points
