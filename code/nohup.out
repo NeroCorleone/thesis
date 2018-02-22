@@ -7273,3 +7273,8 @@ output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.0-20180222-
 time for calculation with multiprocessing:  0:16:33.320885
 output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=30size=0.5-20180222-11:04:31/data.csv
 starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:35.989566
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=40size=0.5-20180222-11:21:07/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:26.581188
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=50size=0.5-20180222-11:37:46/data.csv

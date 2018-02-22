@@ -14,10 +14,11 @@ import os
 from functools import partial
 import csv
 
+disorder_setup = True
 vsg_values = [-0.0]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.2 
 #vdis = 0 
-vdis_values = [1, 2, 4, 6, 10] 
+vdis_values = [0.1, 0.2, 0.3, 0.4, 0.5] 
 vlead = 0.0
 nb_points = 500 
 max_b = 0.00005
@@ -279,8 +280,10 @@ def current_vs_b(system, vsg, dis, path=path_to_result):
     system_params = [str(vsg), str(vbg), str(vdis), str(vlead), str(max_b), str(nb_points), 
                     str(pot_decay), str(eta), str(gamma), str(a), 
                     str(at), str(delta), str(T), ]
-    
-    newpath = path + 'vsg=' + str(vsg) + '-' +  runtime + '/'
+    if disorder_setup:
+        newpath = path + 'vsg=' + str(vsg) + 'vdis='+ str(vdis) + '-' +  runtime + '/'
+    else:
+        newpath = path + 'vsg=' + str(vsg) + '-' +  runtime + '/'
     if not os.path.exists(newpath):
         os.makedirs(newpath)
     system_params_file = newpath + 'params.txt'
@@ -333,7 +336,9 @@ def current_vs_b(system, vsg, dis, path=path_to_result):
 
 system = make_system()
 
-for vdis in vdis_values:
-    for vsg in vsg_values:
-        current_vs_b(system, vsg, vdis)
+if disorder_setup:
+    path_to_result += 'disorder/'
+    for vdis in vdis_values:
+        for vsg in vsg_values:
+            current_vs_b(system, vsg, vdis, path_to_result)
 

@@ -18,11 +18,11 @@ scattering_region = np.fliplr(1 - scipy.ndimage.imread(
     '/home/nefta/thesis/designfiles/scatteringRegion.png', mode='L').T / 255)
 
 delta = 1.0 
-T = delta / 2
+T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5
-a = 0.15
+a = 0.4
 #a = 0.4
 #a_s = 0.0000001 * at # shift in one lattice for calculating and plotting current density
 
