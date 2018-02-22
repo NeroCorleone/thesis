@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  22 FEB 2018 20:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  22 FEB 2018 21:23
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1901,12 +1901,6 @@ LaTeX Warning: Label `fig:qpc-conductance' multiply defined.
 
 LaTeX Warning: Label `fig:qpc-conductance-sigma' multiply defined.
 
-
-LaTeX Warning: Label `fig:qpc-conductance' multiply defined.
-
-
-LaTeX Warning: Label `fig:qpc-conductance-sigma' multiply defined.
-
 )
 \openout1 = `mainThesis.aux'.
 
@@ -2904,10 +2898,6 @@ Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 [41 <./figure/numericalmodel/qpc-conductance-eps-converted-to.pdf> <./figure/nu
 mericalmodel/conductance-sigma-eps-converted-to.pdf>]
-
-LaTeX Warning: Reference `fig:half-barrier' on page 42 undefined on input line 
-40.
-
 Package epstopdf Info: Source file: <figure/numericalmodel/hb_upper.eps>
 (epstopdf)                    date: 2018-02-22 20:19:30
 (epstopdf)                    size: 46956 bytes
@@ -2917,7 +2907,7 @@ ed-to.pdf>
 (epstopdf)                    size: 16935 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/numericalmodel/hb_up
 per-eps-converted-to.pdf figure/numericalmodel/hb_upper.eps>
-(epstopdf)             \includegraphics on input line 51.
+(epstopdf)             \includegraphics on input line 42.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/numericalmodel/hb_upper-eps-converted-to.pdf, id=1183, 1156.32pt x 650.
@@ -2926,7 +2916,7 @@ File: figure/numericalmodel/hb_upper-eps-converted-to.pdf Graphic file (type pd
 f)
  <use figure/numericalmodel/hb_upper-eps-converted-to.pdf>
 Package pdftex.def Info: figure/numericalmodel/hb_upper-eps-converted-to.pdf us
-ed on input line 51.
+ed on input line 42.
 (pdftex.def)             Requested size: 228.64893pt x 128.61482pt.
 Package epstopdf Info: Source file: <figure/numericalmodel/hb_upper_abs.eps>
 (epstopdf)                    date: 2018-02-22 20:19:09
@@ -2937,7 +2927,7 @@ verted-to.pdf>
 (epstopdf)                    size: 16247 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/numericalmodel/hb_up
 per_abs-eps-converted-to.pdf figure/numericalmodel/hb_upper_abs.eps>
-(epstopdf)             \includegraphics on input line 57.
+(epstopdf)             \includegraphics on input line 48.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/numericalmodel/hb_upper_abs-eps-converted-to.pdf, id=1184, 1156.32pt x 
@@ -2946,8 +2936,63 @@ File: figure/numericalmodel/hb_upper_abs-eps-converted-to.pdf Graphic file (typ
 e pdf)
  <use figure/numericalmodel/hb_upper_abs-eps-converted-to.pdf>
 Package pdftex.def Info: figure/numericalmodel/hb_upper_abs-eps-converted-to.pd
-f used on input line 57.
+f used on input line 48.
 (pdftex.def)             Requested size: 228.64893pt x 128.61482pt.
+
+Overfull \vbox (13.61752pt too high) has occurred while \output is active []
+
+
+[42 <./figure/numericalmodel/qpc_icnorm_heatmap-eps-converted-to.pdf> <./figure
+/numericalmodel/hb_upper-eps-converted-to.pdf> <./figure/numericalmodel/hb_uppe
+r_abs-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figure/numericalmodel/qpc-system.eps>
+(epstopdf)                    date: 2018-02-22 19:43:28
+(epstopdf)                    size: 2073837 bytes
+(epstopdf)             Output file: <figure/numericalmodel/qpc-system-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2018-02-22 20:44:45
+(epstopdf)                    size: 926979 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/numericalmodel/qpc-s
+ystem-eps-converted-to.pdf figure/numericalmodel/qpc-system.eps>
+(epstopdf)             \includegraphics on input line 63.
+Package epstopdf Info: Output file is already uptodate.
+
+<figure/numericalmodel/qpc-system-eps-converted-to.pdf, id=1272, 285.065pt x 50
+6.89375pt>
+File: figure/numericalmodel/qpc-system-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use figure/numericalmodel/qpc-system-eps-converted-to.pdf>
+Package pdftex.def Info: figure/numericalmodel/qpc-system-eps-converted-to.pdf 
+used on input line 63.
+(pdftex.def)             Requested size: 139.989pt x 248.92152pt.
+Package epstopdf Info: Source file: <figure/numericalmodel/hb-system.eps>
+(epstopdf)                    date: 2018-02-22 19:42:07
+(epstopdf)                    size: 2087992 bytes
+(epstopdf)             Output file: <figure/numericalmodel/hb-system-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2018-02-22 20:44:47
+(epstopdf)                    size: 927614 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/numericalmodel/hb-sy
+stem-eps-converted-to.pdf figure/numericalmodel/hb-system.eps>
+(epstopdf)             \includegraphics on input line 69.
+Package epstopdf Info: Output file is already uptodate.
+
+<figure/numericalmodel/hb-system-eps-converted-to.pdf, id=1273, 285.065pt x 506
+.89375pt>
+File: figure/numericalmodel/hb-system-eps-converted-to.pdf Graphic file (type p
+df)
+ <use figure/numericalmodel/hb-system-eps-converted-to.pdf>
+Package pdftex.def Info: figure/numericalmodel/hb-system-eps-converted-to.pdf u
+sed on input line 69.
+(pdftex.def)             Requested size: 139.989pt x 248.92152pt.
+
+<figure/numericalmodel/waveguide.png, id=1275, 1156.32pt x 650.43pt>
+File: figure/numericalmodel/waveguide.png Graphic file (type png)
+
+<use figure/numericalmodel/waveguide.png>
+Package pdftex.def Info: figure/numericalmodel/waveguide.png used on input line
+ 86.
+(pdftex.def)             Requested size: 373.30162pt x 209.97792pt.
 Package epstopdf Info: Source file: <figure/numericalmodel/waveguide-ic.eps>
 (epstopdf)                    date: 2018-02-22 16:31:39
 (epstopdf)                    size: 52771 bytes
@@ -2957,16 +3002,16 @@ verted-to.pdf>
 (epstopdf)                    size: 20820 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/numericalmodel/waveg
 uide-ic-eps-converted-to.pdf figure/numericalmodel/waveguide-ic.eps>
-(epstopdf)             \includegraphics on input line 71.
+(epstopdf)             \includegraphics on input line 93.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/waveguide-ic-eps-converted-to.pdf, id=1185, 1156.32pt x 
+<figure/numericalmodel/waveguide-ic-eps-converted-to.pdf, id=1277, 1156.32pt x 
 650.43pt>
 File: figure/numericalmodel/waveguide-ic-eps-converted-to.pdf Graphic file (typ
 e pdf)
  <use figure/numericalmodel/waveguide-ic-eps-converted-to.pdf>
 Package pdftex.def Info: figure/numericalmodel/waveguide-ic-eps-converted-to.pd
-f used on input line 71.
+f used on input line 93.
 (pdftex.def)             Requested size: 233.31262pt x 131.23495pt.
 Package epstopdf Info: Source file: <figure/numericalmodel/waveguide-jy.eps>
 (epstopdf)                    date: 2018-02-22 16:31:52
@@ -2977,19 +3022,19 @@ verted-to.pdf>
 (epstopdf)                    size: 16657 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/numericalmodel/waveg
 uide-jy-eps-converted-to.pdf figure/numericalmodel/waveguide-jy.eps>
-(epstopdf)             \includegraphics on input line 77.
+(epstopdf)             \includegraphics on input line 99.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/waveguide-jy-eps-converted-to.pdf, id=1186, 1156.32pt x 
+<figure/numericalmodel/waveguide-jy-eps-converted-to.pdf, id=1278, 1156.32pt x 
 650.43pt>
 File: figure/numericalmodel/waveguide-jy-eps-converted-to.pdf Graphic file (typ
 e pdf)
  <use figure/numericalmodel/waveguide-jy-eps-converted-to.pdf>
 Package pdftex.def Info: figure/numericalmodel/waveguide-jy-eps-converted-to.pd
-f used on input line 77.
+f used on input line 99.
 (pdftex.def)             Requested size: 233.31262pt x 131.23495pt.
 
-Overfull \hbox (2.43332pt too wide) in paragraph at lines 69--80
+Overfull \hbox (2.43332pt too wide) in paragraph at lines 91--102
 [][] [] 
  []
 
@@ -2997,23 +3042,23 @@ Overfull \hbox (2.43332pt too wide) in paragraph at lines 69--80
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[42 <./figure/numericalmodel/qpc_icnorm_heatmap-eps-converted-to.pdf>]
+[43 <./figure/numericalmodel/qpc-system-eps-converted-to.pdf> <./figure/numeric
+almodel/hb-system-eps-converted-to.pdf>]
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[43 <./figure/numericalmodel/hb_upper-eps-converted-to.pdf> <./figure/numerical
-model/hb_upper_abs-eps-converted-to.pdf> <./figure/numericalmodel/waveguide-ic-
-eps-converted-to.pdf> <./figure/numericalmodel/waveguide-jy-eps-converted-to.pd
-f>] [44
-
-
-]
+[44 <./figure/numericalmodel/waveguide.png> <./figure/numericalmodel/waveguide-
+ic-eps-converted-to.pdf> <./figure/numericalmodel/waveguide-jy-eps-converted-to
+.pdf>]
 chapter 7.
 )
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
-[45] [46
+[45
+
+
+] [46
 
 
 ] (./mainThesis.bbl
@@ -3053,10 +3098,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
  ) 
 Here is how much of TeX's memory you used:
- 29513 strings out of 494974
- 552693 string characters out of 6180014
- 757187 words of memory out of 5000000
- 31884 multiletter control sequences out of 15000+600000
+ 29531 strings out of 494974
+ 553401 string characters out of 6180014
+ 757386 words of memory out of 5000000
+ 31897 multiletter control sequences out of 15000+600000
  30644 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  73i,15n,75p,10405b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3086,10 +3131,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on mainThesis.pdf (59 pages, 2579897 bytes).
+Output written on mainThesis.pdf (59 pages, 4562536 bytes).
 PDF statistics:
- 1513 PDF objects out of 1728 (max. 8388607)
- 1057 compressed objects within 11 object streams
- 315 named destinations out of 1000 (max. 500000)
- 411 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1529 PDF objects out of 1728 (max. 8388607)
+ 1067 compressed objects within 11 object streams
+ 317 named destinations out of 1000 (max. 500000)
+ 426 words of extra memory for PDF output out of 10000 (max. 10000000)
 
