@@ -35,7 +35,7 @@ So, in order to find the band energies $E_j$, these coefficients $H_{m, m'}$ and
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{figure/numericalframework/graphene-lattice-small}
+\includegraphics[width=0.5\textwidth]{figure/numericalframework/graphene_lattice_single_layer_csch}
 \caption{Monolayer graphene lattice with lattice vectors $\mathbf{a}_1$, $\mathbf{a}_1$ for sublattice $A$. The vectors $\delta_i$ give the shift to the atoms of sublattice $B$. }
 \end{figure}
 Let us apply the introduced procedure to monolayer graphene. Graphene has two atoms per unit cell and  one $2p_z$ orbital per atom is taken into account. Graphene has two sets of lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{b_1}$, $\mathbf{b_2}$, depending on which the lattice site (see figure XY). The sublattices are labelled $A$ and $B$. The atomic orbitals are therefore also labelled with a sublattice index, $\phi_A$ and $\phi_B$. The transfer matrix $H$ is
@@ -82,6 +82,10 @@ The energy $\gamma_0$ and the coefficient $s_0$ have been determined experimenta
 $\gamma_0 = 3.033 \text{eV}$ and $s_0 = 0.129$.
 
 \subsection{Bilayer Graphene}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{figure/numericalframework/graphene_lattice_bi_layer_top_csch}
+\end{figure}
 Bilayer graphene consists of two layers of graphene, and each of these layers has two sublattices. A lattice site in bilayer graphene can there be in one of the four sublattices $A_1$, $B_1$, $A_2$ and $B_2$, where the integer 1, 2 labels the layer. Using the notation of the SWM model, \cite{McClure1957}, \cite{McClure1960}, the transfer matrix can be written as
 \begin{equation}
 H =  \begin{pmatrix} \epsilon_{A_1} & - \gamma_0 f \left( \mathbf{k} \right) & \gamma_4 f \left( \mathbf{k} \right) & - \gamma_3 f^*\left( \mathbf{k} \right) \\
@@ -91,7 +95,10 @@ H =  \begin{pmatrix} \epsilon_{A_1} & - \gamma_0 f \left( \mathbf{k} \right) & \
 \end{equation}
 The basis  of this matrix is  $( |\phi_{A_1}\rangle$, $|\phi_{B_1}\rangle$, $|\phi_{A_2}\rangle$, $|\phi_{B_2}\rangle )$ and therefore describes an $AB$-stacked bilayer system. If the representation of eq (\ref{eq:bilayer-matrix}) had the basis $( |\phi_{B_1}\rangle$, $|\phi_{A_1}\rangle$, $|\phi_{A_2}\rangle$, $|\phi_{B_2}\rangle )$, the matrix would describe an $AA$-stacked bilayer system. %TODO see figure...
 In an $AB$ ($AA$) stacked system, an $A_2$ atom would be directly above an atom of the $B_1$ ($A_1$) sublattice.
-
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{figure/numericalframework/graphene_lattice_bi_layer_planes_csch}
+\end{figure}
 In the most general case, the energies $\epsilon$ on the diagonal are not equal. The off-diagonal parameters $\gamma$ are given by
 \begin{eqnarray}
 \gamma_0 &=& - \langle \phi_{A_1} | \mathcal{H} | \phi_{B_1} \rangle = - \langle \phi_{A_2} | \mathcal{H} | \phi_{B_2} \rangle, \\
@@ -206,7 +213,7 @@ G = G_0 \sum_{n=1}^N T_n, \quad G_0 = \frac{2e^2}{h}
 \end{equation}
 This is cool. But there is not much context...
 
-\subsection{Supercurrent In An SNS Junction}
+\subsection{Supercurrent In An SNS Junction}\label{sec:scattering-supercurrent}
 
 Considering an SNS junction. The wave funtions for an incident wave and an reflected/transmitted wave contain now coefficients for electrons and holes:
 \begin{eqnarray}
