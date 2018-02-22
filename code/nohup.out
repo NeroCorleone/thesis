@@ -7294,3 +7294,49 @@ output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=25size
 starting calculation with  500  points
 time for calculation with multiprocessing:  0:16:30.511314
 output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=35size=0.5-20180222-12:52:19/data.csv
+starting calculation with  400  points
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:13:26.736868
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/disorder/vsg=-0.0vdis=0.1-20180222-15:14:15/data.csv
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:12:43.196859
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/disorder/vsg=0.0vdis=0.1-20180222-15:18:30/data.csv
+starting calculation with  500  points
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+time for calculation with multiprocessing:  0:13:26.382281
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/disorder/vsg=-0.0vdis=0.2-20180222-15:27:43/data.csv
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:12:27.139597
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/disorder/vsg=0.0vdis=0.2-20180222-15:31:14/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:13:25.996229
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/disorder/vsg=-0.0vdis=0.3-20180222-15:41:09/data.csv
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:12:28.243228
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/disorder/vsg=0.0vdis=0.3-20180222-15:43:42/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:13:25.354131
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/disorder/vsg=-0.0vdis=0.4-20180222-15:54:36/data.csv
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:12:24.680947
+Traceback (most recent call last):
+  File "waveguide-supercurrent.py", line 381, in <module>
+    current_vs_b(system, vsg, vdis, path_to_result)
+  File "waveguide-supercurrent.py", line 364, in current_vs_b
+    plotCurrentPerV(current_values.T[0], magnetic_field, pngfile)
+  File "waveguide-supercurrent.py", line 297, in plotCurrentPerV
+    plt.plot(current, magneticField, linestyle='None', marker='o', color='b', )
+  File "/usr/lib/python3/dist-packages/matplotlib/pyplot.py", line 3099, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_axes.py", line 1374, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_base.py", line 303, in _grab_next_args
+    for seg in self._plot_args(remaining, kwargs):
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_base.py", line 281, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_base.py", line 223, in _xy_from_xy
+    raise ValueError("x and y must have same first dimension")
+ValueError: x and y must have same first dimension
+time for calculation with multiprocessing:  0:13:28.753495
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/disorder/vsg=-0.0vdis=0.5-20180222-16:08:01/data.csv
