@@ -14,34 +14,38 @@ import os
 from functools import partial
 import csv
 
+rough_setup = False 
+disorder_setup = True 
+
 vsg_values = [0.0, ]#np.arange(-0.0, -0.1, -0.01)
-vbg = 0.2 
-vdis = 0 
+vbg = 0.8
+vdis_values = [0.0,] 
 vlead = 0.0
-nb_points = 100
+nb_points = 50 
 max_b = 0.0001
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
 delta = 1.0 
-T = delta / 2
+T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5
 a = 0.2
 
-pot_decay = 15 
+pot_decay = 0 
 #mainpath = '/users/tkm/kanilmaz/thesis/'
 mainpath = '/home/nefta/thesis/'
 
-path_to_result = mainpath + 'results/qpc/supercurrent/rough/' 
-path_to_file = mainpath +'designfiles/qpc.png'
+path_to_result = mainpath + 'results/wg3_2/supercurrent/' 
+path_to_file = mainpath +'designfiles/waveguide3_2_small.png'
 path_to_scatfile = mainpath +'designfiles/scatteringRegion.png'
-topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
+topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L') / 255
 topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
-scattering_region = np.fliplr(1 - scipy.ndimage.imread(
-                            path_to_scatfile, mode='L').T / 255) 
+#scattering_region = np.fliplr(1 - scipy.ndimage.imread(
+#                            path_to_scatfile, mode='L').T / 255) 
+scattering_region = np.ones(topgate.shape)
 #depth = 20
 #size = 0.5
 
@@ -215,7 +219,8 @@ def make_system(depth, size):
     
     system.attach_lead(lead_1)
     system.attach_lead(lead_2)
-    system = make_edges_rough(system, depth, size)
+    if rough_setup:
+        system = make_edges_rough(system, depth, size)
     system = system.finalized()
     system.leads = [TRIInfiniteSystem(lead, trs) for lead in system.leads]#
     return(system)
@@ -296,7 +301,7 @@ def plotCurrentPerV(magneticField, current, filename):
     return
 
 
-def current_vs_b(system, vsg, path=path_to_result):
+def current_vs_b(system, vsg, vdis, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
     system_params_names = ['vsg', 'vbg', 'vdis', 'vlead', 'maxB', 'nb_points',
                            'decay', 'eta', 'gamma', 'a', 
@@ -304,8 +309,10 @@ def current_vs_b(system, vsg, path=path_to_result):
     system_params = [str(vsg), str(vbg), str(vdis), str(vlead), str(max_b), str(nb_points), 
                     str(pot_decay), str(eta), str(gamma), str(a), 
                     str(at), str(delta), str(T), ]
-    
-    newpath = path + 'vsg=' + str(vsg) + '-' +  runtime + '/'
+    if disorder_setup:
+        newpath = path + 'vsg=' + str(vsg) + 'vdis=' + str(vdis) + '-' +  runtime + '/'
+    if rough_setup:
+        newpath = path + 'vsg=' + str(vsg) + 'depth=' + str(depth) + 'size=' + str(size) + '-' +  runtime + '/'
     if not os.path.exists(newpath):
         os.makedirs(newpath)
     system_params_file = newpath + 'params.txt'
@@ -351,13 +358,26 @@ def current_vs_b(system, vsg, path=path_to_result):
         writer = csv.writer(csvfile, delimiter=' ')
         for row in current_values:
             writer.writerow(list(row))
+    fig = kwant.plotter.plot(system)
+    fig.savefig(newpath + 'system.png')
     pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
     plotCurrentPerV(current_values.T[0], magnetic_field, pngfile)
     print('output in', filename)
     return()
 
-for depth, size in [(20, 0.5), (30, 0.5), (40, 0.5)]:
-    system = make_system(depth, size)
-    for vsg in vsg_values:
-        current_vs_b(system, vsg)
+if rough_setup:
+    vdis = 0.0
+    path_to_result += 'rough/'
+    for depth, size in [(10, 0.5), (20, 0.5), (30, 0.5)]:
+        system = make_system(depth, size)
+        for vsg in vsg_values:
+            current_vs_b(system, vsg, vdis, path_to_result)
 
+if disorder_setup:
+    path_to_result += 'disorder/'
+    system =  make_system(0, 0)
+    for vdis in vdis_values:
+        for vsg in vsg_values:
+            current_vs_b(system, vsg, vdis, path_to_result)
+
+    
