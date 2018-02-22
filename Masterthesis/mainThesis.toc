@@ -31,4 +31,4 @@
 \contentsline {section}{\numberline {6.2}Half-Barrier}{42}{section.6.2}
 \contentsline {section}{\numberline {6.3}Wave-guide}{43}{section.6.3}
 \contentsline {chapter}{\numberline {7}Conclusion And Outlook}{45}{chapter.7}
-\contentsline {chapter}{Bibliography}{47}{chapter.7}
+\contentsline {chapter}{Bibliography}{47}{equation.7.0.3}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{35}
+\begin{thebibliography}{37}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -72,6 +72,18 @@ M.~J. Zhu et~al.
 Rainer Kraft et~al.
 \newblock {Tailoring supercurrent confinement in graphene bilayer weak links}.
 \newblock feb 2017.
+
+\bibitem[Barzykin and Zagoskin(1999)]{Barzykin1999}
+Victor Barzykin and Alexandre~M. Zagoskin.
+\newblock {Coherent transport and nonlocality in mesoscopic SNS junctions:
+  Anomalous magnetic interference patterns}.
+\newblock \emph{Superlattices and Microstructures}, 25\penalty0 (5):\penalty0
+  797--807, 1999.
+
+\bibitem[Wallace(1947)]{Wallace1947}
+P.~R. Wallace.
+\newblock {The Band Theory of Graphite}.
+\newblock \emph{Physical Review}, 71\penalty0 (9):\penalty0 622--634, may 1947.
 
 \bibitem[Bardeen et~al.(1957)Bardeen, Cooper, and Schrieffer]{Bardeen1957}
 J.~Bardeen, L.~N. Cooper and J.~R. Schrieffer.
@@ -215,17 +227,16 @@ Alexandre~M. Zagoskin.
   superconductor-normal-metal-d-wave superconductor junction}.
 \newblock \emph{Journal of Physics Condensed Matter}, 9\penalty0 (31), 1997.
 
-\bibitem[Barzykin and Zagoskin(1999)]{Barzykin1999}
-Victor Barzykin and Alexandre~M. Zagoskin.
-\newblock {Coherent transport and nonlocality in mesoscopic SNS junctions:
-  Anomalous magnetic interference patterns}.
-\newblock \emph{Superlattices and Microstructures}, 25\penalty0 (5):\penalty0
-  797--807, 1999.
-
 \bibitem[Meier et~al.(2016)Meier, Fal'Ko, and Glazman]{Meier2016}
 Hendrik Meier, Vladimir~I. Fal'Ko and Leonid~I. Glazman.
 \newblock {Edge effects in the magnetic interference pattern of a ballistic SNS
   junction}.
 \newblock \emph{Physical Review B}, 93\penalty0 (18):\penalty0 1--13, 2016.
+
+\bibitem[Dynes and Fulton(1971)]{Dynes1971}
+R.~C. Dynes and T.~A. Fulton.
+\newblock {Supercurrent Density Distribution in Josephson Junctions}.
+\newblock \emph{Physical Review B}, 3\penalty0 (9):\penalty0 3015--3023, may
+  1971.
 
 \end{thebibliography}

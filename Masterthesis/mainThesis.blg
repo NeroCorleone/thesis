@@ -3,11 +3,11 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: mainThesis.aux
 The style file: unsrtnatMod.bst
 Database file #1: literature.bib
-Repeated entry---line 445 of file literature.bib
+Repeated entry---line 460 of file literature.bib
  : @article{Beenakker1992
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 818 of file literature.bib
+Repeated entry---line 833 of file literature.bib
  : @article{CastroNeto2009
  :                        ,
 I'm skipping whatever remains of this entry
@@ -72,6 +72,18 @@ while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Kraft2017
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Kraft2017
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Barzykin1999
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Barzykin1999
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Barzykin1999
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Wallace1947
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Wallace1947
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Wallace1947
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Bardeen1957
 while executing---line 1300 of file unsrtnatMod.bst
@@ -220,57 +232,57 @@ You can't pop an empty literal stack for entry Zagoskin1997
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Zagoskin1997
 while executing---line 1300 of file unsrtnatMod.bst
-You can't pop an empty literal stack for entry Barzykin1999
-while executing---line 1300 of file unsrtnatMod.bst
-You can't pop an empty literal stack for entry Barzykin1999
-while executing---line 1300 of file unsrtnatMod.bst
-You can't pop an empty literal stack for entry Barzykin1999
-while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Meier2016
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Meier2016
 while executing---line 1300 of file unsrtnatMod.bst
 You can't pop an empty literal stack for entry Meier2016
 while executing---line 1300 of file unsrtnatMod.bst
-You've used 35 entries,
+You can't pop an empty literal stack for entry Dynes1971
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Dynes1971
+while executing---line 1300 of file unsrtnatMod.bst
+You can't pop an empty literal stack for entry Dynes1971
+while executing---line 1300 of file unsrtnatMod.bst
+You've used 37 entries,
             2418 wiz_defined-function locations,
-            867 strings with 13820 characters,
-and the built_in function-call counts, 13950 in all, are:
-= -- 1244
-> -- 743
-< -- 16
-+ -- 310
-- -- 209
-* -- 1264
-:= -- 2311
-add.period$ -- 106
-call.type$ -- 35
-change.case$ -- 70
-chr.to.int$ -- 35
-cite$ -- 43
-duplicate$ -- 660
-empty$ -- 1138
-format.name$ -- 256
-if$ -- 2857
+            885 strings with 14168 characters,
+and the built_in function-call counts, 14734 in all, are:
+= -- 1324
+> -- 766
+< -- 18
++ -- 321
+- -- 215
+* -- 1332
+:= -- 2431
+add.period$ -- 112
+call.type$ -- 37
+change.case$ -- 74
+chr.to.int$ -- 37
+cite$ -- 45
+duplicate$ -- 698
+empty$ -- 1210
+format.name$ -- 266
+if$ -- 3022
 int.to.chr$ -- 1
-int.to.str$ -- 36
-missing$ -- 35
-newline$ -- 183
-num.names$ -- 105
-pop$ -- 189
+int.to.str$ -- 38
+missing$ -- 37
+newline$ -- 193
+num.names$ -- 111
+pop$ -- 198
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 37
 quote$ -- 0
-skip$ -- 375
+skip$ -- 397
 stack$ -- 0
-substring$ -- 678
-swap$ -- 92
+substring$ -- 738
+swap$ -- 98
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 245
+type$ -- 259
 warning$ -- 8
-while$ -- 116
+while$ -- 124
 width$ -- 0
-write$ -- 554
-(There were 108 error messages)
+write$ -- 586
+(There were 114 error messages)

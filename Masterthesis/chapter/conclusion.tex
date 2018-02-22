@@ -1,29 +1,35 @@
 \chapter{Conclusion And Outlook}
 \label{ch:conclusion}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Zusammenfassung der Arbeit%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Meine Arbeit hat sich mit SNS junctions und der quasiklassischen Beschreibung beschäftigt. Ein weiterer Punkt ist die numerische Simulation von konkreten Experimenten. Ich konnte zeigen, dass die Ergebnisse von meiner
+\subsection*{Results}
+The central result of this work is that
+\begin{equation}
+J(\tilde{\chi}(y_1, y_2), \phi) \propto \int \int_{-W/2}^{~W/2} dy_1 dy_2 \frac{ \mathcal{J}(\tilde{\chi}(y_1, y_2)) }{ \left( 1 - \left(\frac{y_1 - y_2}{L}\right)^2 \right)^2 }
+\end{equation}
+The denominator for a current through SNS junction goes with a power of 2. This contradicts the result of \cite{Barzykin1999}. 
+The current density for the QPC has been established, it reads
+\begin{equation}
+J(\tilde{\chi}(y_1, y_2), \phi) \propto \int \int_{-W/2}^{W/2} d y_1 d y_2 \frac{\cos \left( \frac{\pi \phi}{W}(y_1 + y_2) \right)}{\left[ 1 + \left(\frac{y_1 - y_2}{L}\right)^2\right]^2} \label{eq:josephson_current},
+\end{equation}
+The critical current was evaluated for the $\phi \rightarrow 0$ boundary case where a parabolic function dependent on W/L was found for the QPC. In the other boundary case, $\phi \rightarrow \infty$, the exponential decline for large $\phi$ is correctly reproduced. The behaviour of the boundary currents was also investigated within the framework of the quasi-classical approximation. It is shown that for different coefficients of transmittance $\mathcal{T}_e$ of the edge and $\mathcal{T}_q$ of the QPC the critical current is modulated by a factor 
+\begin{equation}
+\mathcal{C} =  \frac{| \mathcal{T}_q / \mathcal{T}_e + \cos \left( \pi \phi \right)/2 |}{\mathcal{T}_q / \mathcal{T}_e + 1/2}.
+\end{equation}
+This modulation is already visible with values of around $\mathcal{T}_e/ \mathcal{T}_q = 1 / 100$. This is a strong indication that there are no edge streams in the observed data. 
+ 
+\subsection*{Outlook}
+
+The transport theory presented in the scope of this thesis can be expanded in various aspects. It was demonstrated that this theory can model a \emph{weak link} in the form of a QPC fairly well. It is therefore conceivable to model other, similar forms of weak links.
+
+In this thesis, a short SNS-set-up was considered. As a consequence, certain approximations that simplify the calculations have been made.  For the other boundary case of a long SNS junction, scattering at the edges is an important component for current transport and must therefore be taken into account. Secondly, higher-order terms must be considered when calculating the current density. Thus, the simplest form of the Josephson equation is no longer sufficient in this case. 
+
+So far, only Andreev retro-reflexion has been considered, where the hole is reflected on approximately the same trajectory as the electron, only with inverted impulse. In the case of graphene, however, the process is dominated by the specular Andreev reflection, in which the reflected hole does not return on the same trajectory. The quasi-classical theory can also be extended to this case and thus consider graphene-specific properties.
+
+The numerical simulations with \texttt{kwant} can be extended. This thesis work implements the BLG system as a de facto two-dimensional system. However, realistic experimental set-ups are more complex: On the one hand, they are three-dimensional, and on the other hand, the assumptions of the spatial distribution of electrostatic fields so far are too simplistic. A combination of calculating these fields with numerical methods and simulations with \texttt{kwant} will allow for a more complete modelling of the experiments. 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		Ergebnisse?		   %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Es wurden Ansätze für den Transport überprüft und auf den konkreten Fall des QPC übertragen (neu entwickelt, Formel). Dieser Ansatz ist anders als in Glazman, Zagoskin etc.
-%Die quasiklassische Transporttheorie wurde erfolgreich auf das QPC Setup angewendet. Es konnte gezeigt werden, dass sowohl das Limit phi -> unendlich als auch phi-> 0 korrekt wiedergegeben werden. Weiterhin konnte gezeigt werden, dass das Verhalten der Kantenströme gut beschrieben werden kann.
 
-%Auf das Experiment eingehen, was wird gut beschrieben, was nicht? Was steht 
 
-%Eine Berechung der kritischen Stroms im Rahmen der Streumatrix-Theorie wurde implementiert. Die Tendenz ist, dass die QPC und HB Experimente richtig wiedergegeben werden. Das Waveguide Setup konnte simuliert werden, daraus konnte, weil es der tolle Fall mit translationsinvariantem System ist, die Stromdichte mit der Dyson Fuller Methode berechnet werden. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		 Ausblick		   %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%Analytische Rechnungen können für weitere Setups berechnet werden, für kompliziertere Setups. Dabei kann beispielsweise Mehrfachstreuung und Anisotrope Streeuung hinzugezogen werden. 
-
-%Im Kontext auf die Experimente sind die Möglichkeiten beinahe unbeschränkt. Es gibt Ansätze, für Spin Orbit Coupling in BLG, die nutzen und afwändige experimentelle Setups beschreiben.
 
 
 
