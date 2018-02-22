@@ -14,11 +14,12 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.055, -0.065, -0.075]#np.arange(-0.0, -0.1, -0.01)
+vsg_values = [-0.05, ]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.2 
+vdis = 0 
 vlead = 0.0
-nb_points = 500 
-max_b = 0.00005
+nb_points = 100
+max_b = 0.0001
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
@@ -28,11 +29,11 @@ T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5.0
-a = 0.4
+a = 0.2
 
 pot_decay = 15 
-mainpath = '/users/tkm/kanilmaz/thesis/'
-#mainpath = '/home/nefta/thesis/'
+#mainpath = '/users/tkm/kanilmaz/thesis/'
+mainpath = '/home/nefta/thesis/'
 
 path_to_result = mainpath + 'results/qpc/supercurrent/' 
 path_to_file = mainpath +'designfiles/qpc.png'
@@ -88,10 +89,11 @@ def onsite(site, par):
     potentialTop = par.v_sg * potential(site.pos[0], site.pos[1]) 
     mu = (par.v_bg + potentialTop) / 2 #+ Vb
     delta = - (potentialTop - par.v_bg) / eta
+    disorder = -0.5 * par.v_dis* (2 * kwant.digest.uniform(repr(site), salt='') - 1)
     # site.family in (a1, b1)
     if (site.family == a1 or site.family == b1):
-        return - mu - delta #+ disorder #- edge_gap
-    return -mu + delta #+ disorder  #+ edge_gap
+        return - mu - delta + disorder #- edge_gap
+    return -mu + delta + disorder  #+ edge_gap
 
 def onsite_lead(site, par):     
     potentialTop = par.v_lead 
@@ -270,10 +272,10 @@ def plotCurrentPerV(magneticField, current, filename):
 
 def current_vs_b(system, vsg, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
-    system_params_names = ['vsg', 'vbg', 'vlead', 'maxB', 'nb_points',
+    system_params_names = ['vsg', 'vbg', 'vdis', 'vlead', 'maxB', 'nb_points',
                            'decay', 'eta', 'gamma', 'a', 
                            'at', 'delta', 'T', ]
-    system_params = [str(vsg), str(vbg), str(vlead), str(max_b), str(nb_points), 
+    system_params = [str(vsg), str(vbg), str(vdis), str(vlead), str(max_b), str(nb_points), 
                     str(pot_decay), str(eta), str(gamma), str(a), 
                     str(at), str(delta), str(T), ]
     
@@ -292,7 +294,7 @@ def current_vs_b(system, vsg, path=path_to_result):
     param_args = []
     
     for i, b in enumerate(magnetic_field):
-        param_args.append((i, SimpleNamespace(v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, v_sg=vsg, B=b)))
+        param_args.append((i, SimpleNamespace(v_bg=vbg, v_lead=vlead, t=1, gamma1=gamma, v_sg=vsg, B=b, v_dis=vdis)))
     for arg in param_args:
         param_queue.put(arg)
         

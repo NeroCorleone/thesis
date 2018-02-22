@@ -25,10 +25,40 @@ Die Ergebnisse, die f\"ur den Suprastrom im Rahmen der quasiklassischen Transpor
 
 In Kapitel \ref{ch:numerical-results} wird neben dem QPC-Aufbau noch ein weiterer, Wellenleiter-f\"ormiger Aufbau mit Tight-Binding-Modellen untersucht. Die berechneten Ergebnisse f\"ur Suprastrom und Leitf\"ahigkeit werden pr\"asentiert und es wird auf den Einfluss von Unordnung in der Probe und Defekte an den Kanten eingegangen. Die berechneten Ergebnisse f\"ur den QPC-Aufbau decken sich gut mit den experimentellen Befunden.
 
-%Schlie{\ss}lich gibt Kapitel \ref{ch:conclusion} einen Uberblick und Ausblick auf die Ergebnisse.
 
-%\paragraph{Ergebnisse}
-%Das sind meine Ergebnisse
-%\paragraph{Ausblick}
-%Das sehe ich, wenn ich nach vorne schaue.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Ergebnisse?        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Ergebnisse}
+Das zentrale Ergebnis dieser Arbeit ist, dass
+\begin{equation}
+J(\tilde{\chi}(y_1, y_2), \phi) \propto \int \int_{-W/2}^{~W/2} dy_1 dy_2 \frac{ \mathcal{J}(\tilde{\chi}(y_1, y_2)) }{ \left( 1 - \left(\frac{y_1 - y_2}{L}\right)^2 \right)^2 }
+\end{equation}
+Die Potenz im Nenner f\"ur den Strom durch die SNS junction geht mit der Potent von 2. Dies widerspricht dem Ergebnis von \cite{Barzykin1999}. 
+Die Stromdichte f\"ur das QPC wurde aufgestellt, sie lautet
+\begin{equation}
+J(\tilde{\chi}(y_1, y_2), \phi) \propto \int \int_{-W/2}^{W/2} d y_1 d y_2 \frac{\cos \left( \frac{\pi \phi}{W}(y_1 + y_2) \right)}{\left[ 1 + \left(\frac{y_1 - y_2}{L}\right)^2\right]^2} \label{eq:josephson_current},
+\end{equation}
+Der kritische Strom wurde ausgewertet f\"ur den Grenzfall $\phi \rightarrow 0$, in dem eine parabolische Funktion abh\"angig von W/L f\"ur das QPC gefunden wurde. In dem anderen Grenzfall, $\phi \rightarrow \infty$, wird der exponentielle Abfall f\"ur gro{\ss}e $\phi$ korrekt wiedergegeben. Es wurde auch das Verhalten der Randstr\"ome im Rahmen der quasi-klassischen N\"aherung untersucht und es zeigt sich, dass f\"ur verschiedenen Tranmissionskoeffizienten $\mathcal{T}_e$ der Kante und $\mathcal{T}_q$ des QPC, der kritische Strom durch einen Faktor 
+\begin{equation}
+\mathcal{C} =  \frac{| \mathcal{T}_q / \mathcal{T}_e + \cos \left( \pi \phi \right)/2 |}{\mathcal{T}_q / \mathcal{T}_e + 1/2}
+\end{equation}
+moduliert wird. Diese Modulation zeigt sich schon ab einem Wert von $\mathcal{T}_e/ \mathcal{T}_q = 1 / 100$ und ist ein starker Hinweis daraus, dass in den beobachteten Daten keine Kantenstr\"ome zu finden sind. 
+
+\section{Ausblick}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Ausblick		   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Die im Ramen dieser Arbeit vorgestellte Transporttheorie kann in verschiedenen Aspekten erweitert werden. Es wurde demonstriert, dass diese Theorie einen \emph{weak link} in Form eines QPC gut modellieren kann. Es ist deshalb denkbar, \"ahnliche Formen von weak links zu modellieren.
+
+In dieser Arbeit wurde ein kurzer SNS-Aufbau betrachtet. Das hat bestimmte N\"aherungen als Konsequenz, die die Rechnungen vereinfachen. F\"ur den anderen Grenzfall einer langen SNS-Schaltung, ist zum einen Streuung an den Kanten ein wichtiger Bestandteil zum Stromtransport und muss ber\"ucksichtigt werden. Zum anderen muss dann die Stromdichte modifiziert werden, die einfachste From der Joesphson Gleichung ist dann nicht mehr ausreichend.
+
+
+%Die quasi-klassische Transporttheorie kann f\"ur kompliziertere F\"alle erweitert werden. 
+%Analytische Rechnungen k\"onnen f\"ur weitere Setups berechnet werden, f\"ur kompliziertere Setups. Dabei kann beispielsweise Mehrfachstreuung und Anisotrope Streeuung hinzugezogen werden. 
+
+%Im Kontext auf die Experimente sind die M\"oglichkeiten beinahe unbeschr\"ankt. Es gibt Ans\"atze, f\"ur Spin Orbit Coupling in BLG, die nutzen und afw\"andige experimentelle Setups beschreiben.
+
+
 
