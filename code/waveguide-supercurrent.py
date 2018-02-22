@@ -14,15 +14,15 @@ import os
 from functools import partial
 import csv
 
-rough_setup = True 
-disorder_setup = False 
+rough_setup = False 
+disorder_setup = True
 
 vsg_values = [0.0, ]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.8
 vdis_values = [0.1, 0.2, 0.3, 0.4, 0.5,] 
 vlead = 0.0
-nb_points = 500 
-max_b = 0.00005
+nb_points = 400 
+max_b = 0.00015
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
@@ -375,8 +375,8 @@ if rough_setup:
 if disorder_setup:
     path_to_result += 'disorder/'
     system =  make_system(0, 0)
-    for vdis in vdis_values:
-        for vsg in vsg_values:
+    for vsg in vsg_values:
+        for vdis in vdis_values:
             current_vs_b(system, vsg, vdis, path_to_result)
 
     
