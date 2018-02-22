@@ -355,7 +355,7 @@ def current_vs_b(system, vsg, path=path_to_result):
     print('output in', filename)
     return()
 
-for depth, size in [(10, 0.5), (20, 0.5), (30, 0.5), (40, 0.5), (50, 0.5)]:
+for depth, size in [(5, 0.5), (15, 0.5), (25, 0.5), (35, 0.5),]: 
     system = make_system(depth, size)
     for vsg in vsg_values:
         current_vs_b(system, vsg)

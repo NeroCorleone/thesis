@@ -7278,3 +7278,19 @@ output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=40size
 starting calculation with  500  points
 time for calculation with multiprocessing:  0:16:26.581188
 output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=50size=0.5-20180222-11:37:46/data.csv
+  File "supercurrent-rough.py", line 358
+    for depth, size in [(5, 0.5), (15, 0.5), (25, 0.5), (35, 0.5),] 
+                                                                   ^
+SyntaxError: invalid syntax
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:18.913535
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=5size=0.5-20180222-12:02:59/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:29.580415
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=15size=0.5-20180222-12:19:21/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:22.359129
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=25size=0.5-20180222-12:35:53/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:16:30.511314
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/rough/depth=35size=0.5-20180222-12:52:19/data.csv
