@@ -52,7 +52,7 @@ Figure \ref{fig:qpc-heatmap} shows the the supercurrent that has been simulated 
 
 The two fingers of the QPC experiment can be tuned individually, so measurements of individually gated (half-barrier) set-ups  were included in the experimental set-up. As of yet, no measurement data has been published, though.
 
-The simulations have been carried out with a higher back-gate potential, which explains the higher values of the split-gate potential in the following plots. It is not important to have a low charge-carrier density, because this set-up does not aim to confine the current. A back-gate potential of as high as $\varphi_{BG} = 0.8$ has been chosen.
+The simulations have been carried out with a higher back-gate potential, which explains the higher values of the split-gate potential in the following plots. It is not important to have a low charge carrier density, because this set-up does not aim to confine the current. A back-gate potential of as high as $\varphi_{BG} = 0.8$ has been chosen.
 
 The plot in figure \ref{fig:hb-abs} shows that when the barrier is fully formed, $I_{c0}$ is halved compared to its value when there is no split-gate. Figure \ref{fig:hb-norm} illustrates that as the barrier forms, the periodicity of the pattern almost doubles. This behaviour is observed in the experiment as well.
 
@@ -74,10 +74,10 @@ The plot in figure \ref{fig:hb-abs} shows that when the barrier is fully formed,
 
 The halving of the critical current peak can be explained within the framework of the quasi-classical theory. When a barrier is fully present, only half of the trajectories connecting the superconducting leads can pass. Figure \ref{fig:systems} pictures the implementation of the sample in \texttt{kwant}. The geometry of the asymmetric sample manifests in the Fraunhofer pattern. Because of the asymmetry, the upper finger allows for more trajectories than the lower finger. The maximum current therefore saturates at a higher threshold with the upper half-barrier.
 
-Periodicity can be understood geometrically as well: about half of the area contributes to the magnetic phase, therefore the phase changes accordingly which leads to a doubling of the periodicity.
+Periodicity can be understood geometrically as well: About half of the area contributes to the magnetic phase. The phase changes accordingly, which leads to a doubling of the periodicity.
 %Ergebnis: Die Periode verändert sich, mit der Fläche, die Asymmetrie spielt eine Rolle.
 
-\section{Waveguide}
+\section{Wave-guide}
 %Waveguide 3, 2 for $\varphi_{BG} = 0.5$ 
 %Waveguide ist spannend, weil: symmetrie in die x Richtung sorgt dafür, dass man den Strom Fourier transformieren kann. Das geht mit der Methode von Dynes and Fulton \cite{Dynes1971}
 
@@ -91,14 +91,17 @@ Periodicity can be understood geometrically as well: about half of the area cont
 \begin{minipage}[b]{0.5\linewidth}
 \centering
 \includegraphics[width=\textwidth]{figure/numericalmodel/waveguide-ic}
-\caption{Conductance QPC} \label{fig:qpc-conductance}
+\caption{Conductance QPC} \label{fig:waveguide-ic}
 \end{minipage}
 %\hspace{0.5cm}
 \begin{minipage}[b]{0.5\linewidth}
 \centering
 \includegraphics[width=\textwidth]{figure/numericalmodel/waveguide-jy}
-\caption{default}\label{fig:qpc-conductance-sigma}
+\caption{default}\label{fig:waveguide-jy}
 \end{minipage}
 \end{figure}
+The wave-guide set-up of figure \ref{fig:waveguide-system} is, again, a short and wide junction with a narrow channel of 1 $\mu m$. The current can be confined similarly to the QPC set-up. Because of the wide channel, the value for the high back-gate potential can be chosen to be relatively high. This is justifiable, since in comparison to the QPC set-up, the waveguide set-up is measured experimentally at higher charge carrier densities. The advantage of this set-up is the translation invariance in the x-direction because of its symmetry. This allows for fourier transformation of the current with the method of Dynes and Fulton \cite{Dynes1971}.
+
+Figure \ref{fig:waveguide-ic} shows the normalized critical current. Similar to the results of the QPC simulation, a transition to a bell-shaped pattern can be observed. By fourier transforming the $I_c$-curves, the current density distribution along the width of the junction can be obtained. This current distribution is shown in figure \ref{fig:waveguide-jy}. For low values of the split-gate potential, the current density distribution is approximately rectangular. This implies that there is current flow below the top-gates. When the values of the the split-gate potential become increasingly negative, the current density distribution resembles a sharp peak. In this situation, the current transport is confined to the the area not covered by the top-gate.
 
 %Ergebnis: Strom wird eingeschränkt auf wenige Channels

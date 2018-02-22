@@ -11,6 +11,8 @@ Womit fängst du an?
 **überleg dir, wie du den darstellen  kannst. 
 **Wenn sich kein Unterschied bemerkbar macht: Dinge in einen Appendix und dazu schreiben.
 
+* Mach die Fouriertrafo plots zu Waveguide, nicht verkünsteln, fertig.
+
 #### Offene Fragen gerade ###
 
 *  Welche disorder Stärke relevant? ---> Werte zwischen 0, 1, aber nicht in der Nähe 1 (tight binding parameter)
@@ -18,10 +20,9 @@ Womit fängst du an?
 *  Welche Werte für disorder bei Waveguide?
 
 %%%%% Gerade läuft %%%%
-* tfpnc16 supercurrent-armchair.py QPC setup Untersuchung mit disorder werten [0.1, 0.2, 0.3, 0.4, 0.5]
-* tfpnc15 waveguide-supercurrent.py Waceguide setup mit disorder werten [0.1, 0.2, 0.3, 0.4, 0.5]
+* tfpnc10 waveguide mit rough edges 
+* tfpnc19 waveguide-supercurrent.py Waceguide setup mit disorder werten [0.1, 0.2, 0.3, 0.4, 0.5]
 
-* Mach die Fouriertrafo plots zu Waveguide, nicht verkünsteln, fertig.
 
 * Untersuhce das Waveguide setup auf disorder und rough edges, da kannst du jeweils Rückschlüsse auf die current density ziehen (Einfach, weil du sie Fourier transformieren kannst).
 

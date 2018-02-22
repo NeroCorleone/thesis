@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  22 FEB 2018 21:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  22 FEB 2018 22:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1895,12 +1895,6 @@ Package hyperref Info: Option `final' set `true' on input line 120.
 
 LaTeX Warning: Label `eq:josephson_current' multiply defined.
 
-
-LaTeX Warning: Label `fig:qpc-conductance' multiply defined.
-
-
-LaTeX Warning: Label `fig:qpc-conductance-sigma' multiply defined.
-
 )
 \openout1 = `mainThesis.aux'.
 
@@ -2043,7 +2037,7 @@ Package babel Info: Redefining ngerman shorthand "~
 
 
 ])
-(./misc/synopsis_german.tex
+(./misc/synopsis_german_csch.tex
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
@@ -2055,6 +2049,9 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 2.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 21.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2065,15 +2062,15 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 21.
  [5]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 54.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 54.
- [6]) [7]
-[8
+(babel)             in language  on input line 47.
+
+[6]) [7] [8
 
 
 ]
@@ -2785,12 +2782,12 @@ verted-to.pdf used on input line 322.
 (pdftex.def)             Requested size: 466.62526pt x 262.46992pt.
 Package epstopdf Info: Source file: <figure/analyticalmodel/hourglass_csch.eps>
 
-(epstopdf)                    date: 2018-02-21 14:04:05
-(epstopdf)                    size: 16526 bytes
+(epstopdf)                    date: 2018-02-22 22:28:22
+(epstopdf)                    size: 27735 bytes
 (epstopdf)             Output file: <figure/analyticalmodel/hourglass_csch-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2018-02-22 14:37:45
-(epstopdf)                    size: 6813 bytes
+(epstopdf)                    date: 2018-02-22 22:29:02
+(epstopdf)                    size: 10937 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/analyticalmodel/hour
 glass_csch-eps-converted-to.pdf figure/analyticalmodel/hourglass_csch.eps>
 (epstopdf)             \includegraphics on input line 332.
@@ -2835,7 +2832,7 @@ onductance-eps-converted-to.pdf figure/numericalmodel/qpc-conductance.eps>
 (epstopdf)             \includegraphics on input line 8.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/qpc-conductance-eps-converted-to.pdf, id=1113, 1156.32pt
+<figure/numericalmodel/qpc-conductance-eps-converted-to.pdf, id=1120, 1156.32pt
  x 650.43pt>
 File: figure/numericalmodel/qpc-conductance-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -2856,7 +2853,7 @@ ctance-sigma-eps-converted-to.pdf figure/numericalmodel/conductance-sigma.eps>
 (epstopdf)             \includegraphics on input line 14.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/conductance-sigma-eps-converted-to.pdf, id=1114, 1156.32
+<figure/numericalmodel/conductance-sigma-eps-converted-to.pdf, id=1121, 1156.32
 pt x 650.43pt>
 File: figure/numericalmodel/conductance-sigma-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -2879,7 +2876,7 @@ cnorm_heatmap-eps-converted-to.pdf figure/numericalmodel/qpc_icnorm_heatmap.eps
 (epstopdf)             \includegraphics on input line 31.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/qpc_icnorm_heatmap-eps-converted-to.pdf, id=1118, 1156.3
+<figure/numericalmodel/qpc_icnorm_heatmap-eps-converted-to.pdf, id=1125, 1156.3
 2pt x 650.43pt>
 File: figure/numericalmodel/qpc_icnorm_heatmap-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -2910,7 +2907,7 @@ per-eps-converted-to.pdf figure/numericalmodel/hb_upper.eps>
 (epstopdf)             \includegraphics on input line 42.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/hb_upper-eps-converted-to.pdf, id=1183, 1156.32pt x 650.
+<figure/numericalmodel/hb_upper-eps-converted-to.pdf, id=1189, 1156.32pt x 650.
 43pt>
 File: figure/numericalmodel/hb_upper-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -2930,7 +2927,7 @@ per_abs-eps-converted-to.pdf figure/numericalmodel/hb_upper_abs.eps>
 (epstopdf)             \includegraphics on input line 48.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/hb_upper_abs-eps-converted-to.pdf, id=1184, 1156.32pt x 
+<figure/numericalmodel/hb_upper_abs-eps-converted-to.pdf, id=1190, 1156.32pt x 
 650.43pt>
 File: figure/numericalmodel/hb_upper_abs-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -2950,14 +2947,14 @@ Package epstopdf Info: Source file: <figure/numericalmodel/qpc-system.eps>
 (epstopdf)                    size: 2073837 bytes
 (epstopdf)             Output file: <figure/numericalmodel/qpc-system-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2018-02-22 20:44:45
+(epstopdf)                    date: 2018-02-22 21:30:12
 (epstopdf)                    size: 926979 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/numericalmodel/qpc-s
 ystem-eps-converted-to.pdf figure/numericalmodel/qpc-system.eps>
 (epstopdf)             \includegraphics on input line 63.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/qpc-system-eps-converted-to.pdf, id=1272, 285.065pt x 50
+<figure/numericalmodel/qpc-system-eps-converted-to.pdf, id=1278, 285.065pt x 50
 6.89375pt>
 File: figure/numericalmodel/qpc-system-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2970,14 +2967,14 @@ Package epstopdf Info: Source file: <figure/numericalmodel/hb-system.eps>
 (epstopdf)                    size: 2087992 bytes
 (epstopdf)             Output file: <figure/numericalmodel/hb-system-eps-conver
 ted-to.pdf>
-(epstopdf)                    date: 2018-02-22 20:44:47
+(epstopdf)                    date: 2018-02-22 21:30:12
 (epstopdf)                    size: 927614 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/numericalmodel/hb-sy
 stem-eps-converted-to.pdf figure/numericalmodel/hb-system.eps>
 (epstopdf)             \includegraphics on input line 69.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/hb-system-eps-converted-to.pdf, id=1273, 285.065pt x 506
+<figure/numericalmodel/hb-system-eps-converted-to.pdf, id=1279, 285.065pt x 506
 .89375pt>
 File: figure/numericalmodel/hb-system-eps-converted-to.pdf Graphic file (type p
 df)
@@ -2986,7 +2983,7 @@ Package pdftex.def Info: figure/numericalmodel/hb-system-eps-converted-to.pdf u
 sed on input line 69.
 (pdftex.def)             Requested size: 139.989pt x 248.92152pt.
 
-<figure/numericalmodel/waveguide.png, id=1275, 1156.32pt x 650.43pt>
+<figure/numericalmodel/waveguide.png, id=1281, 1156.32pt x 650.43pt>
 File: figure/numericalmodel/waveguide.png Graphic file (type png)
 
 <use figure/numericalmodel/waveguide.png>
@@ -3005,7 +3002,7 @@ uide-ic-eps-converted-to.pdf figure/numericalmodel/waveguide-ic.eps>
 (epstopdf)             \includegraphics on input line 93.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/waveguide-ic-eps-converted-to.pdf, id=1277, 1156.32pt x 
+<figure/numericalmodel/waveguide-ic-eps-converted-to.pdf, id=1283, 1156.32pt x 
 650.43pt>
 File: figure/numericalmodel/waveguide-ic-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -3025,7 +3022,7 @@ uide-jy-eps-converted-to.pdf figure/numericalmodel/waveguide-jy.eps>
 (epstopdf)             \includegraphics on input line 99.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/numericalmodel/waveguide-jy-eps-converted-to.pdf, id=1278, 1156.32pt x 
+<figure/numericalmodel/waveguide-jy-eps-converted-to.pdf, id=1284, 1156.32pt x 
 650.43pt>
 File: figure/numericalmodel/waveguide-jy-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -3038,12 +3035,16 @@ Overfull \hbox (2.43332pt too wide) in paragraph at lines 91--102
 [][] [] 
  []
 
-) (./chapter/conclusion.tex
+
+Package natbib Warning: Citation `Dynes1971' on page 43 undefined on input line
+ 103.
+
+
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
 [43 <./figure/numericalmodel/qpc-system-eps-converted-to.pdf> <./figure/numeric
-almodel/hb-system-eps-converted-to.pdf>]
+almodel/hb-system-eps-converted-to.pdf>]) (./chapter/conclusion.tex
 Overfull \vbox (13.61752pt too high) has occurred while \output is active []
 
 
@@ -3087,7 +3088,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
 Package rerunfilecheck Info: File `mainThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 96A78861EF420B832FDCD6CA14A0C6B9;2344.
+(rerunfilecheck)             Checksum: 5EFB2E6BCA27E92D22DBA3224FE3BCAA;2345.
 
 
 LaTeX Warning: There were undefined references.
@@ -3098,10 +3099,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
  ) 
 Here is how much of TeX's memory you used:
- 29531 strings out of 494974
- 553401 string characters out of 6180014
- 757386 words of memory out of 5000000
- 31897 multiletter control sequences out of 15000+600000
+ 29534 strings out of 494974
+ 553478 string characters out of 6180014
+ 757480 words of memory out of 5000000
+ 31900 multiletter control sequences out of 15000+600000
  30644 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  73i,15n,75p,10405b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3131,10 +3132,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on mainThesis.pdf (59 pages, 4562536 bytes).
+Output written on mainThesis.pdf (59 pages, 4568049 bytes).
 PDF statistics:
- 1529 PDF objects out of 1728 (max. 8388607)
- 1067 compressed objects within 11 object streams
+ 1539 PDF objects out of 1728 (max. 8388607)
+ 1074 compressed objects within 11 object streams
  317 named destinations out of 1000 (max. 500000)
  426 words of extra memory for PDF output out of 10000 (max. 10000000)
 
