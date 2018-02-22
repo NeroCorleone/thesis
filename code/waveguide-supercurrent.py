@@ -14,8 +14,8 @@ import os
 from functools import partial
 import csv
 
-rough_setup = False 
-disorder_setup = True 
+rough_setup = True 
+disorder_setup = False 
 
 vsg_values = [0.0, ]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.8
@@ -147,9 +147,8 @@ class TRIInfiniteSystem(kwant.builder.InfiniteSystem):
 def make_edges_rough(system, depth, size, lead_distance=2):
     site_positions = [site.pos for site in system.sites()]
     unique_x = np.unique(list(zip(*site_positions))[0])[lead_distance:-lead_distance]
-    #ymin = {xval: min([val for val in site_positions if val[0] == xval], key=lambda x: x[1])[1] for xval in unique_x}
-    ymin = {xval: min([val for val in site_positions if val[0] == xval])[1] for xval in unique_x}
-    ymax = {xval: max([val for val in site_positions if val[0] == xval])[1] for xval in unique_x}
+    ymin = {xval: min([val for val in site_positions if val[0] == xval], key=lambda x: x[1])[1] for xval in unique_x}
+    ymax = {xval: max([val for val in site_positions if val[0] == xval], key=lambda x: x[1])[1] for xval in unique_x}
     
     def upper_edge(site, width):
         x0, y0 = site.pos
@@ -368,7 +367,7 @@ def current_vs_b(system, vsg, vdis, path=path_to_result):
 if rough_setup:
     vdis = 0.0
     path_to_result += 'rough/'
-    for depth, size in [(10, 0.5), (20, 0.5), (30, 0.5)]:
+    for depth, size in [(5, 0.5), (10, 0.5), (15, 0.5), (20, 0.5), (25, 0.5), (30, 0.5)]:
         system = make_system(depth, size)
         for vsg in vsg_values:
             current_vs_b(system, vsg, vdis, path_to_result)

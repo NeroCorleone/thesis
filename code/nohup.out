@@ -7340,3 +7340,33 @@ Traceback (most recent call last):
 ValueError: x and y must have same first dimension
 time for calculation with multiprocessing:  0:13:28.753495
 output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/disorder/vsg=-0.0vdis=0.5-20180222-16:08:01/data.csv
+starting calculation with  500  points
+time for calculation with multiprocessing:  0:13:17.325220
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/rough/vsg=0.0depth=5size=0.5-20180222-17:20:05/data.csv
+starting calculation with  500  points
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+time for calculation with multiprocessing:  0:13:21.987033
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/rough/vsg=0.0depth=10size=0.5-20180222-17:33:24/data.csv
+starting calculation with  500  points
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+time for calculation with multiprocessing:  0:13:17.689879
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/rough/vsg=0.0depth=15size=0.5-20180222-17:46:48/data.csv
+starting calculation with  500  points
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+time for calculation with multiprocessing:  0:14:57.148355
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/rough/vsg=0.0depth=20size=0.5-20180222-18:00:08/data.csv
+starting calculation with  500  points
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+time for calculation with multiprocessing:  0:12:45.804581
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/rough/vsg=0.0depth=25size=0.5-20180222-18:15:07/data.csv
+starting calculation with  500  points
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+time for calculation with multiprocessing:  0:12:19.313559
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/rough/vsg=0.0depth=30size=0.5-20180222-18:27:54/data.csv
