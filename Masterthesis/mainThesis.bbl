@@ -114,6 +114,12 @@ Dmitri~K. Efetov and Konstantin~B. Efetov.
   graphene}.
 \newblock \emph{Physical Review B}, 94\penalty0 (7), 2016.
 
+\bibitem[Groth et~al.(2014)Groth, Wimmer, Akhmerov, and Waintal]{Groth2014}
+Christoph~W Groth et~al.
+\newblock {Kwant: a software package for quantum transport}.
+\newblock \emph{New Journal of Physics}, 16\penalty0 (6):\penalty0 063065, jun
+  2014.
+
 \bibitem[McCann and Koshino(2012)]{McCann2012}
 Edward McCann and Mikito Koshino.
 \newblock {The electronic properties of bilayer graphene}.
@@ -165,12 +171,6 @@ A.~B. Kuzmenko et~al.
   parameters in bilayer graphene using infrared spectroscopy}.
 \newblock \emph{Physical Review B}, 80\penalty0 (16):\penalty0 165406, oct
   2009.
-
-\bibitem[Groth et~al.(2014)Groth, Wimmer, Akhmerov, and Waintal]{Groth2014}
-Christoph~W Groth et~al.
-\newblock {Kwant: a software package for quantum transport}.
-\newblock \emph{New Journal of Physics}, 16\penalty0 (6):\penalty0 063065, jun
-  2014.
 
 \bibitem[Mello et~al.(1988)Mello, Pereyra, and Kumar]{Mello1988}
 Pier~A. Mello, Pedro Pereyra and Narendra Kumar.

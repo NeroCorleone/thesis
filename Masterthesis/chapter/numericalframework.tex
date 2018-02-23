@@ -1,5 +1,144 @@
 \chapter{A Framework For The Numerical Analysis}
 \label{ch:basics-numerical}
+\section{\texttt{kwant} - A Toolbox For Quantum Transport}
+The numerical calculations in this thesis were performed using \texttt{kwant} \cite{Groth2014}, an open source Python package for calculations with tight binding models. \texttt{kwant} is intended to describe an infinite system that consists of a scattering region connected to semi-infinite leads. For example, an SNS junction can be thought of a normal metal scattering region connected to two large superconducting leads, which are considered semi-infinite. In \texttt{kwant}, leads are wave guides that lead plane waves in and out of the scattering region and the Hamiltonian of  a system is represented as
+\begin{equation}
+H = \begin{pmatrix}
+\ddots & V_L & &  \\
+V_L^\dagger & H_L & V_L &   \\
+ & V_L^\dagger & H_L & V_{LS} \\
+ & & V_{LS}^\dagger & H_S 
+\end{pmatrix}
+\end{equation}
+$H_S$ is the Hamiltonian of the scattering region and $H_L$ the Hamiltonian of the lead, or to be more precise: $H_L$ is the Hamiltonian of one unit cell of the lead. $V_L$ connects one lead unit cell to another and $V_{LS}$ connects the system to the lead.
+
+The leads are translational invariant and the wave functions inside are a superposition of plane waves. A general scattering state inside the lead is a superposition of a incoming wave, outgoing waves and the evanescent waves:
+\begin{equation}
+\psi_n ( i ) = c_n^\text{in} ( i ) + \sum_m s_{nm} c_m^\text{out} ( i ) + \sum_m s_{nm} c_m^\text{ev} ( i ),
+\end{equation}
+where $i$ is the lead index. The scattering state within the scattering region $c_n^s$ and is the main output of \texttt{kwant}. Once the scattering matrix $s$ and the wave functions $c_n^s$ are known, a lot of transport quantities can be calculated. In section \ref{sec:random-matrix} the procedure of hor to get the current within first order perturbation theory from the scattering matrix is described.
+
+\section{Random Matrix Theory Tor Transport}\label{sec:random-matrix}
+
+\subsection{Fundamental Idea}
+To describe the transport through a conducting region of interest, which is in between of two ideal leads. Ideal leads means that there is no disorder present, whereas the conductor is a disordered system. The question that the random matrix theory is answering, is: how can one describe the transport from one lead, through the disordered region to the other lead? Essential for this transport theory is the work of Landauer (cite!), who described ballistic transport through a 1D channel as a transmission problem. 
+
+The transport through the conducting region can be written in terms of an incident wave $c^\text{in}$ and a reflected/transmitted wave $c^\text{out}$. The scattering matrix $\mathcal{S}$ relates the amplitudes of these wave functions.
+\begin{equation}
+c^{\text{out}} = \mathcal{S} c^{\text{in}},
+\end{equation}
+where
+\begin{eqnarray}
+c^\text{in} &=& \left( a_1^+, a_2^+, \dots a_N^+, b_1^+, b_2^+, \dots b_N^+ \right) \\
+c^\text{out} &=& \left( a_1^-, a_2^-, \dots a_N^-, b_1^-, b_2^-, \dots b_N^- \right)
+\end{eqnarray}
+The coefficients $a$ represent the left lead and $b$ the right lead. The $\pm$ sign indicates, if it describes a right or left moving electron (see figure). The integer $n = 1, 2, \dots N$ is the index for the propagating modes. %In this case, there are $N$ modes in both the left and the right lead. %TODO ?
+%TODO figure
+The scattering matrix has the form
+\begin{equation}
+\mathcal{S} = \begin{pmatrix} r & t' \\ t & r'\end{pmatrix}
+\end{equation}
+where $r,\ r'$ are reflection matrices, and $t,\ t'$ are $N \times N $ transmission matrices. Both the transmission and the reflection matrices have the dimension $N \times N$. The scattering matrix is unitarity, since the current is conserved:
+\begin{equation}
+\mathcal{S}^{-1} = \mathcal{S}^\dagger.
+\end{equation}
+Consequently, the matrices $tt^\dagger$, $t't^\dagger$, $1-rr^\dagger$ and $1-r'r^\dagger$ have the same set of eigenvalues $T_1, T_2, \dots T_N$, each of them being a real number between $0$ and $1$.
+It is useful to write the scattering matrix $\mathcal{S}$ in terms of the transmission eigenvalues $T_n$, introducing the matrix $\mathcal{T} = \text{diag} ( T_1, T_2, \dots T_n )$. Each of the eigenvalues of $\mathcal{T}$ is a real value between 0 and 1. This rewriting is done in \cite{Mello1988} and is called polar decomposition
+\begin{equation}
+\mathcal{S} = \begin{pmatrix} U & 0 \\ 0 & V\end{pmatrix} \begin{pmatrix} - \sqrt{1 - \mathcal{T}} & \sqrt{\mathcal{T}} \\ \sqrt{\mathcal{T}}& \sqrt{1 - \mathcal{T}} \end{pmatrix} \begin{pmatrix} U' & 0 \\ 0 & V' \end{pmatrix}
+\end{equation}
+$U$, $V$ are are $N\times N $ unitary matrices.
+%TODO rewrite below, 
+The scattering matrix relates incoming ($c^\text{in}$) states to outgoing ($c^\text{out}$) states. It is also possible to look at the transfer matrix $M$, which relates states from the left lead ($c^\text{left}$) to states in the right lead ($c^\text{right}$):
+%TODO figure
+\begin{equation}
+c^\text{right} = M c^\text{left}
+\end{equation}
+where 
+\begin{eqnarray}
+c^\text{left} &=& \left( a_1^+, a_2^+, \dots, a_N^+, a_2^-, a_2^-, \dots a_N^-\right) \\
+c^\text{right} &=& \left( b_1^+, b_2^+, \dots, b_N^+, b_2^-, b_2^-, \dots b_N^-\right) \\
+M &=& \begin{pmatrix} V & 0 \\ 0 & V'^\dagger \end{pmatrix} \begin{pmatrix} \sqrt{\mathcal{T}^{-1}} & \sqrt{\mathcal{T}^{-1} -1} \\ \sqrt{\mathcal{T}^{-1} -1} & \sqrt{\mathcal{T}^{-1}}\end{pmatrix} \begin{pmatrix} U' & 0 \\ 0 & U\dagger \end{pmatrix}
+\end{eqnarray}
+
+Both the transfer matrix $M$ and the scattering matrix $S$ describe the conductive region. The nice feature of the transfer matrix can be seen, if multiple disordered regions, each separated by ideal leads, are considered. The transfer matrix of the whole system is a multiplication of each regions individual transfer matrix.
+The conductance of such a disordered region is given by the sum of the transmission eigenvalues $T_n$:
+\begin{equation}
+G = G_0 \sum_{n=1}^N T_n, \quad G_0 = \frac{2e^2}{h}
+\end{equation}
+This is cool. But there is not much context...
+
+\subsection{Supercurrent In An SNS Junction}\label{sec:scattering-supercurrent}
+
+Considering an SNS junction. The wave funtions for an incident wave and an reflected/transmitted wave contain now coefficients for electrons and holes:
+\begin{eqnarray}
+c_N^\text{in} &=& \left( c^+_e(N_1), c^-_e(N_2), c^-_h(N_1), c^+_h(N_2) \right) \\
+c_N^\text{out} &=& \left( c^-_e(N_1), c^+_e(N_2), c^-_h(N_1), c^+_h(N_2) \right)
+\end{eqnarray}
+$N_1$ is the number of modes in the left lead, $N_2$ is the number of modes in the right lead. In the special case of scattering between a normal conductive region and a superconductor, two types of scattering have to be distinguished. For one, there is the normal scattering of electrons and there is Andreev reflection of electrons at the superconductor. The scattering process at the normal region is described by the normal scattering matrix $s_N$, that connects an incident wave with a reflected/transmitted one.
+\begin{equation}
+c^\text{out}_N = s_N(\epsilon) c^\text{in}_N
+\end{equation}
+This scattering matrix $s_N$ is
+\begin{equation}
+s_N (\epsilon) = \begin{pmatrix} s_0 (\epsilon ) & 0  \\ 0 & s_0 ( \epsilon) \end{pmatrix} \label{eq:s-n},
+\end{equation}
+where
+\begin{equation}
+s_0 = \begin{pmatrix} r_{1 1} & t_{1 2} \\ t_{2 1} & r_{2 2} \end{pmatrix}
+\end{equation}
+The Andreev reflection process is described by another scattering matrix, the Andreev scattering matrix $s_A$. For  energies $\epsilon < \Delta$, there are no propagating modes inside the superconductor.  And for $\Delta_0 \ll E_F$, the normal reflection at the NS interface can be ignored and only Andreev scattering is taken into account.
+\begin{equation}
+s_A = \alpha(\epsilon) \begin{pmatrix} 0 & r_A \\ r_A^* & 0 \end{pmatrix}, 
+\end{equation}
+with $\alpha ( \epsilon ) = \text{exp} \left( -i \arccos \frac{\epsilon}{\Delta} \right) $
+\begin{equation}
+r_A = \begin{pmatrix} e^{i \phi /2 } \mathds{1} & 0 \\ 0 & e^{-i \phi / 2 } \mathds{1} \end{pmatrix}
+\end{equation}
+From the structure of the Andreev scattering matrix, it can be seen that an electron mode is transformed into a hole mode, while the mode index $n$ does not change. This transformation is accompanied by a phase shit of $- \arccos \frac{\epsilon}{\Delta} $, which comes form the decay into the superconducting region. Also, a phase of $\phi/2$ ($-\phi/2$), where $\phi$ is the superconducting phase difference, is added for reflection from electron to hole (hole to electron).
+
+
+A bound state in the SNS junction forms, when 
+\begin{equation}
+c_\text{in} = s_A ( \epsilon ) s_N ( \epsilon ) c_\text{in} \label{eq:bound-state-cond}
+\end{equation}
+holds. In the short junction limit, $L \ll \xi$, it holds that
+\begin{equation}
+s_0 ( \epsilon ) \approx s_0 ( - \epsilon ) \approx s_0 ( 0) \equiv s_0
+\end{equation}
+This can be used to simplify the normal scattering matrix $s_N (\epsilon) $ equation (\ref{eq:s-n}). Using this approximation, the bond state condition eq. (\ref{eq:bound-state-cond}) becomes
+\begin{equation}
+\begin{pmatrix} s_0^\dagger & 0\\ 0 & s_0^T \end{pmatrix}  \begin{pmatrix} 0 & r_A^* \\ r_A & 0 \end{pmatrix}  c_\text{in} = \text{exp} \left( i \arccos \frac{\epsilon}{\Delta} \right) c_\text{in}
+\end{equation}
+This can be simplified further. By appliying a Joukowsky transformation, it is possible to write
+\begin{equation}
+\begin{pmatrix} 0 & - i A \\ i A & 0 \end{pmatrix} c_\text{in} = \frac{\epsilon}{\Delta}
+\end{equation}
+with $A = \frac{1}{2} ( r_A s_0 - s_0^T r_A)$ . This leads  to
+\begin{equation}
+A^\dagger A c_\text{in} = \frac{\epsilon^2}{\Delta^2} c_\text{in} \label{eq:bound-state-final}
+\end{equation}
+
+So far, the condition for an Andreev bound state has been simplified according to the short junction approach. To get an expression for the current, the free energy $F$ is needed \cite{Beenakker1992}:
+\begin{equation}
+I = \frac{ 2 e}{\hbar} \frac{d F}{d \phi}
+\end{equation}
+the free energy $F$ has been calculated as \cite{Beenakker1991}
+\begin{equation}
+F = - 2 k_B T \sum_{\epsilon > 0 } \text{ln} \left[ 2 \cosh \frac{\epsilon}{2 k_B T}  \right] + \dots
+\end{equation}
+which is the free energy of a non interacting electron . 
+So the current is
+\begin{equation}
+I = - \frac{2 e}{\hbar} \sum_p \tanh \left( \frac{\epsilon_p}{2 k_B T} \right) \frac{d \epsilon_p }{d \phi}
+\end{equation}
+The derivation of the energy with respect to the phase can be obtained from eq. (\ref{eq:bound-state-final}).
+\begin{equation}
+\frac{d \epsilon}{d \phi } = \frac{\Delta^2}{2 \epsilon} \frac{\langle c_\text{in} | \frac{d ( A^\dagger A )}{d \phi }| c_\text{in} \rangle} {\langle c_\text{in} |c_\text{in} \rangle}
+\end{equation}
+
+
+
 \section{Tight Binding Model For Graphene}
 %%%%%%
 Tight binding models are simple, yet powerful methods to calculate the electronic band structure of a system consisting of many lattice sites. Each lattice site is represented in the Hamiltonian as an atomic potential. 
@@ -129,7 +268,7 @@ The tight binding parameters can be determined experimentally using Raman scatte
 \end{eqnarray}
 
 \subsection{Tight Binding Models And \texttt{kwant}}
-The numerical calculations in this thesis were performed using \texttt{kwant} \cite{Groth2014}, an open source Python package for calculations with tight binding models. For implementing the system in \texttt{kwant} , the tight binding model hast to be defined. This means,  a lattice with corresponding symmetry has to be build and the hoppings between the lattice points have to be defined. The bilayer system that is used in this thesis is $AB$-stacked and the presence of a magnetic field is considered, entering the Hamiltonian with the Peierls approximation:
+For implementing the system in \texttt{kwant} , the tight binding model hast to be defined. This means,  a lattice with corresponding symmetry has to be build and the hoppings between the lattice points have to be defined. The bilayer system that is used in this thesis is $AB$-stacked and the presence of a magnetic field is considered, entering the Hamiltonian with the Peierls approximation:
 \begin{equation}
 \phi_{i, j} = \frac{e}{\hbar} \int_i^j \mathbf{A} d\mathbf{r}.
 \end{equation}
@@ -158,128 +297,7 @@ Here, $\mu$ and $\delta$ are defined as
 \mu_i &=& \frac{\varphi_{BG} + u_i \varphi_{SG}}{2} \\
 \delta_i &=& \frac{\varphi_{BG} -  u_i \varphi_{SG}}{\eta}
 \end{eqnarray}
-$u_i$ is used as a paramter that defines, if the lattice site $i$ is within a gated region ($u_i = 1$) (underneath a topgate) or not ($u_i = 0$).
+$u_i$ is used as a paramter that defines, if the lattice site $i$ is within a gated region ($u_i = 1$) (underneath a topgate) or not ($u_i = 0$). The split-gate and back-gate potential is represented by  $\varphi_{SG}$ and $ \varphi_{BG}$, respectively. In the course of this thesis, all quantities are given in units of the tight binding parameters $t$ and the lattice constant $a$.
 
-\section{Random Matrix Theory Tor Transport}
-
-\subsection{Fundamental Idea}
-To describe the transport through a conducting region of interest, which is in between of two ideal leads. Ideal leads means that there is no disorder present, whereas the conductor is a disordered system. The question that the random matrix theory is answering, is: how can one describe the transport from one lead, through the disordered region to the other lead? Essential for this transport theory is the work of Landauer (cite!), who described ballistic transport through a 1D channel as a transmission problem. 
-
-The transport through the conducting region can be written in terms of an incident wave $c^\text{in}$ and a reflected/transmitted wave $c^\text{out}$. The scattering matrix $\mathcal{S}$ relates the amplitudes of these wave functions.
-\begin{equation}
-c^{\text{out}} = \mathcal{S} c^{\text{in}},
-\end{equation}
-where
-\begin{eqnarray}
-c^\text{in} &=& \left( a_1^+, a_2^+, \dots a_N^+, b_1^+, b_2^+, \dots b_N^+ \right) \\
-c^\text{out} &=& \left( a_1^-, a_2^-, \dots a_N^-, b_1^-, b_2^-, \dots b_N^- \right)
-\end{eqnarray}
-The coefficients $a$ represent the left lead and $b$ the right lead. The $\pm$ sign indicates, if it describes a right or left moving electron (see figure). The integer $n = 1, 2, \dots N$ is the index for the propagating modes. In this case, there are $N$ modes in both the left and the right lead. %TODO ?
-%TODO figure
-The scattering matrix has the form
-\begin{equation}
-\mathcal{S} = \begin{pmatrix} r & t' \\ t & r'\end{pmatrix}
-\end{equation}
-where $r,\ r'$ are reflection matrices, and $t,\ t'$ are $N \times N $ transmission matrices. Both the transmission and the reflection matrices have the dimension $N \times N$. The scattering matrix is unitarity, since the current is conserved:
-\begin{equation}
-\mathcal{S}^{-1} = \mathcal{S}^\dagger.
-\end{equation}
-Consequently, the matrices $tt^\dagger$, $t't^\dagger$, $1-rr^\dagger$ and $1-r'r^\dagger$ have the same set of eigenvalues $T_1, T_2, \dots T_N$, each of them being a real number between $0$ and $1$.
-
-It is useful to write the scattering matrix $\mathcal{S}$ in terms of the transmission eigenvalues $T_n$, introducing the matrix $\mathcal{T} = \text{diag} ( T_1, T_2, \dots T_n )$. Each of the eigenvalues of $\mathcal{T}$ is a real value between 0 and 1. This rewriting is done in \cite{Mello1988} and is called polar decomposition
-\begin{equation}
-\mathcal{S} = \begin{pmatrix} U & 0 \\ 0 & V\end{pmatrix} \begin{pmatrix} - \sqrt{1 - \mathcal{T}} & \sqrt{\mathcal{T}} \\ \sqrt{\mathcal{T}}& \sqrt{1 - \mathcal{T}} \end{pmatrix} \begin{pmatrix} U' & 0 \\ 0 & V' \end{pmatrix}
-\end{equation}
-$U$, $V$ are are $N\times N $ unitary matrices.
-
-%TODO rewrite below, 
-The scattering matrix relates incoming ($c^\text{in}$) states to outgoing ($c^\text{out}$) states. It is also possible to look at the transfer matrix $M$, which relates states from the left lead ($c^\text{left}$) to states in the right lead ($c^\text{right}$):
-%TODO figure
-\begin{equation}
-c^\text{right} = M c^\text{left}
-\end{equation}
-where 
-\begin{eqnarray}
-c^\text{left} &=& \left( a_1^+, a_2^+, \dots, a_N^+, a_2^-, a_2^-, \dots a_N^-\right) \\
-c^\text{right} &=& \left( b_1^+, b_2^+, \dots, b_N^+, b_2^-, b_2^-, \dots b_N^-\right) \\
-M &=& \begin{pmatrix} V & 0 \\ 0 & V'^\dagger \end{pmatrix} \begin{pmatrix} \sqrt{\mathcal{T}^{-1}} & \sqrt{\mathcal{T}^{-1} -1} \\ \sqrt{\mathcal{T}^{-1} -1} & \sqrt{\mathcal{T}^{-1}}\end{pmatrix} \begin{pmatrix} U' & 0 \\ 0 & U\dagger \end{pmatrix}
-\end{eqnarray}
-
-Both the transfer matrix $M$ and the scattering matrix $S$ describe the conductive region. The nice feature of the transfer matrix can be seen, if multiple disordered regions, each separated by ideal leads, are considered. The transfer matrix of the whole system is a multiplication of each regions individual transfer matrix. (which is an advantage, the scattering matrix stuff is then a bit of a fuck off...)
-%TODO das fällt son bisschen ausm Himmel...
-The conductance of such a disordered region is given by the sum of the transmission eigenvalues $T_n$:
-\begin{equation}
-G = G_0 \sum_{n=1}^N T_n, \quad G_0 = \frac{2e^2}{h}
-\end{equation}
-This is cool. But there is not much context...
-
-\subsection{Supercurrent In An SNS Junction}\label{sec:scattering-supercurrent}
-
-Considering an SNS junction. The wave funtions for an incident wave and an reflected/transmitted wave contain now coefficients for electrons and holes:
-\begin{eqnarray}
-c_N^\text{in} &=& \left( c^+_e(N_1), c^-_e(N_2), c^-_h(N_1), c^+_h(N_2) \right) \\
-c_N^\text{out} &=& \left( c^-_e(N_1), c^+_e(N_2), c^-_h(N_1), c^+_h(N_2) \right)
-\end{eqnarray}
-$N_1$ is the number of modes in the left lead, $N_2$ is the number of modes in the right lead. In the special case of scattering between a normal conductive region and a superconductor, two types of scattering have to be distinguished. For one, there is the normal scattering of electrons and there is Andreev reflection of electrons at the superconductor. The scattering process at the normal region is described by the normal scattering matrix $s_N$, that connects an incident wave with a reflected/transmitted one.
-\begin{equation}
-c^\text{out}_N = s_N(\epsilon) c^\text{in}_N
-\end{equation}
-This scattering matrix $s_N$ is
-\begin{equation}
-s_N (\epsilon) = \begin{pmatrix} s_0 (\epsilon ) & 0  \\ 0 & s_0 ( \epsilon) \end{pmatrix} \label{eq:s-n},
-\end{equation}
-where
-\begin{equation}
-s_0 = \begin{pmatrix} r_{1 1} & t_{1 2} \\ t_{2 1} & r_{2 2} \end{pmatrix}
-\end{equation}
-The Andreev reflection process is described by another scattering matrix, the Andreev scattering matrix $s_A$. For  energies $\epsilon < \Delta$, there are no propagating modes inside the superconductor.  And for $\Delta_0 \ll E_F$, the normal reflection at the NS interface can be ignored and only Andreev scattering is taken into account.
-\begin{equation}
-s_A = \alpha(\epsilon) \begin{pmatrix} 0 & r_A \\ r_A^* & 0 \end{pmatrix}, 
-\end{equation}
-with $\alpha ( \epsilon ) = \text{exp} \left( -i \arccos \frac{\epsilon}{\Delta} \right) $
-\begin{equation}
-r_A = \begin{pmatrix} e^{i \phi /2 } \mathds{1} & 0 \\ 0 & e^{-i \phi / 2 } \mathds{1} \end{pmatrix}
-\end{equation}
-From the structure of the Andreev scattering matrix, it can be seen that an electron mode is transformed into a hole mode, while the mode index $n$ does not change. This transformation is accompanied by a phase shit of $- \arccos \frac{\epsilon}{\Delta} $, which comes form the decay into the superconducting region. Also, a phase of $\phi/2$ ($-\phi/2$), where $\phi$ is the superconducting phase difference, is added for reflection from electron to hole (hole to electron).
-
-
-A bound state in the SNS junction forms, when 
-\begin{equation}
-c_\text{in} = s_A ( \epsilon ) s_N ( \epsilon ) c_\text{in} \label{eq:bound-state-cond}
-\end{equation}
-holds. In the short junction limit, $L \ll \xi$, it holds that
-\begin{equation}
-s_0 ( \epsilon ) \approx s_0 ( - \epsilon ) \approx s_0 ( 0) \equiv s_0
-\end{equation}
-This can be used to simplify the normal scattering matrix $s_N (\epsilon) $ equation (\ref{eq:s-n}). Using this approximation, the bond state condition eq. (\ref{eq:bound-state-cond}) becomes
-\begin{equation}
-\begin{pmatrix} s_0^\dagger & 0\\ 0 & s_0^T \end{pmatrix}  \begin{pmatrix} 0 & r_A^* \\ r_A & 0 \end{pmatrix}  c_\text{in} = \text{exp} \left( i \arccos \frac{\epsilon}{\Delta} \right) c_\text{in}
-\end{equation}
-This can be simplified further. By appliying a Joukowsky transformation, it is possible to write
-\begin{equation}
-\begin{pmatrix} 0 & - i A \\ i A & 0 \end{pmatrix} c_\text{in} = \frac{\epsilon}{\Delta}
-\end{equation}
-with $A = \frac{1}{2} ( r_A s_0 - s_0^T r_A)$ . This leads  to
-\begin{equation}
-A^\dagger A c_\text{in} = \frac{\epsilon^2}{\Delta^2} c_\text{in} \label{eq:bound-state-final}
-\end{equation}
-
-So far, the condition for an Andreev bound state has been simplified according to the short junction approach. To get an expression for the current, the free energy $F$ is needed \cite{Beenakker1992}:
-\begin{equation}
-I = \frac{ 2 e}{\hbar} \frac{d F}{d \phi}
-\end{equation}
-the free energy $F$ has been calculated as \cite{Beenakker1991}
-\begin{equation}
-F = - 2 k_B T \sum_{\epsilon > 0 } \text{ln} \left[ 2 \cosh \frac{\epsilon}{2 k_B T}  \right] + \dots
-\end{equation}
-which is the free energy of a non interacting electron . 
-So the current is
-\begin{equation}
-I = - \frac{2 e}{\hbar} \sum_p \tanh \left( \frac{\epsilon_p}{2 k_B T} \right) \frac{d \epsilon_p }{d \phi}
-\end{equation}
-The derivation of the energy with respect to the phase can be obtained from eq. (\ref{eq:bound-state-final}).
-\begin{equation}
-\frac{d \epsilon}{d \phi } = \frac{\Delta^2}{2 \epsilon} \frac{\langle c_\text{in} | \frac{d ( A^\dagger A )}{d \phi }| c_\text{in} \rangle} {\langle c_\text{in} |c_\text{in} \rangle}
-\end{equation}
-
-%\subsection{Implementation in kwant} ?
+\section{Summary Of This Chapter}
+This chapter introduces the basics needed to understand the numerical simulations. The scattering matrix theory is highlighted, especially with regard to its applications in \texttt{kwant}. The general tight binding formalism for both single and bilayer graphene is introduced and finally, the tight binding model used in the numerics is presented.
