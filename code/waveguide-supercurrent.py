@@ -14,10 +14,10 @@ import os
 from functools import partial
 import csv
 
-rough_setup = False 
-disorder_setup = True
+rough_setup = True 
+disorder_setup = False 
 
-vsg_values = [0.0, ]#np.arange(-0.0, -0.1, -0.01)
+vsg_values = [-0.45,]#[-0.3, -0.4, -0.42, -0.45, ]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.8
 vdis_values = [0.1, 0.2, 0.3, 0.4, 0.5,] 
 vlead = 0.0
@@ -367,7 +367,7 @@ def current_vs_b(system, vsg, vdis, path=path_to_result):
 if rough_setup:
     vdis = 0.0
     path_to_result += 'rough/'
-    for depth, size in [(5, 0.5), (10, 0.5), (15, 0.5), (20, 0.5), (25, 0.5), (30, 0.5)]:
+    for depth, size in [(20, 0.5)]:
         system = make_system(depth, size)
         for vsg in vsg_values:
             current_vs_b(system, vsg, vdis, path_to_result)

@@ -7429,3 +7429,31 @@ output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/disorder/vsg=0.0
 starting calculation with  400  points
 time for calculation with multiprocessing:  0:09:57.988142
 output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/disorder/vsg=0.0vdis=0.5-20180222-22:28:13/data.csv
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:04:56.689268
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/rough/vsg=-0.3depth=20size=0.5-20180223-01:56:00/data.csv
+starting calculation with  400  points
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+time for calculation with multiprocessing:  0:04:56.311727
+output in /users/tkm/kanilmaz/thesis/results/wg3_2/supercurrent/rough/vsg=-0.4depth=20size=0.5-20180223-02:00:57/data.csv
+starting calculation with  400  points
+time for calculation with multiprocessing:  0:04:52.740714
+Traceback (most recent call last):
+  File "waveguide-supercurrent.py", line 373, in <module>
+    current_vs_b(system, vsg, vdis, path_to_result)
+  File "waveguide-supercurrent.py", line 363, in current_vs_b
+    plotCurrentPerV(current_values.T[0], magnetic_field, pngfile)
+  File "waveguide-supercurrent.py", line 296, in plotCurrentPerV
+    plt.plot(current, magneticField, linestyle='None', marker='o', color='b', )
+  File "/usr/lib/python3/dist-packages/matplotlib/pyplot.py", line 3099, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_axes.py", line 1374, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_base.py", line 303, in _grab_next_args
+    for seg in self._plot_args(remaining, kwargs):
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_base.py", line 281, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_base.py", line 223, in _xy_from_xy
+    raise ValueError("x and y must have same first dimension")
+ValueError: x and y must have same first dimension
