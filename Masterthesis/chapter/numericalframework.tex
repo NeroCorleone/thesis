@@ -1,27 +1,27 @@
 \chapter{A Framework For The Numerical Analysis}
 \label{ch:basics-numerical}
 \section{\texttt{kwant} - A Toolbox For Quantum Transport}
-The numerical calculations in this thesis were performed using \texttt{kwant} \cite{Groth2014}, an open source Python package for calculations with tight binding models. \texttt{kwant} is intended to describe an infinite system that consists of a scattering region connected to semi-infinite leads. For example, an SNS junction can be thought of a normal metal scattering region connected to two large superconducting leads, which are considered semi-infinite. In \texttt{kwant}, leads are wave guides that lead plane waves in and out of the scattering region and the Hamiltonian of  a system is represented as
+The numerical calculations in this thesis were performed using \texttt{kwant} \cite{Groth2014}, an open source Python package for calculations with tight binding models. \texttt{kwant} is intended to describe an infinite system that consists of a scattering region connected to semi-infinite leads. For example, an SNS junction can be thought of a normal metal scattering region connected to two large superconducting leads, which are considered semi-infinite. In \texttt{kwant}, leads are wave guides that lead plane waves in and out of the scattering region. The Hamiltonian of  a system is represented as
 \begin{equation}
 H = \begin{pmatrix}
 \ddots & V_L & &  \\
 V_L^\dagger & H_L & V_L &   \\
  & V_L^\dagger & H_L & V_{LS} \\
  & & V_{LS}^\dagger & H_S 
-\end{pmatrix}
+\end{pmatrix}.
 \end{equation}
-$H_S$ is the Hamiltonian of the scattering region and $H_L$ the Hamiltonian of the lead, or to be more precise: $H_L$ is the Hamiltonian of one unit cell of the lead. $V_L$ connects one lead unit cell to another and $V_{LS}$ connects the system to the lead.
+$H_S$ is the Hamiltonian of the scattering region and $H_L$ the Hamiltonian of the lead -- to be more precise: $H_L$ is the Hamiltonian of one unit cell of the lead. $V_L$ connects one lead unit cell to another and $V_{LS}$ connects the system to the lead.
 
-The leads are translational invariant and the wave functions inside are a superposition of plane waves. A general scattering state inside the lead is a superposition of a incoming wave, outgoing waves and the evanescent waves:
+The leads are translational invariant and the wave functions inside are a superposition of plane waves. A general scattering state inside the lead is a superposition of a incoming wave, outgoing waves, and the evanescent waves:
 \begin{equation}
 \psi_n ( i ) = c_n^\text{in} ( i ) + \sum_m s_{nm} c_m^\text{out} ( i ) + \sum_m s_{nm} c_m^\text{ev} ( i ),
 \end{equation}
-where $i$ is the lead index. The scattering state within the scattering region $c_n^s$ and is the main output of \texttt{kwant}. Once the scattering matrix $s$ and the wave functions $c_n^s$ are known, a lot of transport quantities can be calculated. In section \ref{sec:random-matrix} the procedure of hor to get the current within first order perturbation theory from the scattering matrix is described.
+where $i$ is the lead index. The scattering state within the scattering region $c_n^s$ is the main output of \texttt{kwant}. Once the scattering matrix $s$ and the wave functions $c_n^s$ are known, a lot of transport quantities can be calculated. In section \ref{sec:random-matrix} the procedure of how to get the current within first order perturbation theory from the scattering matrix is described.
 
-\section{Random Matrix Theory Tor Transport}\label{sec:random-matrix}
+\section{Random Matrix Theory For Transport}\label{sec:random-matrix}
 
 \subsection{Fundamental Idea}
-To describe the transport through a conducting region of interest, which is in between of two ideal leads. Ideal leads means that there is no disorder present, whereas the conductor is a disordered system. The question that the random matrix theory is answering, is: how can one describe the transport from one lead, through the disordered region to the other lead? Essential for this transport theory is the work of Landauer (cite!), who described ballistic transport through a 1D channel as a transmission problem. 
+The aim of the random matrix theory is to describe the transport through a conducting region. While the conductor is a disordered system, the two leads connected to it are considered ideal, i.e. there is no disorder present. Essential for this transport theory is the work of Landauer, who described ballistic transport through a 1D channel as a transmission problem. 
 
 The transport through the conducting region can be written in terms of an incident wave $c^\text{in}$ and a reflected/transmitted wave $c^\text{out}$. The scattering matrix $\mathcal{S}$ relates the amplitudes of these wave functions.
 \begin{equation}
@@ -30,9 +30,9 @@ c^{\text{out}} = \mathcal{S} c^{\text{in}},
 where
 \begin{eqnarray}
 c^\text{in} &=& \left( a_1^+, a_2^+, \dots a_N^+, b_1^+, b_2^+, \dots b_N^+ \right) \\
-c^\text{out} &=& \left( a_1^-, a_2^-, \dots a_N^-, b_1^-, b_2^-, \dots b_N^- \right)
+c^\text{out} &=& \left( a_1^-, a_2^-, \dots a_N^-, b_1^-, b_2^-, \dots b_N^- \right).
 \end{eqnarray}
-The coefficients $a$ represent the left lead and $b$ the right lead. The $\pm$ sign indicates, if it describes a right or left moving electron (see figure). The integer $n = 1, 2, \dots N$ is the index for the propagating modes. %In this case, there are $N$ modes in both the left and the right lead. %TODO ?
+The coefficients $a$ represent the left lead and $b$ the right lead. The $\pm$ sign indicates if the wave function describes a right or left moving electron. The integer $n = 1, 2, \dots N$ is the index for the propagating modes. %In this case, there are $N$ modes in both the left and the right lead. %TODO ?
 %TODO figure
 The scattering matrix has the form
 \begin{equation}
@@ -43,13 +43,13 @@ where $r,\ r'$ are reflection matrices, and $t,\ t'$ are $N \times N $ transmiss
 \mathcal{S}^{-1} = \mathcal{S}^\dagger.
 \end{equation}
 Consequently, the matrices $tt^\dagger$, $t't^\dagger$, $1-rr^\dagger$ and $1-r'r^\dagger$ have the same set of eigenvalues $T_1, T_2, \dots T_N$, each of them being a real number between $0$ and $1$.
-It is useful to write the scattering matrix $\mathcal{S}$ in terms of the transmission eigenvalues $T_n$, introducing the matrix $\mathcal{T} = \text{diag} ( T_1, T_2, \dots T_n )$. Each of the eigenvalues of $\mathcal{T}$ is a real value between 0 and 1. This rewriting is done in \cite{Mello1988} and is called polar decomposition
+It is useful to write the scattering matrix $\mathcal{S}$ in terms of the transmission eigenvalues $T_n$, introducing the matrix $\mathcal{T} = \text{diag} ( T_1, T_2, \dots T_n )$. Each of the eigenvalues of $\mathcal{T}$ is a real value between 0 and 1. This rewriting is done in \cite{Mello1988} and yields
 \begin{equation}
 \mathcal{S} = \begin{pmatrix} U & 0 \\ 0 & V\end{pmatrix} \begin{pmatrix} - \sqrt{1 - \mathcal{T}} & \sqrt{\mathcal{T}} \\ \sqrt{\mathcal{T}}& \sqrt{1 - \mathcal{T}} \end{pmatrix} \begin{pmatrix} U' & 0 \\ 0 & V' \end{pmatrix}
 \end{equation}
 $U$, $V$ are are $N\times N $ unitary matrices.
 %TODO rewrite below, 
-The scattering matrix relates incoming ($c^\text{in}$) states to outgoing ($c^\text{out}$) states. It is also possible to look at the transfer matrix $M$, which relates states from the left lead ($c^\text{left}$) to states in the right lead ($c^\text{right}$):
+The scattering matrix relates incoming ($c^\text{in}$) states to outgoing ($c^\text{out}$) states, whereas the states from the left lead ($c^\text{left}$) and states in the right lead ($c^\text{right}$) are related by transfer matrix $M$:
 %TODO figure
 \begin{equation}
 c^\text{right} = M c^\text{left}
@@ -61,21 +61,21 @@ c^\text{right} &=& \left( b_1^+, b_2^+, \dots, b_N^+, b_2^-, b_2^-, \dots b_N^-\
 M &=& \begin{pmatrix} V & 0 \\ 0 & V'^\dagger \end{pmatrix} \begin{pmatrix} \sqrt{\mathcal{T}^{-1}} & \sqrt{\mathcal{T}^{-1} -1} \\ \sqrt{\mathcal{T}^{-1} -1} & \sqrt{\mathcal{T}^{-1}}\end{pmatrix} \begin{pmatrix} U' & 0 \\ 0 & U\dagger \end{pmatrix}
 \end{eqnarray}
 
-Both the transfer matrix $M$ and the scattering matrix $S$ describe the conductive region. The nice feature of the transfer matrix can be seen, if multiple disordered regions, each separated by ideal leads, are considered. The transfer matrix of the whole system is a multiplication of each regions individual transfer matrix.
+Both the transfer matrix $M$ and the scattering matrix $S$ describe the conductive region. A convenient property of the transfer matrix can be seen if multiple disordered regions, each separated by ideal leads, are considered. The transfer matrix of the whole system is a multiplication of each regions individual transfer matrix.
 The conductance of such a disordered region is given by the sum of the transmission eigenvalues $T_n$:
 \begin{equation}
 G = G_0 \sum_{n=1}^N T_n, \quad G_0 = \frac{2e^2}{h}
 \end{equation}
-This is cool. But there is not much context...
+The conductance of a scattering matrix is calculated in \texttt{kwant} by using the equation above.
 
 \subsection{Supercurrent In An SNS Junction}\label{sec:scattering-supercurrent}
 
-Considering an SNS junction. The wave funtions for an incident wave and an reflected/transmitted wave contain now coefficients for electrons and holes:
+When considering an SNS junction, the wave funtions for an incident wave and an reflected/transmitted wave contain coefficients for electrons and holes:
 \begin{eqnarray}
 c_N^\text{in} &=& \left( c^+_e(N_1), c^-_e(N_2), c^-_h(N_1), c^+_h(N_2) \right) \\
 c_N^\text{out} &=& \left( c^-_e(N_1), c^+_e(N_2), c^-_h(N_1), c^+_h(N_2) \right)
 \end{eqnarray}
-$N_1$ is the number of modes in the left lead, $N_2$ is the number of modes in the right lead. In the special case of scattering between a normal conductive region and a superconductor, two types of scattering have to be distinguished. For one, there is the normal scattering of electrons and there is Andreev reflection of electrons at the superconductor. The scattering process at the normal region is described by the normal scattering matrix $s_N$, that connects an incident wave with a reflected/transmitted one.
+$N_1$ is the number of modes in the left lead, $N_2$ is the number of modes in the right lead. In the special case of scattering between a normal conductive region and a superconductor, two types of scattering have to be distinguished. Firstly, there is the normal scattering of electrons and secondly, there is Andreev reflection of electrons at the superconductor. The scattering process at the normal region is described by the normal scattering matrix $s_N$ connecting an incident wave with a reflected/transmitted one.
 \begin{equation}
 c^\text{out}_N = s_N(\epsilon) c^\text{in}_N
 \end{equation}
@@ -87,7 +87,7 @@ where
 \begin{equation}
 s_0 = \begin{pmatrix} r_{1 1} & t_{1 2} \\ t_{2 1} & r_{2 2} \end{pmatrix}
 \end{equation}
-The Andreev reflection process is described by another scattering matrix, the Andreev scattering matrix $s_A$. For  energies $\epsilon < \Delta$, there are no propagating modes inside the superconductor.  And for $\Delta_0 \ll E_F$, the normal reflection at the NS interface can be ignored and only Andreev scattering is taken into account.
+The Andreev reflection process is described by another scattering matrix, the Andreev scattering matrix $s_A$. For  energies $\epsilon < \Delta$, there are no propagating modes inside the superconductor. For $\Delta_0 \ll E_F$, the normal reflection at the NS interface can be ignored and only Andreev scattering is taken into account.
 \begin{equation}
 s_A = \alpha(\epsilon) \begin{pmatrix} 0 & r_A \\ r_A^* & 0 \end{pmatrix}, 
 \end{equation}
@@ -95,10 +95,9 @@ with $\alpha ( \epsilon ) = \text{exp} \left( -i \arccos \frac{\epsilon}{\Delta}
 \begin{equation}
 r_A = \begin{pmatrix} e^{i \phi /2 } \mathds{1} & 0 \\ 0 & e^{-i \phi / 2 } \mathds{1} \end{pmatrix}
 \end{equation}
-From the structure of the Andreev scattering matrix, it can be seen that an electron mode is transformed into a hole mode, while the mode index $n$ does not change. This transformation is accompanied by a phase shit of $- \arccos \frac{\epsilon}{\Delta} $, which comes form the decay into the superconducting region. Also, a phase of $\phi/2$ ($-\phi/2$), where $\phi$ is the superconducting phase difference, is added for reflection from electron to hole (hole to electron).
+From the structure of the Andreev scattering matrix, it can be seen that an electron mode is transformed into a hole mode, while the mode index $n$ does not change. This transformation is accompanied by a phase shift of $- \arccos \frac{\epsilon}{\Delta} $, which arises from the decay into the superconducting region. Also, a phase of $\phi/2$ ($-\phi/2$), where $\phi$ is the superconducting phase difference, is added for reflection from electron to hole (or hole to electron, respectively).
 
-
-A bound state in the SNS junction forms, when 
+A bound state in the SNS junction forms when 
 \begin{equation}
 c_\text{in} = s_A ( \epsilon ) s_N ( \epsilon ) c_\text{in} \label{eq:bound-state-cond}
 \end{equation}
@@ -127,8 +126,7 @@ the free energy $F$ has been calculated as \cite{Beenakker1991}
 \begin{equation}
 F = - 2 k_B T \sum_{\epsilon > 0 } \text{ln} \left[ 2 \cosh \frac{\epsilon}{2 k_B T}  \right] + \dots
 \end{equation}
-which is the free energy of a non interacting electron . 
-So the current is
+which is the free energy of a non-interacting electron. The current is
 \begin{equation}
 I = - \frac{2 e}{\hbar} \sum_p \tanh \left( \frac{\epsilon_p}{2 k_B T} \right) \frac{d \epsilon_p }{d \phi}
 \end{equation}
@@ -142,8 +140,8 @@ The derivation of the energy with respect to the phase can be obtained from eq. 
 \section{Tight Binding Model For Graphene}
 %%%%%%
 Tight binding models are simple, yet powerful methods to calculate the electronic band structure of a system consisting of many lattice sites. Each lattice site is represented in the Hamiltonian as an atomic potential. 
-The basic premise is that the solution to the Schr\"odinger equation of the isolated system, an electron at a specific site in an atomic potential, is known. The wave function of this electron interacting with the whole lattice (interacting with all other atomic potentials from the other lattice sites) can be constructed from the overlap of the atomic wave functions. 
-Following the notation in \cite{McCann2012} and also from \cite{CastroNeto2009}, the atomic orbital is denoted with $\phi_m$. This is the orbital of an atom for unit cell index $m$, where $m = 1, \dots M$. From these orbitals $\phi_m$, a Bloch state $\Phi_m$ is constructed. This Bloch state then represents the lattice symmetry (vertauscht mit dem Translationsoperator).
+The basic premise is that the solution to the Schr\"odinger equation of the isolated system, an electron at a specific site in an atomic potential, is known. The wave function of this electron interacting with the whole lattice (i.e. interacting with all other atomic potentials from the other lattice sites) can be constructed from the overlap of the atomic wave functions. 
+Following the notation in \cite{McCann2012} and also from \cite{CastroNeto2009}, the atomic orbital is denoted with $\phi_m$. This is the orbital of an atom for unit cell index $m$, where $m = 1, \dots M$. From these orbitals $\phi_m$, a Bloch state $\Phi_m$ is constructed. This Bloch state then represents the lattice symmetry.
 \begin{equation}
 \Phi_m \left( \mathbf{k}, \mathbf{r} \right) = \frac{1}{\sqrt{N}} \sum_{i = 1}^N e^{i \mathbf{k} \mathbf{R}_{m, i}} \phi _m \left( \mathbf{r} - \mathbf{R}_{m, i} \right)
 \end{equation}
@@ -175,9 +173,9 @@ So, in order to find the band energies $E_j$, these coefficients $H_{m, m'}$ and
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{figure/numericalframework/graphene_lattice_single_layer_csch}
-\caption{Monolayer graphene lattice with lattice vectors $\mathbf{a}_1$, $\mathbf{a}_1$ for sublattice $A$. The vectors $\delta_i$ give the shift to the atoms of sublattice $B$. }
+\caption{Monolayer graphene lattice with lattice vectors $\mathbf{a}_1$, $\mathbf{a}_1$ for sublattice $A$. The vectors $\delta_i$ give the shift to the atoms of sublattice $B$.} \label{fig:monolayer}
 \end{figure}
-Let us apply the introduced procedure to monolayer graphene. Graphene has two atoms per unit cell and  one $2p_z$ orbital per atom is taken into account. Graphene has two sets of lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{b_1}$, $\mathbf{b_2}$, depending on which the lattice site (see figure XY). The sublattices are labelled $A$ and $B$. The atomic orbitals are therefore also labelled with a sublattice index, $\phi_A$ and $\phi_B$. The transfer matrix $H$ is
+Let us apply the introduced procedure to monolayer graphene. Graphene has two atoms per unit cell and  one $2p_z$ orbital per atom is taken into account. Graphene has two sets of lattice vectors, $\mathbf{a_1}$, $\mathbf{a_2}$ and $\mathbf{b_1}$, $\mathbf{b_2}$, depending on which the lattice site (see figure \ref{fig:monolayer}). The sublattices are labelled $A$ and $B$. The atomic orbitals are therefore also labelled with a sublattice index, $\phi_A$ and $\phi_B$. The transfer matrix $H$ is
 \begin{eqnarray}
 H &=& \begin{pmatrix}
 \phi_A^* \mathcal{H} \phi_A & \phi_A^* \mathcal{H} \phi_B \\
@@ -188,12 +186,12 @@ H_{A A} & H_{A B} \\
 H_{B A} & H_{B B}\\
 \end{pmatrix}
 \end{eqnarray}
-For the diagonal elements, $H_{A A}$ and $H_{B B}$, the strongest contribution comes from the interaction of the orbital with itself. The hopping from one $A$ site to another $A$ site is significantly smaller and is therefore neglected. (Makes sense, since the nearest neighbours of an $A$ site are $B$ sites).
+For the diagonal elements, $H_{A A}$ and $H_{B B}$, the strongest contribution comes from the interaction of the orbital with itself. The hopping from one $A$ site to another $A$ site is significantly smaller and is therefore neglected.
 \begin{equation}
 H_{A A} \approx \frac{1}{N} \sum_{i=1}^N \langle \phi_A ( \mathbf{r} - \mathbf{R}_{A, i} ) | \mathcal{H} |  \phi_A ( \mathbf{r} - \mathbf{R}_{A, i} ) \rangle \equiv \epsilon_A
 \end{equation}
 $H_{B B} = \epsilon_B$ holds in the analogous way. Since graphene has two identical sublattices $A$ and $B$, the on-diagonal energies are equal: $\epsilon_A = \epsilon_B$. 
-Off diagonal elements $H_{A B}$ and $H_{B A}$ describe the possibility of hopping from one sublattice to the other. 
+The off diagonal elements $H_{A B}$ and $H_{B A}$ describe the possibility of hopping from one sublattice to the other. 
 \begin{eqnarray}
 H_{A B } &\approx & \frac{1}{N} \sum_{i = 1}^N \sum_{l = 1}^3 e^{i \mathbf{k} \bm{\delta}_l} \langle \Phi_A ( \mathbf{r} - \mathbf{R}_{A, i} ) | \mathcal{H} | \Phi_B ( \mathbf{r} - \mathbf{R}_{A, i} - \bm{\delta}_l ) \rangle  \\
 & \equiv & - \gamma_0 f \left( \mathbf{k} \right) \label{eq:gamma0},
@@ -203,7 +201,7 @@ where
 \gamma_0 &=& - \langle \Phi_A ( \mathbf{r} - \mathbf{R}_{A, i} )| \mathcal{H} | \Phi_B ( \mathbf{r} - \mathbf{R}_{A, i} - \bm{\delta}_l ) \rangle \\
 f \left( \mathbf{k} \right) &=&  \sum_{l = 1}^3 e^{i \mathbf{k} \bm{\delta}_l} 
 \end{eqnarray}
-$\bm{\delta}_l$ gives the distance vectors from one given $A$ atom to another $B$ site. The other off-diagnoal element of $H$ is $H_{B A} = H_{A B}^* = - \gamma_0 f^* \left( \mathbf{k} \right)$. The overlap matrix elements on the diagonal, $S_{A A}$ and $S_{B B}$ equal to one, since 
+$\bm{\delta}_l$ gives the distance vectors from one given $A$ atom to another $B$ site. The other off-diagonal element of $H$ is $H_{B A} = H_{A B}^* = - \gamma_0 f^* \left( \mathbf{k} \right)$. The overlap matrix elements on the diagonal, $S_{A A}$ and $S_{B B}$ equal to one, since 
 \begin{equation}
 S_{A A} = S_{B B} = \langle \Phi_A ( \mathbf{r} - \mathbf{R}_{j, i} ) | \Phi_A ( \mathbf{r} - \mathbf{R}_{j, i} ) \rangle = 1.
 \end{equation}
@@ -224,29 +222,32 @@ $\gamma_0 = 3.033 \text{eV}$ and $s_0 = 0.129$.
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{figure/numericalframework/graphene_lattice_bi_layer_top_csch}
+\caption{Lattice structure of bilayer graphene. The lattice sites of $A_2$ and $B_1$ are on top of each other. The lattice vectors are the same as in \ref{fig:monolayer}, there are now four sets of lattice vectors for each sublattice.}\label{fig:bilayer-lattice}
 \end{figure}
-Bilayer graphene consists of two layers of graphene, and each of these layers has two sublattices. A lattice site in bilayer graphene can there be in one of the four sublattices $A_1$, $B_1$, $A_2$ and $B_2$, where the integer 1, 2 labels the layer. Using the notation of the SWM model, \cite{McClure1957}, \cite{McClure1960}, the transfer matrix can be written as
+Bilayer graphene consists of two layers of graphene, and each of these layers has two sublattices. A lattice site in bilayer graphene can there be in one of the four sublattices $A_1$, $B_1$, $A_2$ and $B_2$, where the integer 1, 2 labels the layer. An top view of the bilayer lattice structure is given in figure \ref{fig:bilayer-lattice}. Using the notation of the SWM model, \cite{McClure1957}, \cite{McClure1960}, the transfer matrix can be written as
 \begin{equation}
 H =  \begin{pmatrix} \epsilon_{A_1} & - \gamma_0 f \left( \mathbf{k} \right) & \gamma_4 f \left( \mathbf{k} \right) & - \gamma_3 f^*\left( \mathbf{k} \right) \\
 - \gamma_0 f^* \left( \mathbf{k} \right) & \epsilon_{B_1} & \gamma_1 & \gamma_4 f \left( \mathbf{k} \right) \\
 \gamma_4 f^* \left( \mathbf{k} \right) & \gamma_1 & \epsilon_{A_2} & - \gamma_0 f \left( \mathbf{k} \right)  \\
 - \gamma_3 f \left( \mathbf{k} \right) & \gamma_4 f^* \left( \mathbf{k} \right)& -\gamma_0 f* \left( \mathbf{k} \right)& \epsilon_{B_2} \end{pmatrix} \label{eq:bilayer-matrix}
 \end{equation}
-The basis  of this matrix is  $( |\phi_{A_1}\rangle$, $|\phi_{B_1}\rangle$, $|\phi_{A_2}\rangle$, $|\phi_{B_2}\rangle )$ and therefore describes an $AB$-stacked bilayer system. If the representation of eq (\ref{eq:bilayer-matrix}) had the basis $( |\phi_{B_1}\rangle$, $|\phi_{A_1}\rangle$, $|\phi_{A_2}\rangle$, $|\phi_{B_2}\rangle )$, the matrix would describe an $AA$-stacked bilayer system. %TODO see figure...
+The basis  of this matrix is  $( |\phi_{A_1}\rangle$, $|\phi_{B_1}\rangle$, $|\phi_{A_2}\rangle$, $|\phi_{B_2}\rangle )$ and therefore describes an $AB$-stacked bilayer system, which is visualized in figure \ref{fig:bilayer-hoppings}. If the representation of eq (\ref{eq:bilayer-matrix}) had the basis $( |\phi_{B_1}\rangle$, $|\phi_{A_1}\rangle$, $|\phi_{A_2}\rangle$, $|\phi_{B_2}\rangle )$, the matrix would describe an $AA$-stacked bilayer system. %TODO see figure...
 In an $AB$ ($AA$) stacked system, an $A_2$ atom would be directly above an atom of the $B_1$ ($A_1$) sublattice.
-\begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth]{figure/numericalframework/graphene_lattice_bi_layer_planes_csch}
-\end{figure}
+
 In the most general case, the energies $\epsilon$ on the diagonal are not equal. The off-diagonal parameters $\gamma$ are given by
 \begin{eqnarray}
-\gamma_0 &=& - \langle \phi_{A_1} | \mathcal{H} | \phi_{B_1} \rangle = - \langle \phi_{A_2} | \mathcal{H} | \phi_{B_2} \rangle, \\
+\gamma_0 &=& - \langle \phi_{A_1} | \mathcal{H} | \phi_{B_1} \rangle = - \langle \phi_{A_2} | \mathcal{H} | \phi_{B_2} \rangle, \label{eq:bilayer-hoppings}\\
 \gamma_1 &=& ~\langle \phi_{A_2} | \mathcal{H} | \phi_{B_1} \rangle, \\
 \gamma_3 &=& - \langle \phi_{A_1} | \mathcal{H} | \phi_{B_2} \rangle, \\
 \gamma_4 &=& ~\langle \phi_{A_1} | \mathcal{H} | \phi_{A_2} \rangle = \langle \phi_{B_1} | \mathcal{H} | \phi_{B_2} \rangle
 \end{eqnarray}
 The $\gamma_0$ parameter describes nearest neighbour hopping within a layer (in-plane hopping) and does therefore contain the factor $f\left( \mathbf{k} \right)$, which is defined as the distance to the surrounding neighbours in one layer. %TODO include definition?
-Interlayer hopping between $A_2$ and $B_1$ atoms is included with the parameter $\gamma_1$. This hopping is vertical from one layer to the other. The parameters $\gamma_3$ and $\gamma_4$ also describe interlayer hopping, but this hopping is not vertical (it does not connect lattice sites that are directly in line). It can be though of as a combination of in-plane hopping followed by vertical hopping (see figure).
+Interlayer hopping between $A_2$ and $B_1$ atoms is included with the parameter $\gamma_1$. This hopping is vertical from one layer to the other. The parameters $\gamma_3$ and $\gamma_4$ also describe interlayer hopping, but this hopping is not vertical: it does not connect lattice sites that are directly in line. It can be though of as a combination of in-plane hopping followed by vertical hopping.
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{figure/numericalframework/graphene_lattice_bi_layer_planes_csch}
+\caption{Plane view of AB-stacked bilayer graphene with hopping coefficients from eq. (\ref{eq:bilayer-hoppings}) and following.} \label{fig:bilayer-hoppings}
+\end{figure}
 %TODO figure with hoppings
 The overlap matrix of bilayer graphene can be introduced with the parameters $s_0 = \langle \Phi_{A_1} | \Phi_{B_1} \rangle = \langle \Phi_{A_2} | \Phi_{B_2} \rangle $ and $s_1 = \langle \Phi_{A_2}  | \Phi_{B_1} \rangle $ \cite{Mucha-Kruczynski2010}. The parameters $s_3$ and $s_4$ are neglected, because they are small (why?).
 \begin{equation}
@@ -300,4 +301,4 @@ Here, $\mu$ and $\delta$ are defined as
 $u_i$ is used as a paramter that defines, if the lattice site $i$ is within a gated region ($u_i = 1$) (underneath a topgate) or not ($u_i = 0$). The split-gate and back-gate potential is represented by  $\varphi_{SG}$ and $ \varphi_{BG}$, respectively. In the course of this thesis, all quantities are given in units of the tight binding parameters $t$ and the lattice constant $a$.
 
 \section{Summary Of This Chapter}
-This chapter introduces the basics needed to understand the numerical simulations. The scattering matrix theory is highlighted, especially with regard to its applications in \texttt{kwant}. The general tight binding formalism for both single and bilayer graphene is introduced and finally, the tight binding model used in the numerics is presented.
+This chapter introduces the basics needed to understand the numerical simulations. The scattering matrix theory is highlighted, especially with regard to its applications in \texttt{kwant}. The general tight binding formalism for both single and bilayer graphene is introduced and finally, the tight binding model used in the numerical analysis in chapter \ref{ch:numerical-results} is presented. Central to the calculations is that all relevant quantities can the derived from the scattering matrix.

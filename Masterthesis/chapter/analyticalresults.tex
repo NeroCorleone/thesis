@@ -12,6 +12,7 @@ From section \ref{sec:theory-sns} it is known that Andreev reflection of electro
 \caption{An SNS junction with width $W$ and length $L$. A trajectory connecting the interfaces is parametrized by the angle $\theta$ between the trajectory and the x-axis. $\chi_1$ and $\chi_2$ are the superconducting phases, with total phase difference $\chi = \chi_2 - \chi_1$.}
 \label{fig:sns_schematic}
 \end{figure}
+
 The two dimensional junction (schematic shown in fig \ref{fig:sns_schematic}) is a short and wide junction with width $W$ and length $L$, where $W \gg L$. The NS-interfaces are parallel to the $y$-axis and are placed at $x = \pm L/2$. Each of the superconducting leads has a phase $\chi_{1}$ and $\chi_{2}$, and the overall phase difference is $\chi = \chi_{1} - \chi_{2}$. The superconducting gap parameter $\Delta$ is only present in the superconducting leads. Close to the interface, $\Delta$ begins to decay on a length scale of the superconducting coherence length $\xi_0$ into the normal region.
 %\begin{equation}
 %\xi_0 = \hbar v_F / \pi \Delta.
@@ -32,7 +33,8 @@ r_B = \frac{m v_F}{e B}
 In order to justify the assumption of straight trajectories, either the magnetic field has to be weak enough, or the Fermi velocity (wavelength) has to be large (short) enough. Then, the cyclotron radius $r_B$ is larger than the sample size $L$, and straight trajectories are a valid assumption. 
 
 \section{Plane Set-up: Calculation Of The Critical Current}
-Summing up the contributions leads to the current through the SNS junctions, the Josephson current $J\left( \chi \right)$, which is a function of the superconducting phase difference $\chi = \chi_2 - \chi_1$. By maximizing the Josephson current with respect to $\chi$, one finds the critical current $I_c$.\\
+Summing up the contributions leads to the current through the SNS junctions, the Josephson current $J\left( \chi \right)$, which is a function of the superconducting phase difference $\chi = \chi_2 - \chi_1$. By maximizing the Josephson current with respect to $\chi$, one finds the critical current $I_c$.
+
 A trajectory connecting the two superconducting interfaces can be parametrized by the angle $\theta$ between the trajectory and the x-axis. For a trajectory from a point $(-L/2, y_1)$ to another at $(+L/2, y_2)$, the angle for the parametrization is
 \begin{equation}
 \tan \theta = \frac{y_2 - y_1}{L}.
@@ -192,8 +194,10 @@ Figure \ref{fig:plane-edge-contribution} shows the result of equations (\ref{eq:
 \label{fig:qpc_sns_schematic}
 \end{figure}
 %\textbf{TODO: what happens when a constriction is on top of normal layer, fermi levels etc}
-The quasi classical formalism can even be employed to modified SNS junctions. One can build gates on top of the normal region of the junction in a way that the current cannot pass through the gated regions (see chapter \ref{ch:experiment}). In the quasi classical picture, this means that the possibilities for trajectories connecting two points at the superconducting interfaces are limited through the geometry of the constriction.\\
-Figure \ref{fig:qpc_sns_schematic} shows a sketch of the quantum point contact set-up which will be analysed with the quasi classical formalism. The normal region of the SNS junction is covered by a gate with a small split in the middle. The split is located at $(x, y) = (0, 0)$ so that the sample is symmetric around the origin. The width of the split is in the order of $\lambda_F$  and can thereby be viewed as an isotropic scattering point with transmission coefficient $\mathcal{T}_0$. Trajectories connecting the two superconducting interfaces have to pass through the QPC. For simplicity, the geometrical width of the barrier is neglected, only straight trajectories are considered, and scattering at side edges is neglected. This modified set-up leads to a different parametrization of the trajectories and therefore to a different magnetic phase than in eq. (\ref{eq:chi}).\\
+The quasi classical formalism can even be employed to modified SNS junctions. One can build gates on top of the normal region of the junction in a way that the current cannot pass through the gated regions (see chapter \ref{ch:experiment}). In the quasi classical picture, this means that the possibilities for trajectories connecting two points at the superconducting interfaces are limited through the geometry of the constriction.
+
+Figure \ref{fig:qpc_sns_schematic} shows a sketch of the quantum point contact set-up which will be analysed with the quasi classical formalism. The normal region of the SNS junction is covered by a gate with a small split in the middle. The split is located at $(x, y) = (0, 0)$ so that the sample is symmetric around the origin. The width of the split is in the order of $\lambda_F$  and can thereby be viewed as an isotropic scattering point with transmission coefficient $\mathcal{T}_0$. Trajectories connecting the two superconducting interfaces have to pass through the QPC. For simplicity, the geometrical width of the barrier is neglected, only straight trajectories are considered, and scattering at side edges is neglected. This modified set-up leads to a different parametrization of the trajectories and therefore to a different magnetic phase than in eq. (\ref{eq:chi}).
+
 With the QPC set-up, all possible trajectories are parametrized by two angles $\theta_1$ and $\theta_2$. $\theta_1$ describes the trajectory before passing through the QPC in the region $ -L/2 < x < 0$, and  $\theta_2$ after passing through the QPC. The parametrization of the trajectories reads
 \begin{equation}
 \tan \theta_1 = - \frac{2 y_1}{L}, \quad \tan \theta_2 = \frac{2 y_2}{L}
@@ -214,7 +218,9 @@ The total phase difference is the difference of the contribution coming from the
 \end{equation}
 %The contribution in eq. (\ref{eq:chiQPC}) is half of the effective phase without any constriction, as written in eq. (\ref{eq:chi}). This is reasonable and can be illustrated by looking at the area contributing to the phase. Only half of the normal region is covered by all possible trajectories in the QPC case, whereas in the case without any constriction, the whole normal region contributes.\\
 %\textbf{TODO: stimmt das da oben? warum?}\\
-One consequence of the additional gate on top of the normal region is the change in the effective phase, resulting in a modified current phase relation $\mathcal{J}(\tilde{\chi}(y_1, y_2))$. Another consequence is a modified expression for the critical current. In the set-up without gates, straight trajectories with a fixed angle $\theta$ were considered and summed up to a total contribution. The difference in the QPC set-up is the split in the gate, which is modelled as an isotropic scattering point. The trajectories being summed up in this set-up can be thought to consist of two parts. The first part connects $y_1$ with the split at $(x, y) = (0, 0)$ and is determined by the direction of the trajectory. This explains the Fermi velocity in this part(?). The second part of the current trajectory starts from the origin and connects it with a point at the right interface $y_2$. Summing up, the  critical current in the QPC set-up is
+One consequence of the additional gate on top of the normal region is the change in the effective phase, resulting in a modified current phase relation $\mathcal{J}(\tilde{\chi}(y_1, y_2))$. Another consequence is a modified expression for the critical current. In the set-up without gates, straight trajectories with a fixed angle $\theta$ were considered and summed up to a total contribution.
+
+The difference in the QPC set-up is the split in the gate, which is modelled as an isotropic scattering point. The trajectories being summed up in this set-up can be thought to consist of two parts. The first part connects $y_1$ with the split at $(x, y) = (0, 0)$ and is determined by the direction of the trajectory. This explains the Fermi velocity in this part(?). The second part of the current trajectory starts from the origin and connects it with a point at the right interface $y_2$. Summing up, the  critical current in the QPC set-up is
 \begin{equation}
 I_c^{\text{QPC}}(\phi) \propto \text{max}_{\chi} \int d \theta_1 v_F \cos^2 \theta_1 \int d \theta_f \cos \theta_f \mathcal{J}\left( \tilde{\chi} (\theta_1, \theta_2) \right)
 \end{equation}
@@ -360,5 +366,5 @@ When $w_s$ is small enough, like in the QPC case, two independent trajectories a
 This set-up is particularly interesting because the impact of asymmetry in the junction can be studied. When relocating the split by for example moving it along the $x$-axis, the possible trajectories are limited. As a consequence, the Fraunhofer pattern changes. 
 %TODO cite?
 
-\section{Summary of this chapter}
-This chapter presents a calculation of the critical current in a SNS junctions. For this purpose, a quasi-classical transport theory is used and its foundations are explained. This technique is then employed for a clean SNS junction, and an expression for the Josephson current is derived. The calculations used for the clean setup are extended for the more sophisticated QPC, and, here as well, the current for the QPC-gated junction is found. Finally, the edge states in a QPC-like setup are investigated. 
+\section{Summary Of This Chapter}
+This chapter presents a calculation of the critical current in a SNS junctions. For this purpose, a quasi-classical transport theory is used and its foundations are explained. This technique is then employed for a clean SNS junction, and an expression for the Josephson current is derived. The calculations used for the clean set-up are extended for the more sophisticated QPC, and the current for the QPC-gated junction is found as well. Finally, the edge states in a QPC-like set-up are investigated. 

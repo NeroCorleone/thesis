@@ -52,7 +52,7 @@
 \citation{Son2017}
 \citation{Katsnelson2006}
 \citation{Zhu2017}
-\citation{Craft2017}
+\citation{Kraft2017}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -110,32 +110,38 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ch:basics-numerical}{{3}{15}{A Framework For The Numerical Analysis}{chapter.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}\texttt  {kwant} - A Toolbox For Quantum Transport}{15}{section.3.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Random Matrix Theory Tor Transport}{15}{section.3.2}}
-\newlabel{sec:random-matrix}{{3.2}{15}{Random Matrix Theory Tor Transport}{section.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Random Matrix Theory For Transport}{15}{section.3.2}}
+\newlabel{sec:random-matrix}{{3.2}{15}{Random Matrix Theory For Transport}{section.3.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Fundamental Idea}{15}{subsection.3.2.1}}
 \citation{Mello1988}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Supercurrent In An SNS Junction}{17}{subsection.3.2.2}}
 \newlabel{sec:scattering-supercurrent}{{3.2.2}{17}{Supercurrent In An SNS Junction}{subsection.3.2.2}{}}
 \newlabel{eq:s-n}{{\relax 3.17}{17}{Supercurrent In An SNS Junction}{equation.3.2.17}{}}
+\newlabel{eq:bound-state-cond}{{\relax 3.21}{17}{Supercurrent In An SNS Junction}{equation.3.2.21}{}}
 \citation{Beenakker1992}
 \citation{Beenakker1991}
 \citation{McCann2012}
 \citation{CastroNeto2009}
-\newlabel{eq:bound-state-cond}{{\relax 3.21}{18}{Supercurrent In An SNS Junction}{equation.3.2.21}{}}
 \newlabel{eq:bound-state-final}{{\relax 3.25}{18}{Supercurrent In An SNS Junction}{equation.3.2.25}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Tight Binding Model For Graphene}{18}{section.3.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Monolayer Graphene}{19}{subsection.3.3.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Monolayer graphene lattice with lattice vectors $\mathbf  {a}_1$, $\mathbf  {a}_1$ for sublattice $A$. The vectors $\delta _i$ give the shift to the atoms of sublattice $B$. \relax }}{20}{figure.caption.6}}
-\newlabel{eq:gamma0}{{\relax 3.41}{20}{Monolayer Graphene}{equation.3.3.40}{}}
 \citation{Dresselhaus1995}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Monolayer graphene lattice with lattice vectors $\mathbf  {a}_1$, $\mathbf  {a}_1$ for sublattice $A$. The vectors $\delta _i$ give the shift to the atoms of sublattice $B$.\relax }}{20}{figure.caption.6}}
+\newlabel{fig:monolayer}{{\relax 3.1}{20}{Monolayer graphene lattice with lattice vectors $\mathbf {a}_1$, $\mathbf {a}_1$ for sublattice $A$. The vectors $\delta _i$ give the shift to the atoms of sublattice $B$.\relax }{figure.caption.6}{}}
+\newlabel{eq:gamma0}{{\relax 3.41}{20}{Monolayer Graphene}{equation.3.3.40}{}}
 \citation{McClure1957}
 \citation{McClure1960}
+\citation{Mucha-Kruczynski2010}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Lattice structure of bilayer graphene. The lattice sites of $A_2$ and $B_1$ are on top of each other. The lattice vectors are the same as in \ref  {fig:monolayer}, there are now four sets of lattice vectors for each sublattice.\relax }}{21}{figure.caption.7}}
+\newlabel{fig:bilayer-lattice}{{\relax 3.2}{21}{Lattice structure of bilayer graphene. The lattice sites of $A_2$ and $B_1$ are on top of each other. The lattice vectors are the same as in \ref {fig:monolayer}, there are now four sets of lattice vectors for each sublattice.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Bilayer Graphene}{21}{subsection.3.3.2}}
 \newlabel{eq:bilayer-matrix}{{\relax 3.49}{21}{Bilayer Graphene}{equation.3.3.49}{}}
-\citation{Mucha-Kruczynski2010}
+\newlabel{eq:bilayer-hoppings}{{\relax 3.50}{21}{Bilayer Graphene}{equation.3.3.50}{}}
 \citation{Malard2007}
 \citation{Kuzmenko2009}
 \citation{Kuzmenko2009}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Plane view of AB-stacked bilayer graphene with hopping coefficients from eq. (\ref  {eq:bilayer-hoppings}) and following.\relax }}{22}{figure.caption.8}}
+\newlabel{fig:bilayer-hoppings}{{\relax 3.3}{22}{Plane view of AB-stacked bilayer graphene with hopping coefficients from eq. (\ref {eq:bilayer-hoppings}) and following.\relax }{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Tight Binding Models And \texttt  {kwant}}{22}{subsection.3.3.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Summary Of This Chapter}{23}{section.3.4}}
 \citation{Likharev1979}
@@ -165,117 +171,118 @@
 \citation{Kraft2017}
 \citation{Kraft2017}
 \citation{Kraft2017}
-\citation{Chiodi2012}
 \@writefile{lof}{\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces A detailled view on the $NPN$-region of the resistance map. When the split-gate voltage $V_{SG}$ dominates, the area between the two split-gate fingers (the violet framed region) becomes $P$-doped because of the stray fields of the $V_{SG}$. When the constricition works as a 1D-channel, the area between the fingers (the orange framed region) is $N$-doped and the current can pass though this region. In the blue framed region, the sample is overall conductive. Reprinted from \cite  {Kraft2017}.\relax }}{27}{figure.caption.11}}
 \newlabel{fig:npn-regions-gates}{{\relax 4.3}{27}{A detailled view on the $NPN$-region of the resistance map. When the split-gate voltage $V_{SG}$ dominates, the area between the two split-gate fingers (the violet framed region) becomes $P$-doped because of the stray fields of the $V_{SG}$. When the constricition works as a 1D-channel, the area between the fingers (the orange framed region) is $N$-doped and the current can pass though this region. In the blue framed region, the sample is overall conductive. Reprinted from \cite {Kraft2017}.\relax }{figure.caption.11}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {\relax 4.4}{\ignorespaces Differential conductance versus voltage applied for different values of $V_{SG}$. The higher the split-gate voltage, the less peaks are visible. Reprinted from \cite  {Kraft2017}.\relax }}{27}{figure.caption.12}}
 \newlabel{fig:mar}{{\relax 4.4}{27}{Differential conductance versus voltage applied for different values of $V_{SG}$. The higher the split-gate voltage, the less peaks are visible. Reprinted from \cite {Kraft2017}.\relax }{figure.caption.12}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}Superconducting State}{27}{section.4.3}}
 \newlabel{sec:experiment-superconducting}{{4.3}{27}{Superconducting State}{section.4.3}{}}
+\citation{Chiodi2012}
 \citation{Kraft2017}
 \@writefile{lof}{\contentsline {figure}{\numberline {\relax 4.5}{\ignorespaces \textbf  {a} shows differential resistance $dV/dI$ plotted against the magnetic field $B$. The y-axis indicates the strength of the critical current, which is the dotted, coloured line. \textbf  {b} shows the critical current (left) and normalised critical current (right) versus a magnetic field (x-axis) for different values of $V_{SG}$. The dotted curves from \textbf  {a} correspond to different stadiums of the transition from 2D-Fraunhofer pattern to a bell-shaped pattern where the current is confined. Reprinted from \cite  {Kraft2017}.\relax }}{28}{figure.caption.13}}
 \newlabel{fig:supercurrent}{{\relax 4.5}{28}{\textbf {a} shows differential resistance $dV/dI$ plotted against the magnetic field $B$. The y-axis indicates the strength of the critical current, which is the dotted, coloured line. \textbf {b} shows the critical current (left) and normalised critical current (right) versus a magnetic field (x-axis) for different values of $V_{SG}$. The dotted curves from \textbf {a} correspond to different stadiums of the transition from 2D-Fraunhofer pattern to a bell-shaped pattern where the current is confined. Reprinted from \cite {Kraft2017}.\relax }{figure.caption.13}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Summary Of This Chapter}{28}{section.4.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Analytical Model}{29}{chapter.5}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Analytical Model}{31}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:analyticalmodel}{{5}{29}{Analytical Model}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Foundation Of The Quasi-classical Model}{29}{section.5.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces An SNS junction with width $W$ and length $L$. A trajectory connecting the interfaces is parametrized by the angle $\theta $ between the trajectory and the x-axis. $\chi _1$ and $\chi _2$ are the superconducting phases, with total phase difference $\chi = \chi _2 - \chi _1$.\relax }}{29}{figure.caption.14}}
-\newlabel{fig:sns_schematic}{{\relax 5.1}{29}{An SNS junction with width $W$ and length $L$. A trajectory connecting the interfaces is parametrized by the angle $\theta $ between the trajectory and the x-axis. $\chi _1$ and $\chi _2$ are the superconducting phases, with total phase difference $\chi = \chi _2 - \chi _1$.\relax }{figure.caption.14}{}}
+\newlabel{ch:analyticalmodel}{{5}{31}{Analytical Model}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Foundation Of The Quasi-classical Model}{31}{section.5.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces An SNS junction with width $W$ and length $L$. A trajectory connecting the interfaces is parametrized by the angle $\theta $ between the trajectory and the x-axis. $\chi _1$ and $\chi _2$ are the superconducting phases, with total phase difference $\chi = \chi _2 - \chi _1$.\relax }}{31}{figure.caption.14}}
+\newlabel{fig:sns_schematic}{{\relax 5.1}{31}{An SNS junction with width $W$ and length $L$. A trajectory connecting the interfaces is parametrized by the angle $\theta $ between the trajectory and the x-axis. $\chi _1$ and $\chi _2$ are the superconducting phases, with total phase difference $\chi = \chi _2 - \chi _1$.\relax }{figure.caption.14}{}}
 \citation{Zagoskin1997}
 \citation{Barzykin1999}
 \citation{Zagoskin1997}
 \citation{Meier2016}
-\newlabel{eq:gap_parameter}{{\relax 5.1}{30}{Foundation Of The Quasi-classical Model}{equation.5.1.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Plane Set-up: Calculation Of The Critical Current}{30}{section.5.2}}
-\newlabel{eq:parametrization}{{\relax 5.4}{30}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.4}{}}
-\newlabel{eq:i-zagoskin}{{\relax 5.5}{30}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.5}{}}
+\newlabel{eq:gap_parameter}{{\relax 5.1}{32}{Foundation Of The Quasi-classical Model}{equation.5.1.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Plane Set-up: Calculation Of The Critical Current}{32}{section.5.2}}
+\newlabel{eq:parametrization}{{\relax 5.4}{32}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.4}{}}
+\newlabel{eq:i-zagoskin}{{\relax 5.5}{32}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.5}{}}
 \citation{Beenakker1991}
 \citation{Barzykin1999}
 \citation{Meier2016}
-\newlabel{eq:josephson_current_zero_b}{{\relax 5.8}{31}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.8}{}}
-\newlabel{eq:josephson-relation}{{\relax 5.9}{31}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.9}{}}
-\newlabel{eq:short-j}{{\relax 5.10}{31}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.10}{}}
-\newlabel{eq:long-j}{{\relax 5.11}{31}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.11}{}}
-\newlabel{eq:josephson-low-t}{{\relax 5.12}{31}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.12}{}}
-\newlabel{eq:chi}{{\relax 5.15}{31}{}{equation.5.2.13}{}}
-\newlabel{eq:Ay}{{\relax 5.16}{31}{}{equation.5.2.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Current density plotted against the superconducting phase difference $\chi = \chi _2 - \chi _1$. The density from eq. (\ref  {eq:long-j}) gives the sawtooth like shape for $\mathcal  {J}^l$ for high values of $\mathcal  {T}$. In the short junction limit, $\mathcal  {J}^s$ holds from eq. (\ref  {eq:short-j}). For low values of the transmission coefficient $\mathcal  {T}$, both current densities have a similar sinusoidal form. \relax }}{32}{figure.caption.15}}
-\newlabel{fig:current_density}{{\relax 5.2}{32}{Current density plotted against the superconducting phase difference $\chi = \chi _2 - \chi _1$. The density from eq. (\ref {eq:long-j}) gives the sawtooth like shape for $\mathcal {J}^l$ for high values of $\mathcal {T}$. In the short junction limit, $\mathcal {J}^s$ holds from eq. (\ref {eq:short-j}). For low values of the transmission coefficient $\mathcal {T}$, both current densities have a similar sinusoidal form. \relax }{figure.caption.15}{}}
-\newlabel{eq:magnetic-phase-straight}{{\relax 5.20}{32}{}{equation.5.2.17}{}}
-\newlabel{eq:josephson_current}{{\relax 5.22}{32}{}{equation.5.2.22}{}}
+\newlabel{eq:josephson_current_zero_b}{{\relax 5.8}{33}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.8}{}}
+\newlabel{eq:josephson-relation}{{\relax 5.9}{33}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.9}{}}
+\newlabel{eq:short-j}{{\relax 5.10}{33}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.10}{}}
+\newlabel{eq:long-j}{{\relax 5.11}{33}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.11}{}}
+\newlabel{eq:josephson-low-t}{{\relax 5.12}{33}{Plane Set-up: Calculation Of The Critical Current}{equation.5.2.12}{}}
+\newlabel{eq:chi}{{\relax 5.15}{33}{}{equation.5.2.13}{}}
+\newlabel{eq:Ay}{{\relax 5.16}{33}{}{equation.5.2.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Current density plotted against the superconducting phase difference $\chi = \chi _2 - \chi _1$. The density from eq. (\ref  {eq:long-j}) gives the sawtooth like shape for $\mathcal  {J}^l$ for high values of $\mathcal  {T}$. In the short junction limit, $\mathcal  {J}^s$ holds from eq. (\ref  {eq:short-j}). For low values of the transmission coefficient $\mathcal  {T}$, both current densities have a similar sinusoidal form. \relax }}{34}{figure.caption.15}}
+\newlabel{fig:current_density}{{\relax 5.2}{34}{Current density plotted against the superconducting phase difference $\chi = \chi _2 - \chi _1$. The density from eq. (\ref {eq:long-j}) gives the sawtooth like shape for $\mathcal {J}^l$ for high values of $\mathcal {T}$. In the short junction limit, $\mathcal {J}^s$ holds from eq. (\ref {eq:short-j}). For low values of the transmission coefficient $\mathcal {T}$, both current densities have a similar sinusoidal form. \relax }{figure.caption.15}{}}
+\newlabel{eq:magnetic-phase-straight}{{\relax 5.20}{34}{}{equation.5.2.17}{}}
+\newlabel{eq:josephson_current}{{\relax 5.22}{34}{}{equation.5.2.22}{}}
 \citation{Barzykin1999}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces The normed critical current $I_c/I_0$ versus $\phi / \phi _0$ for different transmissions cofficients $\mathcal  {T}$. For $\mathcal  {T} < 1$, the barrier becomes reflective and the overall current density is low. The sharp peak ar $\phi / \phi _0$ arises from the \relax }}{33}{figure.caption.16}}
-\newlabel{eq:ic-short}{{\relax 5.23}{33}{}{equation.5.2.23}{}}
-\newlabel{eq:ic-long}{{\relax 5.24}{33}{}{equation.5.2.23}{}}
-\newlabel{eq:angles-scattering}{{\relax 5.25}{33}{}{equation.5.2.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces The normed critical current $I_c/I_0$ versus $\phi / \phi _0$ for different transmissions cofficients $\mathcal  {T}$. For $\mathcal  {T} < 1$, the barrier becomes reflective and the overall current density is low. The sharp peak ar $\phi / \phi _0$ arises from the \relax }}{35}{figure.caption.16}}
+\newlabel{eq:ic-short}{{\relax 5.23}{35}{}{equation.5.2.23}{}}
+\newlabel{eq:ic-long}{{\relax 5.24}{35}{}{equation.5.2.23}{}}
+\newlabel{eq:angles-scattering}{{\relax 5.25}{35}{}{equation.5.2.25}{}}
 \citation{Meier2016}
 \citation{Meier2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Normed critical current calculated from eqs. (\ref  {eq:ic-long}) and (\ref  {eq:ic-short}) for the long and short junction limit, respectively. \relax }}{34}{figure.caption.17}}
-\newlabel{eq:total-current}{{\relax 5.31}{34}{}{equation.5.2.31}{}}
-\newlabel{eq:josephson-edge}{{\relax 5.32}{34}{}{equation.5.2.32}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Comparison of contribution to current with and without boundary scattering at $\mathcal  {T} \ll 1$. The total current is a sum of the contribution without boundary scattering, $I_c^{(0)}$, and two times the current from the boundaries, $I_c^{(1)}$. The boundary scattering can be seen in the Fraunhofer pattern of the total current in the lifting of the lobes\relax }}{35}{figure.caption.18}}
-\newlabel{fig:plane-edge-contribution}{{\relax 5.5}{35}{Comparison of contribution to current with and without boundary scattering at $\mathcal {T} \ll 1$. The total current is a sum of the contribution without boundary scattering, $I_c^{(0)}$, and two times the current from the boundaries, $I_c^{(1)}$. The boundary scattering can be seen in the Fraunhofer pattern of the total current in the lifting of the lobes\relax }{figure.caption.18}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Calculation Of The QPC Critical Current}{35}{section.5.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces SNS junction with a QPC gate on top. The split is located at $(x, y) = (0, 0)$, and the width of the barrier is assumed to be negligible. Each contributing trajectory has to pass though the origin. The angles $\theta _1$ and $\theta _2$ parametrize this trajectory.\relax }}{36}{figure.caption.19}}
-\newlabel{fig:qpc_sns_schematic}{{\relax 5.6}{36}{SNS junction with a QPC gate on top. The split is located at $(x, y) = (0, 0)$, and the width of the barrier is assumed to be negligible. Each contributing trajectory has to pass though the origin. The angles $\theta _1$ and $\theta _2$ parametrize this trajectory.\relax }{figure.caption.19}{}}
-\newlabel{eq:QPCparametrization}{{\relax 5.33}{36}{Calculation Of The QPC Critical Current}{equation.5.3.33}{}}
-\newlabel{eq:phaseQPC}{{\relax 5.34}{36}{Calculation Of The QPC Critical Current}{equation.5.3.34}{}}
-\newlabel{eq:chiQPC}{{\relax 5.35}{36}{Calculation Of The QPC Critical Current}{equation.5.3.35}{}}
-\newlabel{eq:qpc-integral}{{\relax 5.37}{37}{Calculation Of The QPC Critical Current}{equation.5.3.37}{}}
-\newlabel{integral-qpc}{{\relax 5.38}{37}{Calculation Of The QPC Critical Current}{equation.5.3.38}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.7}{\ignorespaces Plot of the numerical integration for the QPC current from eq. (\ref  {eq:qpc-integral}) and the result of the fitting to a Gaussian curve.\relax }}{37}{figure.caption.20}}
-\newlabel{fig:ic-qpc-gauss}{{\relax 5.7}{37}{Plot of the numerical integration for the QPC current from eq. (\ref {eq:qpc-integral}) and the result of the fitting to a Gaussian curve.\relax }{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces Result of numerical intergration for QPC current and the limits from eqs. (\ref  {eq:large-phi}) and (\ref  {eq:parabolic-phi}).\relax }}{37}{figure.caption.20}}
-\newlabel{fig:ic-qpc-limits-phi}{{\relax 5.8}{37}{Result of numerical intergration for QPC current and the limits from eqs. (\ref {eq:large-phi}) and (\ref {eq:parabolic-phi}).\relax }{figure.caption.20}{}}
-\newlabel{Ic-0}{{\relax 5.40}{37}{}{equation.5.3.39}{}}
-\newlabel{eq:parabolic-phi}{{\relax 5.42}{37}{}{equation.5.3.41}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.9}{\ignorespaces A SNS junction with split at upper edge, $(x, y) = (0, + W/2)$. Similar to the QPC set-up, this constriction is formed so that each trajectory has to pass through in order to contribute to the current.\relax }}{38}{figure.caption.21}}
-\newlabel{fig:qpc-edge-parametrization}{{\relax 5.9}{38}{A SNS junction with split at upper edge, $(x, y) = (0, + W/2)$. Similar to the QPC set-up, this constriction is formed so that each trajectory has to pass through in order to contribute to the current.\relax }{figure.caption.21}{}}
-\newlabel{eq:large-phi}{{\relax 5.43}{38}{}{equation.5.3.43}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}QPC Edge Current}{38}{section.5.4}}
-\newlabel{eq:angles-edge}{{\relax 5.44}{38}{QPC Edge Current}{equation.5.4.44}{}}
-\newlabel{eq:chi-edge}{{\relax 5.51}{39}{QPC Edge Current}{equation.5.4.51}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces Upper plot: Correction factor $\mathcal  {C}$ versus magnetic flux $\phi / \phi _0$ for different values of $\mathcal  {T}_e / \mathcal  {T}_q$. Lower plot: critical current for the QPC from eq. (\ref  {eq:qpc-integral}), modulated by $\mathcal  {C}$.\relax }}{40}{figure.caption.22}}
-\newlabel{fig:edge-current-modulation}{{\relax 5.10}{40}{Upper plot: Correction factor $\mathcal {C}$ versus magnetic flux $\phi / \phi _0$ for different values of $\mathcal {T}_e / \mathcal {T}_q$. Lower plot: critical current for the QPC from eq. (\ref {eq:qpc-integral}), modulated by $\mathcal {C}$.\relax }{figure.caption.22}{}}
-\newlabel{eq:ratio-transmissions}{{\relax 5.58}{40}{QPC Edge Current}{equation.5.4.57}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Barrier With Finite Split Width: Transition To The QPC Set-up}{40}{section.5.5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.11}{\ignorespaces An SNS junction with hourglass-shaped constriction on top. The split is located at $(x, y) = (0, \pm w_s / 2)$ and the trajectory is parametrized by the angle $\theta $. \relax }}{41}{figure.caption.23}}
-\newlabel{fig:hourglass}{{\relax 5.11}{41}{An SNS junction with hourglass-shaped constriction on top. The split is located at $(x, y) = (0, \pm w_s / 2)$ and the trajectory is parametrized by the angle $\theta $. \relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}Summary of this chapter}{41}{section.5.6}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Numerical Results}{43}{chapter.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Normed critical current calculated from eqs. (\ref  {eq:ic-long}) and (\ref  {eq:ic-short}) for the long and short junction limit, respectively. \relax }}{36}{figure.caption.17}}
+\newlabel{eq:total-current}{{\relax 5.31}{36}{}{equation.5.2.31}{}}
+\newlabel{eq:josephson-edge}{{\relax 5.32}{36}{}{equation.5.2.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Comparison of contribution to current with and without boundary scattering at $\mathcal  {T} \ll 1$. The total current is a sum of the contribution without boundary scattering, $I_c^{(0)}$, and two times the current from the boundaries, $I_c^{(1)}$. The boundary scattering can be seen in the Fraunhofer pattern of the total current in the lifting of the lobes\relax }}{37}{figure.caption.18}}
+\newlabel{fig:plane-edge-contribution}{{\relax 5.5}{37}{Comparison of contribution to current with and without boundary scattering at $\mathcal {T} \ll 1$. The total current is a sum of the contribution without boundary scattering, $I_c^{(0)}$, and two times the current from the boundaries, $I_c^{(1)}$. The boundary scattering can be seen in the Fraunhofer pattern of the total current in the lifting of the lobes\relax }{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Calculation Of The QPC Critical Current}{37}{section.5.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces SNS junction with a QPC gate on top. The split is located at $(x, y) = (0, 0)$, and the width of the barrier is assumed to be negligible. Each contributing trajectory has to pass though the origin. The angles $\theta _1$ and $\theta _2$ parametrize this trajectory.\relax }}{38}{figure.caption.19}}
+\newlabel{fig:qpc_sns_schematic}{{\relax 5.6}{38}{SNS junction with a QPC gate on top. The split is located at $(x, y) = (0, 0)$, and the width of the barrier is assumed to be negligible. Each contributing trajectory has to pass though the origin. The angles $\theta _1$ and $\theta _2$ parametrize this trajectory.\relax }{figure.caption.19}{}}
+\newlabel{eq:QPCparametrization}{{\relax 5.33}{38}{Calculation Of The QPC Critical Current}{equation.5.3.33}{}}
+\newlabel{eq:phaseQPC}{{\relax 5.34}{38}{Calculation Of The QPC Critical Current}{equation.5.3.34}{}}
+\newlabel{eq:chiQPC}{{\relax 5.35}{38}{Calculation Of The QPC Critical Current}{equation.5.3.35}{}}
+\newlabel{eq:qpc-integral}{{\relax 5.37}{39}{Calculation Of The QPC Critical Current}{equation.5.3.37}{}}
+\newlabel{integral-qpc}{{\relax 5.38}{39}{Calculation Of The QPC Critical Current}{equation.5.3.38}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.7}{\ignorespaces Plot of the numerical integration for the QPC current from eq. (\ref  {eq:qpc-integral}) and the result of the fitting to a Gaussian curve.\relax }}{39}{figure.caption.20}}
+\newlabel{fig:ic-qpc-gauss}{{\relax 5.7}{39}{Plot of the numerical integration for the QPC current from eq. (\ref {eq:qpc-integral}) and the result of the fitting to a Gaussian curve.\relax }{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces Result of numerical intergration for QPC current and the limits from eqs. (\ref  {eq:large-phi}) and (\ref  {eq:parabolic-phi}).\relax }}{39}{figure.caption.20}}
+\newlabel{fig:ic-qpc-limits-phi}{{\relax 5.8}{39}{Result of numerical intergration for QPC current and the limits from eqs. (\ref {eq:large-phi}) and (\ref {eq:parabolic-phi}).\relax }{figure.caption.20}{}}
+\newlabel{Ic-0}{{\relax 5.40}{39}{}{equation.5.3.39}{}}
+\newlabel{eq:parabolic-phi}{{\relax 5.42}{39}{}{equation.5.3.41}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.9}{\ignorespaces A SNS junction with split at upper edge, $(x, y) = (0, + W/2)$. Similar to the QPC set-up, this constriction is formed so that each trajectory has to pass through in order to contribute to the current.\relax }}{40}{figure.caption.21}}
+\newlabel{fig:qpc-edge-parametrization}{{\relax 5.9}{40}{A SNS junction with split at upper edge, $(x, y) = (0, + W/2)$. Similar to the QPC set-up, this constriction is formed so that each trajectory has to pass through in order to contribute to the current.\relax }{figure.caption.21}{}}
+\newlabel{eq:large-phi}{{\relax 5.43}{40}{}{equation.5.3.43}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}QPC Edge Current}{40}{section.5.4}}
+\newlabel{eq:angles-edge}{{\relax 5.44}{40}{QPC Edge Current}{equation.5.4.44}{}}
+\newlabel{eq:chi-edge}{{\relax 5.51}{41}{QPC Edge Current}{equation.5.4.51}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces Upper plot: Correction factor $\mathcal  {C}$ versus magnetic flux $\phi / \phi _0$ for different values of $\mathcal  {T}_e / \mathcal  {T}_q$. Lower plot: critical current for the QPC from eq. (\ref  {eq:qpc-integral}), modulated by $\mathcal  {C}$.\relax }}{42}{figure.caption.22}}
+\newlabel{fig:edge-current-modulation}{{\relax 5.10}{42}{Upper plot: Correction factor $\mathcal {C}$ versus magnetic flux $\phi / \phi _0$ for different values of $\mathcal {T}_e / \mathcal {T}_q$. Lower plot: critical current for the QPC from eq. (\ref {eq:qpc-integral}), modulated by $\mathcal {C}$.\relax }{figure.caption.22}{}}
+\newlabel{eq:ratio-transmissions}{{\relax 5.58}{42}{QPC Edge Current}{equation.5.4.57}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Barrier With Finite Split Width: Transition To The QPC Set-up}{42}{section.5.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 5.11}{\ignorespaces An SNS junction with hourglass-shaped constriction on top. The split is located at $(x, y) = (0, \pm w_s / 2)$ and the trajectory is parametrized by the angle $\theta $. \relax }}{43}{figure.caption.23}}
+\newlabel{fig:hourglass}{{\relax 5.11}{43}{An SNS junction with hourglass-shaped constriction on top. The split is located at $(x, y) = (0, \pm w_s / 2)$ and the trajectory is parametrized by the angle $\theta $. \relax }{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Summary Of This Chapter}{43}{section.5.6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Numerical Results}{45}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:numerical-results}{{6}{43}{Numerical Results}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}QPC}{43}{section.6.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Conductance QPC\relax }}{43}{figure.caption.24}}
-\newlabel{fig:qpc-conductance}{{\relax 6.1}{43}{Conductance QPC\relax }{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces default\relax }}{43}{figure.caption.24}}
-\newlabel{fig:qpc-conductance-sigma}{{\relax 6.2}{43}{default\relax }{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces The normed critical current $I_c^\text  {norm}$ as a function of quantised flux and split-gate voltage $\varphi _{SG}$. \relax }}{44}{figure.caption.25}}
-\newlabel{fig:qpc-heatmap}{{\relax 6.3}{44}{The normed critical current $I_c^\text {norm}$ as a function of quantised flux and split-gate voltage $\varphi _{SG}$. \relax }{figure.caption.25}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Half-Barrier}{44}{section.6.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces HB normalized current \relax }}{44}{figure.caption.26}}
-\newlabel{fig:hb-norm}{{\relax 6.4}{44}{HB normalized current \relax }{figure.caption.26}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.5}{\ignorespaces HB current\relax }}{44}{figure.caption.26}}
-\newlabel{fig:hb-abs}{{\relax 6.5}{44}{HB current\relax }{figure.caption.26}{}}
+\newlabel{ch:numerical-results}{{6}{45}{Numerical Results}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}QPC}{45}{section.6.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Conductance of the QPC system for different back-gate potentials. Even at a back-gate potential of $\varphi _{BG} = 0.3$, the overal conductance is too high to observe current confinement.\relax }}{45}{figure.caption.24}}
+\newlabel{fig:qpc-conductance}{{\relax 6.1}{45}{Conductance of the QPC system for different back-gate potentials. Even at a back-gate potential of $\varphi _{BG} = 0.3$, the overal conductance is too high to observe current confinement.\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Conducandance of the QPC system for $\varphi _{BG} = 0.2$. The curves differ in their value of the variance of the gaussion filter, $\sigma $. For higher values of $\sigma $, the impact of the stray fields dominates and the QPC effectively becomes a reflective barrier.\relax }}{46}{figure.caption.25}}
+\newlabel{fig:qpc-conductance-sigma}{{\relax 6.2}{46}{Conducandance of the QPC system for $\varphi _{BG} = 0.2$. The curves differ in their value of the variance of the gaussion filter, $\sigma $. For higher values of $\sigma $, the impact of the stray fields dominates and the QPC effectively becomes a reflective barrier.\relax }{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Half-Barrier}{46}{section.6.2}}
 \citation{Dynes1971}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.6}{\ignorespaces Systems\relax }}{45}{figure.caption.27}}
-\newlabel{fig:systems}{{\relax 6.6}{45}{Systems\relax }{figure.caption.27}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Wave-guide}{45}{section.6.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.7}{\ignorespaces Waveguide system\relax }}{46}{figure.caption.28}}
-\newlabel{fig:waveguide-system}{{\relax 6.7}{46}{Waveguide system\relax }{figure.caption.28}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.8}{\ignorespaces Conductance QPC\relax }}{46}{figure.caption.29}}
-\newlabel{fig:waveguide-ic}{{\relax 6.8}{46}{Conductance QPC\relax }{figure.caption.29}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.9}{\ignorespaces default\relax }}{46}{figure.caption.29}}
-\newlabel{fig:waveguide-jy}{{\relax 6.9}{46}{default\relax }{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces The normalized critical current $I_c^\text  {norm}$ as a function of quantised flux and split-gate potential $\varphi _{SG}$. \relax }}{47}{figure.caption.26}}
+\newlabel{fig:qpc-heatmap}{{\relax 6.3}{47}{The normalized critical current $I_c^\text {norm}$ as a function of quantised flux and split-gate potential $\varphi _{SG}$. \relax }{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Wave-guide}{47}{section.6.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Normalized current in the half-barrier set-up.\relax }}{48}{figure.caption.27}}
+\newlabel{fig:hb-norm}{{\relax 6.4}{48}{Normalized current in the half-barrier set-up.\relax }{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.5}{\ignorespaces Absolute current in the half-barrier set-up.\relax }}{48}{figure.caption.27}}
+\newlabel{fig:hb-abs}{{\relax 6.5}{48}{Absolute current in the half-barrier set-up.\relax }{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Summary Of This Chapter}{48}{section.6.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.6}{\ignorespaces QPC and half-barrier systems. The red areas are the superconducting leads, the grey area is the normal bi-layer graphene region, and lattice sites colored black are effectively covered by the top gate. The half-barrier set-up results when only one of the fingers of the QPC are activated. It should be noticed that the superconducting material has been modelled with the same lattice structure as the normal region, which is only approximation.\relax }}{49}{figure.caption.28}}
+\newlabel{fig:systems}{{\relax 6.6}{49}{QPC and half-barrier systems. The red areas are the superconducting leads, the grey area is the normal bi-layer graphene region, and lattice sites colored black are effectively covered by the top gate. The half-barrier set-up results when only one of the fingers of the QPC are activated. It should be noticed that the superconducting material has been modelled with the same lattice structure as the normal region, which is only approximation.\relax }{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.7}{\ignorespaces Wave-guide system. The top gate covers most of the sample; only a narrow transport region remains.\relax }}{49}{figure.caption.29}}
+\newlabel{fig:waveguide-system}{{\relax 6.7}{49}{Wave-guide system. The top gate covers most of the sample; only a narrow transport region remains.\relax }{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.8}{\ignorespaces Critical current in the wave-guide set-up. Similarly to the results of the QPC set-up, a transition from a beating pattern to a bell-shaped pattern can be observed.\relax }}{50}{figure.caption.30}}
+\newlabel{fig:waveguide-ic}{{\relax 6.8}{50}{Critical current in the wave-guide set-up. Similarly to the results of the QPC set-up, a transition from a beating pattern to a bell-shaped pattern can be observed.\relax }{figure.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {\relax 6.9}{\ignorespaces Current density distribution along the y-axis of the wave-guide set-up. The curves can be found by fourier transforming the critical current from the plot on the left hand side.\relax }}{50}{figure.caption.30}}
+\newlabel{fig:waveguide-jy}{{\relax 6.9}{50}{Current density distribution along the y-axis of the wave-guide set-up. The curves can be found by fourier transforming the critical current from the plot on the left hand side.\relax }{figure.caption.30}{}}
 \citation{Barzykin1999}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion And Outlook}{47}{chapter.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion And Outlook}{51}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:conclusion}{{7}{47}{Conclusion And Outlook}{chapter.7}{}}
-\newlabel{eq:josephson_current}{{\relax 7.2}{47}{}{equation.7.0.2}{}}
+\newlabel{ch:conclusion}{{7}{51}{Conclusion And Outlook}{chapter.7}{}}
+\newlabel{eq:josephson_current}{{\relax 7.2}{51}{}{equation.7.0.2}{}}
 \bibdata{literature}
 \bibcite{Mermin1966}{{1}{1966}{{Mermin and Wagner}}{{}}}
 \bibcite{Novoselov2004}{{2}{2004}{{Novoselov et~al.}}{{Novoselov, Geim, Morozov, Jiang, Zhang, Dubonos, Grigorieva, and Firsov}}}
@@ -294,19 +301,19 @@
 \bibcite{Furusaki1999}{{15}{1999}{{Furusaki}}{{}}}
 \bibcite{Beenakker2006}{{16}{2006}{{Beenakker}}{{}}}
 \bibcite{Efetov2016}{{17}{2016}{{Efetov and Efetov}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{49}{equation.7.0.3}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{55}{chapter*.31}}
 \bibcite{Groth2014}{{18}{2014}{{Groth et~al.}}{{Groth, Wimmer, Akhmerov, and Waintal}}}
-\bibcite{McCann2012}{{19}{2012}{{McCann and Koshino}}{{}}}
-\bibcite{CastroNeto2009}{{20}{2009}{{{Castro Neto} et~al.}}{{{Castro Neto}, Guinea, Peres, Novoselov, and Geim}}}
-\bibcite{Dresselhaus1995}{{21}{1995}{{Dresselhaus et~al.}}{{Dresselhaus, Dresselhaus, and Saito}}}
-\bibcite{McClure1957}{{22}{1957}{{McClure}}{{}}}
-\bibcite{McClure1960}{{23}{1960}{{McClure}}{{}}}
-\bibcite{Mucha-Kruczynski2010}{{24}{2010}{{Mucha-Kruczynski et~al.}}{{Mucha-Kruczynski, McCann, and Fal'ko}}}
-\bibcite{Malard2007}{{25}{2007}{{Malard et~al.}}{{Malard, Nilsson, Elias, Brant, Plentz, Alves, Neto, and Pimenta}}}
-\bibcite{Kuzmenko2009}{{26}{2009}{{Kuzmenko et~al.}}{{Kuzmenko, Crassee, van~der Marel, Blake, and Novoselov}}}
-\bibcite{Mello1988}{{27}{1988}{{Mello et~al.}}{{Mello, Pereyra, and Kumar}}}
-\bibcite{Beenakker1992}{{28}{1992}{{Beenakker}}{{}}}
-\bibcite{Beenakker1991}{{29}{1991}{{Beenakker and {Van Houten}}}{{}}}
+\bibcite{Mello1988}{{19}{1988}{{Mello et~al.}}{{Mello, Pereyra, and Kumar}}}
+\bibcite{Beenakker1992}{{20}{1992}{{Beenakker}}{{}}}
+\bibcite{Beenakker1991}{{21}{1991}{{Beenakker and {Van Houten}}}{{}}}
+\bibcite{McCann2012}{{22}{2012}{{McCann and Koshino}}{{}}}
+\bibcite{CastroNeto2009}{{23}{2009}{{{Castro Neto} et~al.}}{{{Castro Neto}, Guinea, Peres, Novoselov, and Geim}}}
+\bibcite{Dresselhaus1995}{{24}{1995}{{Dresselhaus et~al.}}{{Dresselhaus, Dresselhaus, and Saito}}}
+\bibcite{McClure1957}{{25}{1957}{{McClure}}{{}}}
+\bibcite{McClure1960}{{26}{1960}{{McClure}}{{}}}
+\bibcite{Mucha-Kruczynski2010}{{27}{2010}{{Mucha-Kruczynski et~al.}}{{Mucha-Kruczynski, McCann, and Fal'ko}}}
+\bibcite{Malard2007}{{28}{2007}{{Malard et~al.}}{{Malard, Nilsson, Elias, Brant, Plentz, Alves, Neto, and Pimenta}}}
+\bibcite{Kuzmenko2009}{{29}{2009}{{Kuzmenko et~al.}}{{Kuzmenko, Crassee, van~der Marel, Blake, and Novoselov}}}
 \bibcite{Likharev1979}{{30}{1979}{{Likharev}}{{}}}
 \bibcite{McCann2006}{{31}{2006}{{McCann}}{{}}}
 \bibcite{Oostinga2008}{{32}{2008}{{Oostinga et~al.}}{{Oostinga, Heersche, Liu, Morpurgo, and Vandersypen}}}

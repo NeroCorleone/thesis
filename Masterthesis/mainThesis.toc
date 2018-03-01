@@ -11,7 +11,7 @@
 \contentsline {section}{\numberline {2.6}Summary Of This Chapter}{13}{section.2.6}
 \contentsline {chapter}{\numberline {3}A Framework For The Numerical Analysis}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}\texttt {kwant} - A Toolbox For Quantum Transport}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Random Matrix Theory Tor Transport}{15}{section.3.2}
+\contentsline {section}{\numberline {3.2}Random Matrix Theory For Transport}{15}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Fundamental Idea}{15}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Supercurrent In An SNS Junction}{17}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}Tight Binding Model For Graphene}{18}{section.3.3}
@@ -24,16 +24,17 @@
 \contentsline {section}{\numberline {4.2}Normal State Analysis}{26}{section.4.2}
 \contentsline {section}{\numberline {4.3}Superconducting State}{27}{section.4.3}
 \contentsline {section}{\numberline {4.4}Summary Of This Chapter}{28}{section.4.4}
-\contentsline {chapter}{\numberline {5}Analytical Model}{29}{chapter.5}
-\contentsline {section}{\numberline {5.1}Foundation Of The Quasi-classical Model}{29}{section.5.1}
-\contentsline {section}{\numberline {5.2}Plane Set-up: Calculation Of The Critical Current}{30}{section.5.2}
-\contentsline {section}{\numberline {5.3}Calculation Of The QPC Critical Current}{35}{section.5.3}
-\contentsline {section}{\numberline {5.4}QPC Edge Current}{38}{section.5.4}
-\contentsline {section}{\numberline {5.5}Barrier With Finite Split Width: Transition To The QPC Set-up}{40}{section.5.5}
-\contentsline {section}{\numberline {5.6}Summary of this chapter}{41}{section.5.6}
-\contentsline {chapter}{\numberline {6}Numerical Results}{43}{chapter.6}
-\contentsline {section}{\numberline {6.1}QPC}{43}{section.6.1}
-\contentsline {section}{\numberline {6.2}Half-Barrier}{44}{section.6.2}
-\contentsline {section}{\numberline {6.3}Wave-guide}{45}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusion And Outlook}{47}{chapter.7}
-\contentsline {chapter}{Bibliography}{49}{equation.7.0.3}
+\contentsline {chapter}{\numberline {5}Analytical Model}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Foundation Of The Quasi-classical Model}{31}{section.5.1}
+\contentsline {section}{\numberline {5.2}Plane Set-up: Calculation Of The Critical Current}{32}{section.5.2}
+\contentsline {section}{\numberline {5.3}Calculation Of The QPC Critical Current}{37}{section.5.3}
+\contentsline {section}{\numberline {5.4}QPC Edge Current}{40}{section.5.4}
+\contentsline {section}{\numberline {5.5}Barrier With Finite Split Width: Transition To The QPC Set-up}{42}{section.5.5}
+\contentsline {section}{\numberline {5.6}Summary Of This Chapter}{43}{section.5.6}
+\contentsline {chapter}{\numberline {6}Numerical Results}{45}{chapter.6}
+\contentsline {section}{\numberline {6.1}QPC}{45}{section.6.1}
+\contentsline {section}{\numberline {6.2}Half-Barrier}{46}{section.6.2}
+\contentsline {section}{\numberline {6.3}Wave-guide}{47}{section.6.3}
+\contentsline {section}{\numberline {6.4}Summary Of This Chapter}{48}{section.6.4}
+\contentsline {chapter}{\numberline {7}Conclusion And Outlook}{51}{chapter.7}
+\contentsline {chapter}{Bibliography}{55}{chapter*.31}
