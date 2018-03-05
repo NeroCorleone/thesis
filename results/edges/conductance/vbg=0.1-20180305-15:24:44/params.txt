@@ -1,0 +1,14 @@
+vbg, 0.1
+vlead, 0.0
+b, 0
+nb_points, 300
+decay, 0
+eta, 2.5
+gamma, 0.4
+a, 0.4
+at, 5
+delta, 1.0
+T, 0.05
+rough_edges, False
+depth, 20
+size, 0.4

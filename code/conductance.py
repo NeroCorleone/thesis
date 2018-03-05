@@ -14,9 +14,9 @@ import os
 from functools import partial
 import csv
 
-nb_points = 100 
-splitgate_voltage = np.linspace(-1, 0.2, nb_points)#np.linspace(-1.0, 0.0, nb_points)
-vbg_values = [0.2, ]#[0.1, 0.15,  0.2, 0.25, 0.3,]
+nb_points = 300
+splitgate_voltage = np.linspace(-0.6, 0.2, nb_points)#np.linspace(-1.0, 0.0, nb_points)
+vbg_values = [0.1, 0.15,  0.2, 0.25, 0.3,]
 phase = (-np.pi, np.pi) 
 vlead = 0.0 
 
@@ -25,26 +25,34 @@ T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5 
-a = 0.2
+a = 0.4
 
 #parameters for rough edges
 rough_edges = False 
 depth = 20 
 size = 0.4
 
-pot_decay = 15 
-mainpath = '/home/nefta/thesis/'
-#mainpath = '/users/tkm/kanilmaz/thesis/'
-
+pot_decay = 0 #15
+#mainpath = '/home/nefta/thesis/'
+mainpath = '/users/tkm/kanilmaz/thesis/'
+"""
 if rough_edges:
     path_to_result = mainpath + 'results/qpc/conductance/rough/' 
 else:
     path_to_result = mainpath + 'results/qpc/conductance/' 
+
 path_to_file = mainpath + 'designfiles/qpc.png' 
 
 scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegion.png')[:, :, 0].T / 255
 
 topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
+"""
+path_to_result = mainpath + 'results/edges/conductance/'
+path_to_file = mainpath + 'designfiles/topgate_full_edges.png'
+path_to_scatfile = mainpath +'designfiles/scattering_region.png'
+topgate = np.fliplr(1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255)
+scattering_region = np.fliplr(1 - scipy.ndimage.imread(
+    path_to_scatfile, mode='L').T / 255) 
 
 topgateGauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 
@@ -248,11 +256,11 @@ def plotConductance(splitgate, conductance, filename):
 def calculate_conductance(system, vbg, b=0, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
     system_params_names = ['vbg', 'vlead', 'b', 'nb_points', 
-			   'decay', 'eta', 'gamma', 
+                           'decay', 'eta', 'gamma', 
                            'a', 'at', 'delta', 'T', 
                            'rough_edges', 'depth', 'size', ]
     system_params = [str(vbg), str(vlead), str(b), str(nb_points), 
-		     str(pot_decay), str(eta), str(gamma), 
+                     str(pot_decay), str(eta), str(gamma), 
                      str(a), str(at), str(delta), str(T), 
                      str(rough_edges), str(depth), str(size), ]
     newpath = path + 'vbg=' + str(vbg) + '-' +  runtime + '/'
