@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-vsg_values = np.arange(-0.01, -0.1, -0.01) 
+vsg_values = [-0.045, -0.055,]#np.arange(-0.1, -0.15, -0.01) 
 vbg = 0.25 
 vlead = 0.0
 nb_points = 300 
@@ -34,14 +34,15 @@ pot_decay = 15
 mainpath = '/users/tkm/kanilmaz/thesis/' 
 #mainpath = '/home/nefta/thesis/'
 
-path_to_result = mainpath + 'results/full_gate_edges/supercurrent/' 
-path_to_file = mainpath +'designfiles/full_gate_both_edges.png'
+#QPC-like gate for edge transmission
+#path_to_result = mainpath + 'results/full_gate_edges/supercurrent/' 
+#path_to_file = mainpath +'designfiles/full_gate_both_edges.png'
+
+#Full gate covering scattering region, with edge channels
+path_to_result = mainpath + 'results/edges/supercurrent/' 
+path_to_file = mainpath +'designfiles/topgate_full_edges.png'
+
 path_to_scatfile = mainpath +'designfiles/scattering_region.png'
-
-#path_to_result = mainpath + 'results/edges/supercurrent/' 
-#path_to_file = mainpath +'designfiles/topgate_full_edges.png'
-#path_to_scatfile = mainpath +'designfiles/scattering_region.png'
-
 topgate = np.fliplr(1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255)
 topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 scattering_region = np.fliplr(1 - scipy.ndimage.imread(
@@ -249,7 +250,7 @@ def plotCurrentPerV(magneticField, current, filename):
 
 def current_vs_b(system, vsg, path=path_to_result):
     runtime = datetime.strftime(datetime.today(), '%Y%m%d-%H:%M:%S')
-    system_params_names = ['vsg', 'vbg', 'maxB', 'nb_points',
+    system_params_names = ['vsg', 'vbg', 'vlead', 'maxB', 'nb_points',
                            'decay', 'eta', 'gamma', 'a', 
                            'at', 'delta', 'T', ]
     system_params = [str(vsg), str(vbg), str(vlead), str(max_b), str(nb_points), 

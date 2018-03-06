@@ -7457,3 +7457,24 @@ Traceback (most recent call last):
   File "/usr/lib/python3/dist-packages/matplotlib/axes/_base.py", line 223, in _xy_from_xy
     raise ValueError("x and y must have same first dimension")
 ValueError: x and y must have same first dimension
+starting calculation with  300  points
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:45.080625
+output in /users/tkm/kanilmaz/thesis/results/full_gate_edges/supercurrent/vsg=-0.1-20180306-11:18:04/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:47.805750
+output in /users/tkm/kanilmaz/thesis/results/edges/supercurrent/vsg=-0.045-20180306-11:26:47/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:43.712417
+output in /users/tkm/kanilmaz/thesis/results/full_gate_edges/supercurrent/vsg=-0.11-20180306-11:27:49/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:44.014617
+output in /users/tkm/kanilmaz/thesis/results/edges/supercurrent/vsg=-0.055-20180306-11:36:35/data.csv
+time for calculation with multiprocessing:  0:09:47.657538
+output in /users/tkm/kanilmaz/thesis/results/full_gate_edges/supercurrent/vsg=-0.12-20180306-11:37:33/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:50.449047
+output in /users/tkm/kanilmaz/thesis/results/full_gate_edges/supercurrent/vsg=-0.13-20180306-11:47:21/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:44.469114
+output in /users/tkm/kanilmaz/thesis/results/full_gate_edges/supercurrent/vsg=-0.14-20180306-11:57:12/data.csv
