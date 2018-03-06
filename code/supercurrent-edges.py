@@ -14,17 +14,17 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.0, -0.01] 
+vsg_values = np.arange(-0.01, -0.1, -0.01) 
 vbg = 0.25 
 vlead = 0.0
-nb_points = 100 
-max_b = 0.00005
+nb_points = 300 
+max_b = 0.000035
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
 
 delta = 1.0 
-T = delta / 2
+T = delta / 20
 eta = 2.5 
 gamma = 0.4
 at = 5.0
@@ -34,19 +34,18 @@ pot_decay = 15
 mainpath = '/users/tkm/kanilmaz/thesis/' 
 #mainpath = '/home/nefta/thesis/'
 
-path_to_result = mainpath + 'results/edges/supercurrent/' 
-path_to_file = mainpath +'designfiles/topgate_full_edges.png'
+path_to_result = mainpath + 'results/full_gate_edges/supercurrent/' 
+path_to_file = mainpath +'designfiles/full_gate_both_edges.png'
 path_to_scatfile = mainpath +'designfiles/scattering_region.png'
+
+#path_to_result = mainpath + 'results/edges/supercurrent/' 
+#path_to_file = mainpath +'designfiles/topgate_full_edges.png'
+#path_to_scatfile = mainpath +'designfiles/scattering_region.png'
+
 topgate = np.fliplr(1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255)
+topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 scattering_region = np.fliplr(1 - scipy.ndimage.imread(
     path_to_scatfile, mode='L').T / 255) 
-
-#path_to_result = mainpath + 'results/wg3_2/supercurrent/' 
-#path_to_file = mainpath +'designfiles/waveguide3_2_small.png'
-#topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
-#scattering_region = np.ones(topgate.shape)
-
-topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 
 potential = scipy.interpolate.RectBivariateSpline(
     x=(a*np.arange(topgate_gauss.shape[0])),
@@ -65,7 +64,7 @@ hoppings1 = (((0, 0), a1, b1), ((0, 1), a1, b1), ((1, 0), a1, b1))
 hoppings2 = (((0, 0), a2, b2), ((0, -1), a2, b2), ((1, -1), a2, b2))
 
 def onsite(site, par):    
-    potentialTop = par.v_sg * potential(site.pos[0], site.pos[1]) 
+    potentialTop = par.v_sg * potential(site.pos[0], site.pos[1])
     mu = (par.v_bg + potentialTop) / 2 #+ Vb
     delta = - (potentialTop - par.v_bg) / eta
     # site.family in (a1, b1)
@@ -213,13 +212,13 @@ def superCurrent(scatMatrix, phi):
     real = 0.5 * delta ** 2 * np.real(current_complex)
     absval = 0.5 * delta ** 2 * np.abs(current_complex)
     
-    return((absval, real, imag)) 
+    return (absval, real, imag)
 
 def findMax(func, phase_min, phase_max):
     current = [func(phi) for phi in np.linspace(phase_min, phase_max)]
-    currentPeak = max(current, key=lambda x: x[2])
+    currentPeak = max(current, key=lambda x: x[0])
     #currentPeak = np.amax(current)
-    return(currentPeak)
+    return currentPeak
 
 
 def maxCurrent(system, params):
@@ -304,7 +303,7 @@ def current_vs_b(system, vsg, path=path_to_result):
         for row in current_values:
             writer.writerow(list(row))
     pngfile = newpath + 'v_sg=' + str(vsg) + '.png'
-    plotCurrentPerV(current_values, magnetic_field, pngfile)
+    plotCurrentPerV(current_values.T[0], magnetic_field, pngfile)
     print('output in', filename)
     return()
 
