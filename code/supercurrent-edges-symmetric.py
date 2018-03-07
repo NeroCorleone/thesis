@@ -37,6 +37,7 @@ mainpath = '/users/tkm/kanilmaz/thesis/'
 channelwidth = 15 
 scattering_region = np.ones((210, 700))
 
+"""
 #QPC-like gate for edge transmission
 path_to_result = mainpath + 'results/full_gate_edges/symmetric/supercurrent/' 
 topgate = np.zeros(np.shape(scattering_region))
@@ -55,7 +56,6 @@ gatewidth = topgate.shape[1] - 2 * channelwidth
 for index, row in enumerate(topgate):
     topgate[index][channelwidth:-channelwidth] = np.ones(gatewidth)
 
-"""
 topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 
 potential = scipy.interpolate.RectBivariateSpline(
