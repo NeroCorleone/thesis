@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-vsg_values = np.arange(-0.01, -0.1, -0.01) 
+vsg_values = [-0.01, ]#np.arange(-0.01, -0.1, -0.01) 
 vbg = 0.25 
 vlead = 0.0
 nb_points = 300 
@@ -35,7 +35,8 @@ mainpath = '/users/tkm/kanilmaz/thesis/'
 #mainpath = '/home/nefta/thesis/'
 
 channelwidth = 15 
-scattering_region = np.ones((210, 700))
+scattering_region = np.ones((525, 1758))
+#scattering_region = np.ones((210, 700))
 
 """
 #QPC-like gate for edge transmission
