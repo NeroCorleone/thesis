@@ -34,20 +34,33 @@ pot_decay = 15
 mainpath = '/users/tkm/kanilmaz/thesis/' 
 #mainpath = '/home/nefta/thesis/'
 
-#QPC-like gate for edge transmission
-#path_to_result = mainpath + 'results/full_gate_edges/supercurrent/' 
-#path_to_file = mainpath +'designfiles/full_gate_both_edges.png'
+#QPC gate with two edge channels for edge transmission
+path_to_result = mainpath + 'results/qpc_both_edges/supercurrent/' 
+path_to_file = mainpath +'designfiles/qpc_both_edges.png'
+path_to_scatfile = mainpath +'designfiles/scattering_region.png'
+topgate = np.fliplr(1 - scipy.ndimage.imread(path_to_file).T[3] / 255)
+topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 
-#Full gate covering scattering region, with edge channels
-path_to_result = mainpath + 'results/edges/supercurrent/' 
-path_to_file = mainpath +'designfiles/topgate_full_edges.png'
-
+"""
+#Full like gate for edge transmission
+path_to_result = mainpath + 'results/full_gate_edges/supercurrent/' 
+path_to_file = mainpath +'designfiles/full_gate_both_edges.png'
 path_to_scatfile = mainpath +'designfiles/scattering_region.png'
 topgate = np.fliplr(1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255)
 topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
+"""
+
+"""
+#Full gate covering scattering region, with edge channels
+path_to_result = mainpath + 'results/edges/supercurrent/' 
+path_to_file = mainpath +'designfiles/topgate_full_edges.png'
+path_to_scatfile = mainpath +'designfiles/scattering_region.png'
+topgate = np.fliplr(1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255)
+topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
+"""
+
 scattering_region = np.fliplr(1 - scipy.ndimage.imread(
     path_to_scatfile, mode='L').T / 255) 
-
 potential = scipy.interpolate.RectBivariateSpline(
     x=(a*np.arange(topgate_gauss.shape[0])),
     y=(a*np.arange(topgate_gauss.shape[1])),
