@@ -14,10 +14,10 @@ import os
 from functools import partial
 import csv
 
-vsg_values = [-0.01, ]#np.arange(-0.01, -0.1, -0.01) 
-vbg = 0.25 
+vsg_values = [-0.06, -0.065]#np.arange(-0.01, -0.1, -0.01) 
+vbg = 0.2 
 vlead = 0.0
-nb_points = 300 
+nb_points = 100 
 max_b = 0.000035
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
@@ -30,17 +30,21 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
-pot_decay = 0 
+channelwidth = 15 
+pot_decay = 30 
 mainpath = '/users/tkm/kanilmaz/thesis/' 
 #mainpath = '/home/nefta/thesis/'
 
-channelwidth = 15 
-scattering_region = np.ones((525, 1758))
-#scattering_region = np.ones((210, 700))
+scattering_region = np.ones((525, 1777))
+path_to_result = mainpath + 'results/qpc_symmetric/supercurrent/'
+designfile = mainpath + 'designfiles/qpc_gate.png'
+topgate = 1 - scipy.ndimage.imread(designfile, mode='L').T / 255
+topgate = topgate.T[260:-260].T
 
 """
 #QPC-like gate for edge transmission
 path_to_result = mainpath + 'results/full_gate_edges/symmetric/supercurrent/' 
+scattering_region = np.ones((525, 1758))
 topgate = np.zeros(np.shape(scattering_region))
 gatewidth = topgate.shape[1] - 2 * channelwidth
 gatelength = 50
@@ -49,13 +53,16 @@ gate_pos = (round(topgate.shape[0] / 2) - round(gatelength / 2),
 for row in topgate[gate_pos[0]:gate_pos[1]]:
     row[channelwidth:-channelwidth] = np.ones(gatewidth)
 """
+"""
 
 #Full gate covering scattering region, with edge channels
 path_to_result = mainpath + 'results/edges/symmetric/supercurrent/' 
+scattering_region = np.ones((525, 1758))
 topgate = np.zeros(np.shape(scattering_region))
 gatewidth = topgate.shape[1] - 2 * channelwidth
 for index, row in enumerate(topgate):
     topgate[index][channelwidth:-channelwidth] = np.ones(gatewidth)
+"""
 
 topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 

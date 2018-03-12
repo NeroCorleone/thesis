@@ -14,13 +14,13 @@ import os
 from functools import partial
 import csv
 
-disorder_setup = True
-vsg_values = [-0.0]#np.arange(-0.0, -0.1, -0.01)
+disorder_setup = False 
+vsg_values = [-0.055, -0.065, ]#np.arange(-0.0, -0.1, -0.01)
 vbg = 0.2 
-#vdis = 0 
+vdis = 0 
 vdis_values = [0.1, 0.2, 0.3, 0.4, 0.5] 
 vlead = 0.0
-nb_points = 400 
+nb_points = 200 
 max_b = 0.00005
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
@@ -33,7 +33,7 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
-pot_decay = 15 
+pot_decay = 30 
 mainpath = '/users/tkm/kanilmaz/thesis/'
 #mainpath = '/home/nefta/thesis/'
 
@@ -48,26 +48,6 @@ scattering_region = np.fliplr(1 - scipy.ndimage.imread(
 #path_to_file = mainpath +'designfiles/waveguide3_2_small.png'
 #topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
 #scattering_region = np.ones(topgate.shape)
-"""
-case = 'wg3_2'
-setups = {'wg3_2': ('results/wg3_2/supercurrent/', 'designfiles/waveguide3_2_small.png')}
-
-path_to_result, path_to_file = (mainpath + setups[case][0], mainpath + setups[case][1]) 
-
-read_files = {
-        'wg3_2': scipy.ndimage.imread(mainpath + setups['wg3_2'][1], mode='L') / 255, 
-        }
-
-topgate = 1 - read_files[case]
-
-scat_file = mainpath + 'designfiles/scatteringRegions.png'
-
-scattering_cases = {
-        'wg3_2': np.ones(topgate.shape)
-        }
-
-scattering_region = scattering_cases[case]
-"""
 topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 
 potential = scipy.interpolate.RectBivariateSpline(
@@ -341,4 +321,6 @@ if disorder_setup:
     for vdis in vdis_values:
         for vsg in vsg_values:
             current_vs_b(system, vsg, vdis, path_to_result)
-
+else:
+    for vsg in vsg_values:
+        current_vs_b(system, vsg, vdis)

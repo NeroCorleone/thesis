@@ -14,9 +14,9 @@ import os
 from functools import partial
 import csv
 
-nb_points = 300
+nb_points = 100
 splitgate_voltage = np.linspace(-0.6, 0.2, nb_points)#np.linspace(-1.0, 0.0, nb_points)
-vbg_values = [0.1, 0.15,  0.2, 0.25, 0.3,]
+vbg_values = [0.2, 0.25,] 
 phase = (-np.pi, np.pi) 
 vlead = 0.0 
 
@@ -32,7 +32,7 @@ rough_edges = False
 depth = 20 
 size = 0.4
 
-pot_decay = 0 #15
+pot_decay = 20
 #mainpath = '/home/nefta/thesis/'
 mainpath = '/users/tkm/kanilmaz/thesis/'
 """
@@ -47,8 +47,10 @@ scattering_region = 1 - scipy.misc.imread(mainpath + 'designfiles/scatteringRegi
 
 topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
 """
-path_to_result = mainpath + 'results/edges/conductance/'
-path_to_file = mainpath + 'designfiles/topgate_full_edges.png'
+#path_to_result = mainpath + 'results/edges/conductance/'
+#path_to_file = mainpath + 'designfiles/topgate_full_edges.png'
+path_to_result = mainpath + 'results/qpc/conductance/'
+path_to_file = mainpath + 'designfiles/qpc_gate.png'
 path_to_scatfile = mainpath +'designfiles/scattering_region.png'
 topgate = np.fliplr(1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255)
 scattering_region = np.fliplr(1 - scipy.ndimage.imread(

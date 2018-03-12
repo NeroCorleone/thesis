@@ -17,7 +17,7 @@ import csv
 vsg_values = np.arange(-0.01, -0.1, -0.01) 
 vbg = 0.25 
 vlead = 0.0
-nb_points = 300 
+nb_points = 100 
 max_b = 0.000035
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
