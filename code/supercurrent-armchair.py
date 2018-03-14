@@ -15,12 +15,12 @@ from functools import partial
 import csv
 
 disorder_setup = False 
-vsg_values = [-0.055, -0.065, ]#np.arange(-0.0, -0.1, -0.01)
+vsg_values = [-0.05, -0.1, -0.15, -0.2, -0.4, -0.6, -0.7, -0.8] 
 vbg = 0.2 
 vdis = 0 
 vdis_values = [0.1, 0.2, 0.3, 0.4, 0.5] 
 vlead = 0.0
-nb_points = 200 
+nb_points = 300 
 max_b = 0.00005
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
@@ -33,13 +33,13 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
-pot_decay = 30 
+pot_decay = 20 
 mainpath = '/users/tkm/kanilmaz/thesis/'
 #mainpath = '/home/nefta/thesis/'
 
 path_to_result = mainpath + 'results/qpc/supercurrent/' 
 path_to_file = mainpath +'designfiles/qpc.png'
-path_to_scatfile = mainpath +'designfiles/scatteringRegion.png'
+path_to_scatfile = mainpath +'designfiles/scattering_region.png'
 topgate = 1 - scipy.ndimage.imread(path_to_file, mode='L').T / 255
 scattering_region = np.fliplr(1 - scipy.ndimage.imread(
                             path_to_scatfile, mode='L').T / 255) 

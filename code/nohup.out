@@ -7632,3 +7632,44 @@ Traceback (most recent call last):
   File "conductance.py", line 1, in <module>
     import matplotlib
 ImportError: No module named matplotlib
+Traceback (most recent call last):
+  File "supercurrent-armchair.py", line 51, in <module>
+    topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
+  File "/usr/lib/python3/dist-packages/scipy/ndimage/filters.py", line 305, in gaussian_filter
+    mode, cval, truncate)
+  File "/usr/lib/python3/dist-packages/scipy/ndimage/filters.py", line 248, in gaussian_filter1d
+    return correlate1d(input, weights, axis, output, mode, cval, 0)
+  File "/usr/lib/python3/dist-packages/scipy/ndimage/filters.py", line 144, in correlate1d
+    origin)
+KeyboardInterrupt
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:42.825371
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.05-20180314-14:36:04/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:46.805833
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.1-20180314-14:45:48/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:51.000775
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.15-20180314-14:55:35/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:02.175645
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.2-20180314-15:05:26/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:46.004131
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.4-20180314-15:15:29/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:53.300450
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.6-20180314-15:25:15/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:45.729741
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.7-20180314-15:35:08/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:48.862108
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.8-20180314-15:44:55/data.csv
+Traceback (most recent call last):
+  File "supercurrent-edges.py", line 327, in <module>
+    current_vs_b(system, vsg)
+  File "supercurrent-edges.py", line 279, in current_vs_b
+    paramfile.write(name + ", " + value + '\n')
+KeyboardInterrupt
+starting calculation with  300  points
