@@ -7673,3 +7673,12 @@ Traceback (most recent call last):
     paramfile.write(name + ", " + value + '\n')
 KeyboardInterrupt
 starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:46.150623
+output in /users/tkm/kanilmaz/thesis/results/qpc_both_edges/supercurrent/vsg=-0.01-20180314-15:54:55/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:48.917155
+output in /users/tkm/kanilmaz/thesis/results/qpc_both_edges/supercurrent/vsg=-0.02-20180314-16:04:41/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:56.014279
+output in /users/tkm/kanilmaz/thesis/results/qpc_both_edges/supercurrent/vsg=-0.03-20180314-16:14:31/data.csv
+starting calculation with  300  points
