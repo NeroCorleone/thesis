@@ -14,8 +14,8 @@ import os
 from functools import partial
 import csv
 
-nb_points = 100
-splitgate_voltage = np.linspace(-0.6, 0.2, nb_points)#np.linspace(-1.0, 0.0, nb_points)
+nb_points = 400 
+splitgate_voltage = np.linspace(-0.8, 0.2, nb_points)#np.linspace(-1.0, 0.0, nb_points)
 vbg_values = [0.2, 0.25,] 
 phase = (-np.pi, np.pi) 
 vlead = 0.0 

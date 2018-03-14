@@ -7628,3 +7628,7 @@ output in /users/tkm/kanilmaz/thesis/results/full_gate_edges/symmetric/supercurr
 starting calculation with  300  points
 time for calculation with multiprocessing:  0:09:56.493006
 output in /users/tkm/kanilmaz/thesis/results/full_gate_edges/symmetric/supercurrent/vsg=-0.09-20180307-13:21:08/data.csv
+Traceback (most recent call last):
+  File "conductance.py", line 1, in <module>
+    import matplotlib
+ImportError: No module named matplotlib
