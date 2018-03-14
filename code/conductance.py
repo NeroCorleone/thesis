@@ -15,8 +15,8 @@ from functools import partial
 import csv
 
 nb_points = 100
-splitgate_voltage = np.linspace(-0.6, 0.2, nb_points)#np.linspace(-1.0, 0.0, nb_points)
-vbg_values = [0.2, 0.25,] 
+splitgate_voltage = np.linspace(-0.8, 0.2, nb_points)#np.linspace(-1.0, 0.0, nb_points)
+vbg_values = [0.2, ] 
 phase = (-np.pi, np.pi) 
 vlead = 0.0 
 
@@ -33,8 +33,8 @@ depth = 20
 size = 0.4
 
 pot_decay = 20
-#mainpath = '/home/nefta/thesis/'
-mainpath = '/users/tkm/kanilmaz/thesis/'
+mainpath = '/home/nefta/thesis/'
+#mainpath = '/users/tkm/kanilmaz/thesis/'
 """
 if rough_edges:
     path_to_result = mainpath + 'results/qpc/conductance/rough/' 
