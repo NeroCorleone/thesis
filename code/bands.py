@@ -2,25 +2,28 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import kwant
+import pandas as pd
 import scipy.ndimage
 import numpy as np
 from types import SimpleNamespace
 import os
 
-dirname = '/home/nefta/thesis/results/bands/qpc/'
-topgate = 1- scipy.ndimage.imread(
-        '/home/nefta/thesis/designfiles/qpc_gate.png', mode='L') / 255
-
-#dirname = '/users/tkm/kanilmaz/thesis/results/bands/'
+#dirname = '/home/nefta/thesis/results/bands/qpc/'
 #topgate = 1- scipy.ndimage.imread(
-#        '/users/tkm/kanilmaz/thesis/designfiles/waveguide3_2_small.png', mode='L') / 255
+#        '/home/nefta/thesis/designfiles/qpc_gate.png', mode='L') / 255
+
+dirname = '/users/tkm/kanilmaz/thesis/results/bands/'
+topgate = 1- scipy.ndimage.imread(
+        '/users/tkm/kanilmaz/thesis/designfiles/waveguide3_2_small.png', mode='L') / 255
 
 #scatteringGeom = np.ones(topgate.shape)
+#scatteringGeom = np.fliplr(1 - scipy.ndimage.imread(
+#    '/home/nefta/thesis/designfiles/scatteringRegion.png', mode='L').T / 255)
 scatteringGeom = np.fliplr(1 - scipy.ndimage.imread(
-    '/home/nefta/thesis/designfiles/scatteringRegion.png', mode='L').T / 255)
+    '/users/tkm/kanilmaz/thesis/designfiles/scatteringRegion.png', mode='L').T / 255)
 vbg = 0.2
 vlead = 0.0
-vsg_values = np.round(np.arange(-0.4, 0.4, 0.1), 1)
+vsg_values = [-0.7, -0.6, -0.4, -0.3, -0.2, -0.1, 0.0, 0.1] 
 b = 0.0
 gamma = 0.4
 a = 0.4
@@ -93,6 +96,8 @@ def calculate_bands(par):
     bands = kwant.physics.Bands(sys_lead.finalized(), args=[par])
     momenta = np.linspace(-np.pi, np.pi, 50)
     energies = [bands(k) for k in momenta]
+    df = pd.DataFrame(np.asarray(energies).T)
+    df.to_csv(resultdir + 'bands_vsg={}.csv'.format(par.v_sg))
     band_index = int(len(energies[0]) / 2)
 
     start = band_index - 3

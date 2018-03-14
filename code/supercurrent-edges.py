@@ -14,11 +14,11 @@ import os
 from functools import partial
 import csv
 
-vsg_values = np.arange(-0.01, -0.1, -0.01) 
-vbg = 0.25 
+vsg_values = [-0.05, -0.1, -0.15,  -0.2, -0.4, -0.6, -0.7, -0.8]#np.arange(-0.01, -0.1, -0.01) 
+vbg = 0.2 
 vlead = 0.0
-nb_points = 100 
-max_b = 0.000035
+nb_points = 300 
+max_b = 0.00005
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
 phase = (-np.pi, np.pi) 
@@ -30,7 +30,7 @@ gamma = 0.4
 at = 5.0
 a = 0.4
 
-pot_decay = 15 
+pot_decay = 20 
 mainpath = '/users/tkm/kanilmaz/thesis/' 
 #mainpath = '/home/nefta/thesis/'
 
@@ -42,7 +42,7 @@ topgate = np.fliplr(1 - scipy.ndimage.imread(path_to_file).T[3] / 255)
 topgate_gauss = scipy.ndimage.gaussian_filter(topgate, pot_decay)
 
 """
-#Full like gate for edge transmission
+#Full QPC-like gate for edge transmission
 path_to_result = mainpath + 'results/full_gate_edges/supercurrent/' 
 path_to_file = mainpath +'designfiles/full_gate_both_edges.png'
 path_to_scatfile = mainpath +'designfiles/scattering_region.png'
