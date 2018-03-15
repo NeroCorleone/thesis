@@ -15,7 +15,7 @@ from functools import partial
 import csv
 
 disorder_setup = False 
-vsg_values = [-0.05, -0.1, -0.15, -0.2, -0.4, -0.6, -0.7, -0.8] 
+vsg_values = np.arange(0.65, -0.8, -0.05) 
 vbg = 0.2 
 vdis = 0 
 vdis_values = [0.1, 0.2, 0.3, 0.4, 0.5] 
