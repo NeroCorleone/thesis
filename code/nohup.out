@@ -7700,3 +7700,94 @@ starting calculation with  300  points
 time for calculation with multiprocessing:  0:09:51.036896
 output in /users/tkm/kanilmaz/thesis/results/qpc_both_edges/supercurrent/vsg=-0.09-20180314-17:13:47/data.csv
 starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:13.404423
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.65-20180315-15:10:04/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:04.561487
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.6-20180315-15:20:18/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:15.268201
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.55-20180315-15:30:23/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:12.497992
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.5-20180315-15:40:38/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:07.489976
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.45-20180315-15:50:51/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:01.056853
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.4-20180315-16:00:59/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:09.720251
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.35-20180315-16:11:00/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:12.492664
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.3-20180315-16:21:10/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:08.093658
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.25-20180315-16:31:23/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:56.921288
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.2-20180315-16:41:31/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:04.316409
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.15-20180315-16:51:28/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:09.998396
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.1-20180315-17:01:33/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:09.391198
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.05-20180315-17:11:43/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:02.984319
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-5.55111512313e-16-20180315-17:21:53/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:08.566514
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.05-20180315-17:31:56/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:08.013919
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.1-20180315-17:42:05/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:06.950323
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.15-20180315-17:52:14/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:09:58.417597
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.2-20180315-18:02:21/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:04.167382
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.25-20180315-18:12:20/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:05.139760
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.3-20180315-18:22:24/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:06.262406
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.35-20180315-18:32:30/data.csv
+starting calculation with  300  points
+/usr/lib/python3/dist-packages/matplotlib/pyplot.py:424: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  max_open_warning, RuntimeWarning)
+time for calculation with multiprocessing:  0:10:07.678065
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.4-20180315-18:42:36/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:09.005504
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.45-20180315-18:52:44/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:08.802065
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.5-20180315-19:02:53/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:13.247850
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.55-20180315-19:13:03/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:11.150325
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.6-20180315-19:23:16/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:07.565808
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.65-20180315-19:33:28/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:07.771454
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.7-20180315-19:43:36/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:06.739634
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.75-20180315-19:53:44/data.csv
+starting calculation with  300  points
+time for calculation with multiprocessing:  0:10:10.061778
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.8-20180315-20:03:51/data.csv
