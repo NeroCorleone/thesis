@@ -14,7 +14,7 @@ import os
 from functools import partial
 import csv
 
-vsg_values = np.arange(-0.01, -0.1, -0.01) 
+vsg_values = [-0.3, -0.35, -0.45, -0.5, -0.65, -0.75, ] 
 vbg = 0.2 
 vlead = 0.0
 nb_points = 300 
