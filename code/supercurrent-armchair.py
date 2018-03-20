@@ -15,12 +15,12 @@ from functools import partial
 import csv
 
 disorder_setup = False 
-vsg_values = np.arange(0.65, -0.8, -0.05) 
+vsg_values = [0.0, ] 
 vbg = 0.2 
 vdis = 0 
 vdis_values = [0.1, 0.2, 0.3, 0.4, 0.5] 
 vlead = 0.0
-nb_points = 300 
+nb_points = 500 
 max_b = 0.00005
 magnetic_field = np.linspace(- max_b, max_b, nb_points)
 maxPhi = np.pi
@@ -315,6 +315,8 @@ def current_vs_b(system, vsg, dis, path=path_to_result):
     return()
 
 system = make_system()
+fig = kwant.plotter.plot(system)
+fig.savefig('testqpc-png')
 
 if disorder_setup:
     path_to_result += 'disorder/'

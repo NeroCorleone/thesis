@@ -7791,3 +7791,8 @@ output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.75-20180315
 starting calculation with  300  points
 time for calculation with multiprocessing:  0:10:10.061778
 output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=-0.8-20180315-20:03:51/data.csv
+starting calculation with  500  points
+/usr/lib/python3/dist-packages/matplotlib/collections.py:571: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+time for calculation with multiprocessing:  0:08:12.064084
+output in /users/tkm/kanilmaz/thesis/results/qpc/supercurrent/vsg=0.0-20180320-12:49:04/data.csv
