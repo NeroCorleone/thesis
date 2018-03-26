@@ -14,66 +14,65 @@
 
 \begin{document}
 \iffalse
-Ziel: Zusammenfassung der bisherigen Daten fuer QPC und Half Barrier
-
-Was willst du zeigen?
-* QPC mit edge currents (schmaler Spalt an der Seite)
-* QPC-like setup, aber nur zwei schmale Spalte an den Seiten
-* QPC fuer hoeheres Splitgate
-
-Half Barrier
-%* Oberer Finger (check)
-%* Unterer Finger (check)
-* Rechnung hinzufuegen?
-
-Waveguide
-
 Waveguide mit Gate in der Mitte?
 
 NPN junction? 
+
+Nächste Arbeitsschritte:
+* Kurz LDOS untersuchen
+* Integral für HB aufschreiben: NIntegrate? Überhaupt Intergrate?
+* Integral für Hourglass setup aufschreiben, wie auswerten?
+* Text in das LatexFile einfügen
+
+Fragen, zur Vorbereitung:
+* Was sind die Einheiten:
+** Strom
+** Leitfähigkeit
+** Flux
+** Potential
+
+Jedes Kapitel: was willst du erzählen, was ist die Message? 
+
+Wo siehst du Möglichkeiten, weiterzumachen?
 \fi
 
 \section{QPC}
-\iffalse
-
-Entschieden für decay 20, weil da die Transmissionskurve deutlich früher wieder hochgeht. Gerade laufen Bandstruktur berechnungen, damit kann ich dann sagen, bei welchen Splitgate ich welche dotierung habe.
-Wenn das steht, kann ich zeigen, wie das beating pattern verschwindet und wieder auftaucht. 
-
-Dann kann ich mit diesen Parametern die Spalte an den Seiten dazu modellieren und diese Plots mitaufnehmen. 
-
-Arbeitsschritte: 
-* Leitfähigkeit für decay 30 (check)
-* Vergleiche mit Leitfähigkeit für decay 20 (check) 
-* Bandstruktur berechnen (läuft, als nächstes commiten, plotten und einfügen) (check)
-* Strom Plots machen: dafür parameter checken und vereinheitlichen!
-* Mit den gleichen Parametern das QPC mit Spalten modellieren (check), plotten, welche Daten fehlen?
-* Weitere Möglichkeiten: Doping an den Rändern manuell erhöhen?
-\fi
-
-\begin{figure}
+\begin{figure}[h!]
 \centering
-\includegraphics[width=\textwidth]{qpc-conductance}
+\includegraphics[width=0.8\textwidth]{qpc-conductance}
 \caption{Conductance of QPC setup}
+\includegraphics[width=0.8\textwidth]{bands-transition}
+\caption{Bandstructure for different values of $\varphi_{SG}$ at constant $\varphi_{BG}$. Yellowish line marks $E_F - E = 0$}
 \end{figure}
-
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{bands-transition}
-\caption{Banstructure for different values of splitgate}
+\includegraphics[width=0.8\textwidth]{qpc-0-01}
+\caption{Supercurrent with increasing splitgate: $\varphi_{SG} \in [0.0, -0.1]$: transition from beating pattern to pattern for confined regime.}
+\includegraphics[width=0.8\textwidth]{qpc-05-08}
+\caption{Supercurrent with increasing splitgate: $\varphi_{SG} \in [-0.5, -0.8]$: beating pattern recovers for increasing splitgate.}
 \end{figure}
 
-\section{Waveguide}
+\newpage
 
-Less impact of stray fields
+\section{QPC with edge channels}
 
-What could be done and has not been evaluated so far:
-* impact of disorder in the sample or in the leads
-* finite doping in the leads
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{qpc-edges-conductance}
+\caption{Conductance of QPC-like setup with edge channels}
+\end{figure}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{qpc-edges-0-01}
+\caption{Supercurrent with increasing splitgate: $\varphi_{SG} \in [0.0, -0.1]$}
+\includegraphics[width=0.8\textwidth]{qpc-edges-05-08}
+\caption{Supercurrent with increasing splitgate: $\varphi_{SG} \in [-0.5, -0.8]$}
+\end{figure}
 
+\newpage
 \section{Half barrier setup}
-
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \begin{minipage}{0.3\textwidth}
 \centering
@@ -86,8 +85,7 @@ What could be done and has not been evaluated so far:
 \caption{Critical current of lower finger}
 \end{minipage}
 \end{figure}
-
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \begin{minipage}{0.3\textwidth}
 \centering
@@ -100,10 +98,35 @@ What could be done and has not been evaluated so far:
 \caption{Critical current of upper finger}
 \end{minipage}
 \end{figure}
-
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.8\textwidth]{hb_comparison}
 \caption{Comparing critical current curves for upper and lower finger of constriction at the same topgate voltage}
 \end{figure}
+\newpage
+
+\section{Waveguide}
+\iffalse
+Less impact of stray fields
+
+What could be done and has not been evaluated so far:
+* impact of disorder in the sample or in the leads
+* finite doping in the leads
+\fi
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{wg-conductance}
+\caption{Conductance of waveguide set-up}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{wg-00-01}
+\caption{Supercurrent with increasing splitgate: $\varphi_{SG} \in [0.0, -0.1]$}
+\includegraphics[width=0.8\textwidth]{wg-085-095}
+\caption{Supercurrent with increasing splitgate: $\varphi_{SG} \in [-0.5, -0.8]$}
+\end{figure}
+
+
 \end{document}

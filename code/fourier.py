@@ -95,7 +95,7 @@ def plot_current_and_density(phi_values, abs_values, real_flip,
     
     fig.savefig(filedir + '/current_and_density_{}.png'.format(phi_sg))
     fig.savefig(filedir + '/current_and_density_{}.ps'.format(phi_sg))
-    return()
+    return
 
 for phi_sg, dirname in list(zip(phi_sg_values, dirnames)):
     print('running..., phi = {}'.format(phi_sg))

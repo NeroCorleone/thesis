@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  15 MAR 2018 11:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2016/dev) (preloaded format=pdflatex 2017.2.24)  20 MAR 2018 12:35
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -331,24 +331,24 @@ Package epstopdf Info: Source file: <qpc-conductance.eps>
 (epstopdf)                    size: 14749 bytes
 (epstopdf)             Command: <epstopdf --outfile=qpc-conductance-eps-convert
 ed-to.pdf qpc-conductance.eps>
-(epstopdf)             \includegraphics on input line 55.
+(epstopdf)             \includegraphics on input line 42.
 Package epstopdf Info: Output file is already uptodate.
 <qpc-conductance-eps-converted-to.pdf, id=1, 1156.32pt x 650.43pt>
 File: qpc-conductance-eps-converted-to.pdf Graphic file (type pdf)
 
 <use qpc-conductance-eps-converted-to.pdf>
 Package pdftex.def Info: qpc-conductance-eps-converted-to.pdf used on input lin
-e 55.
-(pdftex.def)             Requested size: 426.79134pt x 240.06976pt.
+e 42.
+(pdftex.def)             Requested size: 341.43436pt x 192.05383pt.
 Package epstopdf Info: Source file: <bands-transition.eps>
-(epstopdf)                    date: 2018-03-14 14:23:16
-(epstopdf)                    size: 30207 bytes
+(epstopdf)                    date: 2018-03-20 07:56:57
+(epstopdf)                    size: 30195 bytes
 (epstopdf)             Output file: <bands-transition-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-14 14:26:43
-(epstopdf)                    size: 11575 bytes
+(epstopdf)                    date: 2018-03-20 08:04:17
+(epstopdf)                    size: 11547 bytes
 (epstopdf)             Command: <epstopdf --outfile=bands-transition-eps-conver
 ted-to.pdf bands-transition.eps>
-(epstopdf)             \includegraphics on input line 61.
+(epstopdf)             \includegraphics on input line 44.
 Package epstopdf Info: Output file is already uptodate.
 
 <bands-transition-eps-converted-to.pdf, id=2, 1373.13pt x 650.43pt>
@@ -356,8 +356,104 @@ File: bands-transition-eps-converted-to.pdf Graphic file (type pdf)
 
 <use bands-transition-eps-converted-to.pdf>
 Package pdftex.def Info: bands-transition-eps-converted-to.pdf used on input li
-ne 61.
-(pdftex.def)             Requested size: 426.79134pt x 202.15723pt.
+ne 44.
+(pdftex.def)             Requested size: 341.43436pt x 161.72379pt.
+Package epstopdf Info: Source file: <qpc-0-01.eps>
+(epstopdf)                    date: 2018-03-19 15:57:19
+(epstopdf)                    size: 129909 bytes
+(epstopdf)             Output file: <qpc-0-01-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-19 16:04:05
+(epstopdf)                    size: 18303 bytes
+(epstopdf)             Command: <epstopdf --outfile=qpc-0-01-eps-converted-to.p
+df qpc-0-01.eps>
+(epstopdf)             \includegraphics on input line 49.
+Package epstopdf Info: Output file is already uptodate.
+
+<qpc-0-01-eps-converted-to.pdf, id=3, 1156.32pt x 650.43pt>
+File: qpc-0-01-eps-converted-to.pdf Graphic file (type pdf)
+
+<use qpc-0-01-eps-converted-to.pdf>
+Package pdftex.def Info: qpc-0-01-eps-converted-to.pdf used on input line 49.
+(pdftex.def)             Requested size: 341.43436pt x 192.05383pt.
+Package epstopdf Info: Source file: <qpc-05-08.eps>
+(epstopdf)                    date: 2018-03-19 13:51:07
+(epstopdf)                    size: 126530 bytes
+(epstopdf)             Output file: <qpc-05-08-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-19 16:04:05
+(epstopdf)                    size: 18470 bytes
+(epstopdf)             Command: <epstopdf --outfile=qpc-05-08-eps-converted-to.
+pdf qpc-05-08.eps>
+(epstopdf)             \includegraphics on input line 51.
+Package epstopdf Info: Output file is already uptodate.
+
+<qpc-05-08-eps-converted-to.pdf, id=4, 1156.32pt x 650.43pt>
+File: qpc-05-08-eps-converted-to.pdf Graphic file (type pdf)
+
+<use qpc-05-08-eps-converted-to.pdf>
+Package pdftex.def Info: qpc-05-08-eps-converted-to.pdf used on input line 51.
+(pdftex.def)             Requested size: 341.43436pt x 192.05383pt.
+ [1
+
+{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map} <./qpc-condu
+ctance-eps-converted-to.pdf> <./bands-transition-eps-converted-to.pdf>] [2 <./q
+pc-0-01-eps-converted-to.pdf> <./qpc-05-08-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <qpc-edges-conductance.eps>
+(epstopdf)                    date: 2018-03-15 16:00:20
+(epstopdf)                    size: 26320 bytes
+(epstopdf)             Output file: <qpc-edges-conductance-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2018-03-15 16:04:32
+(epstopdf)                    size: 14745 bytes
+(epstopdf)             Command: <epstopdf --outfile=qpc-edges-conductance-eps-c
+onverted-to.pdf qpc-edges-conductance.eps>
+(epstopdf)             \includegraphics on input line 61.
+Package epstopdf Info: Output file is already uptodate.
+
+<qpc-edges-conductance-eps-converted-to.pdf, id=137, 1156.32pt x 650.43pt>
+File: qpc-edges-conductance-eps-converted-to.pdf Graphic file (type pdf)
+
+<use qpc-edges-conductance-eps-converted-to.pdf>
+Package pdftex.def Info: qpc-edges-conductance-eps-converted-to.pdf used on inp
+ut line 61.
+(pdftex.def)             Requested size: 341.43436pt x 192.05383pt.
+Package epstopdf Info: Source file: <qpc-edges-0-01.eps>
+(epstopdf)                    date: 2018-03-19 15:58:13
+(epstopdf)                    size: 127679 bytes
+(epstopdf)             Output file: <qpc-edges-0-01-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-19 16:04:05
+(epstopdf)                    size: 17923 bytes
+(epstopdf)             Command: <epstopdf --outfile=qpc-edges-0-01-eps-converte
+d-to.pdf qpc-edges-0-01.eps>
+(epstopdf)             \includegraphics on input line 67.
+Package epstopdf Info: Output file is already uptodate.
+
+<qpc-edges-0-01-eps-converted-to.pdf, id=138, 1156.32pt x 650.43pt>
+File: qpc-edges-0-01-eps-converted-to.pdf Graphic file (type pdf)
+
+<use qpc-edges-0-01-eps-converted-to.pdf>
+Package pdftex.def Info: qpc-edges-0-01-eps-converted-to.pdf used on input line
+ 67.
+(pdftex.def)             Requested size: 341.43436pt x 192.05383pt.
+Package epstopdf Info: Source file: <qpc-edges-05-08.eps>
+(epstopdf)                    date: 2018-03-19 16:02:19
+(epstopdf)                    size: 122923 bytes
+(epstopdf)             Output file: <qpc-edges-05-08-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-19 16:04:05
+(epstopdf)                    size: 17304 bytes
+(epstopdf)             Command: <epstopdf --outfile=qpc-edges-05-08-eps-convert
+ed-to.pdf qpc-edges-05-08.eps>
+(epstopdf)             \includegraphics on input line 69.
+Package epstopdf Info: Output file is already uptodate.
+
+<qpc-edges-05-08-eps-converted-to.pdf, id=139, 1156.32pt x 650.43pt>
+File: qpc-edges-05-08-eps-converted-to.pdf Graphic file (type pdf)
+
+<use qpc-edges-05-08-eps-converted-to.pdf>
+Package pdftex.def Info: qpc-edges-05-08-eps-converted-to.pdf used on input lin
+e 69.
+(pdftex.def)             Requested size: 341.43436pt x 192.05383pt.
+ [3 <./qpc-edges-conductance-eps-converted-to.pdf> <./qpc-edges-0-01-eps-conver
+ted-to.pdf> <./qpc-edges-05-08-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <hb_lower.eps>
 (epstopdf)                    date: 2018-03-12 13:29:35
 (epstopdf)                    size: 2163979 bytes
@@ -366,14 +462,14 @@ Package epstopdf Info: Source file: <hb_lower.eps>
 (epstopdf)                    size: 479224 bytes
 (epstopdf)             Command: <epstopdf --outfile=hb_lower-eps-converted-to.p
 df hb_lower.eps>
-(epstopdf)             \includegraphics on input line 80.
+(epstopdf)             \includegraphics on input line 79.
 Package epstopdf Info: Output file is already uptodate.
 
-<hb_lower-eps-converted-to.pdf, id=3, 228.855pt x 492.84125pt>
+<hb_lower-eps-converted-to.pdf, id=237, 228.855pt x 492.84125pt>
 File: hb_lower-eps-converted-to.pdf Graphic file (type pdf)
 
 <use hb_lower-eps-converted-to.pdf>
-Package pdftex.def Info: hb_lower-eps-converted-to.pdf used on input line 80.
+Package pdftex.def Info: hb_lower-eps-converted-to.pdf used on input line 79.
 (pdftex.def)             Requested size: 76.82399pt x 165.44312pt.
 Package epstopdf Info: Source file: <hb_lower_plot.eps>
 (epstopdf)                    date: 2018-03-12 13:48:14
@@ -383,15 +479,15 @@ Package epstopdf Info: Source file: <hb_lower_plot.eps>
 (epstopdf)                    size: 16324 bytes
 (epstopdf)             Command: <epstopdf --outfile=hb_lower_plot-eps-converted
 -to.pdf hb_lower_plot.eps>
-(epstopdf)             \includegraphics on input line 85.
+(epstopdf)             \includegraphics on input line 84.
 Package epstopdf Info: Output file is already uptodate.
 
-<hb_lower_plot-eps-converted-to.pdf, id=4, 1156.32pt x 650.43pt>
+<hb_lower_plot-eps-converted-to.pdf, id=238, 1156.32pt x 650.43pt>
 File: hb_lower_plot-eps-converted-to.pdf Graphic file (type pdf)
 
 <use hb_lower_plot-eps-converted-to.pdf>
 Package pdftex.def Info: hb_lower_plot-eps-converted-to.pdf used on input line 
-85.
+84.
 (pdftex.def)             Requested size: 298.75262pt x 168.04585pt.
 Package epstopdf Info: Source file: <hb_upper.eps>
 (epstopdf)                    date: 2018-03-12 13:35:45
@@ -401,14 +497,14 @@ Package epstopdf Info: Source file: <hb_upper.eps>
 (epstopdf)                    size: 479349 bytes
 (epstopdf)             Command: <epstopdf --outfile=hb_upper-eps-converted-to.p
 df hb_upper.eps>
-(epstopdf)             \includegraphics on input line 94.
+(epstopdf)             \includegraphics on input line 92.
 Package epstopdf Info: Output file is already uptodate.
 
-<hb_upper-eps-converted-to.pdf, id=5, 219.82124pt x 471.7625pt>
+<hb_upper-eps-converted-to.pdf, id=239, 219.82124pt x 471.7625pt>
 File: hb_upper-eps-converted-to.pdf Graphic file (type pdf)
 
 <use hb_upper-eps-converted-to.pdf>
-Package pdftex.def Info: hb_upper-eps-converted-to.pdf used on input line 94.
+Package pdftex.def Info: hb_upper-eps-converted-to.pdf used on input line 92.
 (pdftex.def)             Requested size: 76.82399pt x 164.86739pt.
 Package epstopdf Info: Source file: <hb_upper_plot.eps>
 (epstopdf)                    date: 2018-03-12 13:47:27
@@ -418,15 +514,15 @@ Package epstopdf Info: Source file: <hb_upper_plot.eps>
 (epstopdf)                    size: 16249 bytes
 (epstopdf)             Command: <epstopdf --outfile=hb_upper_plot-eps-converted
 -to.pdf hb_upper_plot.eps>
-(epstopdf)             \includegraphics on input line 99.
+(epstopdf)             \includegraphics on input line 97.
 Package epstopdf Info: Output file is already uptodate.
 
-<hb_upper_plot-eps-converted-to.pdf, id=6, 1156.32pt x 650.43pt>
+<hb_upper_plot-eps-converted-to.pdf, id=240, 1156.32pt x 650.43pt>
 File: hb_upper_plot-eps-converted-to.pdf Graphic file (type pdf)
 
 <use hb_upper_plot-eps-converted-to.pdf>
 Package pdftex.def Info: hb_upper_plot-eps-converted-to.pdf used on input line 
-99.
+97.
 (pdftex.def)             Requested size: 298.75262pt x 168.04585pt.
 Package epstopdf Info: Source file: <hb_comparison.eps>
 (epstopdf)                    date: 2018-03-12 13:47:44
@@ -436,38 +532,92 @@ Package epstopdf Info: Source file: <hb_comparison.eps>
 (epstopdf)                    size: 12382 bytes
 (epstopdf)             Command: <epstopdf --outfile=hb_comparison-eps-converted
 -to.pdf hb_comparison.eps>
-(epstopdf)             \includegraphics on input line 106.
+(epstopdf)             \includegraphics on input line 103.
 Package epstopdf Info: Output file is already uptodate.
 
-<hb_comparison-eps-converted-to.pdf, id=7, 1156.32pt x 650.43pt>
+<hb_comparison-eps-converted-to.pdf, id=241, 1156.32pt x 650.43pt>
 File: hb_comparison-eps-converted-to.pdf Graphic file (type pdf)
 
 <use hb_comparison-eps-converted-to.pdf>
 Package pdftex.def Info: hb_comparison-eps-converted-to.pdf used on input line 
-106.
+103.
 (pdftex.def)             Requested size: 341.43436pt x 192.05383pt.
- [1{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}
+ [4 <./hb_lower-eps-converted-to.pdf> <./hb_lower_plot-eps-converted-to.pdf> <.
+/hb_upper-eps-converted-to.pdf> <./hb_upper_plot-eps-converted-to.pdf> <./hb_co
+mparison-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <wg-conductance.eps>
+(epstopdf)                    date: 2018-03-20 09:04:12
+(epstopdf)                    size: 26284 bytes
+(epstopdf)             Output file: <wg-conductance-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-20 09:05:50
+(epstopdf)                    size: 15517 bytes
+(epstopdf)             Command: <epstopdf --outfile=wg-conductance-eps-converte
+d-to.pdf wg-conductance.eps>
+(epstopdf)             \includegraphics on input line 119.
+Package epstopdf Info: Output file is already uptodate.
 
- <./qpc-conductance-eps-converted-to.pdf> <./bands-transition-eps-converted-to.
-pdf>] [2 <./hb_lower-eps-converted-to.pdf> <./hb_lower_plot-eps-converted-to.pd
-f> <./hb_upper-eps-converted-to.pdf> <./hb_upper_plot-eps-converted-to.pdf> <./
-hb_comparison-eps-converted-to.pdf>]
+<wg-conductance-eps-converted-to.pdf, id=325, 1156.32pt x 650.43pt>
+File: wg-conductance-eps-converted-to.pdf Graphic file (type pdf)
+
+<use wg-conductance-eps-converted-to.pdf>
+Package pdftex.def Info: wg-conductance-eps-converted-to.pdf used on input line
+ 119.
+(pdftex.def)             Requested size: 341.43436pt x 192.05383pt.
+Package epstopdf Info: Source file: <wg-00-01.eps>
+(epstopdf)                    date: 2018-03-20 08:54:37
+(epstopdf)                    size: 126364 bytes
+(epstopdf)             Output file: <wg-00-01-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-20 08:59:07
+(epstopdf)                    size: 18437 bytes
+(epstopdf)             Command: <epstopdf --outfile=wg-00-01-eps-converted-to.p
+df wg-00-01.eps>
+(epstopdf)             \includegraphics on input line 125.
+Package epstopdf Info: Output file is already uptodate.
+
+<wg-00-01-eps-converted-to.pdf, id=326, 1156.32pt x 650.43pt>
+File: wg-00-01-eps-converted-to.pdf Graphic file (type pdf)
+
+<use wg-00-01-eps-converted-to.pdf>
+Package pdftex.def Info: wg-00-01-eps-converted-to.pdf used on input line 125.
+(pdftex.def)             Requested size: 341.43436pt x 192.05383pt.
+Package epstopdf Info: Source file: <wg-085-095.eps>
+(epstopdf)                    date: 2018-03-20 08:57:34
+(epstopdf)                    size: 123055 bytes
+(epstopdf)             Output file: <wg-085-095-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-20 08:59:07
+(epstopdf)                    size: 17726 bytes
+(epstopdf)             Command: <epstopdf --outfile=wg-085-095-eps-converted-to
+.pdf wg-085-095.eps>
+(epstopdf)             \includegraphics on input line 127.
+Package epstopdf Info: Output file is already uptodate.
+
+<wg-085-095-eps-converted-to.pdf, id=327, 1156.32pt x 650.43pt>
+File: wg-085-095-eps-converted-to.pdf Graphic file (type pdf)
+
+<use wg-085-095-eps-converted-to.pdf>
+Package pdftex.def Info: wg-085-095-eps-converted-to.pdf used on input line 127
+.
+(pdftex.def)             Requested size: 341.43436pt x 192.05383pt.
+ [5 <./wg-conductance-eps-converted-to.pdf> <./wg-00-01-eps-converted-to.pdf> <
+./wg-085-095-eps-converted-to.pdf>]
 (./summary.aux) ) 
 Here is how much of TeX's memory you used:
- 4583 strings out of 494974
- 67858 string characters out of 6180014
- 134560 words of memory out of 5000000
- 7761 multiletter control sequences out of 15000+600000
+ 4623 strings out of 494974
+ 69209 string characters out of 6180014
+ 133560 words of memory out of 5000000
+ 7793 multiletter control sequences out of 15000+600000
  4699 words of font info for 18 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  68i,8n,98p,283b,416s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
-pfb>
-Output written on summary.pdf (2 pages, 1040776 bytes).
+cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on summary.pdf (5 pages, 1179086 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 445 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
